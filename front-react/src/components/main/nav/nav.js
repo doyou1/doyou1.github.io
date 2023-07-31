@@ -1,5 +1,18 @@
 export default function Nav() {
     return (
-        <nav class="text-3xl font-bold underline">Nav</nav>
+        <nav>
+            {/* home logo */}
+
+            {/* search bar */}
+
+            {/* buttons */}
+                {/* Learn */}
+                {/* Reference */}
+                {/* Community */}
+                {/* Blog */}
+                {/* Day/Night icon */}
+                {/* Github icon */}
+            {/* buttons */}
+        </nav>
     );
 }
