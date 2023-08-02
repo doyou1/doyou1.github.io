@@ -28,3 +28,11 @@
     - 개발 시작전 항상 본인의 local 브랜치 확인!!!
     - 개발 시작전 항상 !!git pull!! remote로부터 최신화 상태임을 확인해야한다. (conflict 문제 발생 원인이 됨)
     - 활성화중인 issue를 확인해 작업 파일, 범위가 겹치지 않도록 주의한다.
+
+# 참고
+- front-react(react) 로컬 빌드 방법
+    1. npm install : (package.json 변경 없을 시 실행 필요X) package.json에 정의된 라이브러리 설치(node_modules 생성 및 업데이트)
+    2. npm start : React 프로젝트 실행
+- front-vue(vue) 로컬 빌드 방법
+    1. npm install : (package.json 변경 없을 시 실행 필요X) package.json에 정의된 라이브러리 설치(node_modules 생성 및 업데이트)
+    2. npm run dev : Vue (개발용) 프로젝트 실행(코드 변경시 새로고침 없이 자동 적용)
