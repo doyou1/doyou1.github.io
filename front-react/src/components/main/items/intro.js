@@ -19,7 +19,7 @@ export default function Intro() {
         </p>
         {/* button set */}
         <div className="button-boxes">
-          <a href="#" className="learn-react-box" aria-label=" Learn React">
+          <a href="#" className="learn-react-box" aria-label="Learn React">
             Learn React
           </a>
           <a href="#" className="api-reference-box" aria-label="API Reference">
