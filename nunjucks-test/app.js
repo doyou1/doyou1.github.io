@@ -2,7 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 
-var mysql = require('mysql');
+var mysql = require('mysql2');
 
 var con = mysql.createConnection({
   host: "localhost",
