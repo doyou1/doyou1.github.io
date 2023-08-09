@@ -1,29 +1,9 @@
-# front-vue
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+# Vue 공식 사이트 클론
+- 메인 페이지 분석
+![alt vue layout define](./screenshots/vuejs-org-layout-define.png)
+    1. Nav
+    2. Intro
+    3. SponsorAndValue
+    4. SponsorList
+    5. Footer
+    > 총 5개의 컴포넌트로 나눌 수 있다고 분석됨
