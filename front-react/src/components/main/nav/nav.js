@@ -7,7 +7,7 @@ import githubDaynight from "images/github-daynight.svg";
 import githubDark from "images/github-dark.svg";
 import 'styles/nav.css';
 
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { isDarkState } from "recoil/recoil_state";
