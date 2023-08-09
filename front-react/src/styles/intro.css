@@ -1,0 +1,144 @@
+/* Set */
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+
+/* =========================
+   =====  intro layout  ====
+   ========================= */
+.intro-container {
+  margin: 3rem 1.25rem 5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.react-logo {
+  margin: 1rem 0 0.75rem;
+  width: 6rem;
+
+  display: flex;
+  align-self: center;
+  transform-origin: center;
+}
+
+/* =========================
+   =====  text setting ===== 
+   =========================  */
+.text-h1 {
+  display: flex;
+  align-items: center;
+
+  font-size: 40px;
+  line-height: 1.375;
+  font-weight: 600;
+}
+
+.text-p {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+
+  font-size: 32px;
+  line-height: 1.375;
+  text-align: center;
+  align-self: center;
+}
+
+/* ========================
+   ====  button set =======
+   ======================== */
+.button-boxes {
+  margin-top: 1.25rem;
+  grid-gap: 0.5rem;
+  gap: 0.5rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.learn-react-box,
+.api-reference-box {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 100%;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: inherit;
+  line-height: 1.375;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-radius: 9999px;
+}
+/* learn react button styles*/
+.learn-react-box {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 126 164 / var(--tw-bg-opacity));
+}
+
+.learn-react-box:hover {
+  background-color: rgb(8, 126, 164, 0.8);
+}
+/* api reference button styles*/
+.api-reference-box {
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow: inset 0 0 0 1px #d9dbe3;
+  --tw-shadow-colored: inset 0 0 0 1px var(--tw-shadow-color);
+  --tw-text-opacity: 1;
+  color: rgb(35 39 47 / var(--tw-text-opacity));
+}
+.api-reference-box:hover {
+  background-color: rgba(240, 248, 255, 0.425);
+}
+
+/* =======================
+   == Responsive set =====
+   =======================  */
+
+/* minimun width of 1024px */
+@media (min-width: 1024px) {
+  .intro-container {
+    margin-top: 6rem;
+    margin-bottom: 8rem;
+  }
+  .text-xl {
+    font-size: 54px;
+  }
+  .react-logo {
+    width: 7rem;
+    height: 100%;
+  }
+}
+/* minimun width of 768px */
+@media (min-width: 768px) {
+  .text-p {
+    max-width: 100%;
+  }
+}
+/* minimun width of 640px */
+@media (min-width: 640px) {
+  .button-boxes {
+    width: auto;
+    flex-direction: row;
+  }
+  .learn-react-box,
+  .api-reference-box {
+    width: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

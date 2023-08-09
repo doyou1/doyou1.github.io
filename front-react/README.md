@@ -10,3 +10,5 @@
     6. SummaryButtonSlider
     7. Footer
     > 총 7개의 컴포넌트로 나눌 수 있다고 분석됨(팀원과 회의 필요)
+
+### 서로 버전이 달라서 신현진의 경우는 npm start 가 아니라 $ npm run start로 실행시켜야한다
