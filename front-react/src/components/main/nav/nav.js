@@ -9,12 +9,15 @@ import 'styles/nav.css';
 
 import React, { useState } from 'react';
 
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { isDarkState } from "recoil/recoil_state";
 
 
 export default function Nav() {
 
-    const [isDark, setIsDark] = useState(false);
-    const [isMac, setIsMac] = useState(window.navigator.platform.includes("Mac"));
+    const isDark = useRecoilValue(isDarkState);
+    const setIsDark = useSetRecoilState(isDarkState);
+    const isMac = window.navigator.platform.includes("Mac");
 
     const toggleIsDark = () => {
         // 👇️ passed function to setState
@@ -22,7 +25,6 @@ export default function Nav() {
     };
 
     return (
-        <div className={ `${isDark ? 'dark' : ''} ` }>
             <nav className="flex w-full h-16 justify-between pl-4 pr-5 duration-300 dark:bg-[#404756]">
                 <div className="flex w-full h-16 justify-between items-center ">
                     {/* home logo */}
@@ -38,7 +40,7 @@ export default function Nav() {
                     </div>
 
                     {/* search bar */}
-                    <div className="searchbar hidden md:flex flex-1 justify-center items-center h-10 text-[#99a1b3] w-full 3xl:w-auto 3xl:shrink-0 3xl:justify-center rounded-full pl-4 pr-1 py-1">
+                    <div className="searchbar hidden md:flex flex-1 ml-1 justify-center items-center h-10 text-[#99a1b3] w-full 3xl:w-auto 3xl:shrink-0 3xl:justify-center rounded-full pl-4 pr-1 py-1">
                         <button type="button" className="flex items-center 3xl:w-[56rem] w-full h-10 outline-none pointer relative text-left align-middle text-base">
                             <img className="w-4 h-4 mr-3 shrink-0 align-middle" src={search} alt="home logo"/>
                             Search
@@ -88,7 +90,7 @@ export default function Nav() {
                             <div className="flex flex-auto text-gray-500 w-full font-medium py-1.5 px-1.5 active:scale-95 ">
                                 <a href="#" className="w-12 h-12 flex items-center justify-center">
                                     {!isDark && <img className="" src={githubDaynight} alt="github-daynight" />}
-                                    {isDark && <img className="bg-[#404756]" src={githubDark} alt="github-dark" />}
+                                    {isDark && <img className="bg-[#404756] rounded-full" src={githubDark} alt="github-dark" />}
                                 </a>
                             </div>
                         </div>
@@ -96,7 +98,5 @@ export default function Nav() {
                     {/* buttons */}
                 </div>
             </nav>
-        </div>
-
     );
 }
