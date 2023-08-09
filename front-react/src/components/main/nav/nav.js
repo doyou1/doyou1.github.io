@@ -45,9 +45,9 @@ export default function Nav() {
                         <img className="w-4 h-4 mr-3 shrink-0 align-middle" src={search} alt="home logo"/>
                         Search
                         <span className="ml-auto item-center mr-1">
-                            {isMac && <kbd className="w-5 h-5 border border-transparent mr-1 text-xs align-middle p-0 justify-center" data-platform="mac">⌘</kbd> }
-                            {!isMac && <kbd className="w-10 h-5 border border-transparent mr-1 text-xs align-middle p-0 justify-center" data-platform="win">Ctrl</kbd>}
-                            <kbd className="w-5 h-5 border border-transparent mr-1 p-0" >K</kbd>
+                            {isMac && <kbd className="w-5 h-5 border border-transparent bg-white rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0" data-platform="mac">⌘</kbd> }
+                            {!isMac && <kbd className="w-10 h-5 border border-transparent bg-white rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0" data-platform="win">Ctrl</kbd>}
+                            <kbd            className="w-5 h-5 border border-transparent bg-white rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0" >K</kbd>
                         </span>
                     </button>
                 </div>
