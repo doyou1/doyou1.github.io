@@ -8,4 +8,10 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  darkMode: 'class', // or 'media' or 'class'
+  variants: {
+    extend: {
+      display: ['dark']
+    },
+  },
 }
