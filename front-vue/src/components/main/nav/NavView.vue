@@ -12,7 +12,7 @@ const isDarkStore = useIsDarkStore()
     <div class="flex justify-between items-center pl-8 pr-3 py-1 dark:bg-black duration-500 border">
         <div class="flex">
             <!-- home logo -->
-            <div class="flex dark:hover:opacity-70 duration-200">
+            <div class="flex hover:opacity-70 duration-200">
                 <a href="/" class="flex">
                     <img class="w-10 h-10" :src="HomeLogo" />
                     <span class="text-base font-medium self-center dark:text-white">Vue.js</span>
@@ -23,13 +23,13 @@ const isDarkStore = useIsDarkStore()
             <!-- search bar -->
             <div class="flex">
                 <button type="button" class="flex group">
-                    <span class="flex self-center  ">
-                        <svg class="mx-1 w-6 h-6 fill-[#3c3c3ca8] dark:fill-[#ebebeb99] group-hover:dark:fill-[#ebebebd9]" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3  c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2  c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2  c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z"/></svg>
-                        <span class="mx-1 text-[#3c3c3ca8] dark:text-[#ebebeb99] group-hover:dark:text-[#ebebebd9]">Search</span>
+                    <span class="flex self-center">
+                        <svg class="mx-1 w-6 h-6 fill-[#3c3c3ca8] group-hover:fill-[#213547] dark:fill-[#ebebeb99] group-hover:dark:fill-[#ebebebd9]" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3  c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2  c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2  c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z"/></svg>
+                        <span class="mx-0.5 text-[#3c3c3ca8]  group-hover:text-[#213547] dark:text-[#ebebeb99] group-hover:dark:text-[#ebebebd9]">Search</span>
                     </span>
-                    <span class="mx-1 flex w-auto border border-[#ebebeb99] dark:border-[#ebebeb99] group-hover:dark:border-[#42b883] rounded px-1.5 gap-0.5 text-xs self-center">
-                        <kbd class="text-[#3c3c3c54] dark:text-[#ebebeb99] group-hover:dark:text-[#42b883] justify-center">⌘</kbd>
-                        <kbd class="text-[#3c3c3c54] dark:text-[#ebebeb99] group-hover:dark:text-[#42b883] justify-center">K</kbd>
+                    <span class="mx-1 flex w-auto border border-[#ebebeb99] dark:border-[#ebebeb99] group-hover:border-[#42b883] rounded px-1.5 gap-0.5 text-xs self-center">
+                        <kbd class="text-[#3c3c3c54] dark:text-[#ebebeb99] group-hover:text-[#42b883] justify-center">⌘</kbd>
+                        <kbd class="text-[#3c3c3c54] dark:text-[#ebebeb99] group-hover:text-[#42b883] justify-center">K</kbd>
                     </span>
                 </button>
             </div>
