@@ -1,3 +1,4 @@
+/* set */
 * {
   box-sizing: border-box;
   border: 0px solid #e5e7eb;
@@ -90,9 +91,12 @@
   margin-right: auto;
 }
 
+/* content-sub-container 구성 */
 .content-sub-container {
   width: 100%;
 }
+
+/* content-in-container 구성 */
 .content-in-container {
   display: flex;
   flex-direction: column;
@@ -102,6 +106,8 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* content-box 스타일 */
 .content-box {
   display: flex;
   flex-grow: 1;

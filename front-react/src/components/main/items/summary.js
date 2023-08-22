@@ -40,6 +40,7 @@ export default function Summary() {
                   <div className="sp-wrapper">
                     <div className="sp-stack">
                       <div className="sp-code-editor">
+                        {/* pre code 부분부터는 따로 공부해서 작성해야할듯 */}
                         <pre className="pre">
                           <code>
                             <div className="cm-line">
@@ -81,6 +82,7 @@ export default function Summary() {
                   </div>
                 </div>
               </div>
+              {/* 콘텐츠 오른쪽 박스 구성 */}
               <div className="content-rightbox">
                 <div className="content-main-rightbox"></div>
               </div>
