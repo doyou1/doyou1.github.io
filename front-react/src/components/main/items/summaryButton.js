@@ -1,5 +1,3 @@
 export default function SummaryButton() {
-    return (
-        <div>SummaryButton</div>
-    );
+  return <div>SummaryButton</div>;
 }

@@ -1,30 +1,14 @@
 import "styles/Summary.css";
 
-export default function Summary() {
+export default function Summary({ h2, lowertext, children }) {
   return (
+    // main container
     <div className="summary-main-container">
       <div className="summary-sub-container">
         {/* text-box start */}
         <div className="text-box">
-          <h2 className="text-box-h2">
-            Create user interfaces from components
-          </h2>
-          <p className="text-box-p">
-            React lets you build user interfaces out of individual pieces called
-            components. Create your own React components like
-            <code dir="ltr" className="font-mono">
-              Thumbnail
-            </code>
-            ,
-            <code dir="ltr" className="font-mono">
-              LikeButton
-            </code>
-            , and
-            <code dir="ltr" className="font-mono">
-              Video
-            </code>
-            . Then combine them into entire screens, pages, and apps.
-          </p>
+          <h2 className="text-box-h2">{h2}</h2>
+          <p className="text-box-p">{children}</p>
         </div>
       </div>
       {/* content-container start */}
@@ -91,12 +75,7 @@ export default function Summary() {
         </div>
         {/* 하단 텍스트  */}
         <div className="lower-text-box">
-          <p className="lower-box-p">
-            Whether you work on your own or with thousands of other developers,
-            using React feels the same. It is designed to let you seamlessly
-            combine components written by independent people, teams, and
-            organizations.
-          </p>
+          <p className="lower-box-p">{lowertext}</p>
         </div>
       </div>
     </div>
