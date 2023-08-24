@@ -1,6 +1,7 @@
 import "styles/Summary.css";
+import CodeEditor from "../utils/codeediter";
 
-export default function SummaryButton({ h2, lowertext, textbox }) {
+export default function SummaryButton({ h2, lowertext, textbox, a }) {
   return (
     // main container
     <div className="summary-main-container">
@@ -25,42 +26,7 @@ export default function SummaryButton({ h2, lowertext, textbox }) {
                     <div className="sp-stack">
                       <div className="sp-code-editor">
                         {/* pre code 부분부터는 따로 공부해서 작성해야할듯 */}
-                        <pre className="pre">
-                          <code>
-                            <div className="cm-line">
-                              <span className="span-syntax">
-                                function Video ({"{video}"})
-                              </span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                          </code>
-                        </pre>
+                        <CodeEditor />
                       </div>
                     </div>
                   </div>
@@ -76,6 +42,11 @@ export default function SummaryButton({ h2, lowertext, textbox }) {
         {/* 하단 텍스트  */}
         <div className="lower-text-box">
           <p className="lower-box-p">{lowertext}</p>
+          <div className="lower-button-box">
+            <a href="https://reactnative.dev/" target="_blank">
+              {a}
+            </a>
+          </div>
         </div>
       </div>
     </div>

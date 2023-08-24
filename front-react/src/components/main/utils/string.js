@@ -59,6 +59,7 @@ const string = {
         match the new data.
       </p>
     ),
+    btntext: "Add React to your page",
   },
 
   // second SummaryButton
@@ -80,6 +81,7 @@ const string = {
         </a>
       </p>
     ),
+    btntext: "Get started with a framework",
   },
 };
 

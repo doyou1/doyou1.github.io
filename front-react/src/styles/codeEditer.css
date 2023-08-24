@@ -1,0 +1,64 @@
+/* 컬러 변수명  */
+html {
+  --sp-colors-accent: #087ea4;
+  --sp-colors-clickable: #959da5;
+  --sp-colors-disabled: #24292e;
+  --sp-colors-error: #811e18;
+  --sp-colors-error-surface: #ffcdca;
+  --sp-colors-surface1: #fff;
+  --sp-colors-surface2: #e4e7eb;
+  --sp-syntax-color-plain: #24292e;
+  --sp-syntax-color-comment: #6a737d;
+  --sp-syntax-color-keyword: #d73a49;
+  --sp-syntax-color-tag: #22863a;
+  --sp-syntax-color-punctuation: #24292e;
+  --sp-syntax-color-definition: #6f42c1;
+  --sp-syntax-color-property: #005cc5;
+  --sp-syntax-color-static: #032f62;
+  --sp-syntax-color-string: #032f62;
+}
+span {
+  margin: 1px;
+}
+.cm-line {
+  --sp-space-5: 20px;
+  padding-left: var(--sp-space-5);
+  margin-top: 2px;
+}
+.code-editer {
+  width: 200px;
+  flex-grow: 2;
+
+  font-family: Source Code Pro, ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 13.6px;
+  line-height: 24px;
+  padding: 18px;
+  -webkit-font-smoothing: auto;
+}
+/* 컬러지정  */
+.sp-syntax-keyword {
+  color: var(--sp-syntax-color-keyword);
+}
+.sp-syntax-definition {
+  color: var(--sp-syntax-color-definition);
+}
+.sp-syntax-property {
+  color: var(--sp-syntax-color-property);
+}
+.sp-syntax-property {
+  color: var(--sp-syntax-color-property);
+}
+.sp-syntax-string {
+  color: var(--sp-syntax-color-string);
+}
+.sp-syntax-tag {
+  color: var(--sp-syntax-color-tag);
+}
+
+.cm-line-nine:hover,
+.ten:hover,
+.twelve:hover,
+.fourteen:hover {
+  background-color: rgb(255, 255, 221);
+}

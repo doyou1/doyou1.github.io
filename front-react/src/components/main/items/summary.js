@@ -1,4 +1,5 @@
 import "styles/Summary.css";
+import CodeEditor from "../utils/codeediter";
 
 export default function Summary({ h2, lowertext, textbox }) {
   return (
@@ -25,42 +26,8 @@ export default function Summary({ h2, lowertext, textbox }) {
                     <div className="sp-stack">
                       <div className="sp-code-editor">
                         {/* pre code 부분부터는 따로 공부해서 작성해야할듯 */}
-                        <pre className="pre">
-                          <code>
-                            <div className="cm-line">
-                              <span className="span-syntax">
-                                function Video ({"{video}"})
-                              </span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                            <div className="cm-line">
-                              <span className="span-syntax">함수</span>
-                            </div>
-                          </code>
-                        </pre>
+
+                        <CodeEditor />
                       </div>
                     </div>
                   </div>

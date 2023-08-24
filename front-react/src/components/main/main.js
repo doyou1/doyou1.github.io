@@ -7,6 +7,7 @@ import SummaryButtonNews from "components/main/items/summaryButtonNews";
 import SummaryButtonPlatform from "components/main/items/summaryButtonPlatform";
 import SummaryButtonSlider from "components/main/items/summaryButtonSlider";
 import string from "./utils/string";
+
 export default function Main() {
   return (
     <>
@@ -32,6 +33,7 @@ export default function Main() {
         h2={string.firstSummaryBtn.h2}
         lowertext={string.firstSummaryBtn.lowertext}
         textbox={string.firstSummaryBtn.textbox}
+        a={string.firstSummaryBtn.btntext}
       ></SummaryButton>
 
       {/* second SummaryButton  */}
@@ -39,6 +41,7 @@ export default function Main() {
         h2={string.secondSummaryBtn.h2}
         lowertext={string.secondSummaryBtn.lowertext}
         textbox={string.secondSummaryBtn.textbox}
+        a={string.secondSummaryBtn.btntext}
       ></SummaryButton>
       <SummaryButtonPlatform />
       <SummaryButtonNews />

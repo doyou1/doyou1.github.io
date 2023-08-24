@@ -1,5 +1,3 @@
 export default function SummaryButtonNews() {
-    return (
-        <div>SummaryButtonNews</div>
-    );
+  return <div>SummaryButtonNews</div>;
 }

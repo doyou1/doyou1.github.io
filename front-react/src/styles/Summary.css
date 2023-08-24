@@ -180,7 +180,7 @@
 
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
 
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -245,6 +245,26 @@
   background: var(--sp-colors-surface1);
 }
 
+.textbox-a {
+  display: inline;
+  text-decoration: inherit;
+  line-height: 1.5;
+
+  border-bottom-width: 1px;
+  --tw-border-opacity: 0;
+  border-color: rgb(8 126 164 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(8 126 164 / var(--tw-text-opacity));
+
+  transition-duration: 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.textbox-a:hover {
+  --tw-border-opacity: 1;
+}
+
+/* 하단 텍스트 _ 버튼박스 */
+
 .lower-text-box {
   display: flex;
   flex-direction: column;
@@ -264,25 +284,50 @@
   --tw-text-opacity: 0.9;
   color: rgb(64 71 86 / var(--tw-text-opacity));
 }
-.textbox-a {
-  display: inline;
+.lower-button-box {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.lower-button-box > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.25;
+
+  width: auto;
+  margin-top: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+
+  font-size: 17px;
+  font-weight: 600;
+  color: inherit;
   text-decoration: inherit;
-  line-height: 1.5;
+  cursor: pointer;
 
-  border-bottom-width: 1px;
-  --tw-border-opacity: 0;
-  border-color: rgb(8 126 164 / var(--tw-border-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(8 126 164 / var(--tw-text-opacity));
+  border-radius: 9999px;
+  outline: 2px solid transparent;
 
-  transition-duration: 0.1s;
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  --tw-text-opacity: 0.9;
+  color: rgb(35 39 47 / var(--tw-text-opacity));
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow: inset 0 0 0 1px #d9dbe3;
+  --tw-shadow-colored: inset 0 0 0 1px var(--tw-shadow-color);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.textbox-a:hover {
-  --tw-border-opacity: 1;
+.lower-button-box > a:hover {
+  background-color: rgba(120, 131, 155, 0.05);
+  --tw-bg-opacity: 0.8;
 }
+
 /* ==============================
-   ====  반응형 웹사이트 =======
+   ====  반응형 레이아웃 =======
    =============================*/
 
 @media (min-width: 1024px) {
@@ -329,6 +374,10 @@
   .content-leftbox {
     margin: -1.25rem;
   }
+  .content-leftbox-main {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
   .content-rightbox {
     padding: 1.25rem;
     margin-top: -5rem;
@@ -341,5 +390,12 @@
   }
   .lower-box-p {
     font-size: 20px;
+  }
+  .lower-button-box {
+    justify-content: center;
+  }
+  .lower-button-box > a {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
