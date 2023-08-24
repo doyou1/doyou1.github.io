@@ -1,6 +1,6 @@
 import "styles/Summary.css";
 
-export default function Summary({ h2, lowertext, children }) {
+export default function Summary({ h2, lowertext, textbox }) {
   return (
     // main container
     <div className="summary-main-container">
@@ -8,7 +8,7 @@ export default function Summary({ h2, lowertext, children }) {
         {/* text-box start */}
         <div className="text-box">
           <h2 className="text-box-h2">{h2}</h2>
-          <p className="text-box-p">{children}</p>
+          {textbox}
         </div>
       </div>
       {/* content-container start */}
