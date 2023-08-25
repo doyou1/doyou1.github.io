@@ -1,4 +1,9 @@
 import React from "react";
+import code from "images/summary/code.svg";
+// 지우고 두개의 svg 파일로 만들예정
+import arrow from "images/summary/arrow-right.svg";
+import chart from "images/summary/chart-network.svg";
+
 const string = {
   // firstSummart text
   firstSummary: {
@@ -59,7 +64,16 @@ const string = {
         match the new data.
       </p>
     ),
-    btntext: "Add React to your page",
+    // button layout
+    btntext: (
+      <div className="lower-button-box">
+        <a href="https://reactnative.dev/" target="_blank">
+          <img className="code-logo" src={code} alt="code logo" />
+          Add React to your page
+          <img className="arrow-logo" src={arrow} alt="arrow logo" />
+        </a>
+      </div>
+    ),
   },
 
   // second SummaryButton
@@ -81,7 +95,16 @@ const string = {
         </a>
       </p>
     ),
-    btntext: "Get started with a framework",
+
+    btntext: (
+      <div className="lower-button-box">
+        <a href="https://reactnative.dev/" target="_blank">
+          <img className="code-logo" src={chart} alt="code logo" />
+          Get started with a framework
+          <img className="arrow-logo" src={arrow} alt="arrow logo" />
+        </a>
+      </div>
+    ),
   },
 };
 

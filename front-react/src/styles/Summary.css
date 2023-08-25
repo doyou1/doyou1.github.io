@@ -5,7 +5,7 @@
 }
 
 /* ===================================
-   == summary-main-container 구성  ===
+   ==    summary-container  SET    ===
    ==================================*/
 .summary-main-container {
   display: flex;
@@ -78,7 +78,7 @@
 }
 
 /* ==============================
-   ===    콘텐츠 메인 기능    ===
+   === content-container set  ===
    ============================== */
 
 .content-main-container {
@@ -248,25 +248,9 @@
   overflow-y: hidden;
 }
 
-.textbox-a {
-  display: inline;
-  text-decoration: inherit;
-  line-height: 1.5;
-
-  border-bottom-width: 1px;
-  --tw-border-opacity: 0;
-  border-color: rgb(8 126 164 / var(--tw-border-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(8 126 164 / var(--tw-text-opacity));
-
-  transition-duration: 0.1s;
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-.textbox-a:hover {
-  --tw-border-opacity: 1;
-}
-
-/* 하단 텍스트 _ 버튼박스 */
+/* ===============================
+  ==   하단 텍스트 / 버튼   ==
+  ===============================*/
 
 .lower-text-box {
   display: flex;
@@ -275,7 +259,7 @@
   align-items: center;
 
   margin-bottom: 5rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 .lower-box-p {
   line-height: 1.5;
@@ -324,15 +308,49 @@
 
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.textbox-a {
+  display: inline;
+  text-decoration: inherit;
+  line-height: 1.5;
+
+  border-bottom-width: 1px;
+  --tw-border-opacity: 0;
+  border-color: rgb(8 126 164 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(8 126 164 / var(--tw-text-opacity));
+
+  transition-duration: 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.textbox-a:hover {
+  --tw-border-opacity: 1;
+}
+
 .lower-button-box > a:hover {
   background-color: rgba(120, 131, 155, 0.05);
   --tw-bg-opacity: 0.8;
+}
+
+/* =================================
+   =======  Logo Style  ============
+   ================================= */
+.code-logo,
+.arrow-logo {
+  display: block;
+
+  margin-inline-end: 0.625rem;
+  --tw-text-opacity: 1;
+  color: rgb(35 39 47 / var(--tw-text-opacity));
+}
+.arrow-logo {
+  padding-left: 0.6rem;
 }
 
 /* ==============================
    ====  반응형 레이아웃 =======
    =============================*/
 
+/* minimun width of 1024px */
 @media (min-width: 1024px) {
   .summary-sub-container {
     margin-top: 8rem;

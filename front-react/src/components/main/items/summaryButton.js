@@ -1,6 +1,8 @@
 import "styles/Summary.css";
 import CodeEditor from "../utils/codeediter";
-
+// import code from "images/summary/code.svg";
+// // 지우고 두개의 svg 파일로 만들예정
+// import arrow from "images/summary/arrow-right.svg";
 export default function SummaryButton({ h2, lowertext, textbox, a }) {
   return (
     // main container
@@ -42,11 +44,8 @@ export default function SummaryButton({ h2, lowertext, textbox, a }) {
         {/* 하단 텍스트  */}
         <div className="lower-text-box">
           <p className="lower-box-p">{lowertext}</p>
-          <div className="lower-button-box">
-            <a href="https://reactnative.dev/" target="_blank">
-              {a}
-            </a>
-          </div>
+          {/* utils/string.firstSummaryBtn.btntext  */}
+          {a}
         </div>
       </div>
     </div>
