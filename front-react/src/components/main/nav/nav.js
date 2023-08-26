@@ -24,7 +24,7 @@ export default function Nav() {
 
   return (
     <nav
-      className="flex w-full h-16 justify-between pl-4 pr-5 duration-300 dark:bg-[#404756]"
+      className="flex w-full h-16 justify-between pl-4 pr-5 duration-300 bg-white dark:bg-[#404756]"
       style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 999 }}
     >
       <div className="flex w-full h-16 justify-between items-center ">
