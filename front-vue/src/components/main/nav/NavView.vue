@@ -41,23 +41,60 @@ const isDarkStore = useIsDarkStore()
         <!-- menu bar -->
         <div class="flex text-sm items-center">
             <!-- docs -->
-            <div>
+            <div class="group items-end justify-items-end grid">
                 <button class="flex px-1.5 dark:text-[#FFFFFFDE] dark:fill-[#FFFFFFDE] dark:hover:text-[#FFFFFF99] dark:hover:fill-[#FFFFFF99] hover:text-[#3c3c3cb3] hover:fill-[#3c3c3cb3] ">
                     <span>Docs</span>
                     <svg class="w-4 h-4 self-center" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 "/></svg>
                 </button>
+                <div class="hidden group-hover:grid grid-rows-2 top-8 rounded-lg absolute p-3 drop-shadow-xl  bg-white w-auto dark:bg-black dark:text-[#FFFFFFDE]">
+                        <div class="mx-1 my-1 w-full cursor-pointer dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
+                            <button class="flex px-1.5">
+                                <span>Guide</span>
+                            </button>
+                        </div>
+                        <div class="mx-1 my-1 w-full cursor-pointer dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
+                            <button class="flex px-1.5">
+                                <span>Tutorial</span>
+                            </button>
+                        </div>
+                        <div class="mx-1 my-1 w-full cursor-pointer dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
+                            <button class="flex px-1.5">
+                                <span>Examples</span>
+                            </button>
+                        </div>
+                        <div class="mx-1 my-1 w-full cursor-pointer dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
+                            <button class="flex px-1.5">
+                                <span>Quick Start</span>
+                            </button>
+                        </div>
+                        <div class="mx-1 my-1 w-full cursor-pointer dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
+                            <button class="flex px-1.5">
+                                <span>Glossary</span>
+                            </button>
+                        </div>
+                        <div class="mx-1 my-1 w-full cursor-pointer dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
+                            <button class="flex px-1.5">
+                                <span>Vue 2 Docs</span>
+                            </button>
+                        </div>
+                        <div class="mx-1 my-1 w-full cursor-pointer dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
+                            <button class="flex px-1.5">
+                                <span>Migration from Vue 2</span>
+                            </button>
+                        </div>
+                </div>
             </div>
             <!-- docs -->
             <!-- api -->
             <div>
-                <button class="flex px-1.5 dark:text-[#FFFFFFDE] dark:hover:text-[#42b883] hover:text-[#3c3c3cb3] hover:fill-[#3c3c3cb3]">
+                <button class="flex px-1.5 dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
                     <span>API</span>
                 </button>
             </div>
             <!-- api -->
             <!-- playground -->
             <div>
-                <button class="flex px-1.5 dark:text-[#FFFFFFDE] dark:hover:text-[#42b883] hover:text-[#3c3c3cb3] hover:fill-[#3c3c3cb3]">
+                <button class="flex px-1.5 dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
                     <span>Playground</span>
                 </button>
             </div>
@@ -80,14 +117,14 @@ const isDarkStore = useIsDarkStore()
             <!-- about -->
             <!-- sponsor -->
             <div>
-                <button class="flex px-1.5 dark:text-[#FFFFFFDE] dark:hover:text-[#42b883] hover:text-[#3c3c3cb3] hover:fill-[#3c3c3cb3]">
+                <button class="flex px-1.5 dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
                     <span>Sponsor</span>
                 </button>
             </div>
             <!-- sponsor -->
             <!-- partners -->
             <div>
-                <button class="flex px-1.5 dark:text-[#FFFFFFDE] dark:hover:text-[#42b883] hover:text-[#3c3c3cb3] hover:fill-[#3c3c3cb3]">
+                <button class="flex px-1.5 dark:text-[#FFFFFFDE] hover:text-[#42b883] dark:hover:text-[#42b883]">
                     <span>Partners</span>
                 </button>
             </div>
