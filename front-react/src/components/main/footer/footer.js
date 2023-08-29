@@ -1,5 +1,12 @@
+import "styles/footer.css";
+import FooterContent from "./footerContent";
+
 export default function Footer() {
-    return (
-        <footer>Footer</footer>
-    );
+  return (
+    <div>
+      <footer>
+        <FooterContent />
+      </footer>
+    </div>
+  );
 }
