@@ -1,5 +1,5 @@
 import "styles/Summary.css";
-import CodeEditor from "../utils/codeediter";
+import CodeEditor from "./smcodeEditer/codeediter";
 
 export default function Summary({ h2, lowertext, textbox }) {
   return (
