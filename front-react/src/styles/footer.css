@@ -307,17 +307,17 @@
 .footer-grid-box-1 {
     justify-items: start;
     margin-top: 0.875rem;
-    grid-column: 1/1;
+    grid-column: span 2/span 2;
 }
-.footer-bottom-logo{
+
+.footer-bottom-logo {
     grid-column-gap: 0.5rem;
     column-gap: 0.5rem;
     margin-top: 2rem;
-    --tw-text-opacity: 1;
-    color: rgb(64 71 86/var(--tw-text-opacity));
 }
-.footer-bottom-logo a:hover{
-    color: rgb(2, 2, 2);
+
+.footer-bottom-logo svg:hover {
+    fill: rgb(2, 2, 2);
 }
 
 

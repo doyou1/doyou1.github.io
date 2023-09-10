@@ -1,4 +1,4 @@
-import "styles/Summary.css";
+import "styles/summary.css";
 import CodeEditor from "../utils/codeediter";
 // import code from "images/summary/code.svg";
 // // 지우고 두개의 svg 파일로 만들예정

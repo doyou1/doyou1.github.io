@@ -1,4 +1,4 @@
-import "styles/Summary.css";
+import "styles/summary.css";
 import CodeEditor from "../utils/codeediter";
 
 export default function Summary({ h2, lowertext, textbox }) {
