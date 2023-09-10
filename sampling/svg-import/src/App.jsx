@@ -3,7 +3,6 @@ import ReactIcon from "@/assets/icons/react.svg";
 import { useState } from "react";
 import { HuePicker } from 'react-color';
 
-
 function App() {
   const titles = ["<img>로 SVG 로딩하기", "SVG 스프라이트 - use를 사용하기"];
 
