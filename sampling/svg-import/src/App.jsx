@@ -1,13 +1,17 @@
 import SpriteIcon from "@/assets/icons/sprite.svg";
 import ReactIcon from "@/assets/icons/react.svg";
+
 import { useState } from "react";
 import { HuePicker } from 'react-color';
+import "@/App.css";
 
 function App() {
-  const titles = ["<img>로 SVG 로딩하기", "SVG 스프라이트 - use를 사용하기"];
+  const titles = ["<img>로 SVG 로딩하기", "SVG 스프라이트 - use를 사용하기", "다크모드"];
 
   const [spriteSize, setSpriteSize] = useState(32);
   const [spriteColor, setSpriteColor] = useState("#00D8FF");
+  const [isDark, setIsDark] = useState(false);
+  
   return (
     <>
       {/* <img>로 SVG 로딩하기 */}
@@ -31,6 +35,16 @@ function App() {
       <div>
         <svg width={spriteSize} height={spriteSize}  >
           <use href={`${SpriteIcon}#react`} width={spriteSize} height={spriteSize} style={{color: spriteColor}}/>
+        </svg>
+      </div>
+      
+      <h1>{ titles[2] }</h1>
+      <div>
+        <button type="button" onClick={() => setIsDark(!isDark)}>다크모드 on/off</button> status: { isDark ? "다크모드 ON" : "다크모드 OFF" }
+      </div>
+      <div>
+        <svg className={"w-32 h-32 " + (isDark ? "dark" : "")}>
+          <use href={`${SpriteIcon}#react`} className="w-32 h-32" />
         </svg>
       </div>
       
