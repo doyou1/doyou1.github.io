@@ -8,6 +8,8 @@ import SummaryButtonPlatform from "components/main/items/summaryButtonPlatform";
 import SummaryButtonSlider from "components/main/items/summaryButtonSlider";
 import string from "./utils/string";
 import footerString from "./utils/footerString";
+import { CodeEditer, CodeEditer2 } from "./items/smcodeEditer/CodeEditer2";
+// import CodeEditer2 from "./items/smcodeEditer/CodeEditer2";
 
 export default function Main() {
   return (
@@ -20,13 +22,16 @@ export default function Main() {
         h2={string.firstSummary.h2}
         lowertext={string.firstSummary.lowertext}
         textbox={string.firstSummary.textbox}
+        codeeditor={CodeEditer.code}
       ></Summary>
 
       {/* second Summary  */}
+
       <Summary
         h2={string.secondSummary.h1}
         lowertext={string.secondSummary.lowertext}
         textbox={string.secondSummary.textbox}
+        codeeditor={CodeEditer2.code}
       ></Summary>
 
       {/* first SummaryButton  */}
@@ -47,7 +52,7 @@ export default function Main() {
       <SummaryButtonPlatform />
       <SummaryButtonNews />
       <SummaryButtonSlider />
-      <Footer footerString={footerString}/>
+      <Footer footerString={footerString} />
     </>
   );
 }

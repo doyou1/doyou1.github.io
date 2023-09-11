@@ -1,7 +1,7 @@
+import { useState } from "react";
 import "styles/Summary.css";
-import CodeEditor from "./smcodeEditer/codeediter";
 
-export default function Summary({ h2, lowertext, textbox }) {
+export default function Summary({ h2, lowertext, textbox, codeeditor }) {
   return (
     // main container
     <div className="summary-main-container">
@@ -26,8 +26,7 @@ export default function Summary({ h2, lowertext, textbox }) {
                     <div className="sp-stack">
                       <div className="sp-code-editor">
                         {/* pre code 부분부터는 따로 공부해서 작성해야할듯 */}
-
-                        <CodeEditor />
+                        {codeeditor}
                       </div>
                     </div>
                   </div>

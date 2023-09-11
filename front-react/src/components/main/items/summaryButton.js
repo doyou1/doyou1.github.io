@@ -1,5 +1,5 @@
 import "styles/Summary.css";
-import CodeEditor from "./smcodeEditer/codeediter";
+import CodeEditor from "./smcodeEditer/CodeEditer";
 // import code from "images/summary/code.svg";
 // // 지우고 두개의 svg 파일로 만들예정
 // import arrow from "images/summary/arrow-right.svg";
