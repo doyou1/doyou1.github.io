@@ -7,7 +7,6 @@ import SummaryButtonNews from "components/main/items/summaryButtonNews";
 import SummaryButtonPlatform from "components/main/items/summaryButtonPlatform";
 import SummaryButtonSlider from "components/main/items/summaryButtonSlider";
 import string from "./utils/string";
-import footerString from "./utils/footerString";
 
 export default function Main() {
   return (
@@ -47,7 +46,10 @@ export default function Main() {
       <SummaryButtonPlatform />
       <SummaryButtonNews />
       <SummaryButtonSlider />
-      <Footer footerString={footerString}/>
+      <Footer
+        footerContentString={string.footerContentString}
+        footerContentBtn={string.footerContentBtn}
+      />
     </>
   );
 }
