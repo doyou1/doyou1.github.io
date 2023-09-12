@@ -3,7 +3,13 @@ import CodeEditor from "./smcodeEditer/CodeEditer";
 // import code from "images/summary/code.svg";
 // // 지우고 두개의 svg 파일로 만들예정
 // import arrow from "images/summary/arrow-right.svg";
-export default function SummaryButton({ h2, lowertext, textbox, a }) {
+export default function SummaryButton({
+  h2,
+  lowertext,
+  textbox,
+  a,
+  codeeditor,
+}) {
   return (
     // main container
     <div className="summary-main-container">
@@ -28,7 +34,8 @@ export default function SummaryButton({ h2, lowertext, textbox, a }) {
                     <div className="sp-stack">
                       <div className="sp-code-editor">
                         {/* pre code 부분부터는 따로 공부해서 작성해야할듯 */}
-                        <CodeEditor />
+                        {/* <CodeEditor /> */}
+                        {codeeditor}
                       </div>
                     </div>
                   </div>
