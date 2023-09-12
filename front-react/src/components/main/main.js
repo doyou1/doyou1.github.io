@@ -12,6 +12,7 @@ import {
   CodeEditer,
   CodeEditer2,
   CodeEditer3,
+  CodeEditer4,
 } from "./items/smcodeEditer/CodeEditer2";
 // import CodeEditer2 from "./items/smcodeEditer/CodeEditer2";
 
@@ -53,6 +54,7 @@ export default function Main() {
         lowertext={string.secondSummaryBtn.lowertext}
         textbox={string.secondSummaryBtn.textbox}
         a={string.secondSummaryBtn.btntext}
+        codeeditor={CodeEditer4.code}
       ></SummaryButton>
       <SummaryButtonPlatform />
       <SummaryButtonNews />
