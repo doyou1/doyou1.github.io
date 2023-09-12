@@ -524,20 +524,18 @@ export const CodeEditer4 = {
           <span className="sp-syntax-property">findAll</span>
           <span className="sp-syntax-punctuation">{"({"}</span>
           <span className="sp-syntax-property">{" confId "}</span>
-          <span className="sp-syntax-punctuation">{"})"}</span>
+          <span className="sp-syntax-punctuation">{"});"}</span>
           <br></br>
         </div>
         {/* fifteen */}
         <div className="cm-line ">
           <span className="sp-syntax-keyword">&nbsp; const</span>
           <span className="sp-syntax-punctuation"> videos =</span>
-          <span className="sp-syntax-keyword"> await</span>
-          <span className="sp-syntax-plain"> db.</span>
-          <span className="sp-syntax-property">Talks</span>.
-          <span className="sp-syntax-property">findAll</span>
-          <span className="sp-syntax-punctuation">{"({"}</span>
-          <span className="sp-syntax-property">{" confId "}</span>
-          <span className="sp-syntax-punctuation">{"})"}</span>
+          <span className="sp-syntax-plain"> talks.</span>
+          <span className="sp-syntax-property">map</span>
+          <span className="sp-syntax-plain">{"(talk => talk."}</span>
+          <span className="sp-syntax-property">video</span>
+          <span className="sp-syntax-punctuation">{");"}</span>
           <br></br>
         </div>
         {/* sixteen */}
