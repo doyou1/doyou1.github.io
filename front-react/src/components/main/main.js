@@ -7,15 +7,13 @@ import SummaryButtonNews from "components/main/items/summaryButtonNews";
 import SummaryButtonPlatform from "components/main/items/summaryButtonPlatform";
 import SummaryButtonSlider from "components/main/items/summaryButtonSlider";
 import string from "./utils/string";
-feature/21-Summury-codeEditer-layout
-import footerString from "./utils/footerString";
+// import footerString from "./utils/footerString";
 import {
   CodeEditer,
   CodeEditer2,
   CodeEditer3,
   CodeEditer4,
 } from "./items/codeEditer/CodeEditer2.js";
-// import CodeEditer2 from "./items/smcodeEditer/CodeEditer2";
 
 export default function Main() {
   return (

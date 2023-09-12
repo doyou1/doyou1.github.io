@@ -1,4 +1,3 @@
-feature/21-Summury-codeEditer-layout
 import "styles/Summary.css";
 
 // import code from "images/summary/code.svg";

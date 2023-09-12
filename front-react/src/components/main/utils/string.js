@@ -110,8 +110,11 @@ const string = {
   // Footer String Start
   // Footer Content
   footerContentString: {
-    h2: <h2 className="footer-text-h2 w-full">
-      Join a community <br/> of millions</h2>,
+    h2: (
+      <h2 className="footer-text-h2 w-full">
+        Join a community <br /> of millions
+      </h2>
+    ),
     firstText:
       "You’re not alone. Two million developers from all over the world visit the React docs every month. React is something that people and teams can agree on.",
     secondText:
