@@ -540,7 +540,18 @@ export const CodeEditer4 = {
         </div>
         {/* sixteen */}
         <div className="cm-line ">
-          <span className="sp-syntax-punctuation">{"}"}</span>
+          <span className="sp-syntax-keyword">&nbsp; return</span>
+          <span className="sp-syntax-punctuation"> &lt;</span>
+          <span className="sp-syntax-definition">{"SearchableVideoList "}</span>
+          <span className="sp-syntax-property">videos</span>
+          <span className="sp-syntax-plain">{"={videos} />;"}</span>
+          <br></br>
+        </div>
+        {/* sixteen */}
+        <div className="cm-line ">
+          <span className="sp-syntax-plain">{"}"}</span>
+
+          <br></br>
         </div>
       </code>
     </pre>
