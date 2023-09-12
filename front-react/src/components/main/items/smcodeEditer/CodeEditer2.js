@@ -22,12 +22,12 @@ export const CodeEditer = {
           <br></br>
         </div>
         {/* three */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-tag">&nbsp; &nbsp;&nbsp;{"<div>"} </span>
           <br></br>
         </div>
         {/* four */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; {"<"}
           </span>
@@ -39,7 +39,7 @@ export const CodeEditer = {
         </div>
         {/* five */}
         {/* &gt; = > */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; {"<"}</span>
           <span className="sp-syntax-tag">a</span>
           <span className="sp-syntax-property"> href</span>
@@ -49,7 +49,7 @@ export const CodeEditer = {
           <br></br>
         </div>
         {/* six */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-plain">
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{"<"}
           </span>
@@ -63,7 +63,7 @@ export const CodeEditer = {
           <br></br>
         </div>
         {/* seven */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-plain">
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{"<"}
           </span>
@@ -77,7 +77,7 @@ export const CodeEditer = {
           <br></br>
         </div>
         {/* eight */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           &nbsp;&nbsp; &nbsp; &nbsp;
           <span className="sp-syntax-punctuation">{"</"}</span>
           <span className="sp-syntax-tag">a</span>
@@ -85,7 +85,7 @@ export const CodeEditer = {
           <br></br>
         </div>
         {/* nine */}
-        <div className="cm-line cm-line-nine">
+        <div className="cm-line cm-line-nine hover">
           &nbsp;
           <span className="sp-syntax-punctuation"> &nbsp; &nbsp; &lt;</span>
           <span className="sp-syntax-definition">LikeButton</span>
@@ -94,7 +94,7 @@ export const CodeEditer = {
           <br></br>
         </div>
         {/* ten */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-tag">&nbsp; &nbsp;&nbsp;{"<div>"} </span>
           <br></br>
         </div>
@@ -190,14 +190,14 @@ export const CodeEditer2 = {
           <br></br>
         </div>
         {/* nine */}
-        <div className="cm-line cm-line-nine">
+        <div className="cm-line cm-line-nine hover">
           <span className="sp-syntax-punctuation">&nbsp; &nbsp; &lt;</span>
           <span className="sp-syntax-tag">section</span>
           <span className="sp-syntax-punctuation">&gt;</span>
           <br></br>
         </div>
         {/* ten */}
-        <div className="cm-line ten">
+        <div className="cm-line ten hover">
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; &lt;
           </span>
@@ -212,7 +212,7 @@ export const CodeEditer2 = {
           <br></br>
         </div>
         {/* eleven */}
-        <div className="cm-line ">
+        <div className="cm-line">
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; {"{"}
           </span>
@@ -224,7 +224,7 @@ export const CodeEditer2 = {
           <br></br>
         </div>
         {/* twelve*/}
-        <div className="cm-line twelve">
+        <div className="cm-line twelve hover">
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; &nbsp; &lt;
           </span>
@@ -250,7 +250,7 @@ export const CodeEditer2 = {
           <br></br>
         </div>
         {/* fourteen */}
-        <div className="cm-line fourteen">
+        <div className="cm-line fourteen hover">
           <span className="sp-syntax-punctuation"> &nbsp; &nbsp;&lt;/</span>
           <span className="sp-syntax-tag">section</span>
           <span className="sp-syntax-punctuation">&gt;</span>
@@ -320,64 +320,70 @@ export const CodeEditer3 = {
           <br></br>
         </div>
         {/* six */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-plain">&nbsp; &nbsp; {"<>"}</span>
           <br></br>
         </div>
-        {/* seven */}
-        <div className="cm-line ">
-          <span className="sp-syntax-punctuation">
-            &nbsp; &nbsp; &nbsp;{" <"}
-          </span>
-          <span className="sp-syntax-definition">SearchInput</span>
-          <br></br>
+
+        <div className="hover">
+          {/* seven */}
+          <div className="cm-line ">
+            <span className="sp-syntax-punctuation">
+              &nbsp; &nbsp; &nbsp;{" <"}
+            </span>
+            <span className="sp-syntax-definition">SearchInput</span>
+            <br></br>
+          </div>
+          {/* eight */}
+          <div className="cm-line ">
+            <span className="sp-syntax-property">
+              &nbsp; &nbsp; &nbsp; {"  value"}
+            </span>
+            <span className="sp-syntax-punctuation">{"={searchText}"}</span>
+            <br></br>
+          </div>
+          {/* nine */}
+          <div className="cm-line cm-line-nine">
+            <span className="sp-syntax-property">
+              &nbsp; &nbsp; &nbsp; {"  onChange"}
+            </span>
+            <span className="sp-syntax-punctuation">{"={newText => "}</span>
+            <span className="sp-syntax-definition">setSearchText</span>
+            <span className="sp-syntax-plain">{"(newText)} />"}</span>
+            <br></br>
+          </div>
         </div>
-        {/* eight */}
-        <div className="cm-line ">
-          <span className="sp-syntax-property">
-            &nbsp; &nbsp; &nbsp; {"  value"}
-          </span>
-          <span className="sp-syntax-punctuation">{"={searchText}"}</span>
-          <br></br>
-        </div>
-        {/* nine */}
-        <div className="cm-line cm-line-nine">
-          <span className="sp-syntax-property">
-            &nbsp; &nbsp; &nbsp; {"  onChange"}
-          </span>
-          <span className="sp-syntax-punctuation">{"={newText => "}</span>
-          <span className="sp-syntax-definition">setSearchText</span>
-          <span className="sp-syntax-plain">{"(newText)} />"}</span>
-          <br></br>
-        </div>
-        {/* ten */}
-        <div className="cm-line ten">
-          <span className="sp-syntax-punctuation">
-            &nbsp; &nbsp; &nbsp; &lt;
-          </span>
-          <span className="sp-syntax-definition">VideoList</span>
-          <br></br>
-        </div>
-        {/* eleven */}
-        <div className="cm-line eleven ">
-          <span className="sp-syntax-property">
-            &nbsp; &nbsp; &nbsp; {"  videos"}
-          </span>
-          <span className="sp-syntax-plain">{"={foundVideos}"}</span>
-          <br></br>
-        </div>
-        {/* twelve*/}
-        <div className="cm-line twelve">
-          <span className="sp-syntax-property">
-            &nbsp; &nbsp; &nbsp; {"  emptyHeading"}
-          </span>
-          <span className="sp-syntax-string">{'={`No matches for "$'}</span>
-          <span className="sp-syntax-plain">{"{searchText}"}</span>
-          <span className="sp-syntax-string">{'"`} />'}</span>
-          <br></br>
+
+        <div className="hover">
+          {/* ten */}
+          <div className="cm-line ten">
+            <span className="sp-syntax-punctuation">
+              &nbsp; &nbsp; &nbsp; &lt;
+            </span>
+            <span className="sp-syntax-definition">VideoList</span>
+            <br></br>
+          </div>
+          {/* eleven */}
+          <div className="cm-line eleven ">
+            <span className="sp-syntax-property">
+              &nbsp; &nbsp; &nbsp; {"  videos"}
+            </span>
+            <span className="sp-syntax-plain">{"={foundVideos}"}</span>
+            <br></br>
+          </div>
+          {/* twelve*/}
+          <div className="cm-line twelve">
+            <span className="sp-syntax-property">
+              &nbsp; &nbsp; &nbsp; {"  emptyHeading"}
+            </span>
+            <span className="sp-syntax-string">{'={`No matches for "$'}</span>
+            <span className="sp-syntax-plain">{"{searchText}"}</span>
+            <span className="sp-syntax-string">{'"`} />'}</span>
+            <br></br>
+          </div>
         </div>
         {/* Thirteen */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-punctuation">&nbsp; &nbsp; {"</>"}</span>
 
           <br></br>
@@ -450,7 +456,7 @@ export const CodeEditer4 = {
           <br></br>
         </div>
         {/* six */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-plain">&nbsp; &nbsp; &lt;</span>
           <span className="sp-syntax-definition">ConferenceLayout </span>
           <span className="sp-syntax-property">conf</span>
@@ -458,7 +464,7 @@ export const CodeEditer4 = {
           <br></br>
         </div>
         {/* seven */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; &lt;</span>
           <span className="sp-syntax-definition">Suspense </span>
           <span className="sp-syntax-property">fallback</span>
@@ -468,7 +474,7 @@ export const CodeEditer4 = {
           <br></br>
         </div>
         {/* eight */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-plain">
             &nbsp; &nbsp; &nbsp; &nbsp; &lt;
           </span>
@@ -480,14 +486,14 @@ export const CodeEditer4 = {
           <br></br>
         </div>
         {/* nine */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; &lt;/</span>
           <span className="sp-syntax-definition">Suspense</span>
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
         {/* ten */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-plain">&nbsp; &nbsp; &lt;/</span>
           <span className="sp-syntax-definition">ConferenceLayout</span>
           <span className="sp-syntax-plain">{">"}</span>
@@ -539,7 +545,7 @@ export const CodeEditer4 = {
           <br></br>
         </div>
         {/* sixteen */}
-        <div className="cm-line ">
+        <div className="cm-line hover">
           <span className="sp-syntax-keyword">&nbsp; return</span>
           <span className="sp-syntax-punctuation"> &lt;</span>
           <span className="sp-syntax-definition">{"SearchableVideoList "}</span>

@@ -56,9 +56,6 @@ span {
   color: var(--sp-syntax-color-tag);
 }
 
-.cm-line-nine:hover,
-.ten:hover,
-.twelve:hover,
-.fourteen:hover {
+.hover:hover {
   background-color: rgb(255, 255, 221);
 }
