@@ -13,7 +13,7 @@ import {
   CodeEditer2,
   CodeEditer3,
   CodeEditer4,
-} from "./items/smcodeEditer/CodeEditer2";
+} from "./items/codeEditer/CodeEditer2.js";
 // import CodeEditer2 from "./items/smcodeEditer/CodeEditer2";
 
 export default function Main() {
