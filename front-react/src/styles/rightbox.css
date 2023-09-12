@@ -1,0 +1,73 @@
+.content-rightbox {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-grow: 1;
+
+  width: 100%;
+  /* margin-top: 0; */
+  padding: 0.625rem;
+  line-height: 1.5;
+}
+.content-main-rightbox {
+  overflow: hidden;
+  overflow-y: auto;
+
+  width: 100%;
+  max-width: 48rem;
+  height: 113px;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 1rem;
+
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 16px 32px -16px var(--tw-shadow-color),
+    0 0 0 1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.content-rightbox2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+
+  width: 95%;
+  margin-top: 0;
+  padding: 1.425rem;
+  line-height: 1.5;
+}
+.content-main-rightbox2 {
+  overflow: hidden;
+  overflow-y: auto;
+
+  width: 100%;
+  max-width: 48rem;
+  height: 22rem;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 1rem;
+
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 16px 32px -16px var(--tw-shadow-color),
+    0 0 0 1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (min-width: 374px) {
+  .content-rightbox {
+    padding: 1.25rem;
+  }
+}

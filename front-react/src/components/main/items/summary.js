@@ -1,6 +1,12 @@
 import "styles/Summary.css";
 
-export default function Summary({ h2, lowertext, textbox, codeeditor }) {
+export default function Summary({
+  h2,
+  lowertext,
+  textbox,
+  codeeditor,
+  rightbox,
+}) {
   return (
     // main container
     <div className="summary-main-container">
@@ -32,9 +38,7 @@ export default function Summary({ h2, lowertext, textbox, codeeditor }) {
                 </div>
               </div>
               {/* 콘텐츠 오른쪽 박스 구성 */}
-              <div className="content-rightbox">
-                <div className="content-main-rightbox"></div>
-              </div>
+              {rightbox}
             </div>
           </div>
         </div>

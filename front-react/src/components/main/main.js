@@ -14,6 +14,7 @@ import {
   CodeEditer3,
   CodeEditer4,
 } from "./items/codeEditer/CodeEditer2.js";
+import { RightBox } from "./items/codeEditer/RightBox";
 
 export default function Main() {
   return (
@@ -27,6 +28,7 @@ export default function Main() {
         lowertext={string.firstSummary.lowertext}
         textbox={string.firstSummary.textbox}
         codeeditor={CodeEditer.code}
+        rightbox={RightBox.mainBox1}
       ></Summary>
 
       {/* second Summary  */}
@@ -36,6 +38,7 @@ export default function Main() {
         lowertext={string.secondSummary.lowertext}
         textbox={string.secondSummary.textbox}
         codeeditor={CodeEditer2.code}
+        rightbox={RightBox.mainBox2}
       ></Summary>
 
       {/* first SummaryButton  */}
