@@ -4,11 +4,12 @@ import "styles/summary.css";
 // // 지우고 두개의 svg 파일로 만들예정
 // import arrow from "images/summary/arrow-right.svg";
 export default function SummaryButton({
-  h2,
-  lowertext,
-  textbox,
-  a,
-  codeeditor,
+  title,
+  subHead,
+  btnText,
+  lowerText,
+  textBox,
+  codeEditor,
 }) {
   return (
     // main container
@@ -16,8 +17,8 @@ export default function SummaryButton({
       <div className="summary-sub-container">
         {/* text-box start */}
         <div className="text-box">
-          <h2 className="text-box-h2">{h2}</h2>
-          <p className="text-box-p">{textbox}</p>
+          <h2 className="text-box-h2">{title}</h2>
+          <p className="text-box-p">{textBox}</p>
         </div>
       </div>
       {/* content-container start */}
@@ -27,15 +28,14 @@ export default function SummaryButton({
             <div className="content-box">
               <div className="content-leftbox">
                 <div className="content-leftbox-nav">
-                  <h3 className="content-leftbox-nav-h3">Video.js</h3>
+                  <h3 className="content-leftbox-nav-h3">{subHead}</h3>
                 </div>
                 <div dif="ltr" className="content-leftbox-main">
                   <div className="sp-wrapper">
                     <div className="sp-stack">
                       <div className="sp-code-editor">
-                        {/* pre code 부분부터는 따로 공부해서 작성해야할듯 */}
                         {/* <CodeEditor /> */}
-                        {codeeditor}
+                        {codeEditor}
                       </div>
                     </div>
                   </div>
@@ -50,9 +50,9 @@ export default function SummaryButton({
         </div>
         {/* 하단 텍스트  */}
         <div className="lower-text-box">
-          <p className="lower-box-p">{lowertext}</p>
+          <p className="lower-box-p">{lowerText}</p>
           {/* utils/string.firstSummaryBtn.btntext  */}
-          {a}
+          {btnText}
         </div>
       </div>
     </div>

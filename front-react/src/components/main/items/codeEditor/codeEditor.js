@@ -1,8 +1,8 @@
 import React from "react";
-import "styles/codeEditer.css";
+import "styles/codeEditor.css";
 
-// CodeEditer 1
-export const CodeEditer = {
+// CodeEditerVideo
+export const codeEditorVideo = {
   code: (
     <pre className="pre">
       <code className="code-editer">
@@ -115,8 +115,8 @@ export const CodeEditer = {
   ),
 };
 
-// CodeEditer 2
-export const CodeEditer2 = {
+// codeEditorVideoList
+export const codeEditorVideoList = {
   code: (
     <pre className="pre">
       <code className="code-editer">
@@ -271,8 +271,8 @@ export const CodeEditer2 = {
   ),
 };
 
-// CodeEditer 3
-export const CodeEditer3 = {
+// codeEditorSearchableVideoList
+export const codeEditorSearchableVideoList = {
   code: (
     <pre className="pre">
       <code className="code-editer">
@@ -404,8 +404,8 @@ export const CodeEditer3 = {
   ),
 };
 
-// CodeEditer 4
-export const CodeEditer4 = {
+// codeEditerConferencePage
+export const codeEditorConferencePage = {
   code: (
     <pre className="pre">
       <code className="code-editer">
