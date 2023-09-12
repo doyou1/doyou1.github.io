@@ -7,6 +7,7 @@ import SummaryButtonNews from "components/main/items/summaryButtonNews";
 import SummaryButtonPlatform from "components/main/items/summaryButtonPlatform";
 import SummaryButtonSlider from "components/main/items/summaryButtonSlider";
 import string from "./utils/string";
+feature/21-Summury-codeEditer-layout
 import footerString from "./utils/footerString";
 import {
   CodeEditer,
@@ -59,7 +60,11 @@ export default function Main() {
       <SummaryButtonPlatform />
       <SummaryButtonNews />
       <SummaryButtonSlider />
-      <Footer footerString={footerString} />
+
+      <Footer
+        footerContentString={string.footerContentString}
+        footerContentBtn={string.footerContentBtn}
+      />
     </>
   );
 }
