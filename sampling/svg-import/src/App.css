@@ -1,11 +1,3 @@
-.w-32 {
-    width: 32px;
-}
-.h-32 {
-    height: 32px;
-}
-
-.dark {
-    color: white;
-    background-color: black;
+svg {
+    fill: currentColor;
 }
