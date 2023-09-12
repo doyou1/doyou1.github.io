@@ -13,8 +13,8 @@ import {
   CodeEditer2,
   CodeEditer3,
   CodeEditer4,
-} from "./items/codeEditer/CodeEditer2.js";
-import { RightBox } from "./items/codeEditer/RightBox";
+} from "./items/codeEditer/codeEditer.js";
+import { RightBox } from "./items/codeEditer/rightBox";
 
 export default function Main() {
   return (

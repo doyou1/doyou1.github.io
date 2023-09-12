@@ -1,4 +1,4 @@
-import "styles/Summary.css";
+import "styles/summary.css";
 
 export default function Summary({
   h2,
