@@ -1,4 +1,3 @@
-import React from "react";
 import metaLogo from "@/assets/metaOpenSource-logo.svg";
 
 const FooterBottom = () => (

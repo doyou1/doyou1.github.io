@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "@/assets/home-logo.svg";
 import FooterSlide from "./footerSlide";
 

@@ -124,7 +124,7 @@
   background-position: 50%;
   background-size: cover;
 
-  background-image: url(../images/contentmain.png);
+  background-image: url(../assets/contentmain.png);
   background-repeat: no-repeat;
   --tw-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
   --tw-shadow-colored: inset 0 0 0 1px var(--tw-shadow-color);
@@ -391,7 +391,7 @@
     border-radius: 1rem;
 
     --tw-bg-opacity: 1;
-    background-image: url(../images/contentmain.png);
+    background-image: url(../assets/contentmain.png);
     background-color: rgb(235 236 240 / var(--tw-bg-opacity));
   }
   .content-leftbox {
