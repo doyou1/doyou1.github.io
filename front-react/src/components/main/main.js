@@ -51,6 +51,7 @@ export default function Main() {
         lowerText={string.firstSummaryBtn.lowerText}
         textBox={string.firstSummaryBtn.textBox}
         codeEditor={codeEditorSearchableVideoList.code}
+        rightBox={rightBox.searchableVideoListBox}
       ></SummaryButton>
 
       {/* second SummaryButton  */}

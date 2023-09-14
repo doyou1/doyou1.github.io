@@ -10,6 +10,7 @@ export default function SummaryButton({
   lowerText,
   textBox,
   codeEditor,
+  rightBox,
 }) {
   return (
     // main container
@@ -42,9 +43,7 @@ export default function SummaryButton({
                 </div>
               </div>
               {/* 콘텐츠 오른쪽 박스 구성 */}
-              <div className="content-rightbox">
-                <div className="content-main-rightbox"></div>
-              </div>
+              {rightBox}
             </div>
           </div>
         </div>
