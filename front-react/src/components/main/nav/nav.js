@@ -1,16 +1,14 @@
-import logo from "images/home-logo.svg";
-import search from "images/search.svg";
-import dark from "images/dark.svg";
-import daynight from "images/daynight.svg";
-import menu from "images/home-menu.svg";
-import githubDaynight from "images/github-daynight.svg";
-import githubDark from "images/github-dark.svg";
-import "styles/nav.css";
-
-import React from "react";
+import logo from "@/assets/home-logo.svg";
+import search from "@/assets/search.svg";
+import dark from "@/assets/dark.svg";
+import daynight from "@/assets/daynight.svg";
+import menu from "@/assets/home-menu.svg";
+import githubDaynight from "@/assets/github-daynight.svg";
+import githubDark from "@/assets/github-dark.svg";
+import "@/styles/nav.css";
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { isDarkState } from "recoil/recoil_state";
+import { isDarkState } from "@/recoil/recoil_state";
 
 export default function Nav() {
   const isDark = useRecoilValue(isDarkState);

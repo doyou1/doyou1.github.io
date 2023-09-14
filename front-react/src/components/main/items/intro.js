@@ -1,5 +1,5 @@
-import "styles/intro.css";
-import logo from "images/home-logo.svg";
+import "@/styles/intro.css";
+import logo from "@/assets/home-logo.svg";
 
 export default function Intro() {
   return (

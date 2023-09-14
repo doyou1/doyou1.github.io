@@ -1,20 +1,13 @@
-import Nav from "components/main/nav/nav";
-import Footer from "components/main/footer/footer";
-import Intro from "components/main/items/intro";
-import Summary from "components/main/items/summary";
-import SummaryButton from "components/main/items/summaryButton";
-import SummaryButtonNews from "components/main/items/summaryButtonNews";
-import SummaryButtonPlatform from "components/main/items/summaryButtonPlatform";
-import SummaryButtonSlider from "components/main/items/summaryButtonSlider";
-import string from "./utils/string";
-// import footerString from "./utils/footerString";
-import {
-  codeEditorVideo,
-  codeEditorVideoList,
-  codeEditorSearchableVideoList,
-  codeEditorConferencePage,
-} from "./items/codeEditor/codeEditor.js";
-import { rightBox } from "./items/codeEditor/rightBox";
+import Nav from "@/components/main/nav/nav";
+import Footer from "@/components/main/footer/footer";
+import Intro from "@/components/main/items/intro";
+import Summary from "@/components/main/items/summary";
+import SummaryButton from "@/components/main/items/summaryButton";
+import SummaryButtonNews from "@/components/main/items/summaryButtonNews";
+import SummaryButtonPlatform from "@/components/main/items/summaryButtonPlatform";
+import SummaryButtonSlider from "@/components/main/items/summaryButtonSlider";
+import string from "@/utils/string";
+import footerString from "@/utils/footerString";
 
 export default function Main() {
   return (
@@ -24,52 +17,37 @@ export default function Main() {
 
       {/* first Summary  */}
       <Summary
-        title={string.firstSummary.h2.title}
-        subHead={string.firstSummary.h2.subHead}
-        lowerText={string.firstSummary.lowerText}
-        textBox={string.firstSummary.textBox}
-        codeEditor={codeEditorVideo.code}
-        rightBox={rightBox.mainVideoBox}
+        h2={string.firstSummary.h2}
+        lowertext={string.firstSummary.lowertext}
+        textbox={string.firstSummary.textbox}
       ></Summary>
 
       {/* second Summary  */}
-
       <Summary
-        title={string.secondSummary.h2.title}
-        subHead={string.secondSummary.h2.subHead}
-        lowerText={string.secondSummary.lowerText}
-        textBox={string.secondSummary.textBox}
-        codeEditor={codeEditorVideoList.code}
-        rightBox={rightBox.mainVideoListBox}
+        h2={string.secondSummary.h1}
+        lowertext={string.secondSummary.lowertext}
+        textbox={string.secondSummary.textbox}
       ></Summary>
 
       {/* first SummaryButton  */}
       <SummaryButton
-        title={string.firstSummaryBtn.h2.title}
-        subHead={string.firstSummaryBtn.h2.subHead}
-        btnText={string.firstSummaryBtn.btnText}
-        lowerText={string.firstSummaryBtn.lowerText}
-        textBox={string.firstSummaryBtn.textBox}
-        codeEditor={codeEditorSearchableVideoList.code}
+        h2={string.firstSummaryBtn.h2}
+        lowertext={string.firstSummaryBtn.lowertext}
+        textbox={string.firstSummaryBtn.textbox}
+        a={string.firstSummaryBtn.btntext}
       ></SummaryButton>
 
       {/* second SummaryButton  */}
       <SummaryButton
-        title={string.secondSummaryBtn.h2.title}
-        subHead={string.secondSummaryBtn.h2.subHead}
-        btnText={string.secondSummaryBtn.btnText}
-        lowerText={string.secondSummaryBtn.lowerText}
-        textBox={string.secondSummaryBtn.textBox}
-        codeEditor={codeEditorConferencePage.code}
+        h2={string.secondSummaryBtn.h2}
+        lowertext={string.secondSummaryBtn.lowertext}
+        textbox={string.secondSummaryBtn.textbox}
+        a={string.secondSummaryBtn.btntext}
       ></SummaryButton>
       <SummaryButtonPlatform />
       <SummaryButtonNews />
       <SummaryButtonSlider />
-
-      <Footer
-        footerContentString={string.footerContentString}
-        footerContentBtn={string.footerContentBtn}
-      />
+      <Footer footerString={footerString}/>
     </>
   );
 }

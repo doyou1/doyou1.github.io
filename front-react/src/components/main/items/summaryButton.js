@@ -1,24 +1,17 @@
-import "styles/summary.css";
-
-// import code from "images/summary/code.svg";
+import "@/styles/summary.css";
+import CodeEditor from "@/utils/codeediter";
+// import code from "@/assets/summary/code.svg";
 // // 지우고 두개의 svg 파일로 만들예정
-// import arrow from "images/summary/arrow-right.svg";
-export default function SummaryButton({
-  title,
-  subHead,
-  btnText,
-  lowerText,
-  textBox,
-  codeEditor,
-}) {
+// import arrow from "@/assets/summary/arrow-right.svg";
+export default function SummaryButton({ h2, lowertext, textbox, a }) {
   return (
     // main container
     <div className="summary-main-container">
       <div className="summary-sub-container">
         {/* text-box start */}
         <div className="text-box">
-          <h2 className="text-box-h2">{title}</h2>
-          <p className="text-box-p">{textBox}</p>
+          <h2 className="text-box-h2">{h2}</h2>
+          <p className="text-box-p">{textbox}</p>
         </div>
       </div>
       {/* content-container start */}
@@ -28,14 +21,14 @@ export default function SummaryButton({
             <div className="content-box">
               <div className="content-leftbox">
                 <div className="content-leftbox-nav">
-                  <h3 className="content-leftbox-nav-h3">{subHead}</h3>
+                  <h3 className="content-leftbox-nav-h3">Video.js</h3>
                 </div>
                 <div dif="ltr" className="content-leftbox-main">
                   <div className="sp-wrapper">
                     <div className="sp-stack">
                       <div className="sp-code-editor">
-                        {/* <CodeEditor /> */}
-                        {codeEditor}
+                        {/* pre code 부분부터는 따로 공부해서 작성해야할듯 */}
+                        <CodeEditor />
                       </div>
                     </div>
                   </div>
@@ -50,9 +43,9 @@ export default function SummaryButton({
         </div>
         {/* 하단 텍스트  */}
         <div className="lower-text-box">
-          <p className="lower-box-p">{lowerText}</p>
+          <p className="lower-box-p">{lowertext}</p>
           {/* utils/string.firstSummaryBtn.btntext  */}
-          {btnText}
+          {a}
         </div>
       </div>
     </div>

@@ -1,17 +1,18 @@
-import "../../../styles/footer.css";
+import "@/styles/footer.css";
 import FooterContent from "./footerContent";
 import FooterBottom from "./footerBottom";
 
-export default function Footer({footerContentString, footerContentBtn}) {
+export default function Footer(footerString) {
+  console.log(footerString.footerString.footerContentString);
   return (
     <div>
         <FooterContent
-          footerContentString={footerContentString}
-          footerContentBtn={footerContentBtn}
+          footerContentString={footerString.footerString.footerContentString}
+          footerContentBtn={footerString.footerString.footerContentBtn}
         />
-      <div>
+      <footer>
         <FooterBottom />
-      </div>
+      </footer>
     </div>
   );
 }

@@ -1,21 +1,15 @@
-import "styles/summary.css";
+import "@/styles/summary.css";
+import CodeEditor from "@/utils/codeediter";
 
-export default function Summary({
-  title,
-  subHead,
-  lowerText,
-  textBox,
-  codeEditor,
-  rightBox,
-}) {
+export default function Summary({ h2, lowertext, textbox }) {
   return (
     // main container
     <div className="summary-main-container">
       <div className="summary-sub-container">
         {/* text-box start */}
         <div className="text-box">
-          <h2 className="text-box-h2">{title}</h2>
-          {textBox}
+          <h2 className="text-box-h2">{h2}</h2>
+          {textbox}
         </div>
       </div>
       {/* content-container start */}
@@ -25,27 +19,30 @@ export default function Summary({
             <div className="content-box">
               <div className="content-leftbox">
                 <div className="content-leftbox-nav">
-                  <h3 className="content-leftbox-nav-h3">{subHead}</h3>
+                  <h3 className="content-leftbox-nav-h3">Video.js</h3>
                 </div>
                 <div dif="ltr" className="content-leftbox-main">
                   <div className="sp-wrapper">
                     <div className="sp-stack">
                       <div className="sp-code-editor">
-                        {/* codeEditor */}
-                        {codeEditor}
+                        {/* pre code 부분부터는 따로 공부해서 작성해야할듯 */}
+
+                        <CodeEditor />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               {/* 콘텐츠 오른쪽 박스 구성 */}
-              {rightBox}
+              <div className="content-rightbox">
+                <div className="content-main-rightbox"></div>
+              </div>
             </div>
           </div>
         </div>
         {/* 하단 텍스트  */}
         <div className="lower-text-box">
-          <p className="lower-box-p">{lowerText}</p>
+          <p className="lower-box-p">{lowertext}</p>
         </div>
       </div>
     </div>
