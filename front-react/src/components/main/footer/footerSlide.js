@@ -1,12 +1,12 @@
-import { useState } from "react";
-import sliderImg1 from "@/assets/footer/react_conf_elizabet.jpg";
-import sliderImg2 from "@/assets/footer/react_conf_fun.jpg";
-import sliderImg3 from "@/assets/footer/react_conf_hallway.jpg";
-import sliderImg4 from "@/assets/footer/react_conf_nat.jpg";
-import sliderImg5 from "@/assets/footer/react_india_hallway.jpg";
-import sliderImg6 from "@/assets/footer/react_india_selfie.jpg";
-import sliderImg7 from "@/assets/footer/react_india_sunil.jpg";
-import sliderImg8 from "@/assets/footer/react_india_team.jpg";
+import { React, useState } from "react";
+import sliderImg1 from "@/assets/footer/react-conf-elizabet.jpg";
+import sliderImg2 from "@/assets/footer/react-conf-fun.jpg";
+import sliderImg3 from "@/assets/footer/react-conf-hallway.jpg";
+import sliderImg4 from "@/assets/footer/react-conf-nat.jpg";
+import sliderImg5 from "@/assets/footer/react-india-hallway.jpg";
+import sliderImg6 from "@/assets/footer/react-india-selfie.jpg";
+import sliderImg7 from "@/assets/footer/react-india-sunil.jpg";
+import sliderImg8 from "@/assets/footer/react-india-team.jpg";
 
 const slideList = [
   { key: 1, img: sliderImg1 },

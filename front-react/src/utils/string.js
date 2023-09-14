@@ -6,10 +6,13 @@ import chart from "@/assets/summary/chart-network.svg";
 const string = {
   // firstSummart text
   firstSummary: {
-    h2: "Create user interfaces from components",
-    lowertext:
+    h2: {
+      subHead: "Video.js",
+      title: "Create user interfaces from components",
+    },
+    lowerText:
       " Whether you work on your own or with thousands of other developers, using React feels the same. It is designed to let you seamlessly combine components written by independent people, teams, and organizations.",
-    textbox: (
+    textBox: (
       <p className="text-box-p">
         React lets you build user interfaces out of individual pieces called
         components. Create your own React components like&nbsp;
@@ -31,10 +34,13 @@ const string = {
 
   // secondSummart text
   secondSummary: {
-    h1: "Write components with code and markup",
-    lowertext:
+    h2: {
+      subHead: "VideoList.js",
+      title: "Write components with code and markup",
+    },
+    lowerText:
       "This markup syntax is called JSX. It is a JavaScript syntax extension popularized by React. Putting JSX markup close to related rendering logic makes React components easy to create, maintain, and delete.",
-    textbox: (
+    textBox: (
       <p className="text-box-p">
         React components are JavaScript functions. Want to show some content
         conditionally? Use an&nbsp;
@@ -52,10 +58,14 @@ const string = {
 
   //first SummaryButton
   firstSummaryBtn: {
-    h2: "Add interactivity wherever you need it",
-    lowertext:
+    h2: {
+      subHead: "SearchableVideoList.js",
+      title: "Add interactivity wherever you need it",
+    },
+
+    lowerText:
       "You don’t have to build your whole page in React. Add React to your existing HTML page, and render interactive React components anywhere on it.",
-    textbox: (
+    textBox: (
       <p className="text-box-p">
         React components receive data and return what should appear on the
         screen. You can pass them new data in response to an interaction, like
@@ -64,7 +74,7 @@ const string = {
       </p>
     ),
     // button layout
-    btntext: (
+    btnText: (
       <div className="lower-button-box">
         <a href="https://reactnative.dev/" target="_blank">
           <img className="code-logo" src={code} alt="code logo" />
@@ -77,10 +87,13 @@ const string = {
 
   // second SummaryButton
   secondSummaryBtn: {
-    h2: "Go full-stack with a framework",
-    lowertext:
+    h2: {
+      subHead: "confs/[slug].js",
+      title: "Go full-stack with a framework",
+    },
+    lowerText:
       "React is also an architecture. Frameworks that implement it let you fetch data in asynchronous components that run on the server or even during the build. Read data from a file or a database, and pass it down to your interactive components.",
-    textbox: (
+    textBox: (
       <p className="text-box-p">
         React is a library. It lets you put components together, but it doesn’t
         prescribe how to do routing and data fetching. To build an entire app
@@ -95,7 +108,7 @@ const string = {
       </p>
     ),
 
-    btntext: (
+    btnText: (
       <div className="lower-button-box">
         <a href="https://reactnative.dev/" target="_blank">
           <img className="code-logo" src={chart} alt="code logo" />
@@ -104,6 +117,31 @@ const string = {
         </a>
       </div>
     ),
+  },
+
+  // Footer String Start
+  // Footer Content
+  footerContentString: {
+    h2: (
+      <h2 className="footer-text-h2 w-full">
+        Join a community <br /> of millions
+      </h2>
+    ),
+    firstText:
+      "You’re not alone. Two million developers from all over the world visit the React docs every month. React is something that people and teams can agree on.",
+    secondText:
+      "This is why React is more than a library, an architecture, or even an ecosystem. React is a community. It’s a place where you can ask for help, find opportunities, and meet new friends. You will meet both developers and designers, beginners and experts, researchers and artists, teachers and students. Our backgrounds may be very different, but React lets us all create user interfaces together.",
+  },
+  // Footer Button section below the slider
+  footerContentBtn: {
+    h2: (
+      <h2 className="footer-text-h2">
+        Welcome to the
+        <br />
+        React community
+      </h2>
+    ),
+    btnText: <a className="footer-start-button">Get Started</a>,
   },
 };
 

@@ -1,3 +1,4 @@
+import React from "react";
 import logo from "@/assets/home-logo.svg";
 import FooterSlide from "./footerSlide";
 
@@ -8,9 +9,7 @@ const FooterContent = ({ footerContentString, footerContentBtn }) => {
         <div className="w-full footer-content-wrap">
           <div className="footer-text-wrap">
             <div className="footer-text-box padding1-25rem">
-              <h2 className="footer-text-h2 w-full">
                 {footerContentString.h2}
-              </h2>
               <p className="footer-text-p">{footerContentString.firstText}</p>
             </div>
           </div>

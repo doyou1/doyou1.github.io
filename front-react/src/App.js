@@ -10,9 +10,6 @@ function App() {
   return (
     <div className={ `App ${isDark ? 'dark' : ''} ` }>
       <Main />
-      {/* <div className=''>
-      Hello World
-      </div> */}
     </div>
   );
 }
