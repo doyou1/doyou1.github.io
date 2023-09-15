@@ -1,9 +1,9 @@
 import { ReactComponent as HomeLogo } from "@/assets/home-logo.svg";
-import { ReactComponent as SearchIcon } from "@/assets/search.svg";
-import { ReactComponent as DarkIcon } from "@/assets/dark.svg";
-import { ReactComponent as DaynightIcon } from "@/assets/daynight.svg";
-import { ReactComponent as GithubIcon } from "@/assets/github.svg";
-import { ReactComponent as HomeMenuIcon } from "@/assets/home-menu.svg";
+import { ReactComponent as SearchIcon } from "@/assets/nav/search.svg";
+import { ReactComponent as DarkIcon } from "@/assets/nav/dark.svg";
+import { ReactComponent as DaynightIcon } from "@/assets/nav/daynight.svg";
+import { ReactComponent as GithubIcon } from "@/assets/nav/github.svg";
+import { ReactComponent as HomeMenuIcon } from "@/assets/nav/home-menu.svg";
 import "@/styles/nav.css";
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
