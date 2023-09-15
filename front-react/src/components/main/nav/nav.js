@@ -55,22 +55,12 @@ export default function Nav() {
             />
             Search
             <span className="ml-auto item-center mr-1">
-              {isMac && (
                 <kbd
-                  className="w-5 h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0"
-                  data-platform="mac"
+                  className={`${isMac ? "w-5" : "w-10"} h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0`}
+                  data-platform={isMac ? "mac" : "win"}
                 >
-                  ⌘
+                  {isMac ? "⌘" : "Ctrl"}
                 </kbd>
-              )}
-              {!isMac && (
-                <kbd
-                  className="w-10 h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0"
-                  data-platform="win"
-                >
-                  Ctrl
-                </kbd>
-              )}
               <kbd className="w-5 h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0">
                 K
               </kbd>
