@@ -12,7 +12,7 @@ import { isDarkState } from "@/recoil/recoil_state";
 export default function Nav() {
   const isDark = useRecoilValue(isDarkState);
   const setIsDark = useSetRecoilState(isDarkState);
-  const isMac = window.navigator.platform.includes("Mac");
+  const isMac = window.navigator.userAgentData.platform.toLowerCase().includes("mac");
 
   const toggleIsDark = () => {
     // 👇️ passed function to setState
