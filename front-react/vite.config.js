@@ -25,7 +25,8 @@ export default defineConfig({
     },
     react(),
     svgr({
-      include: "",
+      include: "**/*.svg",
+      // include: "",
     })
   ],
 

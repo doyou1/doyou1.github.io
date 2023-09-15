@@ -1,10 +1,9 @@
-import logo from "@/assets/home-logo.svg";
-import search from "@/assets/search.svg";
-import dark from "@/assets/dark.svg";
-import daynight from "@/assets/daynight.svg";
-import menu from "@/assets/home-menu.svg";
-import githubDaynight from "@/assets/github-daynight.svg";
-import githubDark from "@/assets/github-dark.svg";
+import { ReactComponent as HomeLogo } from "@/assets/home-logo.svg";
+import { ReactComponent as SearchIcon } from "@/assets/search.svg";
+import { ReactComponent as DarkIcon } from "@/assets/dark.svg";
+import { ReactComponent as DaynightIcon } from "@/assets/daynight.svg";
+import { ReactComponent as GithubIcon } from "@/assets/github.svg";
+import { ReactComponent as HomeMenuIcon } from "@/assets/home-menu.svg";
 import "@/styles/nav.css";
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
@@ -32,11 +31,14 @@ export default function Nav() {
             type="button"
             className="active:scale-95 transition-transform flex lg:hidden w-12 h-12 rounded-full items-center justify-center outline-link"
           >
-            <img className="w-10 h-10 mr-0" src={menu} alt="home menu" />
+            <HomeMenuIcon 
+              className="w-10 h-10 mr-0" 
+              alt="home menu" 
+            />
           </button>
 
           <a className="flex flex-row" href="#">
-            <img className="w-10 h-10 mr-0" src={logo} alt="home logo" />
+            <HomeLogo className="w-10 h-10 mr-0" />
             <span className="sr-only 3xl:not-sr-only">React</span>
           </a>
         </div>
@@ -47,10 +49,9 @@ export default function Nav() {
             type="button"
             className="flex items-center 3xl:w-[56rem] w-full h-10 outline-none pointer relative text-left align-middle text-base"
           >
-            <img
+            <SearchIcon
               className="w-4 h-4 mr-3 shrink-0 align-middle"
-              src={search}
-              alt="home logo"
+              alt="search"
             />
             Search
             <span className="ml-auto item-center mr-1">
@@ -111,8 +112,7 @@ export default function Nav() {
                 onClick={toggleIsDark}
                 className="w-12 h-12 flex items-center justify-center"
               >
-                {!isDark && <img src={daynight} alt="daynight" />}
-                {isDark && <img src={dark} alt="dark" />}
+                {!isDark ? <DaynightIcon alt="daynight" /> : <DarkIcon alt="dark" />}
               </a>
             </div>
             {/* Github icon */}
@@ -121,20 +121,11 @@ export default function Nav() {
                 href="#"
                 className="w-12 h-12 flex items-center justify-center"
               >
-                {!isDark && (
-                  <img
-                    className=""
-                    src={githubDaynight}
-                    alt="github-daynight"
-                  />
-                )}
-                {isDark && (
-                  <img
-                    className="bg-[#404756] rounded-full"
-                    src={githubDark}
-                    alt="github-dark"
-                  />
-                )}
+                <GithubIcon
+                  className={`rounded-full ${!isDark & "bg-[#404756]"}`}
+                  alt="github"
+                  style={{ color: !isDark ? "#404756" : "#FFFFFF"}}
+                />
               </a>
             </div>
           </div>
