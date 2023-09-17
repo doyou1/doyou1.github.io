@@ -1,5 +1,4 @@
-import React from "react";
-import "styles/codeEditor.css";
+import "@/styles/codeEditor.css";
 
 // CodeEditerVideo
 export const codeEditorVideo = {

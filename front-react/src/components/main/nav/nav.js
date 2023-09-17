@@ -1,21 +1,18 @@
-import logo from "images/home-logo.svg";
-import search from "images/search.svg";
-import dark from "images/dark.svg";
-import daynight from "images/daynight.svg";
-import menu from "images/home-menu.svg";
-import githubDaynight from "images/github-daynight.svg";
-import githubDark from "images/github-dark.svg";
-import "styles/nav.css";
-
-import React from "react";
+import { ReactComponent as HomeLogo } from "@/assets/home-logo.svg";
+import { ReactComponent as SearchIcon } from "@/assets/nav/search.svg";
+import { ReactComponent as DarkIcon } from "@/assets/nav/dark.svg";
+import { ReactComponent as DaynightIcon } from "@/assets/nav/daynight.svg";
+import { ReactComponent as GithubIcon } from "@/assets/nav/github.svg";
+import { ReactComponent as HomeMenuIcon } from "@/assets/nav/home-menu.svg";
+import "@/styles/nav.css";
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { isDarkState } from "recoil/recoil_state";
+import { isDarkState } from "@/recoil/recoil_state";
 
 export default function Nav() {
   const isDark = useRecoilValue(isDarkState);
   const setIsDark = useSetRecoilState(isDarkState);
-  const isMac = window.navigator.platform.includes("Mac");
+  const isMac = window.navigator.userAgentData.platform.toLowerCase().includes("mac");
 
   const toggleIsDark = () => {
     // 👇️ passed function to setState
@@ -34,11 +31,14 @@ export default function Nav() {
             type="button"
             className="active:scale-95 transition-transform flex lg:hidden w-12 h-12 rounded-full items-center justify-center outline-link"
           >
-            <img className="w-10 h-10 mr-0" src={menu} alt="home menu" />
+            <HomeMenuIcon 
+              className="w-10 h-10 mr-0" 
+              alt="home menu" 
+            />
           </button>
 
           <a className="flex flex-row" href="#">
-            <img className="w-10 h-10 mr-0" src={logo} alt="home logo" />
+            <HomeLogo className="w-10 h-10 mr-0" />
             <span className="sr-only 3xl:not-sr-only">React</span>
           </a>
         </div>
@@ -49,29 +49,18 @@ export default function Nav() {
             type="button"
             className="flex items-center 3xl:w-[56rem] w-full h-10 outline-none pointer relative text-left align-middle text-base"
           >
-            <img
+            <SearchIcon
               className="w-4 h-4 mr-3 shrink-0 align-middle"
-              src={search}
-              alt="home logo"
+              alt="search"
             />
             Search
             <span className="ml-auto item-center mr-1">
-              {isMac && (
                 <kbd
-                  className="w-5 h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0"
-                  data-platform="mac"
+                  className={`${isMac ? "w-5" : "w-10"} h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0`}
+                  data-platform={isMac ? "mac" : "win"}
                 >
-                  ⌘
+                  {isMac ? "⌘" : "Ctrl"}
                 </kbd>
-              )}
-              {!isMac && (
-                <kbd
-                  className="w-10 h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0"
-                  data-platform="win"
-                >
-                  Ctrl
-                </kbd>
-              )}
               <kbd className="w-5 h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0">
                 K
               </kbd>
@@ -113,8 +102,7 @@ export default function Nav() {
                 onClick={toggleIsDark}
                 className="w-12 h-12 flex items-center justify-center"
               >
-                {!isDark && <img src={daynight} alt="daynight" />}
-                {isDark && <img src={dark} alt="dark" />}
+                {!isDark ? <DaynightIcon alt="daynight" /> : <DarkIcon alt="dark" />}
               </a>
             </div>
             {/* Github icon */}
@@ -123,20 +111,11 @@ export default function Nav() {
                 href="#"
                 className="w-12 h-12 flex items-center justify-center"
               >
-                {!isDark && (
-                  <img
-                    className=""
-                    src={githubDaynight}
-                    alt="github-daynight"
-                  />
-                )}
-                {isDark && (
-                  <img
-                    className="bg-[#404756] rounded-full"
-                    src={githubDark}
-                    alt="github-dark"
-                  />
-                )}
+                <GithubIcon
+                  className={`rounded-full ${!isDark & "bg-[#404756]"}`}
+                  alt="github"
+                  style={{ color: !isDark ? "#404756" : "#FFFFFF"}}
+                />
               </a>
             </div>
           </div>

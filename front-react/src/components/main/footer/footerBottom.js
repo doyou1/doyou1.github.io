@@ -1,5 +1,4 @@
-import React from "react";
-import metaLogo from "images/metaOpenSource-logo.svg";
+import metaLogo from "@/assets/metaOpenSource-logo.svg";
 
 const FooterBottom = () => (
   <div className="footer-bottom-wrap-padding">
