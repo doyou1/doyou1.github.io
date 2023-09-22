@@ -8,6 +8,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    boxShadow: {
+      'dark': '0 16px 32px -16px rgba(0,0,0,0.1), 0 16px 32px -16px rgba(0,0,255, 0.05)',
+    },
     extend: {},
   },
   plugins: [],

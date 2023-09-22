@@ -1,4 +1,6 @@
 import Nav from "@/components/main/nav/nav";
+import NavMenu from "@/components/main/nav/navMenu";
+
 import Footer from "@/components/main/footer/footer";
 import Intro from "@/components/main/items/intro";
 import Summary from "@/components/main/items/summary";
@@ -16,60 +18,75 @@ import {
 } from "@/components/main/items/codeEditor/codeEditor";
 import { rightBox } from "@/components/main/items/codeEditor/rightBox";
 
+import { useRecoilValue } from "recoil";
+import { isOpenHomeMenuState } from "@/recoil/recoil_state";
+
+
 export default function Main() {
+  const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
+
   return (
-    <>
-      <Nav />
-      <Intro />
+    <div className={`${isOpenHomeMenu ? "overflow-hidden" : ""} font-text font-medium antialiased text-lg bg-wash dark:bg-wash-dark text-secondary dark:text-secondary-dark leading-base`}>
+      <div
+        className={`${!isOpenHomeMenu ? "z-50 sticky top-0" : "h-screen sticky top-0 lg:bottom-0 lg:h-screen flex flex-col dark:shadow-dark shadow-none z-20"}`}
+      >
+        <Nav />
+        {/* { isOpenHomeMenu && (<NavMenu />) }  */}
+      </div>
 
-      {/* first Summary  */}
-      <Summary
-        title={string.firstSummary.h2.title}
-        subHead={string.firstSummary.h2.subHead}
-        lowerText={string.firstSummary.lowerText}
-        textBox={string.firstSummary.textBox}
-        codeEditor={codeEditorVideo.code}
-        rightBox={rightBox.mainVideoBox}
-      ></Summary>
+      <main
+        className="min-w-0 isolate"
+      >
+        <Intro />
+        {/* first Summary  */}
+        <Summary
+          title={string.firstSummary.h2.title}
+          subHead={string.firstSummary.h2.subHead}
+          lowerText={string.firstSummary.lowerText}
+          textBox={string.firstSummary.textBox}
+          codeEditor={codeEditorVideo.code}
+          rightBox={rightBox.mainVideoBox}
+        ></Summary>
 
-      {/* second Summary  */}
+        {/* second Summary  */}
 
-      <Summary
-        title={string.secondSummary.h2.title}
-        subHead={string.secondSummary.h2.subHead}
-        lowerText={string.secondSummary.lowerText}
-        textBox={string.secondSummary.textBox}
-        codeEditor={codeEditorVideoList.code}
-        rightBox={rightBox.mainVideoListBox}
-      ></Summary>
+        <Summary
+          title={string.secondSummary.h2.title}
+          subHead={string.secondSummary.h2.subHead}
+          lowerText={string.secondSummary.lowerText}
+          textBox={string.secondSummary.textBox}
+          codeEditor={codeEditorVideoList.code}
+          rightBox={rightBox.mainVideoListBox}
+        ></Summary>
 
-      {/* first SummaryButton  */}
-      <SummaryButton
-        title={string.firstSummaryBtn.h2.title}
-        subHead={string.firstSummaryBtn.h2.subHead}
-        btnText={string.firstSummaryBtn.btnText}
-        lowerText={string.firstSummaryBtn.lowerText}
-        textBox={string.firstSummaryBtn.textBox}
-        codeEditor={codeEditorSearchableVideoList.code}
-      ></SummaryButton>
+        {/* first SummaryButton  */}
+        <SummaryButton
+          title={string.firstSummaryBtn.h2.title}
+          subHead={string.firstSummaryBtn.h2.subHead}
+          btnText={string.firstSummaryBtn.btnText}
+          lowerText={string.firstSummaryBtn.lowerText}
+          textBox={string.firstSummaryBtn.textBox}
+          codeEditor={codeEditorSearchableVideoList.code}
+        ></SummaryButton>
 
-      {/* second SummaryButton  */}
-      <SummaryButton
-        title={string.secondSummaryBtn.h2.title}
-        subHead={string.secondSummaryBtn.h2.subHead}
-        btnText={string.secondSummaryBtn.btnText}
-        lowerText={string.secondSummaryBtn.lowerText}
-        textBox={string.secondSummaryBtn.textBox}
-        codeEditor={codeEditorConferencePage.code}
-      ></SummaryButton>
-      <SummaryButtonPlatform />
-      <SummaryButtonNews />
-      <SummaryButtonSlider />
+        {/* second SummaryButton  */}
+        <SummaryButton
+          title={string.secondSummaryBtn.h2.title}
+          subHead={string.secondSummaryBtn.h2.subHead}
+          btnText={string.secondSummaryBtn.btnText}
+          lowerText={string.secondSummaryBtn.lowerText}
+          textBox={string.secondSummaryBtn.textBox}
+          codeEditor={codeEditorConferencePage.code}
+        ></SummaryButton>
+        <SummaryButtonPlatform />
+        <SummaryButtonNews />
+        <SummaryButtonSlider />
 
-      <Footer
-        footerContentString={string.footerContentString}
-        footerContentBtn={string.footerContentBtn}
-      />
-    </>
+        <Footer
+          footerContentString={string.footerContentString}
+          footerContentBtn={string.footerContentBtn}
+        />
+      </main>
+    </div>
   );
 }
