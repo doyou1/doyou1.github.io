@@ -262,10 +262,6 @@
     flex-direction: column;
 }
 
-/* .footer-flex-box{
-    display: flex;
-    flex-direction: column;
-} */
 .footer-bottom-item-title {
     display: inline-block;
     --tw-text-opacity: 1;
@@ -315,34 +311,33 @@
     column-gap: 0.5rem;
     margin-top: 2rem;
 }
-
-.footer-bottom-logo svg:hover {
+.footer-bottom-logo-tag:hover{
     fill: rgb(2, 2, 2);
 }
 
 .react-conf-elizabet {
-    content: url(../assets/footer/react_conf_elizabet.webp);
+    content: url(../assets/footer/react-conf-elizabet.webp);
 }
 .react-conf-fun {
-    content: url(../assets/footer/react_conf_fun.webp);
+    content: url(../assets/footer/react-conf-fun.webp);
 }
 .react-conf-hallway {
-    content: url(../assets/footer/react_conf_hallway.webp);
+    content: url(../assets/footer/react-conf-hallway.webp);
 }
 .react-conf-nat {
-    content: url(../assets/footer/react_conf_nat.webp);
+    content: url(../assets/footer/react-conf-nat.webp);
 }
 .react-india-hallway {
-    content: url(../assets/footer/react_india_hallway.webp);
+    content: url(../assets/footer/react-india-hallway.webp);
 }
 .react-india-selfie {
-    content: url(../assets/footer/react_india_selfie.webp);
+    content: url(../assets/footer/react-india-selfie.webp);
 }
 .react-india-sunil {
-    content: url(../assets/footer/react_india_sunil.webp);
+    content: url(../assets/footer/react-india-sunil.webp);
 }
 .react-india-team {
-    content: url(../assets/footer/react_india_team.webp);
+    content: url(../assets/footer/react-india-team.webp);
 }
 
 
