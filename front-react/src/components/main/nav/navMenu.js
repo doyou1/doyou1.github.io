@@ -7,7 +7,7 @@ export default function NavMenu() {
               role="navigation"
               className="w-full lg:h-auto grow pe-0 lg:pe-5 pt-4 lg:py-6 md:pt-4 lg:pt-4 scrolling-touch scrolling-gpu bg-opacity-20"
             >
-              <div className="ps-3 xs:ps-5 xs:gap-0.5 xs:text-base overflow-x-auto flex flex-row lg:hidden text-base font-bold text-secondary dark:text-secondary-dark">
+              <div className="ps-3 xs:ps-5 xs:gap-0.5 xs:text-base overflow-x-auto flex flex-row lg:hidden text-base font-bold text-[#404756] dark:text-[#ebecf0]">
                 <div className="flex flex-auto sm:flex-1">
                   <a
                     className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-primary/5 hover:dark:bg-primary-dark/5"
@@ -43,17 +43,17 @@ export default function NavMenu() {
               </div>
               <div
                 role="separator"
-                className="ms-5 mt-4 mb-2 border-b border-border dark:border-border-dark"
+                className="ms-5 mt-4 mb-2 border-b border-[#ebecf0] dark:border-[#343a46]"
               ></div>
               <ul>
-                <h3 className="mb-1 text-sm font-bold ms-5 text-tertiary dark:text-tertiary-dark">
+                <h3 className="mb-1 text-sm font-bold ms-5 text-[#5e687e] dark:text-[#99a1b3]">
                   GET STARTED
                 </h3>
                 <li>
                   <a
                     title="Quick Start"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/learn"
                   >
                     <div>Quick Start </div>
@@ -63,7 +63,7 @@ export default function NavMenu() {
                   <a
                     title="Installation"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/learn/installation"
                   >
                     <div>Installation </div>
@@ -71,16 +71,16 @@ export default function NavMenu() {
                 </li>
                 <li
                   role="separator"
-                  className="mt-4 mb-2 ms-5 border-b border-border dark:border-border-dark"
+                  className="mt-4 mb-2 ms-5 border-b border-[#ebecf0] dark:border-[#343a46]"
                 ></li>
-                <h3 className="mb-1 text-sm font-bold ms-5 text-tertiary dark:text-tertiary-dark mt-2">
+                <h3 className="mb-1 text-sm font-bold ms-5 text-[#5e687e] dark:text-[#99a1b3] mt-2">
                   LEARN REACT
                 </h3>
                 <li>
                   <a
                     title="Describing the UI"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/learn/describing-the-ui"
                   >
                     <div>Describing the UI </div>
@@ -90,7 +90,7 @@ export default function NavMenu() {
                   <a
                     title="Adding Interactivity"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/learn/adding-interactivity"
                   >
                     <div>Adding Interactivity </div>
@@ -100,7 +100,7 @@ export default function NavMenu() {
                   <a
                     title="Managing State"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/learn/managing-state"
                   >
                     <div>Managing State </div>
@@ -110,7 +110,7 @@ export default function NavMenu() {
                   <a
                     title="Escape Hatches"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/learn/escape-hatches"
                   >
                     <div>Escape Hatches </div>
@@ -118,16 +118,16 @@ export default function NavMenu() {
                 </li>
                 <li
                   role="separator"
-                  className="mt-4 mb-2 ms-5 border-b border-border dark:border-border-dark"
+                  className="mt-4 mb-2 ms-5 border-b border-[#ebecf0] dark:border-[#343a46]"
                 ></li>
-                <h3 className="mb-1 text-sm font-bold ms-5 text-tertiary dark:text-tertiary-dark mt-2">
+                <h3 className="mb-1 text-sm font-bold ms-5 text-[#5e687e] dark:text-[#99a1b3] mt-2">
                   REACT API
                 </h3>
                 <li>
                   <a
                     title="Hooks"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/reference/react"
                   >
                     <div>Hooks </div>
@@ -137,7 +137,7 @@ export default function NavMenu() {
                   <a
                     title="Components"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/reference/react/components"
                   >
                     <div>Components </div>
@@ -147,7 +147,7 @@ export default function NavMenu() {
                   <a
                     title="APIs"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/reference/react/apis"
                   >
                     <div>APIs </div>
@@ -157,7 +157,7 @@ export default function NavMenu() {
                   <a
                     title="Legacy APIs"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/reference/react/legacy"
                   >
                     <div>Legacy APIs </div>
@@ -165,16 +165,16 @@ export default function NavMenu() {
                 </li>
                 <li
                   role="separator"
-                  className="mt-4 mb-2 ms-5 border-b border-border dark:border-border-dark"
+                  className="mt-4 mb-2 ms-5 border-b border-[#ebecf0] dark:border-[#343a46]"
                 ></li>
-                <h3 className="mb-1 text-sm font-bold ms-5 text-tertiary dark:text-tertiary-dark mt-2">
+                <h3 className="mb-1 text-sm font-bold ms-5 text-[#5e687e] dark:text-[#99a1b3] mt-2">
                   REACT DOM API
                 </h3>
                 <li>
                   <a
                     title="Components"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/reference/react-dom/components"
                   >
                     <div>Components </div>
@@ -184,7 +184,7 @@ export default function NavMenu() {
                   <a
                     title="APIs"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/reference/react-dom"
                   >
                     <div>APIs </div>
@@ -194,7 +194,7 @@ export default function NavMenu() {
                   <a
                     title="Client APIs"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/reference/react-dom/client"
                   >
                     <div>Client APIs </div>
@@ -204,7 +204,7 @@ export default function NavMenu() {
                   <a
                     title="Server APIs"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/reference/react-dom/server"
                   >
                     <div>Server APIs </div>
@@ -212,16 +212,16 @@ export default function NavMenu() {
                 </li>
                 <li
                   role="separator"
-                  className="mt-4 mb-2 ms-5 border-b border-border dark:border-border-dark"
+                  className="mt-4 mb-2 ms-5 border-b border-[#ebecf0] dark:border-[#343a46]"
                 ></li>
-                <h3 className="mb-1 text-sm font-bold ms-5 text-tertiary dark:text-tertiary-dark mt-2">
+                <h3 className="mb-1 text-sm font-bold ms-5 text-[#5e687e] dark:text-[#99a1b3] mt-2">
                   GET INVOLVED
                 </h3>
                 <li>
                   <a
                     title="React Community"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/community"
                   >
                     <div>React Community </div>
@@ -229,16 +229,16 @@ export default function NavMenu() {
                 </li>
                 <li
                   role="separator"
-                  className="mt-4 mb-2 ms-5 border-b border-border dark:border-border-dark"
+                  className="mt-4 mb-2 ms-5 border-b border-[#ebecf0] dark:border-[#343a46]"
                 ></li>
-                <h3 className="mb-1 text-sm font-bold ms-5 text-tertiary dark:text-tertiary-dark mt-2">
+                <h3 className="mb-1 text-sm font-bold ms-5 text-[#5e687e] dark:text-[#99a1b3] mt-2">
                   STAY INFORMED
                 </h3>
                 <li>
                   <a
                     title="React Blog"
                     target=""
-                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-primary dark:text-primary-dark"
+                    className="p-2 pe-2 w-full rounded-none lg:rounded-e-2xl text-start hover:bg-gray-5 dark:hover:bg-gray-80 relative flex items-center justify-between ps-5 text-base font-bold text-[#404756] dark:text-[#ebecf0]"
                     href="/blog"
                   >
                     <div>React Blog </div>
@@ -249,12 +249,12 @@ export default function NavMenu() {
             </nav>
             <div className="fixed bottom-0 hidden lg:block">
               <div className="max-w-xs w-80 lg:w-auto py-3 shadow-lg rounded-lg m-4 bg-wash dark:bg-gray-95 px-4 flex">
-                <p className="w-full font-bold text-primary dark:text-primary-dark text-lg me-4">
+                <p className="w-full font-bold text-[#404756] dark:text-[#ebecf0] text-lg me-4">
                   Is this page useful?
                 </p>
                 <button
                   aria-label="Yes"
-                  className="bg-secondary-button dark:bg-secondary-button-dark rounded-lg text-primary dark:text-primary-dark px-3 me-2"
+                  className="bg-secondary-button dark:bg-secondary-button-dark rounded-lg text-[#404756] dark:text-[#ebecf0] px-3 me-2"
                 >
                   <svg
                     width="16"
@@ -273,7 +273,7 @@ export default function NavMenu() {
                 </button>
                 <button
                   aria-label="No"
-                  className="bg-secondary-button dark:bg-secondary-button-dark rounded-lg text-primary dark:text-primary-dark px-3"
+                  className="bg-secondary-button dark:bg-secondary-button-dark rounded-lg text-[#404756] dark:text-[#ebecf0] px-3"
                 >
                   <svg
                     width="16"

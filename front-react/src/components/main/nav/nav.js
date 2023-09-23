@@ -10,6 +10,8 @@ import { ReactComponent as HomeMenuIcon } from "@/assets/nav/home-menu.svg";
 import { ReactComponent as CloseIcon } from "@/assets/nav/close.svg";
 import { isDarkState, isMacState, isOpenHomeMenuState } from "@/recoil/recoil_state";
 
+import { throttle } from 'lodash';
+import { useMemo, useEffect, useState } from "react";
 
 export default function Nav() {
   const isDark = useRecoilValue(isDarkState);
@@ -19,6 +21,8 @@ export default function Nav() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
   const setIsOpenHomeMenu = useSetRecoilState(isOpenHomeMenuState);
 
+  const [isScrollOn, setIsScrollOn] = useState(false);
+
   const toggleIsDark = () => {
     setIsDark((current) => !current);
   };
@@ -27,9 +31,43 @@ export default function Nav() {
     setIsOpenHomeMenu((current) => !current);
   };
 
+
+  const throttledScroll = useMemo(
+    () =>
+      throttle(() => {
+        const nextTabnavOn = window.scrollY > 0
+        if (nextTabnavOn !== isScrollOn) setIsScrollOn(nextTabnavOn);
+      }, 300),
+      [isScrollOn]
+    );
+
+  useEffect(() => {
+    window.addEventListener('scroll', throttledScroll);
+    return () => {
+      window.removeEventListener('scroll', throttledScroll);
+    };
+  }, [throttledScroll]);
+
+  const throttledResize = useMemo(
+    () =>
+      throttle(() => {
+        const {innerWidth: width } = window;
+        if(width > 1024) setIsOpenHomeMenu(false);
+      }, 100),
+      [isOpenHomeMenu]
+    );
+
+  useEffect(() => {
+    window.addEventListener('resize', throttledResize);
+    return () => {
+      window.removeEventListener('resize', throttledResize);
+    };
+  }, [throttledResize]);
+  
+
   return (
     <div>
-      <nav className={`duration-300 backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 items-center w-full flex justify-between bg-[#FFFFFF] dark:bg-[#23272f] dark:bg-opacity-95 px-1.5 lg:pe-5 lg:ps-4 z-50 ${isOpenHomeMenu ? "dark:shadow-dark shadow-none" : ""}`}>
+      <nav className={`${isOpenHomeMenu ? "dark:shadow-dark shadow-none" : ""} ${isScrollOn ? "dark:shadow-dark shadow-dark" : ""} duration-300 backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 items-center w-full flex justify-between bg-[#FFFFFF] dark:bg-[#23272f] dark:bg-opacity-95 px-1.5 lg:pe-5 lg:ps-4 z-50`}>
         <div className="h-16 w-full gap-0 sm:gap-3 flex items-center justify-between">
           <div className="3xl:flex-1 flex flex-row">
             <button

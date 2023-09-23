@@ -21,17 +21,16 @@ import { rightBox } from "@/components/main/items/codeEditor/rightBox";
 import { useRecoilValue } from "recoil";
 import { isOpenHomeMenuState } from "@/recoil/recoil_state";
 
-
 export default function Main() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
 
   return (
-    <div className={`${isOpenHomeMenu ? "overflow-hidden" : ""} font-text font-medium antialiased text-lg bg-wash dark:bg-wash-dark text-secondary dark:text-secondary-dark leading-base`}>
+    <div className={`${isOpenHomeMenu ? "overflow-hidden" : ""} font-text font-medium antialiased text-lg bg-[#FFFFFF] dark:bg-[#23272f] text-secondary dark:text-secondary-dark leading-base`}>
       <div
         className={`${!isOpenHomeMenu ? "z-50 sticky top-0" : "h-screen sticky top-0 lg:bottom-0 lg:h-screen flex flex-col dark:shadow-dark shadow-none z-20"}`}
       >
         <Nav />
-        {/* { isOpenHomeMenu && (<NavMenu />) }  */}
+        { isOpenHomeMenu && (<NavMenu />) } 
       </div>
 
       <main
