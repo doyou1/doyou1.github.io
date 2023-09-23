@@ -8,6 +8,7 @@ import SummaryButton from "@/components/main/items/summaryButton";
 import SummaryButtonNews from "@/components/main/items/summaryButtonNews";
 import SummaryButtonPlatform from "@/components/main/items/summaryButtonPlatform";
 import SummaryButtonSlider from "@/components/main/items/summaryButtonSlider";
+import DocSearch from "@/components/main/nav/docSearch";
 import string from "@/utils/string";
 // import footerString from "./utils/footerString";
 import {
@@ -19,13 +20,15 @@ import {
 import { rightBox } from "@/components/main/items/codeEditor/rightBox";
 
 import { useRecoilValue } from "recoil";
-import { isOpenHomeMenuState } from "@/recoil/recoil_state";
+import { isOpenHomeMenuState, isOpenDocSearchState } from "@/recoil/recoil_state";
 
 export default function Main() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
+  const isOpenDocSearch = useRecoilValue(isOpenDocSearchState);
+
 
   return (
-    <div className={`${isOpenHomeMenu ? "overflow-hidden" : ""} font-text font-medium antialiased text-lg bg-[#FFFFFF] dark:bg-[#23272f] text-secondary dark:text-secondary-dark leading-base`}>
+    <div className={`font-text font-medium antialiased text-lg bg-[#FFFFFF] dark:bg-[#23272f] text-secondary dark:text-secondary-dark leading-base`}>
       <div
         className={`${!isOpenHomeMenu ? "z-50 sticky top-0" : "h-screen sticky top-0 lg:bottom-0 lg:h-screen flex flex-col dark:shadow-dark shadow-none z-20"}`}
       >
@@ -86,6 +89,8 @@ export default function Main() {
           footerContentBtn={string.footerContentBtn}
         />
       </main>
+
+      { isOpenDocSearch && <DocSearch /> }
     </div>
   );
 }

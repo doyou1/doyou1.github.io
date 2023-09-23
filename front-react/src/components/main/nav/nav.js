@@ -8,7 +8,7 @@ import { ReactComponent as DaynightIcon } from "@/assets/nav/daynight.svg";
 import { ReactComponent as GithubIcon } from "@/assets/nav/github.svg";
 import { ReactComponent as HomeMenuIcon } from "@/assets/nav/home-menu.svg";
 import { ReactComponent as CloseIcon } from "@/assets/nav/close.svg";
-import { isDarkState, isMacState, isOpenHomeMenuState } from "@/recoil/recoil_state";
+import { isDarkState, isMacState, isOpenHomeMenuState, isOpenDocSearchState } from "@/recoil/recoil_state";
 
 import { throttle } from 'lodash';
 import { useMemo, useEffect, useState } from "react";
@@ -63,7 +63,10 @@ export default function Nav() {
       window.removeEventListener('resize', throttledResize);
     };
   }, [throttledResize]);
-  
+
+  useEffect(() => {
+    document.body.style.overflow = isOpenHomeMenu ? "hidden" : "visible";
+  }, [isOpenHomeMenu]);
 
   return (
     <div>
@@ -106,6 +109,7 @@ export default function Nav() {
               type="button"
               className="flex 3xl:w-[56rem] 3xl:mx-0 relative ps-4 pe-1 py-1 h-10 bg-opacity-20 bg-[#99a1b3] dark:bg-opacity-20 dark:bg-[#78839b] outline-none focus:outline-link pointer items-center text-start w-full rounded-full align-middle text-base"
               style={{ color: "#99a1b3"}}
+              onClick={openDocSearch}
             >
               <SearchIcon 
                 className="me-3 align-middle text-gray-30 shrink-0 group-betterhover:hover:text-gray-70"

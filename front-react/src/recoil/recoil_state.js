@@ -15,4 +15,9 @@ const isOpenHomeMenuState = atom({
     default: false
 });
 
-export { isDarkState, isMacState, isOpenHomeMenuState };
+const isOpenDocSearchState = atom({
+    key: "isOpenDocSearchState",
+    default: false
+});
+
+export { isDarkState, isMacState, isOpenHomeMenuState, isOpenDocSearchState };
