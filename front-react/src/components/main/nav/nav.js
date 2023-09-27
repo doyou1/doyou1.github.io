@@ -21,6 +21,8 @@ export default function Nav() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
   const setIsOpenHomeMenu = useSetRecoilState(isOpenHomeMenuState);
 
+  const setIsOpenDocSearch = useSetRecoilState(isOpenDocSearchState);
+
   const [isScrollOn, setIsScrollOn] = useState(false);
 
   const toggleIsDark = () => {
@@ -29,6 +31,10 @@ export default function Nav() {
 
   const toggleIsOpenHomeMenu = () => {
     setIsOpenHomeMenu((current) => !current);
+  };
+
+  const openDocSearch = () => {
+    setIsOpenDocSearch(true);
   };
 
 
@@ -76,7 +82,7 @@ export default function Nav() {
             <button
               type="button"
               aria-label="Menu"
-              className="active:scale-95 transition-transform flex lg:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+              className="active:scale-95 transition-transform flex lg:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-link"
               onClick={toggleIsOpenHomeMenu}
             >
               {!isOpenHomeMenu 
@@ -92,7 +98,7 @@ export default function Nav() {
             </button>
             <div className="3xl:flex-1 flex align-center">
               <a
-                className="active:scale-95 overflow-hidden transition-transform relative items-center text-primary dark:text-primary-dark p-1 whitespace-nowrap outline-link rounded-full 3xl:rounded-xl inline-flex text-lg font-normal gap-2"
+                className="active:scale-95 overflow-hidden transition-transform relative items-center text-primary dark:text-primary-dark p-1 whitespace-nowrap outline-[#087ea4] rounded-full 3xl:rounded-xl inline-flex text-lg font-normal gap-2"
                 href="/"
               >
                 <HomeLogo 
@@ -104,10 +110,9 @@ export default function Nav() {
             </div>
           </div>
           <div className="hidden md:flex flex-1 justify-center items-center w-full 3xl:w-auto 3xl:shrink-0 3xl:justify-center">
-            {/* betterhover:hover:bg-opacity-80 대응필요 */}
             <button
               type="button"
-              className="flex 3xl:w-[56rem] 3xl:mx-0 relative ps-4 pe-1 py-1 h-10 bg-opacity-20 bg-[#99a1b3] dark:bg-opacity-20 dark:bg-[#78839b] outline-none focus:outline-link pointer items-center text-start w-full rounded-full align-middle text-base"
+              className="flex 3xl:w-[56rem] 3xl:mx-0 relative ps-4 pe-1 py-1 h-10 bg-opacity-20 bg-[#99a1b3] dark:bg-opacity-20 dark:bg-[#78839b] outline-none focus:outline-[#087ea4] pointer items-center text-start w-full rounded-full align-middle text-base"
               style={{ color: "#99a1b3"}}
               onClick={openDocSearch}
             >
@@ -141,7 +146,7 @@ export default function Nav() {
               >
               <div className="flex flex-auto sm:flex-1">
                 <a
-                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-primary/5 hover:dark:bg-primary-dark/5"
+                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
                   href="#"
                 >
                   Learn
@@ -149,7 +154,7 @@ export default function Nav() {
               </div>
               <div className="flex flex-auto sm:flex-1">
                 <a
-                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-primary/5 hover:dark:bg-primary-dark/5"
+                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
                   href="#"
                 >
                   Reference
@@ -157,7 +162,7 @@ export default function Nav() {
               </div>
               <div className="flex flex-auto sm:flex-1">
                 <a
-                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-primary/5 hover:dark:bg-primary-dark/5"
+                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
                   href="#"
                 >
                   Community
@@ -165,7 +170,7 @@ export default function Nav() {
               </div>
               <div className="flex flex-auto sm:flex-1">
                 <a
-                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-primary/5 hover:dark:bg-primary-dark/5"
+                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
                   href="#"
                 >
                   Blog
@@ -178,7 +183,7 @@ export default function Nav() {
                 <button
                   aria-label="Search"
                   type="button"
-                  className="active:scale-95 transition-transform flex md:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-secondary-button hover:dark:bg-secondary-button-dark outline-link"
+                  className="active:scale-95 transition-transform flex md:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-[#ebecf0] hover:dark:bg-[#404756] outline-link"
                 >
                   <SearchIcon
                     className="align-middle w-5 h-5"
@@ -190,7 +195,7 @@ export default function Nav() {
                 <button
                   type="button"
                   aria-label="Use Dark Mode"
-                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-link"
                   onClick={toggleIsDark}
                 >
                   <DarkIcon 
@@ -202,7 +207,7 @@ export default function Nav() {
                 <button
                   type="button"
                   aria-label="Use Light Mode"
-                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-link"
                   onClick={toggleIsDark}
                 >
                   <DaynightIcon 
@@ -212,11 +217,11 @@ export default function Nav() {
               </div>
               <div className="flex">
                 <a
-                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-link"
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label="Open on GitHub"
-                  href="https://github.com/facebook/react/releases"
+                  href="#"
                 >
                   <GithubIcon
                     style={{ color: !isDark ? "#414755" : "#FFFFFF"}}
