@@ -1,7 +1,7 @@
 export default function NavMenu() {
   return (
     <>
-      <div className="overflow-y-scroll isolate no-bg-scrollbar lg:w-[342px] grow bg-none dark:bg-dark">
+      <div className="overflow-y-scroll isolate no-bg-scrollbar lg:w-[342px] grow bg-[#FFFFFF] dark:bg-[#23272F] dark:bg-dark">
         <aside className="lg:grow lg:flex flex-col w-full pb-8 lg:pb-0 lg:max-w-xs z-50 block">
             <nav
               role="navigation"
