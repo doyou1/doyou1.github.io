@@ -82,7 +82,7 @@ export default function Nav() {
             <button
               type="button"
               aria-label="Menu"
-              className="active:scale-95 transition-transform flex lg:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-link"
+              className="active:scale-95 transition-transform flex lg:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-[#087ea4]"
               onClick={toggleIsOpenHomeMenu}
             >
               {!isOpenHomeMenu 
@@ -146,7 +146,7 @@ export default function Nav() {
               >
               <div className="flex flex-auto sm:flex-1">
                 <a
-                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
+                  className="active:scale-95 transition-transform w-full text-center outline-[#087ea4] py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
                   href="#"
                 >
                   Learn
@@ -154,7 +154,7 @@ export default function Nav() {
               </div>
               <div className="flex flex-auto sm:flex-1">
                 <a
-                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
+                  className="active:scale-95 transition-transform w-full text-center outline-[#087ea4] py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
                   href="#"
                 >
                   Reference
@@ -162,7 +162,7 @@ export default function Nav() {
               </div>
               <div className="flex flex-auto sm:flex-1">
                 <a
-                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
+                  className="active:scale-95 transition-transform w-full text-center outline-[#087ea4] py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
                   href="#"
                 >
                   Community
@@ -170,7 +170,7 @@ export default function Nav() {
               </div>
               <div className="flex flex-auto sm:flex-1">
                 <a
-                  className="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
+                  className="active:scale-95 transition-transform w-full text-center outline-[#087ea4] py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
                   href="#"
                 >
                   Blog
@@ -183,7 +183,7 @@ export default function Nav() {
                 <button
                   aria-label="Search"
                   type="button"
-                  className="active:scale-95 transition-transform flex md:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-[#ebecf0] hover:dark:bg-[#404756] outline-link"
+                  className="active:scale-95 transition-transform flex md:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-[#ebecf0] hover:dark:bg-[#404756] outline-[#087ea4]"
                 >
                   <SearchIcon
                     className="align-middle w-5 h-5"
@@ -195,7 +195,7 @@ export default function Nav() {
                 <button
                   type="button"
                   aria-label="Use Dark Mode"
-                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-link"
+                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-[#087ea4]"
                   onClick={toggleIsDark}
                 >
                   <DarkIcon 
@@ -207,7 +207,7 @@ export default function Nav() {
                 <button
                   type="button"
                   aria-label="Use Light Mode"
-                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-link"
+                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-[#087ea4]"
                   onClick={toggleIsDark}
                 >
                   <DaynightIcon 
@@ -217,8 +217,7 @@ export default function Nav() {
               </div>
               <div className="flex">
                 <a
-                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-link"
-                  target="_blank"
+                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-[#087ea4]"
                   rel="noreferrer noopener"
                   aria-label="Open on GitHub"
                   href="#"
