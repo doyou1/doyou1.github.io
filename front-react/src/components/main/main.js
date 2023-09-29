@@ -20,25 +20,31 @@ import {
 import { rightBox } from "@/components/main/items/codeEditor/rightBox";
 
 import { useRecoilValue } from "recoil";
-import { isOpenHomeMenuState, isOpenDocSearchState } from "@/recoil/recoil_state";
+import {
+  isOpenHomeMenuState,
+  isOpenDocSearchState,
+} from "@/recoil/recoil_state";
 
 export default function Main() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
   const isOpenDocSearch = useRecoilValue(isOpenDocSearchState);
 
-
   return (
-    <div className={`font-text font-medium antialiased text-lg bg-[#FFFFFF] dark:bg-[#23272f] text-secondary dark:text-secondary-dark leading-base`}>
+    <div
+      className={`font-text font-medium antialiased text-lg bg-[#FFFFFF] dark:bg-[#23272f] text-secondary dark:text-secondary-dark leading-base`}
+    >
       <div
-        className={`${!isOpenHomeMenu ? "z-50 sticky top-0" : "h-screen sticky top-0 lg:bottom-0 lg:h-screen flex flex-col dark:shadow-dark shadow-none z-20"}`}
+        className={`${
+          !isOpenHomeMenu
+            ? "z-50 sticky top-0"
+            : "h-screen sticky top-0 lg:bottom-0 lg:h-screen flex flex-col dark:shadow-dark shadow-none z-20"
+        }`}
       >
         <Nav />
-        { isOpenHomeMenu && (<NavMenu />) } 
+        {isOpenHomeMenu && <NavMenu />}
       </div>
 
-      <main
-        className="min-w-0 isolate"
-      >
+      <main className="min-w-0 isolate">
         <Intro />
         {/* first Summary  */}
         <Summary
@@ -69,6 +75,7 @@ export default function Main() {
           lowerText={string.firstSummaryBtn.lowerText}
           textBox={string.firstSummaryBtn.textBox}
           codeEditor={codeEditorSearchableVideoList.code}
+          rightBox={rightBox.searchableVideoListBox}
         ></SummaryButton>
 
         {/* second SummaryButton  */}
@@ -79,6 +86,7 @@ export default function Main() {
           lowerText={string.secondSummaryBtn.lowerText}
           textBox={string.secondSummaryBtn.textBox}
           codeEditor={codeEditorConferencePage.code}
+          rightBox={rightBox.searchableVideoListBox}
         ></SummaryButton>
         <SummaryButtonPlatform />
         <SummaryButtonNews />
@@ -90,7 +98,7 @@ export default function Main() {
         />
       </main>
 
-      { isOpenDocSearch && <DocSearch /> }
+      {isOpenDocSearch && <DocSearch />}
     </div>
   );
 }

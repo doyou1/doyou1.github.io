@@ -159,17 +159,39 @@
   --tw-text-opacity: 1;
   color: rgb(94 104 126 / var(--tw-text-opacity));
 }
+
+.example-nav-textbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.375;
+
+  width: 100%;
+}
+.text-gray-30 {
+  --tw-text-opacity: 1;
+  color: rgb(153 161 179 / var(--tw-text-opacity));
+}
+
+/* example-main-container */
+
+.example-main-container {
+  height: 33rem;
+  background-color: white;
+}
 /* 반응형  */
 @media (min-width: 374px) {
   .content-container-searchable,
-  .content-container-video {
+  .content-container-video,
+  .example-nav-container {
     padding: 1.25rem;
   }
 }
 @media (min-width: 1024px) {
   .content-container-searchable,
   .content-container-video {
-    padding: 2.5rem;
+    padding: 1.5rem;
     margin-top: -5rem;
     margin-bottom: -5rem;
   }
