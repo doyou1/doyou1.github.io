@@ -4,11 +4,10 @@ import { isDarkState } from "@/recoil/recoil_state";
 
 
 function App() {
-
   const isDark = useRecoilValue(isDarkState);
 
   return (
-    <div className={ `App ${isDark ? 'dark' : ''} ` }>
+    <div className={ `App ${isDark ? 'dark' : ''}` }>
       <Main />
     </div>
   );
