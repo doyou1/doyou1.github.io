@@ -1,5 +1,5 @@
-import React from "react";
-import "styles/rightBox.css";
+import "@/styles/rightBox.css";
+
 export const rightBox = {
   mainVideoBox: (
     <div className="content-container-video">

@@ -1,5 +1,4 @@
-import React from "react";
-import logo from "images/home-logo.svg";
+import logo from "@/assets/home-logo.svg";
 import FooterSlide from "./footerSlide";
 
 const FooterContent = ({ footerContentString, footerContentBtn }) => {

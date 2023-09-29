@@ -1,50 +1,30 @@
-import { React, useState } from "react";
-import sliderImg1 from "images/footer/react-conf-elizabet.jpg";
-import sliderImg2 from "images/footer/react-conf-fun.jpg";
-import sliderImg3 from "images/footer/react-conf-hallway.jpg";
-import sliderImg4 from "images/footer/react-conf-nat.jpg";
-import sliderImg5 from "images/footer/react-india-hallway.jpg";
-import sliderImg6 from "images/footer/react-india-selfie.jpg";
-import sliderImg7 from "images/footer/react-india-sunil.jpg";
-import sliderImg8 from "images/footer/react-india-team.jpg";
+import { useState } from "react";
 
 const slideList = [
-  { key: 1, img: sliderImg1 },
-  { key: 2, img: sliderImg2 },
-  { key: 3, img: sliderImg3 },
-  { key: 4, img: sliderImg4 },
-  { key: 5, img: sliderImg5 },
-  { key: 6, img: sliderImg6 },
-  { key: 7, img: sliderImg7 },
-  { key: 8, img: sliderImg8 },
+  "react-conf-elizabet",
+  "react-conf-fun",
+  "react-conf-hallway",
+  "react-conf-nat",
+  "react-india-hallway",
+  "react-india-selfie",
+  "react-india-sunil",
+  "react-india-team",
 ];
 
 // 컴포넌트를 따로 만들지 말고 className 안에 조건문을 걸어 concat으로해도 괜찮았을 듯 
+// 심: 말씀하신대로 바꿔봤어요.
 const FooterSlideImg = () => {
   return(
     <ul className="w-full">
-      {slideList.map((item) =>
-      item.key % 2 === 1 ? (
-        <li key={item.key}>
+      {slideList.map((item, idx) =>
+        <li key={idx}>
           <div className="image-wrap">
             <img
-              src={item.img}
               alt=""
-              className="aspect-[4/3] image-rounded image-size footer-deg+2"
+              className={`aspect-[4/3] image-rounded image-size ${item} ${idx % 2 === 0 ? "footer-deg+2" : "footer-deg-2"}`}
             ></img>
           </div>
         </li>
-      ) : (
-        <li key={item.key}>
-          <div className="image-wrap">
-            <img
-              src={item.img}
-              alt=""
-              className="aspect-[4/3] image-rounded image-size footer-deg-2"
-            ></img>
-          </div>
-        </li>
-      )
     )}
     </ul>
     

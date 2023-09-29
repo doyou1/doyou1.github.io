@@ -1,8 +1,8 @@
-import "styles/summary.css";
+import "@/styles/summary.css";
 
-// import code from "images/summary/code.svg";
+// import code from "@/assets/summary/code.svg";
 // // 지우고 두개의 svg 파일로 만들예정
-// import arrow from "images/summary/arrow-right.svg";
+// import arrow from "@/assets/summary/arrow-right.svg";
 export default function SummaryButton({
   title,
   subHead,

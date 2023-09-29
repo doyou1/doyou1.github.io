@@ -1,148 +1,236 @@
-import logo from "images/home-logo.svg";
-import search from "images/search.svg";
-import dark from "images/dark.svg";
-import daynight from "images/daynight.svg";
-import menu from "images/home-menu.svg";
-import githubDaynight from "images/github-daynight.svg";
-import githubDark from "images/github-dark.svg";
-import "styles/nav.css";
-
-import React from "react";
-
+import "@/styles/nav.css";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { isDarkState } from "recoil/recoil_state";
+
+import { ReactComponent as HomeLogo } from "@/assets/home-logo.svg";
+import { ReactComponent as SearchIcon } from "@/assets/nav/search.svg";
+import { ReactComponent as DarkIcon } from "@/assets/nav/dark.svg";
+import { ReactComponent as DaynightIcon } from "@/assets/nav/daynight.svg";
+import { ReactComponent as GithubIcon } from "@/assets/nav/github.svg";
+import { ReactComponent as HomeMenuIcon } from "@/assets/nav/home-menu.svg";
+import { ReactComponent as CloseIcon } from "@/assets/nav/close.svg";
+import { isDarkState, isMacState, isOpenHomeMenuState, isOpenDocSearchState } from "@/recoil/recoil_state";
+
+import { throttle } from 'lodash';
+import { useMemo, useEffect, useState } from "react";
 
 export default function Nav() {
   const isDark = useRecoilValue(isDarkState);
   const setIsDark = useSetRecoilState(isDarkState);
-  const isMac = window.navigator.platform.includes("Mac");
+  const isMac = useRecoilValue(isMacState);
+
+  const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
+  const setIsOpenHomeMenu = useSetRecoilState(isOpenHomeMenuState);
+
+  const setIsOpenDocSearch = useSetRecoilState(isOpenDocSearchState);
+
+  const [isScrollOn, setIsScrollOn] = useState(false);
 
   const toggleIsDark = () => {
-    // 👇️ passed function to setState
     setIsDark((current) => !current);
   };
 
+  const toggleIsOpenHomeMenu = () => {
+    setIsOpenHomeMenu((current) => !current);
+  };
+
+  const openDocSearch = () => {
+    setIsOpenDocSearch(true);
+  };
+
+
+  const throttledScroll = useMemo(
+    () =>
+      throttle(() => {
+        const nextTabnavOn = window.scrollY > 0
+        if (nextTabnavOn !== isScrollOn) setIsScrollOn(nextTabnavOn);
+      }, 300),
+      [isScrollOn]
+    );
+
+  useEffect(() => {
+    window.addEventListener('scroll', throttledScroll);
+    return () => {
+      window.removeEventListener('scroll', throttledScroll);
+    };
+  }, [throttledScroll]);
+
+  const throttledResize = useMemo(
+    () =>
+      throttle(() => {
+        const {innerWidth: width } = window;
+        if(width > 1024) setIsOpenHomeMenu(false);
+      }, 100),
+      [isOpenHomeMenu]
+    );
+
+  useEffect(() => {
+    window.addEventListener('resize', throttledResize);
+    return () => {
+      window.removeEventListener('resize', throttledResize);
+    };
+  }, [throttledResize]);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpenHomeMenu ? "hidden" : "visible";
+  }, [isOpenHomeMenu]);
+
   return (
-    <nav
-      className="flex w-full h-16 justify-between pl-4 pr-5 duration-300 bg-white dark:bg-[#404756]"
-      style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 999 }}
-    >
-      <div className="flex w-full h-16 justify-between items-center ">
-        {/* home logo */}
-        <div className="flex flex-row justify-center items-center text-base pl-4 pr-1 py-1 h-10">
-          <button
-            type="button"
-            className="active:scale-95 transition-transform flex lg:hidden w-12 h-12 rounded-full items-center justify-center outline-link"
-          >
-            <img className="w-10 h-10 mr-0" src={menu} alt="home menu" />
-          </button>
-
-          <a className="flex flex-row" href="#">
-            <img className="w-10 h-10 mr-0" src={logo} alt="home logo" />
-            <span className="sr-only 3xl:not-sr-only">React</span>
-          </a>
-        </div>
-
-        {/* search bar */}
-        <div className="searchbar hidden md:flex flex-1 ml-1 justify-center items-center h-10 text-[#99a1b3] w-full 3xl:w-auto 3xl:shrink-0 3xl:justify-center rounded-full pl-4 pr-1 py-1">
-          <button
-            type="button"
-            className="flex items-center 3xl:w-[56rem] w-full h-10 outline-none pointer relative text-left align-middle text-base"
-          >
-            <img
-              className="w-4 h-4 mr-3 shrink-0 align-middle"
-              src={search}
-              alt="home logo"
-            />
-            Search
-            <span className="ml-auto item-center mr-1">
-              {isMac && (
+    <div>
+      <nav className={`${isOpenHomeMenu ? "dark:shadow-dark shadow-none" : ""} ${isScrollOn ? "dark:shadow-dark shadow-dark" : ""} duration-300 backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 items-center w-full flex justify-between bg-[#FFFFFF] dark:bg-[#23272f] dark:bg-opacity-95 px-1.5 lg:pe-5 lg:ps-4 z-50`}>
+        <div className="h-16 w-full gap-0 sm:gap-3 flex items-center justify-between">
+          <div className="3xl:flex-1 flex flex-row">
+            <button
+              type="button"
+              aria-label="Menu"
+              className="active:scale-95 transition-transform flex lg:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-[#087ea4]"
+              onClick={toggleIsOpenHomeMenu}
+            >
+              {!isOpenHomeMenu 
+                ? <HomeMenuIcon 
+                    alt="home menu" 
+                    style={{ color: !isDark ? "#404756" : "#FFFFFF"}}
+                  />
+                : <CloseIcon 
+                    alt="home menu close" 
+                    style={{ color: "#087ea4"}}
+                  />
+              }
+            </button>
+            <div className="3xl:flex-1 flex align-center">
+              <a
+                className="active:scale-95 overflow-hidden transition-transform relative items-center text-primary dark:text-primary-dark p-1 whitespace-nowrap outline-[#087ea4] rounded-full 3xl:rounded-xl inline-flex text-lg font-normal gap-2"
+                href="/"
+              >
+                <HomeLogo 
+                  className="text-sm me-0 w-10 h-10 text-link dark:text-link-dark flex origin-center transition-all ease-in-out"
+                  style={{ color: "#087ea4"}}
+                />
+                <span className="sr-only 3xl:not-sr-only">React</span>
+              </a>
+            </div>
+          </div>
+          <div className="hidden md:flex flex-1 justify-center items-center w-full 3xl:w-auto 3xl:shrink-0 3xl:justify-center">
+            <button
+              type="button"
+              className="flex 3xl:w-[56rem] 3xl:mx-0 relative ps-4 pe-1 py-1 h-10 bg-opacity-20 bg-[#99a1b3] dark:bg-opacity-20 dark:bg-[#78839b] outline-none focus:outline-[#087ea4] pointer items-center text-start w-full rounded-full align-middle text-base"
+              style={{ color: "#99a1b3"}}
+              onClick={openDocSearch}
+            >
+              <SearchIcon 
+                className="me-3 align-middle text-gray-30 shrink-0 group-betterhover:hover:text-gray-70"
+              />
+              Search
+              <span className="ms-auto hidden sm:flex item-center me-1">
                 <kbd
-                  className="w-5 h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0"
+                  className={`${isMac ? "inline-flex" : "hidden"} w-5 h-5 border border-transparent me-1 bg-[#FFFFFF] dark:bg-[#23272f] text-gray-30 align-middle p-0 justify-center items-center text-xs text-center rounded-md`}
                   data-platform="mac"
                 >
                   ⌘
                 </kbd>
-              )}
-              {!isMac && (
                 <kbd
-                  className="w-10 h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0"
+                  className={`${isMac ? "hidden" : "inline-flex"} w-10 h-5 border border-transparent me-1 bg-[#FFFFFF] dark:bg-[#23272f] text-gray-30 align-middle p-0 justify-center items-center text-xs text-center rounded-md`}
                   data-platform="win"
                 >
                   Ctrl
                 </kbd>
-              )}
-              <kbd className="w-5 h-5 border border-transparent bg-white dark:bg-[#404756] dark:text-[#99a1b3] rounded-md inline-flex justify-center items-center mr-1 text-xs align-middle p-0">
-                K
-              </kbd>
-            </span>
-          </button>
-        </div>
-
-        {/* buttons */}
-        <div className="justify-center items-center flex flex-row gap-1.5 mx-2.5 text-base ">
-          <div className="mx-2 flex items-center">
-            {/* Learn */}
-            <div className="flex flex-auto text-gray-500 w-full font-medium py-1.5 px-1.5">
-              <a href="#" className="px-1.5 py-1.5 dark:text-[#ebecf0]">
-                Learn
-              </a>
-            </div>
-            {/* Reference */}
-            <div className="flex flex-auto text-gray-500 w-full font-medium py-1.5 px-1.5">
-              <a href="#" className="px-1.5 py-1.5 dark:text-[#ebecf0]">
-                Reference
-              </a>
-            </div>
-            {/* Community */}
-            <div className="flex flex-auto text-gray-500 w-full font-medium py-1.5 px-1.5">
-              <a href="#" className="px-1.5 py-1.5 dark:text-[#ebecf0]">
-                Community
-              </a>
-            </div>
-            {/* Blog */}
-            <div className="flex flex-auto text-gray-500 w-full font-medium py-1.5 px-1.5">
-              <a href="#" className="px-1.5 py-1.5 dark:text-[#ebecf0]">
-                Blog
-              </a>
-            </div>
-            {/* Day/Night icon */}
-            <div className="flex flex-auto text-gray-500 w-full font-medium py-1.5 px-1.5 active:scale-95">
-              <a
-                href="#"
-                onClick={toggleIsDark}
-                className="w-12 h-12 flex items-center justify-center"
+                <kbd className="w-5 h-5 border border-transparent me-1 bg-[#FFFFFF] dark:bg-[#23272f] text-gray-30 align-middle p-0 inline-flex justify-center items-center text-xs text-center rounded-md">
+                  K
+                </kbd>
+              </span>
+            </button>
+          </div>
+          <div className="text-base justify-center items-center gap-1.5 flex 3xl:flex-1 flex-row 3xl:justify-end">
+            <div 
+              className="mx-2.5 gap-1.5 hidden lg:flex"
+              style={{ color: !isDark ? "#414755" : "#FFFFFF"}}
               >
-                {!isDark && <img src={daynight} alt="daynight" />}
-                {isDark && <img src={dark} alt="dark" />}
-              </a>
+              <div className="flex flex-auto sm:flex-1">
+                <a
+                  className="active:scale-95 transition-transform w-full text-center outline-[#087ea4] py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
+                  href="#"
+                >
+                  Learn
+                </a>
+              </div>
+              <div className="flex flex-auto sm:flex-1">
+                <a
+                  className="active:scale-95 transition-transform w-full text-center outline-[#087ea4] py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
+                  href="#"
+                >
+                  Reference
+                </a>
+              </div>
+              <div className="flex flex-auto sm:flex-1">
+                <a
+                  className="active:scale-95 transition-transform w-full text-center outline-[#087ea4] py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
+                  href="#"
+                >
+                  Community
+                </a>
+              </div>
+              <div className="flex flex-auto sm:flex-1">
+                <a
+                  className="active:scale-95 transition-transform w-full text-center outline-[#087ea4] py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
+                  href="#"
+                >
+                  Blog
+                </a>
+              </div>
             </div>
-            {/* Github icon */}
-            <div className="flex flex-auto text-gray-500 w-full font-medium py-1.5 px-1.5 active:scale-95 ">
-              <a
-                href="#"
-                className="w-12 h-12 flex items-center justify-center"
-              >
-                {!isDark && (
-                  <img
-                    className=""
-                    src={githubDaynight}
-                    alt="github-daynight"
+            <div className="flex w-full md:hidden"></div>
+            <div className="flex items-center -space-x-2.5 xs:space-x-0">
+              <div className="flex md:hidden">
+                <button
+                  aria-label="Search"
+                  type="button"
+                  className="active:scale-95 transition-transform flex md:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-[#ebecf0] hover:dark:bg-[#404756] outline-[#087ea4]"
+                >
+                  <SearchIcon
+                    className="align-middle w-5 h-5"
+                    style={{ color: !isDark ? "#414755" : "#FFFFFF"}}
                   />
-                )}
-                {isDark && (
-                  <img
-                    className="bg-[#404756] rounded-full"
-                    src={githubDark}
-                    alt="github-dark"
+                </button>
+              </div>
+              <div className="flex dark:hidden">
+                <button
+                  type="button"
+                  aria-label="Use Dark Mode"
+                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-[#087ea4]"
+                  onClick={toggleIsDark}
+                >
+                  <DarkIcon 
+                    style={{ color: "#414755" }}
                   />
-                )}
-              </a>
+                </button>
+              </div>
+              <div className="hidden dark:flex">
+                <button
+                  type="button"
+                  aria-label="Use Light Mode"
+                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-[#087ea4]"
+                  onClick={toggleIsDark}
+                >
+                  <DaynightIcon 
+                    style={{ color: "#FFFFFF" }}
+                  />
+                </button>
+              </div>
+              <div className="flex">
+                <a
+                  className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark outline-[#087ea4]"
+                  rel="noreferrer noopener"
+                  aria-label="Open on GitHub"
+                  href="#"
+                >
+                  <GithubIcon
+                    style={{ color: !isDark ? "#414755" : "#FFFFFF"}}
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        {/* buttons */}
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }

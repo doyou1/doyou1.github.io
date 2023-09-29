@@ -1,8 +1,7 @@
-import React from "react";
-import code from "images/summary/code.svg";
+import code from "@/assets/summary/code.svg";
 // 지우고 두개의 svg 파일로 만들예정
-import arrow from "images/summary/arrow-right.svg";
-import chart from "images/summary/chart-network.svg";
+import arrow from "@/assets/summary/arrow-right.svg";
+import chart from "@/assets/summary/chart-network.svg";
 
 const string = {
   // firstSummart text

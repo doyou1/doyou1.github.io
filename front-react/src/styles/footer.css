@@ -320,6 +320,31 @@
     fill: rgb(2, 2, 2);
 }
 
+.react-conf-elizabet {
+    content: url(../assets/footer/react_conf_elizabet.webp);
+}
+.react-conf-fun {
+    content: url(../assets/footer/react_conf_fun.webp);
+}
+.react-conf-hallway {
+    content: url(../assets/footer/react_conf_hallway.webp);
+}
+.react-conf-nat {
+    content: url(../assets/footer/react_conf_nat.webp);
+}
+.react-india-hallway {
+    content: url(../assets/footer/react_india_hallway.webp);
+}
+.react-india-selfie {
+    content: url(../assets/footer/react_india_selfie.webp);
+}
+.react-india-sunil {
+    content: url(../assets/footer/react_india_sunil.webp);
+}
+.react-india-team {
+    content: url(../assets/footer/react_india_team.webp);
+}
+
 
 
 
