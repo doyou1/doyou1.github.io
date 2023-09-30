@@ -20,25 +20,31 @@ import {
 import { rightBox } from "@/components/main/items/codeEditor/rightBox";
 
 import { useRecoilValue } from "recoil";
-import { isOpenHomeMenuState, isOpenDocSearchState } from "@/recoil/recoil_state";
+import {
+  isOpenHomeMenuState,
+  isOpenDocSearchState,
+} from "@/recoil/recoil_state";
 
 export default function Main() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
   const isOpenDocSearch = useRecoilValue(isOpenDocSearchState);
 
-
   return (
-    <div className={`font-text font-medium antialiased text-lg bg-[#FFFFFF] dark:bg-[#23272f] text-secondary dark:text-secondary-dark leading-base`}>
+    <div
+      className={`font-text font-medium antialiased text-lg bg-[#FFFFFF] dark:bg-[#23272f] text-secondary dark:text-secondary-dark leading-base`}
+    >
       <div
-        className={`${!isOpenHomeMenu ? "z-50 sticky top-0" : "h-screen sticky top-0 lg:bottom-0 lg:h-screen flex flex-col dark:shadow-dark shadow-none z-20"}`}
+        className={`${
+          !isOpenHomeMenu
+            ? "z-50 sticky top-0"
+            : "h-screen sticky top-0 lg:bottom-0 lg:h-screen flex flex-col dark:shadow-dark shadow-none z-20"
+        }`}
       >
         <Nav />
-        { isOpenHomeMenu && (<NavMenu />) } 
+        {isOpenHomeMenu && <NavMenu />}
       </div>
 
-      <main
-        className="min-w-0 isolate"
-      >
+      <main className="min-w-0 isolate">
         <Intro />
         {/* first Summary  */}
         <Summary
@@ -80,7 +86,14 @@ export default function Main() {
           textBox={string.secondSummaryBtn.textBox}
           codeEditor={codeEditorConferencePage.code}
         ></SummaryButton>
-        <SummaryButtonPlatform />
+        <SummaryButtonPlatform
+          title={string.summaryButtonPlatform.h2.title}
+          textBox={string.summaryButtonPlatform.textBox}
+          lowerText={string.summaryButtonPlatform.lowerText}
+          btnText={string.secondSummaryBtn.btnText}
+          codeEditor={codeEditorConferencePage.code}
+        />
+
         <SummaryButtonNews />
         <SummaryButtonSlider />
 
@@ -90,7 +103,7 @@ export default function Main() {
         />
       </main>
 
-      { isOpenDocSearch && <DocSearch /> }
+      {isOpenDocSearch && <DocSearch />}
     </div>
   );
 }

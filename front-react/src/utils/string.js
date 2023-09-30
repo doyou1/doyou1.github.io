@@ -143,6 +143,32 @@ const string = {
     ),
     btnText: <a className="footer-start-button">Get Started</a>,
   },
+
+  // summaryButtonPlatform
+  summaryButtonPlatform: {
+    h2: {
+      title: "Use the best from every platform",
+    },
+    textBox: (
+      <p className="text-box-p">
+        People love web and native apps for different reasons. React lets you
+        build both web apps and native apps using the same skills. It leans upon
+        each platform’s unique strengths to let your interfaces feel just right
+        on every platform.
+      </p>
+    ),
+    lowerText:
+      "With React, you can be a web and a native developer. Your team can ship to many platforms without sacrificing the user experience. Your organization can bridge the platform silos, and form teams that own entire features end-to-end.",
+  },
+  btnText: (
+    <div className="lower-button-box">
+      <a href="https://reactnative.dev/" target="_blank">
+        <img className="code-logo" src={chart} alt="code logo" />
+        Build for native platforms
+        <img className="arrow-logo" src={arrow} alt="arrow logo" />
+      </a>
+    </div>
+  ),
 };
 
 export default string;
