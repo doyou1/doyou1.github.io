@@ -2,7 +2,7 @@ import code from "@/assets/summary/code.svg";
 // 지우고 두개의 svg 파일로 만들예정
 import arrow from "@/assets/summary/arrow-right.svg";
 import chart from "@/assets/summary/chart-network.svg";
-
+import build from "@/assets/summary/build.svg";
 const string = {
   // firstSummart text
   firstSummary: {
@@ -110,7 +110,7 @@ const string = {
 
     btnText: (
       <div className="lower-button-box">
-        <a href="https://reactnative.dev/" target="_blank">
+        <a href="#" target="_blank">
           <img className="code-logo" src={chart} alt="code logo" />
           Get started with a framework
           <img className="arrow-logo" src={arrow} alt="arrow logo" />
@@ -159,16 +159,16 @@ const string = {
     ),
     lowerText:
       "With React, you can be a web and a native developer. Your team can ship to many platforms without sacrificing the user experience. Your organization can bridge the platform silos, and form teams that own entire features end-to-end.",
+    btnText: (
+      <div className="lower-button-box">
+        <a href="https://reactnative.dev/" target="_blank">
+          <img className="code-logo" src={build} alt="code logo" />
+          Build for native platforms
+          <img className="arrow-logo" src={arrow} alt="arrow logo" />
+        </a>
+      </div>
+    ),
   },
-  btnText: (
-    <div className="lower-button-box">
-      <a href="https://reactnative.dev/" target="_blank">
-        <img className="code-logo" src={chart} alt="code logo" />
-        Build for native platforms
-        <img className="arrow-logo" src={arrow} alt="arrow logo" />
-      </a>
-    </div>
-  ),
 };
 
 export default string;

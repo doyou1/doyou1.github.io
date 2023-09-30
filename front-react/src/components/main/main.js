@@ -90,7 +90,7 @@ export default function Main() {
           title={string.summaryButtonPlatform.h2.title}
           textBox={string.summaryButtonPlatform.textBox}
           lowerText={string.summaryButtonPlatform.lowerText}
-          btnText={string.secondSummaryBtn.btnText}
+          btnText={string.summaryButtonPlatform.btnText}
           codeEditor={codeEditorConferencePage.code}
         />
 
