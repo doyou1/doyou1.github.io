@@ -141,13 +141,9 @@ const string = {
         </a>
       </div>
     ),
-    rightTopPtag:'LATEST REACT NEWS' ,
+    rightTopPtag: "LATEST REACT NEWS",
     rightBox: [
-      [
-        ["React Canaries: Incremental Feature Rollout"],
-        [<NewsPaper />],
-        ["May 3, 2023"],
-      ],
+      [["React Canaries: Incremental Feature Rollout"], [<NewsPaper />], ["May 3, 2023"]],
       [["React Labs: March 2023"], [<LaboratoryFlask />], ["March 22, 2023"]],
       [["Introducing react.dev"], [<NewsPaper />], ["March 16, 2023"]],
       [["React Labs: June 2022"], [<LaboratoryFlask />], ["June 15, 2022"]],
