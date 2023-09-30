@@ -144,6 +144,7 @@ export default function Nav() {
               className="mx-2.5 gap-1.5 hidden lg:flex"
               style={{ color: !isDark ? "#414755" : "#FFFFFF"}}
               >
+                {/* outline-link : outline-[#087ea4] */}
               <div className="flex flex-auto sm:flex-1">
                 <a
                   className="active:scale-95 transition-transform w-full text-center outline-[#087ea4] py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
@@ -184,6 +185,7 @@ export default function Nav() {
                   aria-label="Search"
                   type="button"
                   className="active:scale-95 transition-transform flex md:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-[#ebecf0] hover:dark:bg-[#404756] outline-[#087ea4]"
+                  onClick={openDocSearch}
                 >
                   <SearchIcon
                     className="align-middle w-5 h-5"
