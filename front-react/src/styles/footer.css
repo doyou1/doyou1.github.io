@@ -310,9 +310,10 @@
     grid-column-gap: 0.5rem;
     column-gap: 0.5rem;
     margin-top: 2rem;
+    color: #414756;
 }
 .footer-bottom-logo-tag:hover{
-    fill: rgb(2, 2, 2);
+    color: rgb(2, 2, 2);
 }
 
 .react-conf-elizabet {

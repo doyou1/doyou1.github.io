@@ -71,18 +71,25 @@ export default function Main() {
           codeEditor={codeEditorSearchableVideoList.code}
         ></SummaryButton>
 
-        {/* second SummaryButton  */}
-        <SummaryButton
-          title={string.secondSummaryBtn.h2.title}
-          subHead={string.secondSummaryBtn.h2.subHead}
-          btnText={string.secondSummaryBtn.btnText}
-          lowerText={string.secondSummaryBtn.lowerText}
-          textBox={string.secondSummaryBtn.textBox}
-          codeEditor={codeEditorConferencePage.code}
-        ></SummaryButton>
-        <SummaryButtonPlatform />
-        <SummaryButtonNews />
-        <SummaryButtonSlider />
+      {/* second SummaryButton  */}
+      <SummaryButton
+        title={string.secondSummaryBtn.h2.title}
+        subHead={string.secondSummaryBtn.h2.subHead}
+        btnText={string.secondSummaryBtn.btnText}
+        lowerText={string.secondSummaryBtn.lowerText}
+        textBox={string.secondSummaryBtn.textBox}
+        codeEditor={codeEditorConferencePage.code}
+      ></SummaryButton>
+      <SummaryButtonPlatform />
+      <SummaryButtonNews
+        title={string.summaryButtonNews.h2}
+        lowerText={string.summaryButtonNews.lowerText}
+        textBox={string.summaryButtonNews.textBox}
+        btnText={string.summaryButtonNews.btnText}
+        rightTopPtag={string.summaryButtonNews.rightTopPtag}
+        rightBox={string.summaryButtonNews.rightBox}
+      />
+      <SummaryButtonSlider />
 
         <Footer
           footerContentString={string.footerContentString}

@@ -2,6 +2,9 @@ import code from "@/assets/summary/code.svg";
 // 지우고 두개의 svg 파일로 만들예정
 import arrow from "@/assets/summary/arrow-right.svg";
 import chart from "@/assets/summary/chart-network.svg";
+import { ReactComponent as Chart } from "@/assets/summary/chart-network.svg";
+import { ReactComponent as NewsPaper } from "@/assets/summary/news-paper.svg";
+import { ReactComponent as LaboratoryFlask } from "@/assets/summary/laboratory-flask.svg";
 
 const string = {
   // firstSummart text
@@ -107,7 +110,6 @@ const string = {
         </a>
       </p>
     ),
-
     btnText: (
       <div className="lower-button-box">
         <a href="https://reactnative.dev/" target="_blank">
@@ -117,6 +119,39 @@ const string = {
         </a>
       </div>
     ),
+  },
+  // 230923
+  // summaryBurronNews
+  summaryButtonNews: {
+    h2: (
+      <h2 className="footer-text-h2 w-full">
+        Upgrade when the <br /> future is ready
+      </h2>
+    ),
+    lowerText:
+      "React approaches changes with care. Every React commit is tested on business-critical surfaces with over a billion users. Over 100,000 React components at Meta help validate every migration strategy.",
+    textBox:
+      "The React team is always researching how to improve React. Some research takes years to pay off. React has a high bar for taking a research idea into production. Only proven approaches become a part of React.",
+    btnText: (
+      <div className="lower-button-box">
+        <a href="https://reactnative.dev/" target="_blank">
+          <NewsPaper className="code-logo" alt="news paper" />
+          Read more React news
+          <img className="arrow-logo" src={arrow} alt="arrow logo" />
+        </a>
+      </div>
+    ),
+    rightTopPtag:'LATEST REACT NEWS' ,
+    rightBox: [
+      [
+        ["React Canaries: Incremental Feature Rollout"],
+        [<NewsPaper />],
+        ["May 3, 2023"],
+      ],
+      [["React Labs: March 2023"], [<LaboratoryFlask />], ["March 22, 2023"]],
+      [["Introducing react.dev"], [<NewsPaper />], ["March 16, 2023"]],
+      [["React Labs: June 2022"], [<LaboratoryFlask />], ["June 15, 2022"]],
+    ],
   },
 
   // Footer String Start

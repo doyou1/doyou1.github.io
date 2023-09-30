@@ -1,3 +1,5 @@
+// 정은우
+// 230929
 // import metaLogo from "@/assets/metaOpenSource-logo.svg";
 import { ReactComponent as FooterMetaLogo } from "@/assets/meta-open-source-logo.svg";
 import { ReactComponent as FooterFacebookLogo } from "@/assets/footer/footer-facebook-logo.svg";
@@ -34,7 +36,7 @@ const FooterBottom = () => (
           </div>
           <div>
             <a className="footer-grid-text-sm footer-text-border-bottom">
-              Describing the UI{" "}
+              Describing the UI
             </a>
           </div>
           <div>
