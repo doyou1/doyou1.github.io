@@ -4,7 +4,7 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/react/',
+  base: '/web-study-clone/react',
   resolve: {
     alias: {
       '@/': `${__dirname}/src/`,

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+rm -rf ./docs/react
+rm -rf ./docs/vue
+
+mkdir ./docs/react
+mkdir ./docs/vue
+
 cd front-react
 npm run build
 cd ..
