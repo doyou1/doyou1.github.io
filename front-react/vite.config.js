@@ -4,8 +4,13 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+<<<<<<< HEAD
   // github pages 배포용
   base: '/web-study-clone/react',
+=======
+    // github pages 배포용
+    base: '/web-study-clone/react',
+>>>>>>> dev
   resolve: {
     alias: {
       '@/': `${__dirname}/src/`,
