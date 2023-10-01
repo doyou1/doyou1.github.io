@@ -1,3 +1,7 @@
+# github pages 배포 (최신, 20231001 추가)
+- react: https://doyou1.github.io/web-study-clone/react/
+- vue(대부분 미완성): https://doyou1.github.io/web-study-clone/vue/
+
 # 목적
 - Web App 개발 라이브러리, 프레임워크인 React와 Vue에 대한 기술 함양
 - html, css, js 기술 함양(css는 tailwind 활용 예정)
