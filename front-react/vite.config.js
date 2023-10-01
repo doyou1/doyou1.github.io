@@ -4,6 +4,7 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // github pages 배포용
   base: '/web-study-clone/react',
   resolve: {
     alias: {
