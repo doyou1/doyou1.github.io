@@ -1,5 +1,5 @@
 import "@/styles/docSearch.css";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useSetRecoilState } from "recoil";
 
 import { ReactComponent as SearchIcon } from "@/assets/nav/search.svg";
@@ -23,7 +23,7 @@ export default function DocSearch() {
 
   const setIsOpenDocSearch = useSetRecoilState(isOpenDocSearchState);
 
-  const close = () => {
+  const closeDocSearch = () => {
     setIsOpenDocSearch(false);
   };
 
@@ -67,6 +67,18 @@ export default function DocSearch() {
     setInputValue("");
   };
 
+  const handleKeydown = useCallback((event) => {
+    // ESC key
+    if (event.keyCode === 27) closeDocSearch();
+  }, []);
+
+  useEffect(() => {
+    // onMounted
+    document.addEventListener("keydown", handleKeydown, false);
+    // onUnMounted
+    return () => document.removeEventListener("keydown", handleKeydown, false);
+  }, []);
+
   return (
     <>
       <div
@@ -75,7 +87,7 @@ export default function DocSearch() {
         aria-haspopup="listbox"
         aria-labelledby="docsearch-label"
         className="DocSearch-Container"
-        onClick={close}
+        onClick={closeDocSearch}
         aria-owns={list.length != 0 ? "docsearch-list" : ""}
       >
         <div
@@ -123,7 +135,7 @@ export default function DocSearch() {
                 <CloseIcon />
               </button>
             </form>
-            <button className="DocSearch-Cancel" onClick={close}>
+            <button className="DocSearch-Cancel" onClick={closeDocSearch}>
               Cancel
             </button>
           </header>
