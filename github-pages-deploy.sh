@@ -1,5 +1,7 @@
 #!/bin/bash
 git checkout dev
+git pull
+
 git checkout release
 git merge dev
 
@@ -18,7 +20,6 @@ npm run build
 cd ..
 
 mv ./front-react/dist/* ./docs/react
-
 mv ./front-vue/dist/* ./docs/vue
 
 git add .
