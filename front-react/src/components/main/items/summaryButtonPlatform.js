@@ -1,6 +1,10 @@
 import "@/styles/summary.css";
 import "@/styles/platform.css";
 import key from "@/assets/summary/key.svg";
+import google from "@/assets/summary/google.svg";
+import firefox from "@/assets/summary/firefox.svg";
+import safari from "@/assets/summary/safari.svg";
+
 export default function SummaryButton({ title, btnText, lowerText, textBox }) {
   return (
     <div>
@@ -16,12 +20,32 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
         {/* content-container start */}
         <div className="content-main-container">
           <main className="content-main-platform">
-            {/* platform-rightbox layout */}
-            <div className="platform-rightbox">
-              <div className="platform-rightbox-svg-collection"></div>
-              <div className="platform-rightbox-webbox">
-                {/* rightnav */}
-                <div className="platform-rightbox-webbox-nav">
+            {/* platform-leftbox layout */}
+            <div className="platform-leftbox">
+              {/* botton svg */}
+              <div className="platform-leftbox-svg-collection">
+                <div className="platform-leftbox-svg">
+                  <img
+                    className="svg-google svg"
+                    src={google}
+                    alt="code logo"
+                  />
+                  <img
+                    className="svg-firefox svg"
+                    src={firefox}
+                    alt="code logo"
+                  />
+                  <img
+                    className="svg-safari svg"
+                    src={safari}
+                    alt="code logo"
+                  />
+                </div>
+              </div>
+              {/* stay true to the web main layout */}
+              <div className="platform-leftbox-webbox">
+                {/* leftnav */}
+                <div className="platform-leftbox-webbox-nav">
                   <div className="example-nav-content">
                     <div className="example-nav">
                       <img className="code-logo" src={key} alt="code logo" />
@@ -29,12 +53,12 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
                     </div>
                   </div>
                 </div>
-                {/* right main collection */}
-                <div className="platform-rightbox-webbox-collection">
-                  <div className="platform-rightbox-webbox-textbox">
+                {/* leftmain collection */}
+                <div className="platform-leftbox-webbox-collection">
+                  <div className="platform-leftbox-webbox-textbox">
                     <div></div>
-                    <div className="second-rightbox-webbox"></div>
-                    <div className="third-rightbox-webbox">
+                    <div className="second-leftbox-webbox"></div>
+                    <div className="third-leftbox-webbox">
                       <h4>Stay true to the web</h4>
                       <p>
                         People expect web app pages to load fast. On the server,
@@ -50,8 +74,8 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
               </div>
             </div>
 
-            {/* platform-leftbox layout */}
-            <div className="platform-leftbox"></div>
+            {/* platform-rightbox layout */}
+            <div className="platform-rightbox"></div>
           </main>
 
           {/* 하단 텍스트  */}
