@@ -1,0 +1,180 @@
+/*  ==============================   
+    ===  content-main-platform ===
+    ============================== */
+.content-main-platform {
+  display: flex;
+  grid-gap: 5rem;
+  gap: 5rem;
+
+  max-width: 80rem;
+  margin: 4rem auto 5rem auto;
+  padding-left: 0 1.25rem;
+}
+
+/* ===============================
+          platfrom right box 
+   ===============================*/
+
+.platform-rightbox {
+  display: flex;
+  position: relative;
+}
+.platform-rightbox-webbox {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  /* max-width: 48rem; */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  -tw-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 16px 32px -16px var(--tw-shadow-color),
+    0 0 0 1px var(--tw-shadow-color);
+}
+.platform-rightbox-webbox-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  grid-gap: 0.5rem;
+  gap: 0.5rem;
+
+  width: 100%;
+  height: 3.5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+    var(--tw-backdrop-sepia);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-bg-opacity: 0.9;
+  --tw-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 0 0 1px var(--tw-shadow-color);
+  --tw-backdrop-blur: blur(16px);
+  --tw-backdrop-saturate: saturate(2);
+}
+.example-nav-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  position: relative;
+  width: 100%;
+  height: 2rem;
+  user-select: none;
+  border-radius: 9999px;
+  text-align: center;
+  font-size: 13px;
+
+  background-color: rgba(153, 161, 179, 0.2);
+  --tw-text-opacity: 1;
+  color: rgb(94 104 126 / var(--tw-text-opacity));
+}
+.example-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.375;
+  width: 100%;
+}
+.example-nav > img {
+  display: block;
+  /* vertical-align: middle; */
+  opacity: 0.5;
+  --tw-text-opacity: 1;
+  color: rgb(94 104 126 / var(--tw-text-opacity));
+}
+.example-nav > span {
+  --tw-text-opacity: 1;
+  color: rgb(153 161 179 / var(--tw-text-opacity));
+}
+.platform-rightbox-webbox-collection {
+  display: flex;
+  flex: 1 1;
+  height: 100%;
+}
+.platform-rightbox-webbox-textbox {
+  position: relative;
+  overflow: hidden;
+}
+.platform-rightbox-webbox-textbox:nth-child(1) {
+  /* position: absolute; */
+  /* inset: 0; */
+  background-image: conic-gradient(
+    from -90deg at 110% 100%,
+    #fff 0deg,
+    #ebecf0 90deg,
+    #ebecf0 1turn
+  );
+}
+.second-rightbox-webbox {
+  position: relative;
+  width: 100%;
+  height: 3.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.third-rightbox-webbox {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+  grid-gap: 0.75rem;
+  gap: 0.75rem;
+
+  padding: 1.25rem 1.25rem 4rem 1.25rem;
+}
+.third-rightbox-webbox > h4 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  --tw-text-opacity: 1;
+  color: rgb(35 39 47 / var(--tw-text-opacity));
+}
+.third-rightbox-webbox > p {
+  margin: 0;
+  line-height: 1.5;
+
+  --tw-text-opacity: 0.9;
+  color: rgb(64 71 86 / var(--tw-text-opacity));
+  margin-top: 8px;
+}
+
+/* 반응형 1024px */
+@media (min-width: 1024px) {
+  .content-main-platform {
+    flex-direction: row;
+    grid-gap: 1.25rem;
+    gap: 1.25rem;
+    margin-bottom: 7rem;
+  }
+  .platform-rightbox {
+    width: 50%;
+  }
+  .third-rightbox-webbox {
+    padding: 2rem 2.5rem 0 2.5rem;
+  }
+  .third-rightbox-webbox > h4 {
+    font-size: 32px;
+  }
+  .third-rightbox-webbox > p {
+    font-size: 20px;
+  }
+}

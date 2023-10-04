@@ -91,7 +91,6 @@ export default function Main() {
           textBox={string.summaryButtonPlatform.textBox}
           lowerText={string.summaryButtonPlatform.lowerText}
           btnText={string.summaryButtonPlatform.btnText}
-          codeEditor={codeEditorConferencePage.code}
         />
 
         <SummaryButtonNews />
