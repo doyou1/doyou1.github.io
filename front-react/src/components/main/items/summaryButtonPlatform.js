@@ -4,7 +4,11 @@ import key from "@/assets/summary/key.svg";
 import google from "@/assets/summary/google.svg";
 import firefox from "@/assets/summary/firefox.svg";
 import safari from "@/assets/summary/safari.svg";
-
+import ios from "@/assets/summary/ios.svg";
+import android from "@/assets/summary/android.svg";
+import bluetooth from "@/assets/summary/bluetooth.svg";
+import wifi from "@/assets/summary/wifi.svg";
+import battery from "@/assets/summary/battery.svg";
 export default function SummaryButton({ title, btnText, lowerText, textBox }) {
   return (
     <div>
@@ -75,7 +79,58 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
             </div>
 
             {/* platform-rightbox layout */}
-            <div className="platform-rightbox"></div>
+            <div className="platform-leftbox">
+              {/* botton svg */}
+              <div className="platform-leftbox-svg-collection">
+                <div className="platform-leftbox-svg">
+                  <img className="svg-ios svg" src={ios} alt="code logo" />
+                  <img
+                    className="svg-android svg"
+                    src={android}
+                    alt="code logo"
+                  />
+                </div>
+              </div>
+              {/* stay true to the web main layout */}
+              <figure className="platform-leftbox-webbox">
+                {/* leftmain collection */}
+                <div className="platform-rightbox-webbox-collection">
+                  <div className="platform-leftbox-webbox-textbox platform-rightbox-webbox-textbox">
+                    <div className="second-rightbox-webbox">
+                      <span>오후 12:15</span>
+                      <div className="leftbox-nav-svg">
+                        <img
+                          className="svg-bluetooth"
+                          src={bluetooth}
+                          alt="code logo"
+                        />
+                        <img className="svg-wifi" src={wifi} alt="code logo" />{" "}
+                        <img
+                          className="svg-battery"
+                          src={battery}
+                          alt="code logo"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="third-leftbox-webbox">
+                      <h4>Go truly native</h4>
+                      <p>
+                        People expect native apps to look and feel like their
+                        platform.
+                        <a href="#"> React Native </a>
+                        and
+                        <a href="#"> Expo </a>
+                        let you build apps in React for Android, iOS, and more.
+                        They look and feel native because their UIs are truly
+                        native. It’s not a web view—your React components render
+                        real Android and iOS views provided by the platform.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+            </div>
           </main>
 
           {/* 하단 텍스트  */}
