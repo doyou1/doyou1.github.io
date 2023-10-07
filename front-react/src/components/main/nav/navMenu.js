@@ -247,6 +247,7 @@ export default function NavMenu() {
               </ul>
               <div className="h-16"></div>
             </nav>
+            {/* 불필요 */}
             {/* <div className="fixed bottom-0 hidden lg:block">
               <div className="max-w-xs w-80 lg:w-auto py-3 shadow-lg rounded-lg m-4 bg-wash dark:bg-gray-95 px-4 flex">
                 <p className="w-full font-bold text-[#404756] dark:text-[#ebecf0] text-lg me-4">
