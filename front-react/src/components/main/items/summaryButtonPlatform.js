@@ -119,7 +119,6 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
             <p className="lower-box-p">{lowerText}</p>
             {/* utils/string.firstSummaryBtn.btntext  */}
             {/* {btnText} */}
-
             <div className="lower-button-box">
               <a
                 className="group"
@@ -129,7 +128,7 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
               >
                 <Build className="code-logo" alt="code logo" />
                 Build for native platforms
-                <ArrowRightMiddleAnimation className="text-[#23272f] dark:text-[#f6f7f9] rtl:rotate-180" />
+                <ArrowRightMiddleAnimation className="arrow-right-middle-animation text-[#23272f] dark:text-[#f6f7f9] rtl:rotate-180" />
               </a>
             </div>
           </div>
