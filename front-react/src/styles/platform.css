@@ -1,3 +1,30 @@
+/* arrow right move 관련 css */
+.middle-line {
+  opacity: 0;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity;
+  transition-duration: 150ms;
+}
+
+.lower-button-box>a:hover .middle-line {
+  opacity: 1;
+}
+
+.arrow-right-move {
+  transform: translateX(-8px);
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+}
+
+.lower-button-box>a:hover .arrow-right-move
+{
+  transform: translateX(8px);
+}
+/* arrow right move 관련 css */
+
+
 /*  ==============================   
     ===  content-main-platform ===
     ============================== */
