@@ -2,13 +2,11 @@
     ===  content-main-platform ===
     ============================== */
 .content-main-platform {
-  display: flex;
-  grid-gap: 5rem;
-  gap: 5rem;
+  flex-direction: row;
+  grid-gap: 1.25rem;
+  gap: 1.25rem;
 
-  max-width: 80rem;
-  margin: 4rem auto 5rem auto;
-  padding-left: 0 1.25rem;
+  margin: 0 2rem 4rem 2rem;
 }
 
 /* ===============================
@@ -18,6 +16,7 @@
 .platform-leftbox {
   display: flex;
   position: relative;
+  margin-bottom: 5rem;
 }
 .platform-leftbox-webbox {
   position: relative;
@@ -264,10 +263,13 @@
 /* 반응형 1024px */
 @media (min-width: 1024px) {
   .content-main-platform {
-    flex-direction: row;
-    grid-gap: 1.25rem;
-    gap: 1.25rem;
-    margin-bottom: 7rem;
+    display: flex;
+    /* grid-gap: 5rem; */
+    /* gap: 5rem; */
+
+    max-width: 80rem;
+    margin: 4rem auto 1rem auto;
+    padding-left: 0 1.25rem;
   }
   .platform-leftbox {
     width: 50%;
