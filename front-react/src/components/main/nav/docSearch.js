@@ -20,6 +20,7 @@ export default function DocSearch() {
   const [isSearching, setIsSearching] = useState(false);
   const [timer, setTimer] = useState(0);
   const [list, setList] = useState([]);
+  const [isHoverResetButton, setIsHoverResetButton] = useState(false);
 
   const setIsOpenDocSearch = useSetRecoilState(isOpenDocSearchState);
 
@@ -29,7 +30,6 @@ export default function DocSearch() {
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
-
     debounce(e.target.value);
   };
 
@@ -64,6 +64,7 @@ export default function DocSearch() {
   };
 
   const handleReset = () => {
+    setIsHoverResetButton(false);
     setInputValue("");
   };
 
@@ -99,12 +100,12 @@ export default function DocSearch() {
               <label
                 className={`items-center justify-center ${isSearching ? "hidden" : "flex"}`}
               >
-                <SearchIcon className="w-[15px] h-[15px] ml-1 mr-1 stroke-[1.6px]" style={{ color: "#99a1b3"}} />
+                <SearchIcon className="w-[15px] h-[15px] ml-1 mr-1 stroke-[1.6px]" style={{ color: "#99a1b3" }} />
               </label>
               <div
                 className={`items-center justify-center ${!isSearching ? "hidden" : "flex"}`}
               >
-                <LoadingIcon className="w-[15px] h-[15px] ml-1 mr-1" style={{ color: "#99a1b3"}}/>
+                <LoadingIcon className="w-[15px] h-[15px] ml-1 mr-1" style={{ color: "#99a1b3" }}/>
               </div>
               <input
                 className="cancel-button-none outline-offset-[-2px] pt-3 pb-3 ps-2 pe-0 text-[15px] leading-5 appearance-none bg-transparent border-0 flex-1 h-full outline-none pl-[8px] w-4/5"
@@ -121,14 +122,16 @@ export default function DocSearch() {
                 onChange={handleChange}
               />
               <button
-                className={`DocSearch-Reset ${
+                className={`animate-[fade-in_.1s_ease-in_forwards] p-[2px] bg-transparent bg-none ${
                   inputValue.length == 0 && "hidden"
                 }`}
                 type="reset"
                 title="Clear the query"
                 onClick={handleReset}
+                onMouseOver={()=>{setIsHoverResetButton(true)}}
+                onMouseOut={()=>{setIsHoverResetButton(false)}}
               >
-                <CloseIcon />
+                <CloseIcon className="bg-transparent block" style={{ color: !isHoverResetButton ? "#99a1b3" : "#087ea4"}} />
               </button>
             </form>
             <button className="DocSearch-Cancel" onClick={closeDocSearch}>
