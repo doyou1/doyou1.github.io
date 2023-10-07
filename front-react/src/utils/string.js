@@ -123,30 +123,35 @@ const string = {
   // 230923
   // summaryBurronNews
   summaryButtonNews: {
-    h2: (
-      <h2 className="footer-text-h2 w-full">
-        Upgrade when the <br /> future is ready
-      </h2>
-    ),
+    h2: ["Upgrade when the", "future is ready"],
     lowerText:
       "React approaches changes with care. Every React commit is tested on business-critical surfaces with over a billion users. Over 100,000 React components at Meta help validate every migration strategy.",
     textBox:
       "The React team is always researching how to improve React. Some research takes years to pay off. React has a high bar for taking a research idea into production. Only proven approaches become a part of React.",
-    btnText: (
-      <div className="lower-button-box">
-        <a href="https://reactnative.dev/" target="_blank">
-          <NewsPaper className="code-logo" alt="news paper" />
-          Read more React news
-          <img className="arrow-logo" src={arrow} alt="arrow logo" />
-        </a>
-      </div>
-    ),
+    btnText: "Read more React news",
+
     rightTopPtag: "LATEST REACT NEWS",
     rightBox: [
-      [["React Canaries: Incremental Feature Rollout"], [<NewsPaper />], ["May 3, 2023"]],
-      [["React Labs: March 2023"], [<LaboratoryFlask />], ["March 22, 2023"]],
-      [["Introducing react.dev"], [<NewsPaper />], ["March 16, 2023"]],
-      [["React Labs: June 2022"], [<LaboratoryFlask />], ["June 15, 2022"]],
+      {
+        title: "React Canaries: Incremental Feature Rollout",
+        component: <NewsPaper />,
+        date: "May 3, 2023",
+      },
+      {
+        title: "React Labs: March 2023",
+        component: <LaboratoryFlask />,
+        date: "March 22, 2023",
+      },
+      {
+        title: "Introducing react.dev",
+        component: <NewsPaper />,
+        date: "March 16, 2023",
+      },
+      {
+        title: "React Labs: June 2022",
+        component: <LaboratoryFlask />,
+        date: "June 15, 2022",
+      },
     ],
   },
 

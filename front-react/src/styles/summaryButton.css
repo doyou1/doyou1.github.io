@@ -1,0 +1,49 @@
+/* ===============================
+  ==   summaryButtonNews  ==
+  ===============================*/
+
+/* [231007] summary-news : 정은우 */
+/* 왼쪽 공간 시작 */
+.summary-news-text-color {
+    --tw-text-opacity: 1;
+    color: rgb(64 71 86/var(--tw-text-opacity));
+}
+.hover-summary-news-button-bg:hover{
+    background-color: rgba(120,131,155,.05);
+}
+.hover-summary-news-button-bg:active{
+    background-color: rgba(120,131,155,.1);
+}
+/* 오른쪽 공간 시작 */
+.summary-news-item-container>a {
+    color: inherit;
+    text-decoration: inherit;
+}
+.summary-news-button-stroke{
+    --tw-shadow: inset 0 0 0 1px #d9dbe3;
+    --tw-shadow-colored: inset 0 0 0 1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+.summary-news-p-color{
+    --tw-text-opacity: 1;
+    color: rgb(94 104 126/var(--tw-text-opacity));
+}
+.summary-news-item-box:hover {
+    background-color: #EFF0F3;
+}
+.summary-news-item-first-text:hover {
+    text-decoration: underline;
+    color: inherit;
+}
+.summary-news-item-second-text {
+    --tw-text-opacity: 1;
+    color: rgb(94 104 126/var(--tw-text-opacity));
+}
+/* summaryButtonNews CSS end */
+
+/* 반응형 웹 */
+@media (min-width: 1024px) {
+    .summary-news-left-h2{
+        font-size: 52px;
+    }
+}
