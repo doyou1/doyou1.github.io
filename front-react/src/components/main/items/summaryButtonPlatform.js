@@ -9,6 +9,10 @@ import { ReactComponent as Android } from "@/assets/summary/android.svg";
 import { ReactComponent as Bluetooth } from "@/assets/summary/bluetooth.svg";
 import { ReactComponent as Wifi } from "@/assets/summary/wifi.svg";
 import { ReactComponent as Battery } from "@/assets/summary/battery.svg";
+
+import { ReactComponent as Build } from "@/assets/summary/build.svg";
+import { ReactComponent as ArrowRightMiddleAnimation } from "@/assets/summary/arrow-right-middle-animation.svg";
+
 export default function SummaryButton({ title, btnText, lowerText, textBox }) {
   return (
     <div>
@@ -114,7 +118,20 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
           <div className="lower-text-box">
             <p className="lower-box-p">{lowerText}</p>
             {/* utils/string.firstSummaryBtn.btntext  */}
-            {btnText}
+            {/* {btnText} */}
+
+            <div className="lower-button-box">
+              <a
+                className="group"
+                href="https://reactnative.dev/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Build className="code-logo" alt="code logo" />
+                Build for native platforms
+                <ArrowRightMiddleAnimation className="text-[#23272f] dark:text-[#f6f7f9] rtl:rotate-180" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
