@@ -86,32 +86,28 @@ export default function DocSearch() {
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-labelledby="docsearch-label"
-        className="DocSearch-Container"
+        className="max-[750px]:h-screen max-[750px]:absolute flex justify-center bg-[#343a46]/[.8] w-screen h-screen	left-0 top-0 fixed z-50	box-border"
         onClick={closeDocSearch}
         aria-owns={list.length != 0 ? "docsearch-list" : ""}
-      >
+      > 
         <div
-          className="DocSearch-Modal bg-white dark:bg-[#23272f]"
+          className="max-[1024px]:max-w-full max-[1024px]:my-0 max-[1024px]:rounded-none  max-w-3xl w-full rounded-2xl	overflow-hidden	mx-0 my-4 flex justify-center flex-col relative bg-white dark:bg-[#23272f]"
           onClick={(e) => e.stopPropagation()}
         >
-          <header className="DocSearch-SearchBar">
-            <form className="DocSearch-Form" onSubmit={() => false}>
+          <header className="py-3 px-5 flex">
+            <form className="h-10 rounded-full shadow-none text-[15px] text-[#5e687e] bg-[#ebecf0] items-center flex m-0 py-0 px-3 relative w-full" onSubmit={() => false}>
               <label
-                className={`DocSearch-MagnifierLabel ${
-                  isSearching ? "hidden" : "flex"
-                }`}
+                className={`items-center justify-center ${isSearching ? "hidden" : "flex"}`}
               >
-                <SearchIcon />
+                <SearchIcon className="w-[15px] h-[15px] ml-1 mr-1 stroke-[1.6px]" style={{ color: "#99a1b3"}} />
               </label>
               <div
-                className={`DocSearch-LoadingIndicator ${
-                  !isSearching ? "hidden" : "flex"
-                }`}
+                className={`items-center justify-center ${!isSearching ? "hidden" : "flex"}`}
               >
-                <LoadingIcon />
+                <LoadingIcon className="w-[15px] h-[15px] ml-1 mr-1" style={{ color: "#99a1b3"}}/>
               </div>
               <input
-                className="DocSearch-Input"
+                className="cancel-button-none outline-offset-[-2px] pt-3 pb-3 ps-2 pe-0 text-[15px] leading-5 appearance-none bg-transparent border-0 flex-1 h-full outline-none pl-[8px] w-4/5"
                 aria-autocomplete="both"
                 aria-labelledby="docsearch-label"
                 autoComplete="off"
