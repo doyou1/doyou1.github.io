@@ -1,3 +1,15 @@
+
+
+body .dark {
+    color: rgba(255, 255, 255, .87);
+    background-color: #1a1a1a;
+}
+
+body {
+    color: #213547;
+    background-color: #ffffff;
+}
+
 *, :before, :after {
     box-sizing: border-box;
 }
@@ -25,6 +37,9 @@
     white-space: nowrap;
     transition: border-color .5s,background-color .5s;
 }
+    .dark .VPNavBar {
+        background-color: #1a1a1a;
+    }
 
     @media (min-width: 1280px) {
         .VPNavBar {
@@ -168,7 +183,11 @@
     display: none;
     padding: 0 10px 0 0;
 }
+    .dark .DocSearch-Button-Placeholder {
+        color: rgba(235, 235, 235, .6);
+    }
 
+    
     @media (min-width: 960px) {
         .DocSearch-Button-Placeholder {
             display: inline-block;
@@ -325,6 +344,10 @@
     white-space: nowrap;
 }
 
+.dark .VPNavBarMenuLink {
+    color: rgba(255, 255, 255, .87);
+}
+
 .VPNavBarMenuLink:hover {
     color: #42b883;
 }
@@ -390,6 +413,10 @@
     margin: 0 0.5rem;
 }
 
+.dark .vt-locales-btn-icon {
+    fill: rgba(255, 255, 255, .87);
+}
+
 .x-padding {
     padding: 0 14px;    
 }
@@ -450,8 +477,13 @@
     transition: border-color .25s,background-color .25s;
 }
 
-.vt-switch-appearance {
-    
+.dark .vt-switch {
+    background-color: #2f2f2f;
+    border-color: rgba(84, 84, 84, .65);
+}
+
+.dark .vt-switch:hover {
+    border-color: #8e8e8e;
 }
 
 .vt-switch-check {
@@ -621,15 +653,33 @@
     justify-content: center;
 }
 
-
+.DocSearch-Button:hover{
+    background: transparent;
+}
 .DocSearch-Button:hover .DocSearch-Button-Keys {
     border: 1px solid #42b883;
+    color: #42b883;
 }
 
 .DocSearch-Button:hover .DocSearch-Button-Key {
     color: #42b883;
 }
 
+.dark .DocSearch-Button-Keys {
+    border: 1px solid rgba(235, 235, 235, .38);
+}
+
+.dark .DocSearch-Button:hover .DocSearch-Button-Placeholder {
+    color: rgba(255, 255, 255, .87);
+}
+
+.dark .DocSearch-Button:hover .DocSearch-Search-Icon {
+    color: rgba(255, 255, 255, .87);
+}
+
+.dark .DocSearch-Button-Key {
+    color: rgba(235, 235, 235, .38);
+}
 
 /* 추가수정 */
 .vt-flyout:hover {
@@ -654,4 +704,15 @@
 
 .dark .vt-flyout:hover .vt-flyout-button-text .vt-flyout-button-text-icon{
     color: rgba(255, 255, 255, .87);
+}
+
+.dark .vt-social-link:hover {
+    color: rgba(255, 255, 255, .87);
+    transition: color .25s;
+}
+
+.dark .vt-menu {
+    background: #1a1a1a;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
+    border: 1px solid rgba(84, 84, 84, .48);
 }
