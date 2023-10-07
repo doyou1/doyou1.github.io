@@ -1,14 +1,14 @@
 import "@/styles/summary.css";
 import "@/styles/platform.css";
-import key from "@/assets/summary/key.svg";
-import google from "@/assets/summary/google.svg";
-import firefox from "@/assets/summary/firefox.svg";
-import safari from "@/assets/summary/safari.svg";
-import ios from "@/assets/summary/ios.svg";
-import android from "@/assets/summary/android.svg";
-import bluetooth from "@/assets/summary/bluetooth.svg";
-import wifi from "@/assets/summary/wifi.svg";
-import battery from "@/assets/summary/battery.svg";
+import { ReactComponent as Key } from "@/assets/summary/key.svg";
+import { ReactComponent as Google } from "@/assets/summary/google.svg";
+import { ReactComponent as Firefox } from "@/assets/summary/firefox.svg";
+import { ReactComponent as Safari } from "@/assets/summary/safari.svg";
+import { ReactComponent as Ios } from "@/assets/summary/ios.svg";
+import { ReactComponent as Android } from "@/assets/summary/android.svg";
+import { ReactComponent as Bluetooth } from "@/assets/summary/bluetooth.svg";
+import { ReactComponent as Wifi } from "@/assets/summary/wifi.svg";
+import { ReactComponent as Battery } from "@/assets/summary/battery.svg";
 export default function SummaryButton({ title, btnText, lowerText, textBox }) {
   return (
     <div>
@@ -29,21 +29,9 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
               {/* botton svg */}
               <div className="platform-leftbox-svg-collection">
                 <div className="platform-leftbox-svg">
-                  <img
-                    className="svg-google svg"
-                    src={google}
-                    alt="code logo"
-                  />
-                  <img
-                    className="svg-firefox svg"
-                    src={firefox}
-                    alt="code logo"
-                  />
-                  <img
-                    className="svg-safari svg"
-                    src={safari}
-                    alt="code logo"
-                  />
+                  <Google className="svg-google svg"> </Google>
+                  <Firefox className="svg-firefox svg"> </Firefox>
+                  <Safari className="svg-safari svg"></Safari>
                 </div>
               </div>
               {/* stay true to the web main layout */}
@@ -52,7 +40,8 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
                 <div className="platform-leftbox-webbox-nav">
                   <div className="example-nav-content">
                     <div className="example-nav">
-                      <img className="code-logo" src={key} alt="code logo" />
+                      <Key className="code-key"></Key>
+
                       <span>example.com</span>
                     </div>
                   </div>
@@ -83,12 +72,8 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
               {/* botton svg */}
               <div className="platform-leftbox-svg-collection">
                 <div className="platform-leftbox-svg">
-                  <img className="svg-ios svg" src={ios} alt="code logo" />
-                  <img
-                    className="svg-android svg"
-                    src={android}
-                    alt="code logo"
-                  />
+                  <Ios className="svg-ios svg"></Ios>
+                  <Android className="svg-android svg"></Android>
                 </div>
               </div>
               {/* stay true to the web main layout */}
@@ -99,17 +84,9 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
                     <div className="second-rightbox-webbox">
                       <span>오후 12:15</span>
                       <div className="leftbox-nav-svg">
-                        <img
-                          className="svg-bluetooth"
-                          src={bluetooth}
-                          alt="code logo"
-                        />
-                        <img className="svg-wifi" src={wifi} alt="code logo" />{" "}
-                        <img
-                          className="svg-battery"
-                          src={battery}
-                          alt="code logo"
-                        />
+                        <Bluetooth className="svg-bluetooth"></Bluetooth>
+                        <Wifi className="svg-wifi"></Wifi>
+                        <Battery className="svg-battery"></Battery>
                       </div>
                     </div>
 
