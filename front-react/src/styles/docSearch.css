@@ -6,6 +6,12 @@
     list-style-type: "» ";
 }
 
+
+
+
+
+
+/* tailwind로 변경후 삭제하자! */
 .DocSearch-Hit-source {
     text-transform: uppercase;
     letter-spacing: .025em;
