@@ -1,4 +1,5 @@
-import logo from "@/assets/home-logo.svg";
+// import logo from "@/assets/home-logo.svg";
+import {ReactComponent as FooterLogo} from "@/assets/home-logo.svg";
 import FooterSlide from "./footerSlide";
 
 const FooterContent = ({ footerContentString, footerContentBtn }) => {
@@ -24,9 +25,8 @@ const FooterContent = ({ footerContentString, footerContentBtn }) => {
           </div>
         </div>
         <div className="content-bottom-box">
-          <img
+          <FooterLogo
             className="footer-react-logo"
-            src={logo}
             alt="react logo in footer"
           />
           {footerContentBtn.h2}

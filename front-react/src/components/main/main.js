@@ -93,7 +93,14 @@ export default function Main() {
           btnText={string.summaryButtonPlatform.btnText}
         />
 
-        <SummaryButtonNews />
+        <SummaryButtonNews 
+          title={string.summaryButtonNews.h2}
+          lowerText={string.summaryButtonNews.lowerText}
+          textBox={string.summaryButtonNews.textBox}
+          btnText={string.summaryButtonNews.btnText}
+          rightTopPtag={string.summaryButtonNews.rightTopPtag}
+          rightBox={string.summaryButtonNews.rightBox}
+        />
         <SummaryButtonSlider />
 
         <Footer
