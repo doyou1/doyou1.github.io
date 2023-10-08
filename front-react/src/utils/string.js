@@ -122,7 +122,7 @@ const string = {
   // 230923
   // summaryBurronNews
   summaryButtonNews: {
-    h2: ["Upgrade when the", "future is ready"],
+    h2: "Upgrade when the future is ready",
     lowerText:
       "React approaches changes with care. Every React commit is tested on business-critical surfaces with over a billion users. Over 100,000 React components at Meta help validate every migration strategy.",
     textBox:
