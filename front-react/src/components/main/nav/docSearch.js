@@ -9,7 +9,8 @@ import { ReactComponent as HomeMenuIcon } from "@/assets/nav/home-menu.svg";
 import { ReactComponent as ActionIcon } from "@/assets/nav/action.svg";
 import { ReactComponent as AlgoliaIcon } from "@/assets/nav/algolia.svg";
 import { ReactComponent as CommandSelectIcon } from "@/assets/nav/command-select.svg";
-import { ReactComponent as CommandNavigateIcon } from "@/assets/nav/command-navigate.svg";
+import { ReactComponent as CommandNavigateUpIcon } from "@/assets/nav/command-navigate-up.svg";
+import { ReactComponent as CommandNavigateDownIcon } from "@/assets/nav/command-navigate-down.svg";
 import { ReactComponent as CommandCloseIcon } from "@/assets/nav/command-close.svg";
 import { ReactComponent as NoSearchIcon } from "@/assets/nav/no-search.svg";
 
@@ -29,7 +30,6 @@ export default function DocSearch() {
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
-
     debounce(e.target.value);
   };
 
@@ -86,32 +86,28 @@ export default function DocSearch() {
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-labelledby="docsearch-label"
-        className="DocSearch-Container"
+        className="dark:text-[#f6f7f9] max-[750px]:h-screen max-[750px]:absolute flex justify-center bg-[#343a46]/[.8] w-screen h-screen	left-0 top-0 fixed z-50	box-border"
         onClick={closeDocSearch}
         aria-owns={list.length != 0 ? "docsearch-list" : ""}
-      >
+      > 
         <div
-          className="DocSearch-Modal bg-white dark:bg-[#23272f]"
+          className="max-[1024px]:max-w-full max-[1024px]:my-0 max-[1024px]:rounded-none  max-w-3xl w-full rounded-2xl	overflow-hidden	mx-0 my-4 flex justify-center flex-col relative bg-white dark:bg-[#23272f]"
           onClick={(e) => e.stopPropagation()}
         >
-          <header className="DocSearch-SearchBar">
-            <form className="DocSearch-Form" onSubmit={() => false}>
+          <header className="py-3 px-5 flex">
+            <form className="dark:bg-[#343a46] h-10 rounded-full shadow-none text-[15px] text-[#5e687e] bg-[#ebecf0] items-center flex m-0 py-0 px-3 relative w-full" onSubmit={() => false}>
               <label
-                className={`DocSearch-MagnifierLabel ${
-                  isSearching ? "hidden" : "flex"
-                }`}
+                className={`items-center justify-center ${isSearching ? "hidden" : "flex"}`}
               >
-                <SearchIcon />
+                <SearchIcon className="w-[15px] h-[15px] ml-1 mr-1 stroke-[1.6px]" style={{ color: "#99a1b3" }} />
               </label>
               <div
-                className={`DocSearch-LoadingIndicator ${
-                  !isSearching ? "hidden" : "flex"
-                }`}
+                className={`items-center justify-center ${!isSearching ? "hidden" : "flex"}`}
               >
-                <LoadingIcon />
+                <LoadingIcon className="w-[15px] h-[15px] ml-1 mr-1" style={{ color: "#99a1b3" }}/>
               </div>
               <input
-                className="DocSearch-Input"
+                className="dark:text-[#f6f7f9] cancel-button-none outline-offset-[-2px] pt-3 pb-3 ps-2 pe-0 text-[15px] leading-5 appearance-none bg-transparent border-0 flex-1 h-full outline-none pl-[8px] w-4/5"
                 aria-autocomplete="both"
                 aria-labelledby="docsearch-label"
                 autoComplete="off"
@@ -122,46 +118,47 @@ export default function DocSearch() {
                 placeholder="Search docs"
                 maxLength="64"
                 type="search"
+                autoFocus="true"
                 onChange={handleChange}
               />
               <button
-                className={`DocSearch-Reset ${
+                className={`group animate-[fade-in_.1s_ease-in_forwards] p-[2px] bg-transparent bg-none ${
                   inputValue.length == 0 && "hidden"
                 }`}
                 type="reset"
                 title="Clear the query"
                 onClick={handleReset}
               >
-                <CloseIcon />
+                <CloseIcon className="bg-transparent block text-[#99a1b3] group-hover:text-[#087ea4] dark:text-inherit dark:group-hover:text-[#149eca]" />
               </button>
             </form>
-            <button className="DocSearch-Cancel" onClick={closeDocSearch}>
+            <button className="inline-block lg:hidden ps-5 ms-0 text-[15px] text-[#087ea4] font-normal	 bg-transparent bg-none" onClick={closeDocSearch}>
               Cancel
             </button>
           </header>
-          <div className="DocSearch-Dropdown">
+          <div className="px-0 h-full max-h-full min-h-[12px]" style={{overflowY: "overlay"}} >
             {list.length == 0 && inputValue.length == 0 && (
-              <div className="DocSearch-StartScreen">
-                <p className="DocSearch-Help">No recent searches</p>
+              <div className="text-[0.9em] my-0 mx-auto py-9 px-0 text-center w-4/5">
+                <p className="text-center mt-4 text-[0.9rem] m-0 select-none text-[#969faf]">No recent searches</p>
               </div>
             )}
             {list.length == 0 && inputValue.length > 0 && !isSearching && (
-              <div className="DocSearch-NoResults">
-                <div className="DocSearch-Screen-Icon">
+              <div className="text-[0.9em] my-0 mx-auto py-9 px-0 text-center w-4/5">
+                <div className="flex justify-center text-[#969faf] pb-3">
                   <NoSearchIcon/>
                 </div>
-                <p className="DocSearch-Title">
+                <p className="text-[1.2em]">
                   No results for &quot;<strong>{ inputValue }</strong>&quot;
                 </p>
-                <div className="DocSearch-NoResults-Prefill-List">
-                  <p className="DocSearch-Help">Try searching for:</p>
-                  <ul>
-                    <li>
-                      <button className="DocSearch-Prefill">React APIs</button>
+                <div className="inline-block pb-6 text-left">
+                  <p className="text-[#969faf] text-center mt-4 text-[0.9em] select-none">Try searching for:</p>
+                  <ul className="me-5 inline-block pt-2">
+                    <li className="list-inside list-»">
+                      <button className="hover:outline-none hover:underline appearance-none bg-none border-0  rounded-2xl text-[#087ea4] inline-block text-[1em] font-bold p-0">React APIs</button>
                     </li>
                   </ul>
                 </div>
-                <p className="DocSearch-Help">
+                <p className="text-center mt-4 text-[0.9em] select-none text-[#969faf]">
                   Believe this query should return results?{" "}
                   <a
                     href="#"
@@ -174,6 +171,8 @@ export default function DocSearch() {
                 </p>
               </div>
             )}
+
+            {/* json api server 작업 이후 추가 작업 필요 */}
             {list.length > 0 && (
               <div className="DocSearch-Dropdown-Container">
               <section className="DocSearch-Hits">
@@ -339,48 +338,39 @@ export default function DocSearch() {
             </div>
             )}
           </div>
-          <footer className="DocSearch-Footer">
-            <div className="DocSearch-Logo">
+          <footer className="dark:bg-[#23272f] bg-transparent flex-col-reverse items-start h-auto pb-2 pl-5 pr-5 shadow-black bg-white rounded-tl-none rounded-tr-none rounded-bl-lg rounded-br-lg flex shrink-0 justify-between relative select-none w-full z-50">
+            <div className="pt-4 pb-2">
               <a
+                className="flex"
                 href="https://www.algolia.com/docsearch"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="DocSearch-Label">Search by</span>
-                <AlgoliaIcon />
+                <span className="text-[11px] text-[#969faf] leading-[1.6em]">Search by</span>
+                <AlgoliaIcon className="ms-2 me-0 text-[#5468ff] ml-2"/>
               </a>
             </div>
-            <ul className="DocSearch-Commands">
-              <li>
-                <span className="DocSearch-Commands-Key">
+            <ul className="max-[1024px]:hidden  w-full justify-between border-t-[1px] border-[#ebecf0] pt-4 text-[#969faf] flex list-none m-0">
+              <li className="items-center flex mr-[0.8em]">
+                <span className="me-[0.4rem] ms-0 bg-[#ebecf0] text-[#23272f]">
                   <CommandSelectIcon />
                 </span>
-                <span className="DocSearch-Label">to select</span>
+                <span className="text-[11px] text-[#969faf] leading-[1.6em]">to select</span>
               </li>
-              <li>
-                <span className="DocSearch-Commands-Key">
-                  <svg width="15" height="15">
-                    <g
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.2"
-                    >
-                      <path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path>
-                    </g>
-                  </svg>
+              <li className="items-center flex mr-[0.8em]">
+                <span className="me-[0.4rem] ms-0 bg-[#ebecf0] text-[#23272f]">
+                  <CommandNavigateDownIcon />
                 </span>
-                <span className="DocSearch-Commands-Key">
-                  <CommandNavigateIcon />
+                <span className="me-[0.4rem] ms-0 bg-[#ebecf0] text-[#23272f]">
+                  <CommandNavigateUpIcon />
                 </span>
-                <span className="DocSearch-Label">to navigate</span>
+                <span className="text-[11px] text-[#969faf] leading-[1.6em]">to navigate</span>
               </li>
-              <li>
-                <span className="DocSearch-Commands-Key">
+              <li className="items-center flex">
+                <span className="me-[0.4rem] ms-0 bg-[#ebecf0] text-[#23272f]">
                   <CommandCloseIcon />
                 </span>
-                <span className="DocSearch-Label">to close</span>
+                <span className="text-[11px] text-[#969faf] leading-[1.6em]">to close</span>
               </li>
             </ul>
           </footer>
