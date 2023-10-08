@@ -1,11 +1,12 @@
 // 정은우
-// 231007
-// 1024px 미만 반응형 수정
+// 2310078
+// 버튼 화살표 svg 애니메이션 추가
 import "@/styles/summary.css";
-import "@/styles/summaryButton.css";
+import "@/styles/summaryButtonNews.css";
 import { ReactComponent as ArrowBottom } from "@/assets/summary/arrow-bottom.svg";
 import { ReactComponent as NewsPaper } from "@/assets/summary/news-paper.svg";
-import { ReactComponent as ArrowRight } from "@/assets/summary/arrow-right.svg";
+import { ReactComponent as ArrowRightMiddleAnimation } from "@/assets/summary/arrow-right-middle-animation.svg";
+
 export default function SummaryButtonNews({
   title,
   lowerText,
@@ -33,26 +34,24 @@ export default function SummaryButtonNews({
                 <p className="summary-news-text-color max-w-3xl mx-auto text-lg lg:text-xl">
                   {textBox}
                 </p>
-                <div className="hidden lg:flex justify-start w-full">
-                <a
-                  href="https://reactnative.dev/"
-                  target="_blank"
-                  className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark"
-                >
-                  <NewsPaper className="code-logo" alt="news paper" />
-                  {btnText}
-                  <ArrowRight />
-                </a>
+                <div className="summary-news-lower-btn hidden lg:flex justify-start w-full">
+                  <a
+                    href="https://reactnative.dev/"
+                    target="_blank"
+                    className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark"
+                  >
+                    <NewsPaper className="code-logo" alt="news paper" />
+                    {btnText}
+                    <ArrowRightMiddleAnimation />
+                  </a>
                 </div>
               </div>
             </div>
             <div className="lg:w-6/12 summary-news-right-box">
-              {/* [정은우_230930] 화살표 svg 교체, 글 string 교체 완료 */}
               <p className="uppercase tracking-wide font-bold text-sm summary-news-p-color dark:summary-news-p-color-dark flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full">
                 <ArrowBottom /> {rightTopPtag}
               </p>
               <div className="text-start my-5 gap-5 w-full flex-row flex-wrap flex">
-                {/* [정은우_230930] 다른 페이지 이동을 위해 Link태그 사용해볼까 했는데 일단은 a태그로 대체 */}
                 {rightBox.map((box, idx) => (
                   <div className="flex-1 min-w-[40%] text-start" key={idx}>
                     <a
@@ -76,7 +75,7 @@ export default function SummaryButtonNews({
                   </div>
                 ))}
               </div>
-              <div className="flex lg:hidden justify-start w-full">
+              <div className="summary-news-lower-btn flex lg:hidden justify-start w-full">
                 <a
                   href="https://reactnative.dev/"
                   target="_blank"
@@ -84,7 +83,7 @@ export default function SummaryButtonNews({
                 >
                   <NewsPaper className="code-logo" alt="news paper" />
                   {btnText}
-                  <ArrowRight />
+                  <ArrowRightMiddleAnimation />
                 </a>
               </div>
             </div>

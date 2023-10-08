@@ -40,7 +40,29 @@
     color: rgb(94 104 126/var(--tw-text-opacity));
 }
 /* summaryButtonNews CSS end */
-
+/* arrow right move 관련 css */
+.middle-line {
+    opacity: 0;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: opacity;
+    transition-duration: 150ms;
+  }
+  
+  .summary-news-lower-btn>a:hover .middle-line {
+    opacity: 1;
+  }
+  
+  .arrow-right-move {
+    transform: translateX(-8px);
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  
+  }
+  .summary-news-lower-btn>a:hover .arrow-right-move
+  {
+    transform: translateX(8px);
+  }
 /* 반응형 웹 */
 @media (min-width: 1024px) {
     .summary-news-left-h2{
