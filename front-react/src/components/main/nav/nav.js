@@ -131,7 +131,7 @@ export default function Nav() {
             <div className="3xl:flex-1 flex align-center">
               <a
                 className="active:scale-95 overflow-hidden transition-transform relative items-center text-primary dark:text-primary-dark p-1 whitespace-nowrap outline-[#087ea4] rounded-full 3xl:rounded-xl inline-flex text-lg font-normal gap-2"
-                href="/"
+                href="#"
               >
                 <HomeLogo 
                   className="text-sm me-0 w-10 h-10 text-link dark:text-link-dark flex origin-center transition-all ease-in-out"

@@ -342,7 +342,7 @@ export default function DocSearch() {
             <div className="pt-4 pb-2">
               <a
                 className="flex"
-                href="https://www.algolia.com/docsearch"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
