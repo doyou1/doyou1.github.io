@@ -126,13 +126,13 @@ const FooterBottom = () => (
             </a>
           </div>
           <div className="footer-flex footer-bottom-logo">
-            <a href="https://www.facebook.com/react">
+            <a href="#">
               <FooterFacebookLogo className="footer-bottom-logo-tag"/>
             </a>
-            <a href="https://twitter.com/reactjs">
+            <a href="#">
               <FooterTwitterLogo className="footer-bottom-logo-tag"/>
             </a>
-            <a href="https://github.com/facebook/react">
+            <a href="#">
               <FooterGithubLogo className="footer-bottom-logo-tag"/>
             </a>
           </div>

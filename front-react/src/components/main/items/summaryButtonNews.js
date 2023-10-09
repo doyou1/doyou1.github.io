@@ -34,9 +34,10 @@ export default function SummaryButtonNews({
                 </p>
                 <div className="summary-news-lower-btn hidden lg:flex justify-start w-full">
                   <a
-                    href="https://reactnative.dev/"
+                    href="#"
                     target="_blank"
-                    className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark"
+                    className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark" 
+                    rel="noreferrer"
                   >
                     <NewsPaper className="code-logo" alt="news paper" />
                     {btnText}
@@ -53,7 +54,7 @@ export default function SummaryButtonNews({
                 {rightBox.map((box, idx) => (
                   <div className="flex-1 min-w-[40%] text-start" key={idx}>
                     <a
-                      href="./"
+                      href="#"
                       className="block outline-none outline-offset-2 rounded-2xl text-inherit text-inheritw-full h-full"
                     >
                       <div className="hover-summary-news-button-bg summary-news-button-stroke decoration-inherit decoration-inherit box-border leading-relaxed p-5 w-full h-full text-xl rounded-2xl justify-between flex-col flex">
@@ -75,9 +76,9 @@ export default function SummaryButtonNews({
               </div>
               <div className="summary-news-lower-btn flex lg:hidden justify-start w-full">
                 <a
-                  href="https://reactnative.dev/"
+                  href="#"
                   target="_blank"
-                  className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark"
+                  className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark" rel="noreferrer"
                 >
                   <NewsPaper className="code-logo" alt="news paper" />
                   {btnText}
