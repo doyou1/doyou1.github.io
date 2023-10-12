@@ -17,7 +17,6 @@ import {
   codeEditorSearchableVideoList,
   codeEditorConferencePage,
 } from "@/components/main/items/codeEditor/codeEditor";
-import { rightBox } from "@/components/main/items/codeEditor/rightBox";
 
 import { useRecoilValue } from "recoil";
 import {
@@ -53,7 +52,6 @@ export default function Main() {
           lowerText={string.firstSummary.lowerText}
           textBox={string.firstSummary.textBox}
           codeEditor={codeEditorVideo.code}
-          rightBox={rightBox.mainVideoBox}
         ></Summary>
 
         {/* second Summary  */}
@@ -64,7 +62,6 @@ export default function Main() {
           lowerText={string.secondSummary.lowerText}
           textBox={string.secondSummary.textBox}
           codeEditor={codeEditorVideoList.code}
-          rightBox={rightBox.mainVideoListBox}
         ></Summary>
 
         {/* first SummaryButton  */}
@@ -75,7 +72,6 @@ export default function Main() {
           lowerText={string.firstSummaryBtn.lowerText}
           textBox={string.firstSummaryBtn.textBox}
           codeEditor={codeEditorSearchableVideoList.code}
-          rightBox={rightBox.searchableVideoListBox}
         ></SummaryButton>
 
         {/* second SummaryButton  */}
@@ -86,7 +82,6 @@ export default function Main() {
           lowerText={string.secondSummaryBtn.lowerText}
           textBox={string.secondSummaryBtn.textBox}
           codeEditor={codeEditorConferencePage.code}
-          rightBox={rightBox.searchableVideoListBox}
         ></SummaryButton>
         <SummaryButtonPlatform />
         <SummaryButtonNews />

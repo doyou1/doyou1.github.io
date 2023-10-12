@@ -1,12 +1,11 @@
 import "@/styles/summary.css";
-
+import { MainVideoBox } from "./codeEditor/rightBox";
 export default function Summary({
   title,
   subHead,
   lowerText,
   textBox,
   codeEditor,
-  rightBox,
 }) {
   return (
     // main container
@@ -39,7 +38,7 @@ export default function Summary({
                 </div>
               </div>
               {/* 콘텐츠 오른쪽 박스 구성 */}
-              {rightBox}
+              <MainVideoBox></MainVideoBox>
             </div>
           </div>
         </div>
