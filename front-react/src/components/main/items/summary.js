@@ -1,5 +1,5 @@
 import "@/styles/summary.css";
-import { MainVideoBox } from "./codeEditor/rightBox";
+import { MainVideoBox } from "./codeEditor/summaryRightBox";
 export default function Summary({
   title,
   subHead,
