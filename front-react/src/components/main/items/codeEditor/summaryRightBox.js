@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { ReactComponent as PlayButton } from "@/assets/summary/playButton.svg";
 import { ReactComponent as EmptyHeart } from "@/assets/summary/emptyHeart.svg";
 import { ReactComponent as FullOfHeart } from "@/assets/summary/fullOfHeart.svg";
-
+import { ReactComponent as HeartBackGround } from "@/assets/summary/heartBackGround.svg";
 function MainVideoBox() {
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(true);
 
   const handleButtonClick = () => {
     setIsLiked(!isLiked);
@@ -18,6 +18,7 @@ function MainVideoBox() {
       >
         <div className="p-4" style={{ contentVisibility: "auto" }}>
           <div className="flex flex-row items-center gap-3" data-hover="Video">
+            {/* 비디오 썸네일 */}
             <a
               data-hover="Thumbnail"
               target="_blank"
@@ -26,14 +27,17 @@ function MainVideoBox() {
               tabIndex="-1"
               className="outline-link dark:outline-link outline-offset-2 aspect-video w-32 xs:w-36 select-none flex-col shadow-inner-border rounded-lg flex items-center overflow-hidden justify-center align-middle text-white/50 bg-cover bg-white bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] via-blue-50 "
             >
+              {/* 재생버튼 아이콘 */}
               <PlayButton alt="play button" />
             </a>
+            {/* 비디오정보 */}
             <a
               target="_blank"
               rel="noreferrer"
               className="outline-link dark:outline-link outline-offset-4 group flex flex-col flex-1 gap-0.5"
               data-hover="a"
             >
+              {/* 비디오제목 */}
               <h3
                 className="text-base leading-tight text-primary font-semibold"
                 data-hover="h3"
@@ -44,22 +48,20 @@ function MainVideoBox() {
                 Video description
               </p>
             </a>
+            {/* 좋아요버튼  */}
             <button
               data-hover="LikeButton"
               className={
                 isLiked
-                  ? "outline-none focus:bg-red-50/5 focus:text-red-50 relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-card active:scale-95 active:bg-red-50/5 active:text-red-50 text-red-50"
-                  : "outline-none focus:bg-red-50/5 focus:text-red-50 relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-card active:scale-95 active:bg-red-50/5 active:text-red-50 text-tertiary"
+                  ? "outline-none focus:bg-red-50/5 focus:text-red-50 relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-card active:scale-95 active:bg-red-50/5 active:text-red-50 text-tertiary"
+                  : "outline-none focus:bg-red-50/5 focus:text-red-50 relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-card active:scale-95 active:bg-red-50/5 active:text-red-50 text-red-50"
               }
               aria-label={isLiked ? "Unsave" : "Save"}
               onClick={handleButtonClick}
             >
-              <svg
-                className="absolute overflow-visible"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              {/* 클릭시 하트백그라운드 애니매이션화  */}
+              <HeartBackGround>
+                {" "}
                 <circle
                   className={
                     isLiked
@@ -74,15 +76,23 @@ function MainVideoBox() {
                   stroke="currentColor"
                   onClick={handleButtonClick}
                 ></circle>
-              </svg>
-
+              </HeartBackGround>
+              {/* 클릭시 변경되는 svg */}
               {isLiked ? (
-                <FullOfHeart onClick={handleButtonClick}></FullOfHeart>
+                // 빈하트
+                <EmptyHeart
+                  width="25" // 원하는 너비로 설정
+                  height="25" // 원하는 높이로 설정
+                  onClick={handleButtonClick}
+                ></EmptyHeart>
               ) : (
-                <EmptyHeart onClick={handleButtonClick}></EmptyHeart>
+                //  꽉찬하트
+                <FullOfHeart
+                  width="25"
+                  height="25"
+                  onClick={handleButtonClick}
+                ></FullOfHeart>
               )}
-
-              {/* <FullOfHeart></FullOfHeart> */}
             </button>
           </div>
         </div>

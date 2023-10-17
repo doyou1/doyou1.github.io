@@ -79,16 +79,16 @@ span {
   background-image: linear-gradient(#2b3491, #087ea4);
 }
 
+.text-red-50 {
+  --tw-text-opacity: 1;
+  color: rgb(166 66 58 / var(--tw-text-opacity));
+}
 .text-tertiary {
   --tw-text-opacity: 1;
   color: rgb(94 104 126 / var(--tw-text-opacity));
 }
 
 /* 버튼에 마우스를 올리면 적용되는 스타일 */
-.text-red-50 {
-  --tw-text-opacity: 1;
-  color: rgb(166 66 58 / var(--tw-text-opacity));
-}
 
 .hover\:bg-card:hover {
   --tw-bg-opacity: 1;
@@ -103,19 +103,15 @@ span {
   background-color: rgba(166, 66, 58, 0.05);
 }
 
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.text-red-50\/50 {
+  color: rgba(166, 66, 58, 0.5);
+}
+.animate-\[circle_\.3s_forwards\] {
+  -webkit-animation: circle 0.3s forwards;
+  animation: circle 0.3s forwards;
 }
 
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.15s;
-}
-.active\:scale-95:active {
-  animation: wave 1s;
-}
-
+/* 애니메이션  */
 @keyframes wave {
   0% {
     transform: scale(0.9);
@@ -125,6 +121,21 @@ span {
     transform: scale(1);
   }
 }
+@keyframes circle {
+  0% {
+    transform: scale(0);
+    stroke-width: 16px;
+  }
+  50% {
+    transform: scale(0.5);
+    stroke-width: 16px;
+  }
+  100% {
+    transform: scale(1);
+    stroke-width: 0px;
+  }
+}
+
 /* 반응형 쿼리  374px*/
 @media (min-width: 374px) {
   .rightbox-container-padding {
