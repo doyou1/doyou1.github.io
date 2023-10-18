@@ -6,12 +6,15 @@ import { ReactComponent as FullOfHeart } from "@/assets/summary/fullOfHeart.svg"
 import { ReactComponent as HeartBackGround } from "@/assets/summary/heartBackGround.svg";
 function MainVideoBox() {
   const [isLiked, setIsLiked] = useState(true);
-
+  const [isHovered, setIsHovered] = useState("opacity-100");
   const handleButtonClick = () => {
     setIsLiked(!isLiked);
   };
   return (
-    <div className="relative mt-0 lg:-my-20 w-full  flex grow justify-center rightbox-container-padding">
+    <div
+      className="relative mt-0 lg:-my-20 w-full  flex grow justify-center rightbox-container-padding"
+      data-value="div"
+    >
       <div
         className="max-w-3xl rounded-2xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto shadow-nav dark:shadow-nav-dark"
         style={{ height: "113px" }}
@@ -73,9 +76,33 @@ function MainVideoBox() {
           </div>
         </div>
       </div>
+      {/* 일단 정보가져오기  */}
+      {/* style 1
+        width: "467px",
+        height: "97px",
+        transform: " translate(28px, 28px)", */}
 
+      {/* style 2
+        width: "160px",
+        height: "97px",
+        transform: " translate(28px, 28px)", */}
+
+      {/* style 3
+        width: "259px",
+        height: "34px",
+        transform: " translate(184px, 70px)", */}
       {/* hover 됐을 시 */}
-      <div></div>
+
+      <div className="absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu opacity-100">
+        <div
+          className="top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg"
+          style={{
+            width: "467px",
+            height: "97px",
+            transform: " translate(28px, 28px)",
+          }}
+        ></div>
+      </div>
     </div>
   );
 }

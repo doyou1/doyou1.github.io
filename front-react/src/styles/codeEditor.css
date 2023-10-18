@@ -120,6 +120,15 @@ span {
   transform-origin: center;
 }
 
+/* codeEditor hover 됐을 시 */
+.bg-blue-30\/5 {
+  background-color: rgba(88, 196, 220, 0.05);
+}
+.border-link {
+  --tw-border-opacity: 1;
+  border-color: rgb(8 126 164 / var(--tw-border-opacity));
+}
+
 /* 애니메이션  */
 @keyframes wave {
   0% {

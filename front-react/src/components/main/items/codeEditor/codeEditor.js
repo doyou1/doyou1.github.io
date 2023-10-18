@@ -22,7 +22,9 @@ export const codeEditorVideo = {
         </div>
         {/* three */}
         <div className="cm-line hover">
-          <span className="sp-syntax-tag">&nbsp; &nbsp;&nbsp;{"<div>"} </span>
+          <span className="sp-syntax-tag" data-value="div">
+            &nbsp; &nbsp;&nbsp;{"<div>"}{" "}
+          </span>
           <br></br>
         </div>
         {/* four */}
