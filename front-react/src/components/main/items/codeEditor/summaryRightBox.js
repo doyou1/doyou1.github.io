@@ -60,18 +60,14 @@ function MainVideoBox() {
               {/* 클릭시 하트백그라운드 애니매이션화  */}
               {/* "line" (empty) 및 "fill" (full) 클래스를 부모인 <button> 요소에 동적으로 설정하고 CSS로 해당 클래스에 대한 스타일을 적용하는 방식 */}
               {/* 좀더 깔끔하게 유지하며, 하트 스타일을 쉽게 조절하는 장점이있는듯  */}
-              <HeartBackGround></HeartBackGround>
-
+              <HeartBackGround className="absolute overflow-visible"></HeartBackGround>
               {/* 클릭시 변경되는 svg */}
               {isLiked ? (
                 // 빈하트
-                <EmptyHeart width="25" onClick={handleButtonClick}></EmptyHeart>
+                <EmptyHeart className="w-6 h-6"></EmptyHeart>
               ) : (
                 //  꽉찬하트
-                <FullOfHeart
-                  width="25"
-                  onClick={handleButtonClick}
-                ></FullOfHeart>
+                <FullOfHeart className="w-6 h-6"></FullOfHeart>
               )}
             </button>
           </div>
