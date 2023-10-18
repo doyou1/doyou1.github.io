@@ -51,45 +51,25 @@ function MainVideoBox() {
             {/* 좋아요버튼  */}
             <button
               data-hover="LikeButton"
-              className={
-                isLiked
-                  ? "outline-none focus:bg-red-50/5 focus:text-red-50 relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-card active:scale-95 active:bg-red-50/5 active:text-red-50 text-tertiary"
-                  : "outline-none focus:bg-red-50/5 focus:text-red-50 relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-card active:scale-95 active:bg-red-50/5 active:text-red-50 text-red-50"
-              }
+              className={`"outline-none focus:bg-red-50/5 focus:text-red-50 relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-card active:scale-95 active:bg-red-50/5 active:text-red-50 ${
+                isLiked ? "text-tertiary fill" : "text-red-50 line"
+              } `}
               aria-label={isLiked ? "Unsave" : "Save"}
               onClick={handleButtonClick}
             >
               {/* 클릭시 하트백그라운드 애니매이션화  */}
-              <HeartBackGround>
-                {" "}
-                <circle
-                  className={
-                    isLiked
-                      ? "text-red-50/50 origin-center transition-all ease-in-out"
-                      : "text-red-50/50 origin-center transition-all ease-in-out animate-[circle_.3s_forwards]"
-                  }
-                  cx="12"
-                  cy="12"
-                  r="11.5"
-                  fill="transparent"
-                  stroke-width="0"
-                  stroke="currentColor"
-                  onClick={handleButtonClick}
-                ></circle>
-              </HeartBackGround>
+              {/* "line" (empty) 및 "fill" (full) 클래스를 부모인 <button> 요소에 동적으로 설정하고 CSS로 해당 클래스에 대한 스타일을 적용하는 방식 */}
+              {/* 좀더 깔끔하게 유지하며, 하트 스타일을 쉽게 조절하는 장점이있는듯  */}
+              <HeartBackGround></HeartBackGround>
+
               {/* 클릭시 변경되는 svg */}
               {isLiked ? (
                 // 빈하트
-                <EmptyHeart
-                  width="25" // 원하는 너비로 설정
-                  height="25" // 원하는 높이로 설정
-                  onClick={handleButtonClick}
-                ></EmptyHeart>
+                <EmptyHeart width="25" onClick={handleButtonClick}></EmptyHeart>
               ) : (
                 //  꽉찬하트
                 <FullOfHeart
                   width="25"
-                  height="25"
                   onClick={handleButtonClick}
                 ></FullOfHeart>
               )}
