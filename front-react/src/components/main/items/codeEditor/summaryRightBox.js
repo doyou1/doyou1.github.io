@@ -1,5 +1,5 @@
 import "@/styles/codeEditor.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ReactComponent as PlayButton } from "@/assets/summary/playButton.svg";
 import { ReactComponent as EmptyHeart } from "@/assets/summary/emptyHeart.svg";
 import { ReactComponent as FullOfHeart } from "@/assets/summary/fullOfHeart.svg";
@@ -7,17 +7,30 @@ import { ReactComponent as HeartBackGround } from "@/assets/summary/heartBackGro
 
 function MainVideoBox({ isHover, setIsHover }) {
   const [isLiked, setIsLiked] = useState(true);
+  const [style, setStyle] = useState({});
 
   const handleButtonClick = () => {
     setIsLiked(!isLiked);
   };
 
-  const rightBoxStyle = () => {
+  useEffect(() => {
     if (isHover === "three") {
-      console.log("테스트");
+      setStyle({
+        width: "467px",
+        height: "97px",
+        transform: "translate(28px, 28px)",
+      });
+      console.log("렌더링");
     }
-  };
-
+    if (isHover === "four") {
+      setStyle({
+        width: "160px",
+        height: "97px",
+        transform: "translate(28px, 28px)",
+      });
+      console.log("렌더링");
+    }
+  }, [isHover]);
   return (
     <div
       className="relative mt-0 lg:-my-20 w-full  flex grow justify-center rightbox-container-padding"
@@ -106,7 +119,7 @@ function MainVideoBox({ isHover, setIsHover }) {
           className={`box123  start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
             isHover ? "opacity-100 " : "opacity-20"
           }`}
-          style={{ rightBoxStyle }}
+          style={style}
           // top-0
         ></div>
       </div>

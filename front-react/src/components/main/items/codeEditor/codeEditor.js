@@ -5,7 +5,7 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
   const handleMouseOver = (element) => {
     console.log("마우스올라옴");
     setIsHover(element);
-    console.log(isHover);
+    console.log("codeEditor.js : ", isHover);
   };
 
   const handleMouseOut = () => {
