@@ -1,8 +1,17 @@
+import React from "react";
 import "@/styles/codeEditor.css";
-
 // CodeEditerVideo
-export const codeEditorVideo = {
-  code: (
+const CodeEditorVideo = ({ isHover, setIsHover, isHover1, setIsHover1 }) => {
+  const handleMouseOver = () => {
+    console.log("마우스올라옴");
+    setIsHover(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHover(false);
+    console.log("마우스나감");
+  };
+  return (
     <pre className="pre">
       <code className="code-editer">
         {/* one */}
@@ -20,15 +29,24 @@ export const codeEditorVideo = {
           <span className="sp-syntax-plain">(</span>
           <br></br>
         </div>
+
         {/* three */}
-        <div className="cm-line hover">
+        <div
+          className={`cm-line ${isHover ? "hover" : ""}`}
+          onMouseOver={() => handleMouseOver()}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-tag" data-value="div">
             &nbsp; &nbsp;&nbsp;{"<div>"}{" "}
           </span>
           <br></br>
         </div>
-        {/* four */}
-        <div className="cm-line hover">
+
+        <div
+          className={`cm-line ${isHover ? "hover" : ""}`}
+          onMouseOver={() => handleMouseOver()}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; {"<"}
           </span>
@@ -38,9 +56,10 @@ export const codeEditorVideo = {
           <span className="sp-syntax-punctuation">{" />"}</span>
           <br></br>
         </div>
-        {/* five */}
-        {/* &gt; = > */}
+
         <div className="cm-line hover">
+          {" "}
+          {/* five */}
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; {"<"}</span>
           <span className="sp-syntax-tag">a</span>
           <span className="sp-syntax-property"> href</span>
@@ -49,8 +68,10 @@ export const codeEditorVideo = {
           <span className="sp-syntax-string">{"}>"}</span>
           <br></br>
         </div>
-        {/* six */}
+
         <div className="cm-line hover">
+          {" "}
+          {/* six */}
           <span className="sp-syntax-plain">
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{"<"}
           </span>
@@ -63,8 +84,10 @@ export const codeEditorVideo = {
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
-        {/* seven */}
+
         <div className="cm-line hover">
+          {" "}
+          {/* seven */}
           <span className="sp-syntax-plain">
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{"<"}
           </span>
@@ -77,14 +100,17 @@ export const codeEditorVideo = {
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
-        {/* eight */}
+
         <div className="cm-line hover">
+          {" "}
+          {/* eight */}
           &nbsp;&nbsp; &nbsp; &nbsp;
           <span className="sp-syntax-punctuation">{"</"}</span>
           <span className="sp-syntax-tag">a</span>
           <span className="sp-syntax-punctuation">{">"}</span>
           <br></br>
         </div>
+
         {/* nine */}
         <div className="cm-line cm-line-nine hover">
           &nbsp;
@@ -108,17 +134,16 @@ export const codeEditorVideo = {
         {/* twelve*/}
         <div className="cm-line twelve">
           <span className="sp-syntax-punctuation">{"}"}</span>
-
           <br></br>
         </div>
       </code>
     </pre>
-  ),
+  );
 };
 
 // codeEditorVideoList
-export const codeEditorVideoList = {
-  code: (
+const CodeEditorVideoList = () => {
+  return (
     <pre className="pre">
       <code className="code-editer">
         {/* one */}
@@ -269,12 +294,12 @@ export const codeEditorVideoList = {
         </div>
       </code>
     </pre>
-  ),
+  );
 };
 
 // codeEditorSearchableVideoList
-export const codeEditorSearchableVideoList = {
-  code: (
+const CodeEditorSearchableVideoList = () => {
+  return (
     <pre className="pre">
       <code className="code-editer">
         {/* one */}
@@ -402,12 +427,12 @@ export const codeEditorSearchableVideoList = {
         </div>
       </code>
     </pre>
-  ),
+  );
 };
 
 // codeEditerConferencePage
-export const codeEditorConferencePage = {
-  code: (
+const CodeEditorConferencePage = () => {
+  return (
     <pre className="pre">
       <code className="code-editer">
         {/* one */}
@@ -562,5 +587,12 @@ export const codeEditorConferencePage = {
         </div>
       </code>
     </pre>
-  ),
+  );
+};
+
+export {
+  CodeEditorVideo,
+  CodeEditorVideoList,
+  CodeEditorSearchableVideoList,
+  CodeEditorConferencePage,
 };

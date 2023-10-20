@@ -4,9 +4,10 @@ import { ReactComponent as PlayButton } from "@/assets/summary/playButton.svg";
 import { ReactComponent as EmptyHeart } from "@/assets/summary/emptyHeart.svg";
 import { ReactComponent as FullOfHeart } from "@/assets/summary/fullOfHeart.svg";
 import { ReactComponent as HeartBackGround } from "@/assets/summary/heartBackGround.svg";
-function MainVideoBox() {
+
+function MainVideoBox({ isHover, setIsHover }) {
   const [isLiked, setIsLiked] = useState(true);
-  const [isHovered, setIsHovered] = useState("opacity-100");
+
   const handleButtonClick = () => {
     setIsLiked(!isLiked);
   };
@@ -93,14 +94,17 @@ function MainVideoBox() {
         transform: " translate(184px, 70px)", */}
       {/* hover 됐을 시 */}
 
-      <div className="absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu opacity-100">
+      <div className=" absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu box1234">
         <div
-          className="top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg"
+          className={`box123  start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
+            isHover ? "opacity-100 " : "opacity-20"
+          }`}
           style={{
             width: "467px",
             height: "97px",
             transform: " translate(28px, 28px)",
           }}
+          // top-0
         ></div>
       </div>
     </div>

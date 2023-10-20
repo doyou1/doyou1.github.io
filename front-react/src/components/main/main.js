@@ -12,21 +12,24 @@ import DocSearch from "@/components/main/nav/docSearch";
 import string from "@/utils/string";
 // import footerString from "./utils/footerString";
 import {
-  codeEditorVideo,
-  codeEditorVideoList,
-  codeEditorSearchableVideoList,
-  codeEditorConferencePage,
+  CodeEditorVideo,
+  CodeEditorVideoList,
+  CodeEditorSearchableVideoList,
+  CodeEditorConferencePage,
 } from "@/components/main/items/codeEditor/codeEditor";
-
+import { MainVideoBox } from "./items/codeEditor/summaryRightBox";
 import { useRecoilValue } from "recoil";
 import {
   isOpenHomeMenuState,
   isOpenDocSearchState,
 } from "@/recoil/recoil_state";
+import { useState } from "react";
 
 export default function Main() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
   const isOpenDocSearch = useRecoilValue(isOpenDocSearchState);
+  const [isHover, setIsHover] = useState(false);
+  const [isHover1, setIsHover1] = useState(false);
 
   return (
     <div
@@ -51,7 +54,20 @@ export default function Main() {
           subHead={string.firstSummary.h2.subHead}
           lowerText={string.firstSummary.lowerText}
           textBox={string.firstSummary.textBox}
-          codeEditor={codeEditorVideo.code}
+          codeEditor={
+            <CodeEditorVideo
+              isHover={isHover}
+              setIsHover={setIsHover}
+              isHover1={isHover1}
+              setIsHover1={setIsHover1}
+            ></CodeEditorVideo>
+          }
+          rightBox={
+            <MainVideoBox
+              isHover={isHover}
+              setIsHover={setIsHover}
+            ></MainVideoBox>
+          }
         ></Summary>
 
         {/* second Summary  */}
@@ -61,7 +77,7 @@ export default function Main() {
           subHead={string.secondSummary.h2.subHead}
           lowerText={string.secondSummary.lowerText}
           textBox={string.secondSummary.textBox}
-          codeEditor={codeEditorVideoList.code}
+          codeEditor={<CodeEditorVideoList></CodeEditorVideoList>}
         ></Summary>
 
         {/* first SummaryButton  */}
@@ -71,7 +87,9 @@ export default function Main() {
           btnText={string.firstSummaryBtn.btnText}
           lowerText={string.firstSummaryBtn.lowerText}
           textBox={string.firstSummaryBtn.textBox}
-          codeEditor={codeEditorSearchableVideoList.code}
+          codeEditor={
+            <CodeEditorSearchableVideoList></CodeEditorSearchableVideoList>
+          }
         ></SummaryButton>
 
         {/* second SummaryButton  */}
@@ -81,7 +99,7 @@ export default function Main() {
           btnText={string.secondSummaryBtn.btnText}
           lowerText={string.secondSummaryBtn.lowerText}
           textBox={string.secondSummaryBtn.textBox}
-          codeEditor={codeEditorConferencePage.code}
+          codeEditor={<CodeEditorConferencePage></CodeEditorConferencePage>}
         ></SummaryButton>
         <SummaryButtonPlatform />
         <SummaryButtonNews />
