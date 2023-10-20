@@ -7,16 +7,17 @@ import { ReactComponent as HeartBackGround } from "@/assets/summary/heartBackGro
 
 function MainVideoBox({ isHover, setIsHover }) {
   const [isLiked, setIsLiked] = useState(true);
-  const [style, setStyle] = useState({});
+  const [style, setStyle] = useState({}); // rightBox 스타일 관리
 
   const handleButtonClick = () => {
     setIsLiked(!isLiked);
   };
 
+  //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
   useEffect(() => {
-    if (isHover === "three") {
+    if (isHover === "three" || isHover === "ten") {
       setStyle({
-        width: "467px",
+        width: "480px",
         height: "97px",
         transform: "translate(28px, 28px)",
       });
@@ -27,6 +28,38 @@ function MainVideoBox({ isHover, setIsHover }) {
         width: "160px",
         height: "97px",
         transform: "translate(28px, 28px)",
+      });
+      console.log("렌더링");
+    }
+    if (isHover === "five" || isHover === "eight") {
+      setStyle({
+        width: "241px",
+        height: "55px",
+        transform: "translate(184px, 49px)",
+      });
+      console.log("렌더링");
+    }
+    if (isHover === "six") {
+      setStyle({
+        width: "241px",
+        height: "35px",
+        transform: "translate(184px, 49px)",
+      });
+      console.log("렌더링");
+    }
+    if (isHover === "seven") {
+      setStyle({
+        width: "241px",
+        height: "34px",
+        transform: "translate(184px, 70px)",
+      });
+      console.log("렌더링");
+    }
+    if (isHover === "nine") {
+      setStyle({
+        width: "56px",
+        height: "56px",
+        transform: "translate(458px, 48px)",
       });
       console.log("렌더링");
     }
