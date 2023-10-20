@@ -28,8 +28,7 @@ import { useState } from "react";
 export default function Main() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
   const isOpenDocSearch = useRecoilValue(isOpenDocSearchState);
-  const [isHover, setIsHover] = useState(false);
-  const [isHover1, setIsHover1] = useState(false);
+  const [isHover, setIsHover] = useState(null);
 
   return (
     <div
@@ -58,8 +57,6 @@ export default function Main() {
             <CodeEditorVideo
               isHover={isHover}
               setIsHover={setIsHover}
-              isHover1={isHover1}
-              setIsHover1={setIsHover1}
             ></CodeEditorVideo>
           }
           rightBox={

@@ -11,6 +11,13 @@ function MainVideoBox({ isHover, setIsHover }) {
   const handleButtonClick = () => {
     setIsLiked(!isLiked);
   };
+
+  const rightBoxStyle = () => {
+    if (isHover === "three") {
+      console.log("테스트");
+    }
+  };
+
   return (
     <div
       className="relative mt-0 lg:-my-20 w-full  flex grow justify-center rightbox-container-padding"
@@ -99,11 +106,7 @@ function MainVideoBox({ isHover, setIsHover }) {
           className={`box123  start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
             isHover ? "opacity-100 " : "opacity-20"
           }`}
-          style={{
-            width: "467px",
-            height: "97px",
-            transform: " translate(28px, 28px)",
-          }}
+          style={{ rightBoxStyle }}
           // top-0
         ></div>
       </div>
