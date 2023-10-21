@@ -154,12 +154,12 @@ const string = {
     ],
   },
 
-  // Footer String Start
-  // Footer Content
-  footerContentString: {
+  // 231021
+  // summaryButtonSlider
+  summaryButtonSliderString: {
     h2: (
       <h2 className="footer-text-h2 leading-xl font-display font-semibold text-5xl lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl">
-        Join a community <br /> of millions
+        Join a community of millions
       </h2>
     ),
     firstText:
@@ -168,12 +168,10 @@ const string = {
       "This is why React is more than a library, an architecture, or even an ecosystem. React is a community. It’s a place where you can ask for help, find opportunities, and meet new friends. You will meet both developers and designers, beginners and experts, researchers and artists, teachers and students. Our backgrounds may be very different, but React lets us all create user interfaces together.",
   },
   // Footer Button section below the slider
-  footerContentBtn: {
+  summaryButtonSliderBtn: {
     h2: (
       <h2 className="footer-text-h2 leading-xl font-display font-semibold text-5xl lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl">
-        Welcome to the
-        <br />
-        React community
+        Welcome to the React community
       </h2>
     ),
     btnText: <a className="footer-start-button">Get Started</a>,
