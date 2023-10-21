@@ -158,7 +158,7 @@ const string = {
   // Footer Content
   footerContentString: {
     h2: (
-      <h2 className="footer-text-h2 w-full">
+      <h2 className="footer-text-h2 leading-xl font-display font-semibold text-5xl lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl">
         Join a community <br /> of millions
       </h2>
     ),
@@ -170,7 +170,7 @@ const string = {
   // Footer Button section below the slider
   footerContentBtn: {
     h2: (
-      <h2 className="footer-text-h2">
+      <h2 className="footer-text-h2 leading-xl font-display font-semibold text-5xl lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl">
         Welcome to the
         <br />
         React community

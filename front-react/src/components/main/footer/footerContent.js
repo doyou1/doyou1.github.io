@@ -1,24 +1,24 @@
 // import logo from "@/assets/home-logo.svg";
-import {ReactComponent as FooterLogo} from "@/assets/home-logo.svg";
+import { ReactComponent as FooterLogo } from "@/assets/home-logo.svg";
 import FooterSlide from "./footerSlide";
 
 const FooterContent = ({ footerContentString, footerContentBtn }) => {
   return (
-    <div className="footer-content-container">
-      <div className="footer-content-box w-full">
-        <div className="w-full footer-content-wrap">
-          <div className="footer-text-wrap">
-            <div className="footer-text-box padding1-25rem">
-                {footerContentString.h2}
-              <p className="footer-text-p">{footerContentString.firstText}</p>
+    <div className="mx-auto flex flex-col w-full footer-content-container border-t border-primary/10">
+      <div className="flex-col gap-2 flex grow w-full my-20 lg:my-32 mx-auto items-center">
+        <div className="w-full">
+          <div className="mx-auto flex flex-col max-w-4xl">
+            <div className="px-5 lg:px-0 max-w-4xl lg:text-center text-opacity-80 flex flex-col items-center justify-center">
+              {footerContentString.h2}
+              <p className="mx-auto flex flex-col max-w-4xl">
+                {footerContentString.firstText}
+              </p>
             </div>
           </div>
-          <div className="w-full footer-slider-container">
             <FooterSlide />
-          </div>
-          <div>
-            <div className="footer-text-box padding1-25rem">
-              <p className="text-opacity-80 footer-text-p ">
+          <div className="mx-auto flex flex-col max-w-4xl">
+            <div className="footer-text-box px-5 lg:px-0 max-w-4xl lg:text-center text-white text-opacity-80 flex flex-col items-center justify-center">
+              <p className="mx-auto flex flex-col max-w-4xl footer-text-p ">
                 {footerContentString.secondText}
               </p>
             </div>

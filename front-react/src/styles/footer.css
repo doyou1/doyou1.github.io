@@ -20,9 +20,7 @@
 }
 
 .footer-content-container {
-    display: flex;
-    flex-direction: column;
-    background-image: conic-gradient(from 90deg at -10% 100%, #bcc1cd 0deg, #bcc1cd 90deg, #fff 1turn);
+    background-image: conic-gradient(from 90deg at -10% 100%,#bcc1cd 0deg,#bcc1cd 90deg,#fff 1turn);
 }
 
 .footer-content-wrap {
@@ -67,11 +65,6 @@
 }
 
 .footer-text-h2 {
-    margin: -1rem 0 1.75rem;
-    line-height: 1.15;
-    font-size: 40px;
-    font-weight: 600;
-    --tw-text-opacity: 1;
     color: rgb(35 39 47/var(--tw-text-opacity));
 }
 
@@ -137,14 +130,14 @@
 
 /* 애니메이션 클래스 */
 /* 1번 0~ */
-.footer-animation-marquee {
+.animate-marqueeSlider {
     -webkit-animation: marqueeSlider 50s linear infinite;
     animation: marqueeSlider 50s linear infinite;
 }
 
 
 /* 2번 200~*/
-.footer-animation-marquee2 {
+.animate-marqueeSlider2 {
     -webkit-animation: marqueeSlider2 50s linear infinite;
     animation: marqueeSlider2 50s linear infinite;
 }
@@ -373,6 +366,14 @@
 }
 
 @media (min-width: 1024px) {
+    .lg\:animate-large-marqueeSlider {
+        -webkit-animation: large-marqueeSlider 80s linear infinite;
+        animation: large-marqueeSlider 80s linear infinite;
+    }
+    .lg\:animate-large-marqueeSlider2 {
+        -webkit-animation: large-marqueeSlider2 80s linear infinite;
+        animation: large-marqueeSlider2 80s linear infinite;
+    }
     .footer-content-box {
         margin-top: 8rem;
         margin-bottom: 8rem;
@@ -437,25 +438,37 @@
         transform: translateX(0);
     }
 
-    50% {
-        transform: translateX(-100%);
-    }
-
-    50.01% {
-        transform: translateX(100%);
-    }
-
     100% {
-        transform: translateX(0);
+        transform: translateX(-400%);
     }
 }
 
 @keyframes marqueeSlider2 {
     0% {
-        transition: translateX(0);
+        transform: translateX(400%); /* 오른쪽에서 시작 */
+    }
+
+    100% {
+        transform: translateX(0); /* 왼쪽으로 이동 */
+    }
+}
+
+@keyframes large-marqueeSlider {
+    0% {
+        transform: translateX(0);
     }
 
     100% {
         transform: translateX(-200%);
+    }
+}
+
+@keyframes large-marqueeSlider2 {
+    0% {
+        transform: translateX(200%); /* 오른쪽에서 시작 */
+    }
+
+    100% {
+        transform: translateX(0); /* 왼쪽으로 이동 */
     }
 }
