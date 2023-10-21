@@ -26,6 +26,11 @@
   );
 }
 
+/* darkmode apply */
+.dark .summary-main-container {
+  background-image: conic-gradient(from 90deg at -10% 100%,#2b303b 0deg,#2b303b 90deg,#16181d 1turn) !important; 
+}
+
 /* summary-sub-container 구성 */
 .summary-sub-container {
   display: flex;
@@ -310,6 +315,11 @@
 
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.dark .lower-button-box > a {
+  --tw-shadow: inset 0 0 0 1px #404756;
+}
+
 .textbox-a {
   display: inline;
   text-decoration: inherit;
