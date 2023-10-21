@@ -21,7 +21,7 @@ const isMacStore = useIsMacStore();
   <header class="VPNav nav-bar stick">
     <div class="VPNavBar">
       <div class="container">
-        <a class="VPNavBarTitle" href="/">
+        <a class="VPNavBarTitle" href="#">
           <HomeLogo class="logo" />
           <span class="text">Vue.js</span>
         </a>
@@ -70,28 +70,28 @@ const isMacStore = useIsMacStore();
                   <div class="vt-menu-items">
                     <a
                       class="vt-link link vt-menu-link"
-                      href="/guide/introduction"
+                      href="#"
                     >
                       Guide
                     </a>
-                    <a class="vt-link link vt-menu-link" href="/tutorial/">
+                    <a class="vt-link link vt-menu-link" href="#">
                       Tutorial
                     </a>
-                    <a class="vt-link link vt-menu-link" href="/examples/">
+                    <a class="vt-link link vt-menu-link" href="#">
                       Examples
                     </a>
                     <a
                       class="vt-link link vt-menu-link"
-                      href="/guide/quick-start"
+                      href="#"
                     >
                       Quick Start
                     </a>
-                    <a class="vt-link link vt-menu-link" href="/glossary/">
+                    <a class="vt-link link vt-menu-link" href="#">
                       Glossary
                     </a>
                     <a
                       class="vt-link link vt-menu-link"
-                      href="https://v2.vuejs.org"
+                      href="#"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -100,7 +100,7 @@ const isMacStore = useIsMacStore();
                     </a>
                     <a
                       class="vt-link link vt-menu-link"
-                      href="https://v3-migration.vuejs.org/"
+                      href="#"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -111,10 +111,10 @@ const isMacStore = useIsMacStore();
                 </div>
               </div>
             </div>
-            <a class="vt-link link VPNavBarMenuLink" href="/api/">API</a>
+            <a class="vt-link link VPNavBarMenuLink" href="#">API</a>
             <a
               class="vt-link link VPNavBarMenuLink"
-              href="https://play.vuejs.org"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -137,18 +137,18 @@ const isMacStore = useIsMacStore();
                   <div class="vt-menu-items">
                     <div class="vt-menu-group">
                       <p class="vt-menu-group-title">Resources</p>
-                      <a class="vt-link link vt-menu-link" href="/partners/">
+                      <a class="vt-link link vt-menu-link" href="#">
                         Partners
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="/ecosystem/themes"
+                        href="#"
                       >
                         Themes
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://certification.vuejs.org/?ref=vuejs-nav"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -157,7 +157,7 @@ const isMacStore = useIsMacStore();
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://vuejobs.com/?ref=vuejs"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -166,7 +166,7 @@ const isMacStore = useIsMacStore();
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://vue.threadless.com/"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -178,7 +178,7 @@ const isMacStore = useIsMacStore();
                       <p class="vt-menu-group-title">Official Libraries</p>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://router.vuejs.org/"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -187,7 +187,7 @@ const isMacStore = useIsMacStore();
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://pinia.vuejs.org/"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -196,7 +196,7 @@ const isMacStore = useIsMacStore();
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="/guide/scaling-up/tooling"
+                        href="#"
                       >
                         Tooling Guide
                       </a>
@@ -206,7 +206,7 @@ const isMacStore = useIsMacStore();
                       <p class="vt-menu-group-title">Video Courses</p>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://www.vuemastery.com/courses/"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -215,7 +215,7 @@ const isMacStore = useIsMacStore();
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://vueschool.io/?friend=vuejs&amp;utm_source=Vuejs.org&amp;utm_medium=Link&amp;utm_content=Navbar%20Dropdown"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -228,7 +228,7 @@ const isMacStore = useIsMacStore();
                       <p class="vt-menu-group-title">Help</p>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://discord.com/invite/HBherRA"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -237,7 +237,7 @@ const isMacStore = useIsMacStore();
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://github.com/vuejs/core/discussions"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -246,7 +246,7 @@ const isMacStore = useIsMacStore();
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://dev.to/t/vue"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -259,7 +259,7 @@ const isMacStore = useIsMacStore();
                       <p class="vt-menu-group-title">News</p>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://blog.vuejs.org/"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -268,7 +268,7 @@ const isMacStore = useIsMacStore();
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://twitter.com/vuejs"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -277,7 +277,7 @@ const isMacStore = useIsMacStore();
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="https://events.vuejs.org/"
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -286,7 +286,7 @@ const isMacStore = useIsMacStore();
                       </a>
                       <a
                         class="vt-link link vt-menu-link"
-                        href="/ecosystem/newsletters"
+                        href="#"
                       >
                         Newsletters
                       </a>
@@ -311,27 +311,27 @@ const isMacStore = useIsMacStore();
               <div class="vt-flyout-menu">
                 <div class="vt-menu">
                   <div class="vt-menu-items">
-                    <a class="vt-link link vt-menu-link" href="/about/faq">
+                    <a class="vt-link link vt-menu-link" href="#">
                       FAQ
                     </a>
-                    <a class="vt-link link vt-menu-link" href="/about/team">
+                    <a class="vt-link link vt-menu-link" href="#">
                       Team
                     </a>
-                    <a class="vt-link link vt-menu-link" href="/about/releases">
+                    <a class="vt-link link vt-menu-link" href="#">
                       Releases
                     </a>
                     <a
                       class="vt-link link vt-menu-link"
-                      href="/about/community-guide"
+                      href="#"
                     >
                       Community Guide
                     </a>
-                    <a class="vt-link link vt-menu-link" href="/about/coc">
+                    <a class="vt-link link vt-menu-link" href="#">
                       Code of Conduct
                     </a>
                     <a
                       class="vt-link link vt-menu-link"
-                      href="https://www.youtube.com/watch?v=OrxmtDw4pVI"
+                      href="#"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -342,10 +342,10 @@ const isMacStore = useIsMacStore();
                 </div>
               </div>
             </div>
-            <a class="vt-link link VPNavBarMenuLink" href="/sponsor/">
+            <a class="vt-link link VPNavBarMenuLink" href="#">
               Sponsor
             </a>
-            <a class="vt-link link VPNavBarMenuLink" href="/partners/">
+            <a class="vt-link link VPNavBarMenuLink" href="#">
               Partners
             </a>
             <div class="vt-flyout VPNavBarMenuGroup active VPNavBarLocale">
@@ -366,14 +366,14 @@ const isMacStore = useIsMacStore();
                     <div class="vt-locales-menu-item">
                       <a
                         class="vt-locales-menu-item-text"
-                        href="https://cn.vuejs.org/"
+                        href="#"
                         target="_blank"
                       >
                         简体中文
                         <LinkIcon class="vt-link-icon" />
                       </a>
                       <a
-                        href="https://github.com/vuejs-translations/docs-zh-cn"
+                        href="#"
                         title="简体中文 Repository"
                         target="_blank"
                         class="vt-locales-btn-icon-container"
@@ -384,12 +384,12 @@ const isMacStore = useIsMacStore();
                     <div class="vt-locales-menu-item">
                       <a
                         class="vt-locales-menu-item-text"
-                        href="https://ja.vuejs.org/"
+                        href="#"
                         target="_blank"
                         >日本語
                         <LinkIcon class="vt-link-icon" /> </a
                       ><a
-                        href="https://github.com/vuejs-translations/docs-ja"
+                        href="#"
                         title="日本語 Repository"
                         target="_blank"
                         class="vt-locales-btn-icon-container"
@@ -399,13 +399,13 @@ const isMacStore = useIsMacStore();
                     <div class="vt-locales-menu-item">
                       <a
                         class="vt-locales-menu-item-text"
-                        href="https://ua.vuejs.org/"
+                        href="#"
                         target="_blank"
                         >Українська
                         <LinkIcon class="vt-link-icon" />
                       </a>
                       <a
-                        href="https://github.com/vuejs-translations/docs-uk"
+                        href="#"
                         title="Українська Repository"
                         target="_blank"
                         class="vt-locales-btn-icon-container"
@@ -415,12 +415,12 @@ const isMacStore = useIsMacStore();
                     <div class="vt-locales-menu-item">
                       <a
                         class="vt-locales-menu-item-text"
-                        href="https://fr.vuejs.org/"
+                        href="#"
                         target="_blank"
                         >Français
                         <LinkIcon class="vt-link-icon" /> </a
                       ><a
-                        href="https://github.com/vuejs-translations/docs-fr"
+                        href="#"
                         title="Français Repository"
                         target="_blank"
                         class="vt-locales-btn-icon-container"
@@ -430,12 +430,12 @@ const isMacStore = useIsMacStore();
                     <div class="vt-locales-menu-item">
                       <a
                         class="vt-locales-menu-item-text"
-                        href="https://ko.vuejs.org/"
+                        href="#"
                         target="_blank"
                         >한국어
                         <LinkIcon class="vt-link-icon" /> </a
                       ><a
-                        href="https://github.com/vuejs-translations/docs-ko"
+                        href="#"
                         title="한국어 Repository"
                         target="_blank"
                         class="vt-locales-btn-icon-container"
@@ -445,12 +445,12 @@ const isMacStore = useIsMacStore();
                     <div class="vt-locales-menu-item">
                       <a
                         class="vt-locales-menu-item-text"
-                        href="https://pt.vuejs.org/"
+                        href="#"
                         target="_blank"
                         >Português
                         <LinkIcon class="vt-link-icon" /> </a
                       ><a
-                        href="https://github.com/vuejs-translations/docs-pt"
+                        href="#"
                         title="Português Repository"
                         target="_blank"
                         class="vt-locales-btn-icon-container"
@@ -460,12 +460,12 @@ const isMacStore = useIsMacStore();
                     <div class="vt-locales-menu-item">
                       <a
                         class="vt-locales-menu-item-text"
-                        href="https://bn.vuejs.org/"
+                        href="#"
                         target="_blank"
                         >বাংলা
                         <LinkIcon class="vt-link-icon" /> </a
                       ><a
-                        href="https://github.com/vuejs-translations/docs-bn"
+                        href="#"
                         title="বাংলা Repository"
                         target="_blank"
                         class="vt-locales-btn-icon-container"
@@ -508,7 +508,7 @@ const isMacStore = useIsMacStore();
           <div class="vt-social-links VPNavBarSocialLinks social-links">
             <a
               class="vt-social-link is-small"
-              href="https://github.com/vuejs/"
+              href="#"
               title="github"
               target="_blank"
               rel="noopener noreferrer"
@@ -518,7 +518,7 @@ const isMacStore = useIsMacStore();
             </a>
             <a
               class="vt-social-link is-small"
-              href="https://twitter.com/vuejs"
+              href="#"
               title="twitter"
               target="_blank"
               rel="noopener noreferrer"
@@ -528,7 +528,7 @@ const isMacStore = useIsMacStore();
             </a>
             <a
               class="vt-social-link is-small"
-              href="https://discord.com/invite/HBherRA"
+              href="#"
               title="discord"
               target="_blank"
               rel="noopener noreferrer"
@@ -580,7 +580,7 @@ const isMacStore = useIsMacStore();
                       class="vt-social-links social-links">
                       <a
                         class="vt-social-link is-small"
-                        href="https://github.com/vuejs/"
+                        href="#"
                         title="github"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -589,7 +589,7 @@ const isMacStore = useIsMacStore();
                         <span class="visually-hidden">github</span></a
                       ><a
                         class="vt-social-link is-small"
-                        href="https://twitter.com/vuejs"
+                        href="#"
                         title="twitter"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -598,7 +598,7 @@ const isMacStore = useIsMacStore();
                         <span class="visually-hidden">twitter</span></a
                       ><a
                         class="vt-social-link is-small"
-                        href="https://discord.com/invite/HBherRA"
+                        href="#"
                         title="discord"
                         target="_blank"
                         rel="noopener noreferrer"

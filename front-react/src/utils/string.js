@@ -78,7 +78,7 @@ const string = {
     // button layout
     btnText: (
       <div className="lower-button-box">
-        <a href="https://reactnative.dev/" target="_blank">
+        <a href="#" target="_blank">
           <img className="code-logo" src={code} alt="code logo" />
           Add React to your page
           <img className="arrow-logo" src={arrow} alt="arrow logo" />
@@ -122,7 +122,7 @@ const string = {
   // 230923
   // summaryBurronNews
   summaryButtonNews: {
-    h2: ["Upgrade when the", "future is ready"],
+    h2: "Upgrade when the future is ready",
     lowerText:
       "React approaches changes with care. Every React commit is tested on business-critical surfaces with over a billion users. Over 100,000 React components at Meta help validate every migration strategy.",
     textBox:
@@ -194,7 +194,7 @@ const string = {
       "With React, you can be a web and a native developer. Your team can ship to many platforms without sacrificing the user experience. Your organization can bridge the platform silos, and form teams that own entire features end-to-end.",
     btnText: (
       <div className="lower-button-box">
-        <a href="https://reactnative.dev/" target="_blank">
+        <a href="#" target="_blank">
           <img className="code-logo" src={build} alt="code logo" />
           Build for native platforms
           <img className="arrow-logo" src={arrow} alt="arrow logo" />
