@@ -17,7 +17,10 @@ import {
   CodeEditorSearchableVideoList,
   CodeEditorConferencePage,
 } from "@/components/main/items/codeEditor/codeEditor";
-import { MainVideoBox } from "./items/codeEditor/summaryRightBox";
+import {
+  MainVideoBox,
+  MainVideoListBox,
+} from "./items/codeEditor/summaryRightBox";
 import { useRecoilValue } from "recoil";
 import {
   isOpenHomeMenuState,
@@ -28,7 +31,7 @@ import { useState } from "react";
 export default function Main() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
   const isOpenDocSearch = useRecoilValue(isOpenDocSearchState);
-  const [isHover, setIsHover] = useState(null);
+  const [isHover, setIsHover] = useState(false);
 
   return (
     <div
@@ -74,7 +77,18 @@ export default function Main() {
           subHead={string.secondSummary.h2.subHead}
           lowerText={string.secondSummary.lowerText}
           textBox={string.secondSummary.textBox}
-          codeEditor={<CodeEditorVideoList></CodeEditorVideoList>}
+          codeEditor={
+            <CodeEditorVideoList
+              isHover={isHover}
+              setIsHover={setIsHover}
+            ></CodeEditorVideoList>
+          }
+          rightBox={
+            <MainVideoListBox
+              isHover={isHover}
+              setIsHover={setIsHover}
+            ></MainVideoListBox>
+          }
         ></Summary>
 
         {/* first SummaryButton  */}
@@ -85,7 +99,10 @@ export default function Main() {
           lowerText={string.firstSummaryBtn.lowerText}
           textBox={string.firstSummaryBtn.textBox}
           codeEditor={
-            <CodeEditorSearchableVideoList></CodeEditorSearchableVideoList>
+            <CodeEditorSearchableVideoList
+              isHover={isHover}
+              setIsHover={setIsHover}
+            ></CodeEditorSearchableVideoList>
           }
         ></SummaryButton>
 
@@ -96,7 +113,12 @@ export default function Main() {
           btnText={string.secondSummaryBtn.btnText}
           lowerText={string.secondSummaryBtn.lowerText}
           textBox={string.secondSummaryBtn.textBox}
-          codeEditor={<CodeEditorConferencePage></CodeEditorConferencePage>}
+          codeEditor={
+            <CodeEditorConferencePage
+              isHover={isHover}
+              setIsHover={setIsHover}
+            ></CodeEditorConferencePage>
+          }
         ></SummaryButton>
         <SummaryButtonPlatform
           title={string.summaryButtonPlatform.h2.title}

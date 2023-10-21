@@ -15,29 +15,24 @@ function MainVideoBox({ isHover, setIsHover }) {
 
   //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
   useEffect(() => {
-    if (isHover === "three" || isHover === "ten") {
+    if (isHover === "videoThree" || isHover === "videoTen") {
       setStyle("w-[89.5%] left-[1.8rem] max-w-[48rem] h-[97px] three-rightBox");
-      console.log("렌더링");
+      // console.log("렌더링");
     }
-    if (isHover === "four") {
+    if (isHover === "videoFour") {
       setStyle("w-[160px] max-w-[48rem] h-[97px] four-rightBox");
-      console.log("렌더링");
     }
-    if (isHover === "five" || isHover === "eight") {
+    if (isHover === "videoFive" || isHover === "videoEight") {
       setStyle("left-[11.5rem] w-[53%] max-w-[48rem] h-[55px] five-rightBox");
-      console.log("렌더링");
     }
-    if (isHover === "six") {
+    if (isHover === "videoSix") {
       setStyle("left-[11.5rem] w-[53%] max-w-[48rem] h-[35px] mb-[19px]");
-      console.log("렌더링");
     }
-    if (isHover === "seven") {
+    if (isHover === "videoSeven") {
       setStyle("left-[11.5rem] w-[53%] max-w-[48rem] h-[35px] mt-[23px]");
-      console.log("렌더링");
     }
-    if (isHover === "nine") {
+    if (isHover === "videoNine") {
       setStyle(" w-[56px] max-w-[56px] h-[56px] nine-box");
-      console.log("렌더링");
     }
   }, [isHover]);
 
@@ -116,7 +111,7 @@ function MainVideoBox({ isHover, setIsHover }) {
       >
         <div
           className={`${
-            isHover ? style : ""
+            isHover ? style : "opacity-0"
           } start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark rounded-lg `}
           // top-0
         ></div>

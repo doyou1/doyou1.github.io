@@ -16,7 +16,25 @@ html {
   --sp-syntax-color-property: #005cc5;
   --sp-syntax-color-static: #032f62;
   --sp-syntax-color-string: #032f62;
+  /* 다크모드 컬러지정  */
+  --sp-syntax-color-keyword-dark: #77b7d7;
+  --sp-colors-accent-dark: #149eca;
+  --sp-colors-clickable-dark: #999;
+  --sp-colors-disabled-dark: #fff;
+  --sp-colors-error-dark: #811e18;
+  --sp-colors-error-surface-dark: #ffcdca;
+  --sp-colors-surface1-dark: #16181d;
+  --sp-colors-surface2-dark: #343a46;
+  --sp-syntax-color-plain-dark: #fff;
+  --sp-syntax-color-comment-dark: #757575;
+  --sp-syntax-color-tag-dark: #dfab5c;
+  --sp-syntax-color-punctuation-dark: #fff;
+  --sp-syntax-color-definition-dark: #86d9ca;
+  --sp-syntax-color-property-dark: #77b7d7;
+  --sp-syntax-color-static-dark: #c64640;
+  --sp-syntax-color-string-dark: #977cdc;
 }
+
 span {
   margin: 1px;
 }
@@ -40,24 +58,32 @@ span {
 .sp-syntax-keyword {
   color: var(--sp-syntax-color-keyword);
 }
+:is(.dark .dark\:sp-syntax-keyword) {
+  color: var(--sp-syntax-color-keyword-dark);
+}
 .sp-syntax-definition {
   color: var(--sp-syntax-color-definition);
 }
-.sp-syntax-property {
-  color: var(--sp-syntax-color-property);
+:is(.dark .dark\:sp-syntax-definition) {
+  color: var(--sp-syntax-color-definition-dark);
 }
-.sp-syntax-property {
-  color: var(--sp-syntax-color-property);
+:is(.dark .dark\:sp-syntax-property) {
+  color: var(--sp-syntax-color-property-dark);
+}
+:is(.dark .dark\:sp-syntax-property) {
+  color: var(--sp-syntax-color-property-dark);
 }
 .sp-syntax-string {
   color: var(--sp-syntax-color-string);
 }
+:is(.dark .dark\:sp-syntax-string) {
+  color: var(--sp-syntax-color-string-dark);
+}
 .sp-syntax-tag {
   color: var(--sp-syntax-color-tag);
 }
-
-.hover {
-  background-color: rgb(255, 255, 221);
+:is(.dark .dark\:sp-syntax-tag) {
+  color: var(--sp-syntax-color-tag-dark);
 }
 
 /* ==========================
@@ -89,7 +115,12 @@ span {
 }
 
 /* 버튼에 마우스를 올리면 적용되는 스타일 */
-
+.hover {
+  background-color: rgb(255, 255, 221);
+}
+:is(.dark .dark\:bg-opacity-10) {
+  background-color: rgba(255, 251, 221, 0.1);
+}
 .hover\:bg-card:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(246 247 249 / var(--tw-bg-opacity));

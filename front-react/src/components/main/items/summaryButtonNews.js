@@ -23,7 +23,7 @@ export default function SummaryButtonNews({
           <div className="max-w-3xl lg:max-w-7xl lg:px-5 gap-5 px-0.5 lg:flex-row flex-col flex">
             <div className="lg:w-6/12 max-w-3xl lg:max-w-7xl lg:ps-5 lg:pe-10 items-start content-start flex-col flex">
               <h2 className="leading-xl summary-news-left-h2 text-left font-display text-primary font-semibold text-5xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl">
-                { title }
+                {title}
               </h2>
               <p className="summary-news-text-color max-w-3xl mx-auto text-lg lg:text-xl">
                 {lowerText}
@@ -36,7 +36,7 @@ export default function SummaryButtonNews({
                   <a
                     href="#"
                     target="_blank"
-                    className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark" 
+                    className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark"
                     rel="noreferrer"
                   >
                     <NewsPaper className="code-logo" alt="news paper" />
@@ -78,9 +78,10 @@ export default function SummaryButtonNews({
                 <a
                   href="#"
                   target="_blank"
-                  className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark" rel="noreferrer"
+                  className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark"
+                  rel="noreferrer"
                 >
-                  <NewsPaper className="code-logo" alt="news paper" />
+                  <NewsPaper className="code-logo " alt="news paper" />
                   {btnText}
                   <ArrowRightMiddleAnimation />
                 </a>

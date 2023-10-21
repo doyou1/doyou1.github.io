@@ -3,64 +3,74 @@ import "@/styles/codeEditor.css";
 // CodeEditerVideo
 const CodeEditorVideo = ({ isHover, setIsHover }) => {
   const handleMouseOver = (element) => {
-    console.log("마우스올라옴");
     setIsHover(element);
-    console.log("codeEditor.js : ", isHover);
   };
 
   const handleMouseOut = () => {
     setIsHover(null);
-    console.log("마우스나감");
   };
-
-  const elements = [
-    { name: "hover", text: "<div>" },
-    // { name: "four", text: "<a href={video.url}>" },
-    // { name: "five", text: "<h3>{video.title}</h3>" },
-    // { name: "six", text: "<p>{video.description}</p>" },
-    // { name: "seven", text: "</a>" },
-  ]; // 추가 요소 정보를 배열로 추가
 
   return (
     <pre className="pre">
       <code className="code-editer">
         {/* one */}
         <div className="cm-line">
-          <span className="sp-syntax-keyword">function </span>
-          <span className="sp-syntax-definition">Video </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword ">
+            function{" "}
+          </span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            Video{" "}
+          </span>
           <span className="sp-syntax-punctuation">{"({"} </span>
-          <span className="sp-syntax-property">videos </span>
+          <span className="sp-syntax-property dark:sp-syntax-keyword">
+            video{" "}
+          </span>
           <span className="sp-syntax-punctuation">{"}) {"}</span>
           <br></br>
         </div>
         {/* two */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; return </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; return{" "}
+          </span>
           <span className="sp-syntax-plain">(</span>
           <br></br>
         </div>
         {/* three */}
         <div
-          className={`cm-line ${isHover === "three" ? "hover" : ""}`}
-          onMouseOver={() => handleMouseOver("three")}
+          className={`cm-line ${
+            isHover === "videoThree" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoThree")}
           onMouseOut={() => handleMouseOut()}
         >
-          <span className="sp-syntax-tag" data-value="div">
-            &nbsp; &nbsp;&nbsp;{"<div>"}
+          <span className="sp-syntax-punctuation">
+            {" "}
+            &nbsp; &nbsp;&nbsp;{"<"}
           </span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag" data-value="div">
+            {"div"}
+          </span>
+          <span className="sp-syntax-punctuation">{">"}</span>
           <br></br>
         </div>
         {/* four */}
         <div
-          className={`cm-line ${isHover === "four" ? "hover" : ""}`}
-          onMouseOver={() => handleMouseOver("four")}
+          className={`cm-line ${
+            isHover === "videoFour" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoFour")}
           onMouseOut={() => handleMouseOut()}
         >
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; {"<"}
           </span>
-          <span className="sp-syntax-definition">Thumbnail </span>
-          <span className="sp-syntax-property">video</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            Thumbnail{" "}
+          </span>
+          <span className="sp-syntax-property dark:sp-syntax-keyword">
+            video
+          </span>
           <span className="sp-syntax-punctuation">{"={video}"}</span>
           <span className="sp-syntax-punctuation">
             {" />                     "}
@@ -69,40 +79,51 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
         </div>
         {/* five */}
         <div
-          className={`cm-line ${isHover === "five" ? "hover" : ""}`}
-          onMouseOver={() => handleMouseOver("five")}
+          className={`cm-line ${
+            isHover === "videoFive" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoFive")}
           onMouseOut={() => handleMouseOut()}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; {"<"}</span>
-          <span className="sp-syntax-tag">a</span>
-          <span className="sp-syntax-property"> href</span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag">a</span>
+          <span className="sp-syntax-property dark:sp-syntax-keyword">
+            {" "}
+            href
+          </span>
           <span className="sp-syntax-static">{"={video."}</span>
-          <span className="sp-syntax-property">url</span>
-          <span className="sp-syntax-string">{"}>"}</span>
+          <span className="sp-syntax-property dark:sp-syntax-keyword">url</span>
+          <span className="sp-syntax-static">{"}>"}</span>
           <br></br>
         </div>
 
         {/* six */}
         <div
-          className={`cm-line ${isHover === "six" ? "hover" : ""}`}
-          onMouseOver={() => handleMouseOver("six")}
+          className={`cm-line ${
+            isHover === "videoSix" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoSix")}
           onMouseOut={() => handleMouseOut()}
         >
-          <span className="sp-syntax-plain">
+          <span className="sp-syntax-static">
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{"<"}
           </span>
-          <span className="sp-syntax-tag">h3</span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag">h3</span>
           <span className="sp-syntax-plain">{">"}</span>
           <span className="sp-syntax-static">{"{video."}</span>
-          <span className="sp-syntax-property">title</span>
-          <span className="sp-syntax-string">{"}</"}</span>
-          <span className="sp-syntax-tag">h3</span>
+          <span className="sp-syntax-property dark:sp-syntax-keyword">
+            title
+          </span>
+          <span className="sp-syntax-static">{"}</"}</span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag">h3</span>
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
         <div
-          className={`cm-line ${isHover === "seven" ? "hover" : ""}`}
-          onMouseOver={() => handleMouseOver("seven")}
+          className={`cm-line ${
+            isHover === "videoSeven" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoSeven")}
           onMouseOut={() => handleMouseOut()}
         >
           {" "}
@@ -110,48 +131,68 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{"<"}
           </span>
-          <span className="sp-syntax-tag">p</span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag">p</span>
           <span className="sp-syntax-plain">{">"}</span>
           <span className="sp-syntax-static">{"{video."}</span>
-          <span className="sp-syntax-property">description</span>
-          <span className="sp-syntax-string">{"}</"}</span>
-          <span className="sp-syntax-tag">p</span>
+          <span className="sp-syntax-property dark:sp-syntax-keyword">
+            description
+          </span>
+          <span className="sp-syntax-static">{"}</"}</span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag">p</span>
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
         <div
-          className={`cm-line ${isHover === "eight" ? "hover" : ""}`}
-          onMouseOver={() => handleMouseOver("eight")}
+          className={`cm-line ${
+            isHover === "videoEight" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoEight")}
           onMouseOut={() => handleMouseOut()}
         >
           {" "}
           {/* eight */}
           &nbsp;&nbsp; &nbsp; &nbsp;
           <span className="sp-syntax-punctuation">{"</"}</span>
-          <span className="sp-syntax-tag">a</span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag">a</span>
           <span className="sp-syntax-punctuation">{">"}</span>
           <br></br>
         </div>
         {/* nine */}
         <div
-          className={`cm-line ${isHover === "nine" ? "hover" : ""}`}
-          onMouseOver={() => handleMouseOver("nine")}
+          className={`cm-line ${
+            isHover === "videoNine" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoNine")}
           onMouseOut={() => handleMouseOut()}
         >
           &nbsp;
           <span className="sp-syntax-punctuation"> &nbsp; &nbsp; &lt;</span>
-          <span className="sp-syntax-definition">LikeButton</span>
-          <span className="sp-syntax-property"> video</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            LikeButton
+          </span>
+          <span className="sp-syntax-property dark:sp-syntax-keyword">
+            {" "}
+            video
+          </span>
           <span className="sp-syntax-punctuation">{"={video} />"}</span>
           <br></br>
         </div>
         {/* ten */}
         <div
-          className={`cm-line ${isHover === "ten" ? "hover" : ""}`}
-          onMouseOver={() => handleMouseOver("ten")}
+          className={`cm-line ${
+            isHover === "videoTen" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoTen")}
           onMouseOut={() => handleMouseOut()}
         >
-          <span className="sp-syntax-tag">&nbsp; &nbsp;&nbsp;{"<div>"} </span>
+          <span className="sp-syntax-punctuation">
+            {" "}
+            &nbsp; &nbsp;&nbsp;{"</"}
+          </span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag" data-value="div">
+            {"div"}
+          </span>
+          <span className="sp-syntax-punctuation">{">"}</span>
           <br></br>
         </div>
         {/* eleven */}
@@ -171,7 +212,14 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
 };
 
 // codeEditorVideoList
-const CodeEditorVideoList = () => {
+const CodeEditorVideoList = ({ isHover, setIsHover }) => {
+  const handleMouseOver = (element) => {
+    setIsHover(element);
+  };
+
+  const handleMouseOut = () => {
+    setIsHover(null);
+  };
   return (
     <pre className="pre">
       <code className="code-editer">
@@ -245,14 +293,26 @@ const CodeEditorVideoList = () => {
           <br></br>
         </div>
         {/* nine */}
-        <div className="cm-line cm-line-nine hover">
+        <div
+          className={`cm-line ${
+            isHover === "videoListNine" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoListNine")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-punctuation">&nbsp; &nbsp; &lt;</span>
           <span className="sp-syntax-tag">section</span>
           <span className="sp-syntax-punctuation">&gt;</span>
           <br></br>
         </div>
         {/* ten */}
-        <div className="cm-line ten hover">
+        <div
+          className={`cm-line ${
+            isHover === "videoListTen" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoListTen")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; &lt;
           </span>
@@ -279,7 +339,13 @@ const CodeEditorVideoList = () => {
           <br></br>
         </div>
         {/* twelve*/}
-        <div className="cm-line twelve hover">
+        <div
+          className={`cm-line ${
+            isHover === "videoListTwelve" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoListTwelve")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; &nbsp; &lt;
           </span>
@@ -305,7 +371,13 @@ const CodeEditorVideoList = () => {
           <br></br>
         </div>
         {/* fourteen */}
-        <div className="cm-line fourteen hover">
+        <div
+          className={`cm-line ${
+            isHover === "videoListFourTeen" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("videoListFourTeen")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-punctuation"> &nbsp; &nbsp;&lt;/</span>
           <span className="sp-syntax-tag">section</span>
           <span className="sp-syntax-punctuation">&gt;</span>
@@ -327,7 +399,14 @@ const CodeEditorVideoList = () => {
 };
 
 // codeEditorSearchableVideoList
-const CodeEditorSearchableVideoList = () => {
+const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
+  const handleMouseOver = (element) => {
+    setIsHover(element);
+  };
+
+  const handleMouseOut = () => {
+    setIsHover(null);
+  };
   return (
     <pre className="pre">
       <code className="code-editer">
@@ -375,12 +454,24 @@ const CodeEditorSearchableVideoList = () => {
           <br></br>
         </div>
         {/* six */}
-        <div className="cm-line hover">
+        <div
+          className={`cm-line ${
+            isHover === "searchableVideoSix" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("searchableVideoSix")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-plain">&nbsp; &nbsp; {"<>"}</span>
           <br></br>
         </div>
 
-        <div className="hover">
+        <div
+          className={`cm-line ${
+            isHover === "searchableVideoSeven" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("searchableVideoSeven")}
+          onMouseOut={() => handleMouseOut()}
+        >
           {/* seven */}
           <div className="cm-line ">
             <span className="sp-syntax-punctuation">
@@ -409,7 +500,13 @@ const CodeEditorSearchableVideoList = () => {
           </div>
         </div>
 
-        <div className="hover">
+        <div
+          className={`cm-line ${
+            isHover === " searchableVideoNine" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver(" searchableVideoNine")}
+          onMouseOut={() => handleMouseOut()}
+        >
           {/* ten */}
           <div className="cm-line ten">
             <span className="sp-syntax-punctuation">
@@ -438,9 +535,14 @@ const CodeEditorSearchableVideoList = () => {
           </div>
         </div>
         {/* Thirteen */}
-        <div className="cm-line hover">
+        <div
+          className={`cm-line ${
+            isHover === "eight" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("eight")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-punctuation">&nbsp; &nbsp; {"</>"}</span>
-
           <br></br>
         </div>
         {/* fourteen */}
@@ -460,7 +562,14 @@ const CodeEditorSearchableVideoList = () => {
 };
 
 // codeEditerConferencePage
-const CodeEditorConferencePage = () => {
+const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
+  const handleMouseOver = (element) => {
+    setIsHover(element);
+  };
+
+  const handleMouseOut = () => {
+    setIsHover(null);
+  };
   return (
     <pre className="pre">
       <code className="code-editer">
@@ -511,7 +620,13 @@ const CodeEditorConferencePage = () => {
           <br></br>
         </div>
         {/* six */}
-        <div className="cm-line hover">
+        <div
+          className={`cm-line ${
+            isHover === "ConferencePageSix" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("ConferencePageSix")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &lt;</span>
           <span className="sp-syntax-definition">ConferenceLayout </span>
           <span className="sp-syntax-property">conf</span>
@@ -519,7 +634,13 @@ const CodeEditorConferencePage = () => {
           <br></br>
         </div>
         {/* seven */}
-        <div className="cm-line hover">
+        <div
+          className={`cm-line ${
+            isHover === "ConferencePageSeven" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("ConferencePageSeven")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; &lt;</span>
           <span className="sp-syntax-definition">Suspense </span>
           <span className="sp-syntax-property">fallback</span>
@@ -529,7 +650,13 @@ const CodeEditorConferencePage = () => {
           <br></br>
         </div>
         {/* eight */}
-        <div className="cm-line hover">
+        <div
+          className={`cm-line ${
+            isHover === "ConferencePageEight" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("ConferencePageEight")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-plain">
             &nbsp; &nbsp; &nbsp; &nbsp; &lt;
           </span>
@@ -541,14 +668,26 @@ const CodeEditorConferencePage = () => {
           <br></br>
         </div>
         {/* nine */}
-        <div className="cm-line hover">
+        <div
+          className={`cm-line ${
+            isHover === "ConferencePageNine" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("ConferencePageNine")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; &lt;/</span>
           <span className="sp-syntax-definition">Suspense</span>
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
         {/* ten */}
-        <div className="cm-line hover">
+        <div
+          className={`cm-line ${
+            isHover === "ConferencePageTen" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("ConferencePageTen")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &lt;/</span>
           <span className="sp-syntax-definition">ConferenceLayout</span>
           <span className="sp-syntax-plain">{">"}</span>
@@ -600,7 +739,13 @@ const CodeEditorConferencePage = () => {
           <br></br>
         </div>
         {/* sixteen */}
-        <div className="cm-line hover">
+        <div
+          className={`cm-line ${
+            isHover === "eight" ? "hover dark:bg-opacity-10" : ""
+          }`}
+          onMouseOver={() => handleMouseOver("eight")}
+          onMouseOut={() => handleMouseOut()}
+        >
           <span className="sp-syntax-keyword">&nbsp; return</span>
           <span className="sp-syntax-punctuation"> &lt;</span>
           <span className="sp-syntax-definition">{"SearchableVideoList "}</span>
