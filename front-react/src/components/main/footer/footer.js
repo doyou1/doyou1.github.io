@@ -7,8 +7,8 @@ import { ReactComponent as FooterGithubLogo } from "@/assets/footer/footer-githu
 export default function Footer() {
   return (
     <div className="footer-bottom-wrap-padding">
-    <footer>
-      <div className="footer-bottom-container">
+    <footer className="sub-text dark:sub-text-dark">
+      <div className="footer-bottom-container ">
         <div className="footer-grid-box-1">
           <a className="footer-grid-text-sm">
             <div>
@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
         <div className="footer-flex footer-flex-col">
           <div>
-            <a className="footer-bottom-item-title footer-text-border-bottom">
+            <a className="footer-bottom-item-title dark:primary-text-dark primary-text-dark footer-text-border-bottom">
               Learn React
             </a>
           </div>
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
         <div className="footer-flex footer-flex-col">
           <div>
-            <a className="footer-bottom-item-title footer-text-border-bottom">
+            <a className="footer-bottom-item-title dark:primary-text-dark footer-text-border-bottom">
               API Reference
             </a>
           </div>
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
         <div className="footer-grid-box-4 footer-flex footer-flex-col">
           <div>
-            <a className="footer-bottom-item-title footer-text-border-bottom">
+            <a className="footer-bottom-item-title dark:primary-text-dark footer-text-border-bottom">
               Community
             </a>
           </div>
@@ -100,7 +100,7 @@ export default function Footer() {
         </div>
         <div className="footer-flex footer-flex-col">
           <div>
-            <a className="footer-bottom-item-title footer-text-border-bottom">
+            <a className="footer-bottom-item-title dark:primary-text-dark footer-text-border-bottom">
               More
             </a>
           </div>
@@ -124,7 +124,7 @@ export default function Footer() {
               Terms
             </a>
           </div>
-          <div className="footer-flex footer-bottom-logo">
+          <div className="footer-flex footer-bottom-logo dark:primary-text-dark">
             <a href="https://www.facebook.com/react">
               <FooterFacebookLogo className="footer-bottom-logo-tag"/>
             </a>

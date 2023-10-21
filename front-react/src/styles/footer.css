@@ -1,9 +1,15 @@
+/* 231021 darkmode 수정 */
 *,
 :after,
 :before {
     box-sizing: border-box;
     border: 0 solid #e5e7eb;
 }
+
+.font-display {
+    font-family: Optimistic Display, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
 
 /* 가로폭 설정 */
 .w-full {
@@ -20,8 +26,9 @@
 }
 
 .footer-content-container {
-    background-image: conic-gradient(from 90deg at -10% 100%,#bcc1cd 0deg,#bcc1cd 90deg,#fff 1turn);
+    background-image: conic-gradient(from 90deg at -10% 100%, #bcc1cd 0deg, #bcc1cd 90deg, #fff 1turn);
 }
+
 
 .footer-content-wrap {
     display: flex;
@@ -65,6 +72,7 @@
 }
 
 .footer-text-h2 {
+    --tw-text-opacity: 1;
     color: rgb(35 39 47/var(--tw-text-opacity));
 }
 
@@ -75,7 +83,7 @@
 
 
     font-size: 20px;
-    --tw-text-opacity: 0.9;
+    --tw-text-opacity: 1;
     color: rgb(64 71 86 / var(--tw-text-opacity));
 }
 
@@ -225,6 +233,10 @@
 
 /* footer Content end */
 /* footer bottom start */
+.dark .footer-bottom-wrap-padding{
+    --tw-bg-opacity: 1;
+    background-color: rgb(22 24 29/var(--tw-bg-opacity));
+}
 .footer-bottom-wrap-padding {
     padding: 3rem 1.25rem;
 }
@@ -280,12 +292,14 @@
 
 .footer-grid-text-sm {
     font-size: 13px;
-    --tw-text-opacity: 1;
-    color: rgb(35 39 47/var(--tw-text-opacity));
     border-color: transparent;
     border-bottom-width: 1px;
     display: inline-block;
     cursor: pointer;
+}
+.sub-text{
+    --tw-text-opacity: 1;
+    color: rgb(35 39 47/var(--tw-text-opacity));
 }
 
 .footer-text-border-bottom:hover {
@@ -305,37 +319,58 @@
     margin-top: 2rem;
     color: #414756;
 }
-.footer-bottom-logo-tag:hover{
+
+.footer-bottom-logo-tag:hover {
     color: rgb(2, 2, 2);
 }
 
+/* slide img */
 .react-conf-elizabet {
     content: url(../assets/footer/react-conf-elizabet.webp);
 }
+
 .react-conf-fun {
     content: url(../assets/footer/react-conf-fun.webp);
 }
+
 .react-conf-hallway {
     content: url(../assets/footer/react-conf-hallway.webp);
 }
+
 .react-conf-nat {
     content: url(../assets/footer/react-conf-nat.webp);
 }
+
 .react-india-hallway {
     content: url(../assets/footer/react-india-hallway.webp);
 }
+
 .react-india-selfie {
     content: url(../assets/footer/react-india-selfie.webp);
 }
+
 .react-india-sunil {
     content: url(../assets/footer/react-india-sunil.webp);
 }
+
 .react-india-team {
     content: url(../assets/footer/react-india-team.webp);
 }
 
 
-
+/* dark mode */
+.dark .footer-content-container {
+    background-image: conic-gradient(from 90deg at -10% 100%,#2b303b 0deg,#2b303b 90deg,#16181d 1turn) !important;
+}
+/* dark mode font */
+:is(.dark .dark\:primary-text-dark){
+    --tw-text-opacity: 1;
+    color: rgb(246 247 249/var(--tw-text-opacity));
+}
+:is(.dark .dark\:sub-text-dark){
+    --tw-text-opacity: 1;
+    color: rgb(235 236 240/var(--tw-text-opacity)) !important;
+}
 
 
 /* footer bottom end */
@@ -370,10 +405,12 @@
         -webkit-animation: large-marqueeSlider 80s linear infinite;
         animation: large-marqueeSlider 80s linear infinite;
     }
+
     .lg\:animate-large-marqueeSlider2 {
         -webkit-animation: large-marqueeSlider2 80s linear infinite;
         animation: large-marqueeSlider2 80s linear infinite;
     }
+
     .footer-content-box {
         margin-top: 8rem;
         margin-bottom: 8rem;
@@ -445,11 +482,13 @@
 
 @keyframes marqueeSlider2 {
     0% {
-        transform: translateX(400%); /* 오른쪽에서 시작 */
+        transform: translateX(400%);
+        /* 오른쪽에서 시작 */
     }
 
     100% {
-        transform: translateX(0); /* 왼쪽으로 이동 */
+        transform: translateX(0);
+        /* 왼쪽으로 이동 */
     }
 }
 
@@ -465,10 +504,12 @@
 
 @keyframes large-marqueeSlider2 {
     0% {
-        transform: translateX(200%); /* 오른쪽에서 시작 */
+        transform: translateX(200%);
+        /* 오른쪽에서 시작 */
     }
 
     100% {
-        transform: translateX(0); /* 왼쪽으로 이동 */
+        transform: translateX(0);
+        /* 왼쪽으로 이동 */
     }
 }

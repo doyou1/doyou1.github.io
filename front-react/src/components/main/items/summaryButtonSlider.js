@@ -3,7 +3,6 @@
 import "@/styles/footer.css";
 import { ReactComponent as ReactLogo } from "@/assets/home-logo.svg";
 
-
 const slideList = [
   "react-conf-elizabet",
   "react-conf-fun",
@@ -47,8 +46,10 @@ export default function SummaryButtonSlider({
         <div className="w-full">
           <div className="mx-auto flex flex-col max-w-4xl">
             <div className="px-5 lg:px-0 max-w-4xl lg:text-center text-opacity-80 flex flex-col items-center justify-center">
-              {title}
-              <p className="mx-auto flex flex-col max-w-3xl">
+              <h2 className="footer-text-h2 leading-xl font-display font-semibold text-5xl lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl dark:primary-text-dark">
+                {title}
+              </h2>
+              <p className="mx-auto flex flex-col max-w-3xl dark:sub-text-dark">
                 {firstTextBox}
               </p>
             </div>
@@ -68,22 +69,20 @@ export default function SummaryButtonSlider({
                 <SummaryButtonSlideImg />
               </div>
             </div>
-
           </div>
           <div className="mx-auto flex flex-col max-w-4xl">
             <div className="footer-text-box px-5 lg:px-0 max-w-3xl lg:text-center text-white text-opacity-80 flex flex-col items-center justify-center">
-              <p className="mx-auto flex flex-col max-w-4xl footer-text-p ">
+              <p className="mx-auto flex flex-col max-w-4xl footer-text-p dark:sub-text-dark">
                 {secondTextBox}
               </p>
             </div>
           </div>
         </div>
         <div className="content-bottom-box">
-          <ReactLogo
-            className="footer-react-logo"
-            alt="react logo in footer"
-          />
-          {btnTitle}
+          <ReactLogo className="footer-react-logo" alt="react logo in footer" />
+          <h2 className="footer-text-h2 leading-xl font-display font-semibold text-5xl lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl dark:primary-text-dark">
+            {btnTitle}
+          </h2>
           {btnText}
         </div>
       </div>

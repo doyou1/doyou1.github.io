@@ -1,0 +1,13 @@
+/* dark mode */
+.dark .footer-content-container {
+    background-image: conic-gradient(from 90deg at -10% 100%,#2b303b 0deg,#2b303b 90deg,#16181d 1turn) !important;
+}
+/* dark mode font */
+:is(.dark .dark\:primary-text-dark){
+    --tw-text-opacity: 1;
+    color: rgb(246 247 249/var(--tw-text-opacity));
+}
+:is(.dark .dark\:sub-text-dark){
+    --tw-text-opacity: 1;
+    color: rgb(235 236 240/var(--tw-text-opacity)) !important;
+}

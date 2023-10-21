@@ -157,11 +157,10 @@ const string = {
   // 231021
   // summaryButtonSlider
   summaryButtonSliderString: {
-    h2: (
-      <h2 className="footer-text-h2 leading-xl font-display font-semibold text-5xl lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl">
-        Join a community of millions
-      </h2>
-    ),
+    h2:
+
+        "Join a community of millions"
+    ,
     firstText:
       "You’re not alone. Two million developers from all over the world visit the React docs every month. React is something that people and teams can agree on.",
     secondText:
@@ -169,11 +168,7 @@ const string = {
   },
   // Footer Button section below the slider
   summaryButtonSliderBtn: {
-    h2: (
-      <h2 className="footer-text-h2 leading-xl font-display font-semibold text-5xl lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl">
-        Welcome to the React community
-      </h2>
-    ),
+    h2: "Welcome to the React community",
     btnText: <a className="footer-start-button">Get Started</a>,
   },
 
