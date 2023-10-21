@@ -98,8 +98,21 @@ export default function Main() {
           textBox={string.secondSummaryBtn.textBox}
           codeEditor={<CodeEditorConferencePage></CodeEditorConferencePage>}
         ></SummaryButton>
-        <SummaryButtonPlatform />
-        <SummaryButtonNews />
+        <SummaryButtonPlatform
+          title={string.summaryButtonPlatform.h2.title}
+          textBox={string.summaryButtonPlatform.textBox}
+          lowerText={string.summaryButtonPlatform.lowerText}
+          btnText={string.summaryButtonPlatform.btnText}
+        />
+
+        <SummaryButtonNews
+          title={string.summaryButtonNews.h2}
+          lowerText={string.summaryButtonNews.lowerText}
+          textBox={string.summaryButtonNews.textBox}
+          btnText={string.summaryButtonNews.btnText}
+          rightTopPtag={string.summaryButtonNews.rightTopPtag}
+          rightBox={string.summaryButtonNews.rightBox}
+        />
         <SummaryButtonSlider />
 
         <Footer

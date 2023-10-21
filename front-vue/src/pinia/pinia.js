@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useIsDarkStore = defineStore('isDark', {
+const useIsDarkStore = defineStore('isDark', {
     state: () => ({ isDark: false }),
     actions: {
         toggle() {
@@ -8,3 +8,14 @@ export const useIsDarkStore = defineStore('isDark', {
         }
     },
 });
+
+const useIsMacStore = defineStore('isMac', {
+    state: () => ({ isMac: window.navigator.platform.includes("Mac") }),
+    actions: {
+        toggle() {
+            this.isMac = !this.isMac;
+        }
+    },
+});
+
+export { useIsDarkStore, useIsMacStore };

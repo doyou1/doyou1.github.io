@@ -2,7 +2,9 @@ import code from "@/assets/summary/code.svg";
 // 지우고 두개의 svg 파일로 만들예정
 import arrow from "@/assets/summary/arrow-right.svg";
 import chart from "@/assets/summary/chart-network.svg";
-
+import build from "@/assets/summary/build.svg";
+import { ReactComponent as NewsPaper } from "@/assets/summary/news-paper.svg";
+import { ReactComponent as LaboratoryFlask } from "@/assets/summary/laboratory-flask.svg";
 const string = {
   // firstSummart text
   firstSummary: {
@@ -76,7 +78,7 @@ const string = {
     // button layout
     btnText: (
       <div className="lower-button-box">
-        <a href="https://reactnative.dev/" target="_blank">
+        <a href="#" target="_blank">
           <img className="code-logo" src={code} alt="code logo" />
           Add React to your page
           <img className="arrow-logo" src={arrow} alt="arrow logo" />
@@ -107,16 +109,49 @@ const string = {
         </a>
       </p>
     ),
-
     btnText: (
       <div className="lower-button-box">
-        <a href="https://reactnative.dev/" target="_blank">
+        <a href="#" target="_blank">
           <img className="code-logo" src={chart} alt="code logo" />
           Get started with a framework
           <img className="arrow-logo" src={arrow} alt="arrow logo" />
         </a>
       </div>
     ),
+  },
+  // 230923
+  // summaryBurronNews
+  summaryButtonNews: {
+    h2: "Upgrade when the future is ready",
+    lowerText:
+      "React approaches changes with care. Every React commit is tested on business-critical surfaces with over a billion users. Over 100,000 React components at Meta help validate every migration strategy.",
+    textBox:
+      "The React team is always researching how to improve React. Some research takes years to pay off. React has a high bar for taking a research idea into production. Only proven approaches become a part of React.",
+    btnText: "Read more React news",
+
+    rightTopPtag: "LATEST REACT NEWS",
+    rightBox: [
+      {
+        title: "React Canaries: Incremental Feature Rollout",
+        component: <NewsPaper />,
+        date: "May 3, 2023",
+      },
+      {
+        title: "React Labs: March 2023",
+        component: <LaboratoryFlask />,
+        date: "March 22, 2023",
+      },
+      {
+        title: "Introducing react.dev",
+        component: <NewsPaper />,
+        date: "March 16, 2023",
+      },
+      {
+        title: "React Labs: June 2022",
+        component: <LaboratoryFlask />,
+        date: "June 15, 2022",
+      },
+    ],
   },
 
   // Footer String Start
@@ -142,6 +177,32 @@ const string = {
       </h2>
     ),
     btnText: <a className="footer-start-button">Get Started</a>,
+  },
+
+  // summaryButtonPlatform
+  summaryButtonPlatform: {
+    h2: {
+      title: "Use the best from every platform",
+    },
+    textBox: (
+      <p className="text-box-p">
+        People love web and native apps for different reasons. React lets you
+        build both web apps and native apps using the same skills. It leans upon
+        each platform’s unique strengths to let your interfaces feel just right
+        on every platform.
+      </p>
+    ),
+    lowerText:
+      "With React, you can be a web and a native developer. Your team can ship to many platforms without sacrificing the user experience. Your organization can bridge the platform silos, and form teams that own entire features end-to-end.",
+    btnText: (
+      <div className="lower-button-box">
+        <a href="#" target="_blank">
+          <img className="code-logo" src={build} alt="code logo" />
+          Build for native platforms
+          <img className="arrow-logo" src={arrow} alt="arrow logo" />
+        </a>
+      </div>
+    ),
   },
 };
 

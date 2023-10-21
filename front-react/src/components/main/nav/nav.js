@@ -1,5 +1,8 @@
 import "@/styles/nav.css";
+import { useMemo, useEffect, useState, useCallback } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
+import { isDarkState, isMacState, isOpenHomeMenuState, isOpenDocSearchState } from "@/recoil/recoil_state";
+import { throttle } from 'lodash';
 
 import { ReactComponent as HomeLogo } from "@/assets/home-logo.svg";
 import { ReactComponent as SearchIcon } from "@/assets/nav/search.svg";
@@ -8,10 +11,7 @@ import { ReactComponent as DaynightIcon } from "@/assets/nav/daynight.svg";
 import { ReactComponent as GithubIcon } from "@/assets/nav/github.svg";
 import { ReactComponent as HomeMenuIcon } from "@/assets/nav/home-menu.svg";
 import { ReactComponent as CloseIcon } from "@/assets/nav/close.svg";
-import { isDarkState, isMacState, isOpenHomeMenuState, isOpenDocSearchState } from "@/recoil/recoil_state";
 
-import { throttle } from 'lodash';
-import { useMemo, useEffect, useState } from "react";
 
 export default function Nav() {
   const isDark = useRecoilValue(isDarkState);
@@ -21,6 +21,7 @@ export default function Nav() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
   const setIsOpenHomeMenu = useSetRecoilState(isOpenHomeMenuState);
 
+  const isOpenDocSearch = useRecoilValue(isOpenDocSearchState);
   const setIsOpenDocSearch = useSetRecoilState(isOpenDocSearchState);
 
   const [isScrollOn, setIsScrollOn] = useState(false);
@@ -49,9 +50,7 @@ export default function Nav() {
 
   useEffect(() => {
     window.addEventListener('scroll', throttledScroll);
-    return () => {
-      window.removeEventListener('scroll', throttledScroll);
-    };
+    return () => window.removeEventListener('scroll', throttledScroll);
   }, [throttledScroll]);
 
   const throttledResize = useMemo(
@@ -73,6 +72,39 @@ export default function Nav() {
   useEffect(() => {
     document.body.style.overflow = isOpenHomeMenu ? "hidden" : "visible";
   }, [isOpenHomeMenu]);
+
+  const handleKeydown = useCallback((event) => {
+    // 이미 docSearch가 열린 상태라면 return
+    if(isOpenDocSearch) return;
+
+    // window
+    if(!isMac) {
+      const code = event.keyCode;
+      let charCode = String.fromCharCode(code).toUpperCase();
+      // ctrl + K
+      if (event.ctrlKey && charCode === "K") {
+        event.preventDefault();
+        openDocSearch();
+      }
+    } 
+    // mac
+    else {
+      const code = event.keyCode;
+      let charCode = String.fromCharCode(code).toUpperCase();
+      // ctrl + K
+      if (event.metaKey && charCode === "K") {
+        event.preventDefault();
+        openDocSearch();
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    // onMounted
+    document.addEventListener("keydown", handleKeydown, false);
+    // onUnMounted
+    return () => document.removeEventListener("keydown", handleKeydown, false);
+  }, []);
 
   return (
     <div>
@@ -99,7 +131,7 @@ export default function Nav() {
             <div className="3xl:flex-1 flex align-center">
               <a
                 className="active:scale-95 overflow-hidden transition-transform relative items-center text-primary dark:text-primary-dark p-1 whitespace-nowrap outline-[#087ea4] rounded-full 3xl:rounded-xl inline-flex text-lg font-normal gap-2"
-                href="/"
+                href="#"
               >
                 <HomeLogo 
                   className="text-sm me-0 w-10 h-10 text-link dark:text-link-dark flex origin-center transition-all ease-in-out"
@@ -144,6 +176,7 @@ export default function Nav() {
               className="mx-2.5 gap-1.5 hidden lg:flex"
               style={{ color: !isDark ? "#414755" : "#FFFFFF"}}
               >
+                {/* outline-link : outline-[#087ea4] */}
               <div className="flex flex-auto sm:flex-1">
                 <a
                   className="active:scale-95 transition-transform w-full text-center outline-[#087ea4] py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-hover-light-dark hover:dark:bg-hover-deep-dark"
@@ -184,6 +217,7 @@ export default function Nav() {
                   aria-label="Search"
                   type="button"
                   className="active:scale-95 transition-transform flex md:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-[#ebecf0] hover:dark:bg-[#404756] outline-[#087ea4]"
+                  onClick={openDocSearch}
                 >
                   <SearchIcon
                     className="align-middle w-5 h-5"
