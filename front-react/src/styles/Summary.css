@@ -427,13 +427,9 @@
     grid-gap: 1.25rem;
     gap: 1.25rem;
 
-    background-size: 60% 100%;
+    background-size: 60% 101%;
     background-position: 100%;
     border-radius: 1rem;
-
-    --tw-bg-opacity: 1;
-    background-image: url(../assets/meta-gradient.png);
-    background-color: rgb(235 236 240 / var(--tw-bg-opacity));
   }
   :is(.dark .dark\:content-box) {
     background-image: url(../assets/meta-gradient-dark.png);

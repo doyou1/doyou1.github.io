@@ -43,7 +43,7 @@ function MainVideoBox({ isHover, setIsHover }) {
     >
       <div
         // max-w-3xl
-        className="rounded-2xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto shadow-nav dark:shadow-nav-dark"
+        className="rounded-2xl max-w-3xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto shadow-nav dark:shadow-nav-dark"
         style={{ height: "113px" }}
       >
         <div className="p-4" style={{ contentVisibility: "auto" }}>
