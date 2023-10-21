@@ -48,7 +48,7 @@ export default function SummaryButtonSlider({
           <div className="mx-auto flex flex-col max-w-4xl">
             <div className="px-5 lg:px-0 max-w-4xl lg:text-center text-opacity-80 flex flex-col items-center justify-center">
               {title}
-              <p className="mx-auto flex flex-col max-w-4xl">
+              <p className="mx-auto flex flex-col max-w-3xl">
                 {firstTextBox}
               </p>
             </div>
@@ -71,7 +71,7 @@ export default function SummaryButtonSlider({
 
           </div>
           <div className="mx-auto flex flex-col max-w-4xl">
-            <div className="footer-text-box px-5 lg:px-0 max-w-4xl lg:text-center text-white text-opacity-80 flex flex-col items-center justify-center">
+            <div className="footer-text-box px-5 lg:px-0 max-w-3xl lg:text-center text-white text-opacity-80 flex flex-col items-center justify-center">
               <p className="mx-auto flex flex-col max-w-4xl footer-text-p ">
                 {secondTextBox}
               </p>
