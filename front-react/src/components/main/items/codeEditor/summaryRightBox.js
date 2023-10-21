@@ -16,61 +16,39 @@ function MainVideoBox({ isHover, setIsHover }) {
   //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
   useEffect(() => {
     if (isHover === "three" || isHover === "ten") {
-      setStyle({
-        width: "480px",
-        height: "97px",
-        transform: "translate(28px, 28px)",
-      });
+      setStyle("w-[89.5%] left-[1.8rem] max-w-[48rem] h-[97px] three-rightBox");
       console.log("렌더링");
     }
     if (isHover === "four") {
-      setStyle({
-        width: "160px",
-        height: "97px",
-        transform: "translate(28px, 28px)",
-      });
+      setStyle("w-[160px] max-w-[48rem] h-[97px] four-rightBox");
       console.log("렌더링");
     }
     if (isHover === "five" || isHover === "eight") {
-      setStyle({
-        width: "241px",
-        height: "55px",
-        transform: "translate(184px, 49px)",
-      });
+      setStyle("left-[11.5rem] w-[53%] max-w-[48rem] h-[55px] five-rightBox");
       console.log("렌더링");
     }
     if (isHover === "six") {
-      setStyle({
-        width: "241px",
-        height: "35px",
-        transform: "translate(184px, 49px)",
-      });
+      setStyle("left-[11.5rem] w-[53%] max-w-[48rem] h-[35px] mb-[19px]");
       console.log("렌더링");
     }
     if (isHover === "seven") {
-      setStyle({
-        width: "241px",
-        height: "34px",
-        transform: "translate(184px, 70px)",
-      });
+      setStyle("left-[11.5rem] w-[53%] max-w-[48rem] h-[35px] mt-[23px]");
       console.log("렌더링");
     }
     if (isHover === "nine") {
-      setStyle({
-        width: "56px",
-        height: "56px",
-        transform: "translate(458px, 48px)",
-      });
+      setStyle(" w-[56px] max-w-[56px] h-[56px] nine-box");
       console.log("렌더링");
     }
   }, [isHover]);
+
   return (
     <div
       className="relative mt-0 lg:-my-20 w-full  flex grow justify-center rightbox-container-padding"
       data-value="div"
     >
       <div
-        className="max-w-3xl rounded-2xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto shadow-nav dark:shadow-nav-dark"
+        // max-w-3xl
+        className="rounded-2xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto shadow-nav dark:shadow-nav-dark"
         style={{ height: "113px" }}
       >
         <div className="p-4" style={{ contentVisibility: "auto" }}>
@@ -130,29 +108,16 @@ function MainVideoBox({ isHover, setIsHover }) {
           </div>
         </div>
       </div>
-      {/* 일단 정보가져오기  */}
-      {/* style 1
-        width: "467px",
-        height: "97px",
-        transform: " translate(28px, 28px)", */}
 
-      {/* style 2
-        width: "160px",
-        height: "97px",
-        transform: " translate(28px, 28px)", */}
-
-      {/* style 3
-        width: "259px",
-        height: "34px",
-        transform: " translate(184px, 70px)", */}
-      {/* hover 됐을 시 */}
-
-      <div className=" absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu box1234">
+      <div
+        className={`flex flex-col justify-center items-center absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu${
+          isHover ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div
-          className={`box123  start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
-            isHover ? "opacity-100 " : "opacity-20"
-          }`}
-          style={style}
+          className={`${
+            isHover ? style : ""
+          } start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark rounded-lg `}
           // top-0
         ></div>
       </div>

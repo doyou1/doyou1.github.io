@@ -128,6 +128,29 @@ span {
   --tw-border-opacity: 1;
   border-color: rgb(8 126 164 / var(--tw-border-opacity));
 }
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+.pointer-events-none {
+  pointer-events: none;
+}
+.rightbox-container-padding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.four-rightBox {
+  position: absolute;
+  left: 1.8rem;
+  /* width: auto; */
+}
+.nine-box {
+  position: relative;
+  left: 12.8rem;
+}
 
 /* 애니메이션  */
 @keyframes wave {
@@ -164,11 +187,29 @@ span {
   .xs\:w-36 {
     width: 9rem;
   }
+  .xs\:p-5 {
+    padding: 1.25rem;
+  }
 }
 /* 반응형 쿼리  1024px*/
 @media (min-width: 1024px) {
   .rightbox-container-padding {
     margin-top: -5rem;
     margin-bottom: -5rem;
+  }
+}
+@media (max-width: 828px) and (min-width: 690px) {
+  .three-rightBox {
+    width: 93%;
+  }
+}
+@media (max-width: 600px) and (min-width: 370px) {
+  .three-rightBox {
+    width: 89%;
+  }
+}
+@media (max-width: 1024px) {
+  .three-rightBox {
+    max-width: 47rem;
   }
 }
