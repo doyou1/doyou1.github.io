@@ -18,8 +18,7 @@ const SummaryButtonSlideImg = () => {
   return (
     <>
       {slideList.map((item, idx) => (
-        <div className="group flex justify-center px-5 min-w-[50%] lg:min-w-[25%] rounded-2xl relative">
-          <div key={idx} className="">
+        <div key={item} className="group flex justify-center px-5 min-w-[50%] lg:min-w-[25%] rounded-2xl relative">
             <img
               alt=""
               className={`ease-in-out duration-300 aspect-[4/3] rounded-2xl  image-size group-hover:scale-110 group-hover:shadow-lg lg:group-hover:shadow-2xl ${item} ${
@@ -28,7 +27,6 @@ const SummaryButtonSlideImg = () => {
                   : "rotate-[-2deg] group-hover:rotate-1"
               }`}
             ></img>
-          </div>
         </div>
       ))}
     </>
@@ -42,7 +40,7 @@ export default function SummaryButtonSlider({
   btnText,
 }) {
   return (
-    <div className="mx-auto flex flex-col w-full footer-content-container border-t border-primary/10">
+    <div className="mx-auto flex flex-col w-full footer-content-container border-primary/10">
       <div className="flex-col gap-2 flex grow w-full my-20 lg:my-32 mx-auto items-center">
         <div className="w-full">
           <div className="mx-auto flex flex-col max-w-4xl">
@@ -80,7 +78,8 @@ export default function SummaryButtonSlider({
           </div>
         </div>
         <div className="content-bottom-box">
-          <ReactLogo className="footer-react-logo" alt="react logo in footer" />
+          <ReactLogo className="footer-react-logo dark:text-[#149eca]"
+                  style={{ color: "#087ea4"}} alt="react logo in footer" />
           <h2 className="footer-text-h2 leading-xl font-display font-semibold summary-button-slider-h2-size lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl dark:primary-text-dark">
             {btnTitle}
           </h2>
