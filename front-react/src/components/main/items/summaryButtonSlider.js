@@ -1,6 +1,7 @@
 // 231021 - 정
 
 import "@/styles/footer.css";
+import "@/styles/summaryButtonSlider.css"
 import { ReactComponent as ReactLogo } from "@/assets/home-logo.svg";
 
 const slideList = [
@@ -80,7 +81,7 @@ export default function SummaryButtonSlider({
         </div>
         <div className="content-bottom-box">
           <ReactLogo className="footer-react-logo" alt="react logo in footer" />
-          <h2 className="footer-text-h2 leading-xl font-display font-semibold text-5xl lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl dark:primary-text-dark">
+          <h2 className="footer-text-h2 leading-xl font-display font-semibold summary-button-slider-h2-size lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl dark:primary-text-dark">
             {btnTitle}
           </h2>
           {btnText}
