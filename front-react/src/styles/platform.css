@@ -78,11 +78,6 @@
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-    var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
-    var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-    var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-    var(--tw-backdrop-sepia);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-bg-opacity: 0.9;
@@ -151,6 +146,11 @@
     #ebecf0 1turn
   );
 }
+
+.dark .platform-rightbox-webbox-textbox {
+  background-image: conic-gradient(from -90deg at 110% 100%,#2b303b 0deg,#16181d 90deg,#16181d 1turn);
+}
+
 .second-leftbox-webbox {
   position: relative;
   width: 100%;
@@ -323,4 +323,8 @@
     height: 5rem;
     border-radius: 1.5rem;
   }
+}
+
+.box-shadow-custom {
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 16px 32px -16px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.1);
 }

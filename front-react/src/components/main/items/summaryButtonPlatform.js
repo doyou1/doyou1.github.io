@@ -16,13 +16,12 @@ import { ReactComponent as ArrowRightMiddleAnimation } from "@/assets/summary/ar
 export default function SummaryButton({ title, btnText, lowerText, textBox }) {
   return (
     <div>
-      {" "}
-      <div className="summary-main-container">
+      <div className="summary-main-container platform-main-container">
         <div className="summary-sub-container">
           {/* text-box start */}
           <div className="text-box">
-            <h2 className="text-box-h2">{title}</h2>
-            <p className="text-box-p">{textBox}</p>
+            <h2 className="text-box-h2 dark:text-white">{title}</h2>
+            <p className="text-box-p dark:text-white">{textBox}</p>
           </div>
         </div>
         {/* content-container start */}
@@ -39,13 +38,12 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
                 </div>
               </div>
               {/* stay true to the web main layout */}
-              <div className="platform-leftbox-webbox">
+              <div className="platform-leftbox-webbox box-shadow-custom">
                 {/* leftnav */}
                 <div className="platform-leftbox-webbox-nav">
                   <div className="example-nav-content">
                     <div className="example-nav">
                       <Key className="code-key"></Key>
-
                       <span>example.com</span>
                     </div>
                   </div>
@@ -93,10 +91,9 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
                         <Battery className="svg-battery"></Battery>
                       </div>
                     </div>
-
                     <div className="third-leftbox-webbox">
-                      <h4>Go truly native</h4>
-                      <p>
+                      <h4 className="dark:text-white">Go truly native</h4>
+                      <p className="dark:text-white">
                         People expect native apps to look and feel like their
                         platform.
                         <a href="#"> React Native </a>
@@ -116,17 +113,17 @@ export default function SummaryButton({ title, btnText, lowerText, textBox }) {
 
           {/* 하단 텍스트  */}
           <div className="lower-text-box">
-            <p className="lower-box-p">{lowerText}</p>
+            <p className="lower-box-p dark:text-white">{lowerText}</p>
             {/* utils/string.firstSummaryBtn.btntext  */}
             {/* {btnText} */}
             <div className="lower-button-box">
               <a
-                className="group"
+                className="group dark:text-white"
                 href="https://reactnative.dev/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Build className="code-logo" alt="code logo" />
+                <Build className="code-logo dark:text-white" alt="code logo" />
                 Build for native platforms
                 <ArrowRightMiddleAnimation className="arrow-right-middle-animation text-[#23272f] dark:text-[#f6f7f9] rtl:rotate-180" />
               </a>
