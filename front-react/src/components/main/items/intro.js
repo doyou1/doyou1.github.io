@@ -1,5 +1,5 @@
 import "@/styles/intro.css";
-import logo from "@/assets/home-logo.svg";
+import { ReactComponent as HomeLogo } from "@/assets/home-logo.svg";
 
 export default function Intro() {
   return (
@@ -9,12 +9,15 @@ export default function Intro() {
         {/* home logo */}
         <div className="flex items-center">
           <a className="" href="#">
-            <img className="react-logo " src={logo} alt="home logo" />
+            <HomeLogo 
+                  className="react-logo dark:text-[#149eca]"
+                  style={{ color: "#087ea4"}}
+                />
           </a>
         </div>
         {/* text set */}
-        <h1 className="text-h1 font-diplay text-xl">React</h1>
-        <p className="text-p font-diplay">
+        <h1 className="text-h1 font-diplay text-xl dark:text-white">React</h1>
+        <p className="text-p font-diplay dark:text-white">
           The library for web and native user interfaces
         </p>
         {/* button set */}
@@ -22,7 +25,7 @@ export default function Intro() {
           <a href="#" className="learn-react-box" aria-label="Learn React">
             Learn React
           </a>
-          <a href="#" className="api-reference-box" aria-label="API Reference">
+          <a href="#" className="api-reference-box dark:text-white" aria-label="API Reference">
             API Reference
           </a>
         </div>
