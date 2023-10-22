@@ -91,9 +91,9 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
             {" "}
             href
           </span>
-          <span className="sp-syntax-static">{"={video."}</span>
+          <span className="sp-syntax-plain">{"={video."}</span>
           <span className="sp-syntax-property dark:sp-syntax-keyword">url</span>
-          <span className="sp-syntax-static">{"}>"}</span>
+          <span className="sp-syntax-plain">{"}>"}</span>
           <br></br>
         </div>
 
@@ -105,16 +105,16 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
           onMouseOver={() => handleMouseOver("videoSix")}
           onMouseOut={() => handleMouseOut()}
         >
-          <span className="sp-syntax-static">
+          <span className="sp-syntax-plain">
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{"<"}
           </span>
           <span className="sp-syntax-tag dark:sp-syntax-tag">h3</span>
           <span className="sp-syntax-plain">{">"}</span>
-          <span className="sp-syntax-static">{"{video."}</span>
+          <span className="sp-syntax-plain">{"{video."}</span>
           <span className="sp-syntax-property dark:sp-syntax-keyword">
             title
           </span>
-          <span className="sp-syntax-static">{"}</"}</span>
+          <span className="sp-syntax-plain">{"}</"}</span>
           <span className="sp-syntax-tag dark:sp-syntax-tag">h3</span>
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
@@ -133,11 +133,11 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
           </span>
           <span className="sp-syntax-tag dark:sp-syntax-tag">p</span>
           <span className="sp-syntax-plain">{">"}</span>
-          <span className="sp-syntax-static">{"{video."}</span>
+          <span className="sp-syntax-plain">{"{video."}</span>
           <span className="sp-syntax-property dark:sp-syntax-keyword">
             description
           </span>
-          <span className="sp-syntax-static">{"}</"}</span>
+          <span className="sp-syntax-plain">{"}</"}</span>
           <span className="sp-syntax-tag dark:sp-syntax-tag">p</span>
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
@@ -866,7 +866,7 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           </span>
           <span className="sp-syntax-punctuation">{"({"}</span>
           <span className="sp-syntax-property dark:sp-syntax-property">
-            {" confId "}
+            {" slug "}
           </span>
           <span className="sp-syntax-punctuation">{"});"}</span>
           <br></br>
