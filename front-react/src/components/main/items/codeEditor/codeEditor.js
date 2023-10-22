@@ -225,27 +225,41 @@ const CodeEditorVideoList = ({ isHover, setIsHover }) => {
       <code className="code-editer">
         {/* one */}
         <div className="cm-line">
-          <span className="sp-syntax-keyword">function </span>
-          <span className="sp-syntax-definition">VideoList </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            function{" "}
+          </span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            VideoList{" "}
+          </span>
           <span className="sp-syntax-punctuation">{"({"} </span>
-          <span className="sp-syntax-property">videos</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            videos
+          </span>
           <span className="sp-syntax-punctuation">, </span>
-          <span className="sp-syntax-property">emptyHeading </span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            emptyHeading{" "}
+          </span>
           <span className="sp-syntax-punctuation">{"}) {"}</span>
           <br></br>
         </div>
         {/* two */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; const </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; const{" "}
+          </span>
           <span className="sp-syntax-plain">count</span> =
           <span className="sp-syntax-plain"> videos</span>.
-          <span className="sp-syntax-property">length</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            length
+          </span>
           <span className="sp-syntax-punctuation">;</span>
           <br></br>
         </div>
         {/* three */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; let </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; let{" "}
+          </span>
           <span className="sp-syntax-plain">heading</span> =
           <span className="sp-syntax-plain"> emptyHeading</span>
           <span className="sp-syntax-punctuation">;</span>
@@ -253,22 +267,33 @@ const CodeEditorVideoList = ({ isHover, setIsHover }) => {
         </div>
         {/* four */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; if</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; if
+          </span>
           <span className="sp-syntax-punctuation"> (</span>
           <span className="sp-syntax-plain">count {">"} </span>
-          <span className="sp-syntax-static">0</span>
+          <span className="sp-syntax-static dark:sp-syntax-static">0</span>
           <span className="sp-syntax-punctuation">)</span>
           <span className="sp-syntax-punctuation">{" {"}</span>
           <br></br>
         </div>
         {/* five */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; &nbsp; const</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; &nbsp; const
+          </span>
           <span className="sp-syntax-plain"> noun</span> =
           <span className="sp-syntax-plain"> count</span> &gt;
-          <span className="sp-syntax-static"> 1</span> ?
-          <span className="sp-syntax-string"> 'Videos'</span> :
-          <span className="sp-syntax-string"> 'Video'</span>
+          <span className="sp-syntax-static dark:sp-syntax-static"> 1</span> ?
+          <span className="sp-syntax-string dark:sp-syntax-string">
+            {" "}
+            'Videos'
+          </span>{" "}
+          :
+          <span className="sp-syntax-string dark:sp-syntax-string">
+            {" "}
+            'Video'
+          </span>
           <span className="sp-syntax-punctuation">;</span>
           <br></br>
         </div>
@@ -276,7 +301,7 @@ const CodeEditorVideoList = ({ isHover, setIsHover }) => {
         <div className="cm-line ">
           <span className="sp-syntax-plain">&nbsp; &nbsp; heading</span> =
           <span className="sp-syntax-plain"> count</span> +
-          <span className="sp-syntax-string"> ' '</span> +
+          <span className="sp-syntax-string dark:sp-syntax-string"> ' '</span> +
           <span className="sp-syntax-plain"> noun</span>
           <span className="sp-syntax-punctuation">; </span>
           <br></br>
@@ -288,7 +313,9 @@ const CodeEditorVideoList = ({ isHover, setIsHover }) => {
         </div>
         {/* eight */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; return</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; return
+          </span>
           <span className="sp-syntax-punctuation"> (</span>
           <br></br>
         </div>
@@ -301,7 +328,7 @@ const CodeEditorVideoList = ({ isHover, setIsHover }) => {
           onMouseOut={() => handleMouseOut()}
         >
           <span className="sp-syntax-punctuation">&nbsp; &nbsp; &lt;</span>
-          <span className="sp-syntax-tag">section</span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag">section</span>
           <span className="sp-syntax-punctuation">&gt;</span>
           <br></br>
         </div>
@@ -316,13 +343,13 @@ const CodeEditorVideoList = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; &lt;
           </span>
-          <span className="sp-syntax-tag">h2</span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag">h2</span>
           <span className="sp-syntax-punctuation">&gt;</span>
           <span className="sp-syntax-punctuation">{"{"}</span>
           <span className="sp-syntax-plain">heading</span>
           <span className="sp-syntax-punctuation">{"}"}</span>
           <span className="sp-syntax-punctuation">&lt;/</span>
-          <span className="sp-syntax-tag">h2</span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag">h2</span>
           <span className="sp-syntax-punctuation">&gt;</span>
           <br></br>
         </div>
@@ -332,7 +359,9 @@ const CodeEditorVideoList = ({ isHover, setIsHover }) => {
             &nbsp; &nbsp; &nbsp; {"{"}
           </span>
           <span className="sp-syntax-plain">videos</span>.
-          <span className="sp-syntax-property">map</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            map
+          </span>
           <span className="sp-syntax-punctuation">(</span>
           <span className="sp-syntax-plain">video</span>
           <span className="sp-syntax-punctuation"> =&gt;</span>
@@ -349,14 +378,22 @@ const CodeEditorVideoList = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; &nbsp; &lt;
           </span>
-          <span className="sp-syntax-definition">Video</span>
-          <span className="sp-syntax-property"> key</span>=
-          <span className="sp-syntax-punctuation">{"{"}</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            Video
+          </span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            {" "}
+            key
+          </span>
+          =<span className="sp-syntax-punctuation">{"{"}</span>
           <span className="sp-syntax-plain">video</span>.
-          <span className="sp-syntax-property">id</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">id</span>
           <span className="sp-syntax-punctuation">{"}"}</span>
-          <span className="sp-syntax-property"> video</span>=
-          <span className="sp-syntax-punctuation">{"{"}</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            {" "}
+            video
+          </span>
+          =<span className="sp-syntax-punctuation">{"{"}</span>
           <span className="sp-syntax-plain">video</span>
           <span className="sp-syntax-punctuation">{"}"}</span>
           <span className="sp-syntax-punctuation"> /&gt;</span>
@@ -379,7 +416,7 @@ const CodeEditorVideoList = ({ isHover, setIsHover }) => {
           onMouseOut={() => handleMouseOut()}
         >
           <span className="sp-syntax-punctuation"> &nbsp; &nbsp;&lt;/</span>
-          <span className="sp-syntax-tag">section</span>
+          <span className="sp-syntax-tag dark:sp-syntax-tag">section</span>
           <span className="sp-syntax-punctuation">&gt;</span>
           <br></br>
         </div>
@@ -412,44 +449,67 @@ const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
       <code className="code-editer">
         {/* one */}
         <div className="cm-line">
-          <span className="sp-syntax-keyword">import </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            import{" "}
+          </span>
           <span className="sp-syntax-punctuation">{"{ useState }"} </span>
-          <span className="sp-syntax-keyword">from</span>
-          <span className="sp-syntax-punctuation">{" 'react';"}</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">from</span>
+          <span className="sp-syntax-string dark:sp-syntax-string">
+            {" 'react'"}
+          </span>
+          <span className="sp-syntax-plain">{";"}</span>
           <br></br>
         </div>
         <br></br>
         {/* two */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">function</span>
-          <span className="sp-syntax-definition"> SearchableVideoList</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            function
+          </span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            SearchableVideoList
+          </span>
           <span className="sp-syntax-plain">{"({"}</span>
-          <span className="sp-syntax-property"> video </span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            videos
+          </span>
           <span className="sp-syntax-punctuation">{"}) {"}</span>
           <br></br>
         </div>
         {/* three */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; const </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; const
+          </span>
           <span className="sp-syntax-plain">
             {"[searchText, setSearchText] = "}
           </span>
-          <span className="sp-syntax-definition">useState</span>
-          <span className="sp-syntax-punctuation">('');</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            useState
+          </span>
+          <span className="sp-syntax-plain">(</span>
+          <span className="sp-syntax-string dark:sp-syntax-string">''</span>
+          <span className="sp-syntax-plain">);</span>
           <br></br>
         </div>
         {/* four */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; const</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; const
+          </span>
           <span className="sp-syntax-punctuation"> foundVideos = </span>
-          <span className="sp-syntax-definition">filterVideos</span>
-          <span className="sp-syntax-static">(videos, searchText);</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            filterVideos
+          </span>
+          <span className="sp-syntax-plain">(videos, searchText);</span>
 
           <br></br>
         </div>
         {/* five */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; return</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; return
+          </span>
           <span className="sp-syntax-plain"> (</span>
           <br></br>
         </div>
@@ -477,12 +537,14 @@ const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
             <span className="sp-syntax-punctuation">
               &nbsp; &nbsp; &nbsp;{" <"}
             </span>
-            <span className="sp-syntax-definition">SearchInput</span>
+            <span className="sp-syntax-definition dark:sp-syntax-definition">
+              SearchInput
+            </span>
             <br></br>
           </div>
           {/* eight */}
           <div className="cm-line ">
-            <span className="sp-syntax-property">
+            <span className="sp-syntax-property dark:sp-syntax-property">
               &nbsp; &nbsp; &nbsp; {"  value"}
             </span>
             <span className="sp-syntax-punctuation">{"={searchText}"}</span>
@@ -490,11 +552,13 @@ const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
           </div>
           {/* nine */}
           <div className="cm-line cm-line-nine">
-            <span className="sp-syntax-property">
+            <span className="sp-syntax-property dark:sp-syntax-property">
               &nbsp; &nbsp; &nbsp; {"  onChange"}
             </span>
             <span className="sp-syntax-punctuation">{"={newText => "}</span>
-            <span className="sp-syntax-definition">setSearchText</span>
+            <span className="sp-syntax-definition dark:sp-syntax-definition">
+              setSearchText
+            </span>
             <span className="sp-syntax-plain">{"(newText)} />"}</span>
             <br></br>
           </div>
@@ -512,12 +576,14 @@ const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
             <span className="sp-syntax-punctuation">
               &nbsp; &nbsp; &nbsp; &lt;
             </span>
-            <span className="sp-syntax-definition">VideoList</span>
+            <span className="sp-syntax-definition dark:sp-syntax-definition">
+              VideoList
+            </span>
             <br></br>
           </div>
           {/* eleven */}
           <div className="cm-line eleven ">
-            <span className="sp-syntax-property">
+            <span className="sp-syntax-property dark:sp-syntax-property">
               &nbsp; &nbsp; &nbsp; {"  videos"}
             </span>
             <span className="sp-syntax-plain">{"={foundVideos}"}</span>
@@ -525,12 +591,18 @@ const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
           </div>
           {/* twelve*/}
           <div className="cm-line twelve">
-            <span className="sp-syntax-property">
+            <span className="sp-syntax-property dark:sp-syntax-property">
               &nbsp; &nbsp; &nbsp; {"  emptyHeading"}
             </span>
-            <span className="sp-syntax-string">{'={`No matches for "$'}</span>
-            <span className="sp-syntax-plain">{"{searchText}"}</span>
-            <span className="sp-syntax-string">{'"`} />'}</span>
+            <span className="sp-syntax-plain">{"={"}</span>
+            <span className="sp-syntax-string dark:sp-syntax-string">
+              {'`No matches for "'}
+            </span>
+            <span className="sp-syntax-plain">{"${searchText}"}</span>
+            <span className="sp-syntax-string dark:sp-syntax-string">
+              {'"`'}
+            </span>
+            <span className="sp-syntax-plain">{"} />"}</span>
             <br></br>
           </div>
         </div>
@@ -575,47 +647,80 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
       <code className="code-editer">
         {/* one */}
         <div className="cm-line">
-          <span className="sp-syntax-keyword">import</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            import
+          </span>
           <span className="sp-syntax-punctuation">{" { db } "}</span>
-          <span className="sp-syntax-keyword">from</span>
-          <span className="sp-syntax-punctuation">{" './database.js';"} </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">from</span>
+          <span className="sp-syntax-string dark:sp-syntax-string">
+            {" './database.js'"}
+          </span>
+          <span className="sp-syntax-plain">{";"} </span>
           <br></br>
         </div>
         {/* two */}
         <div className="cm-line">
-          <span className="sp-syntax-keyword">import</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            import
+          </span>
           <span className="sp-syntax-punctuation">{" { Suspense } "}</span>
-          <span className="sp-syntax-keyword">from</span>
-          <span className="sp-syntax-punctuation">{" 'react';"} </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">from</span>
+          <span className="sp-syntax-string dark:sp-syntax-string">
+            {" 'react'"}
+          </span>
+          <span className="sp-syntax-plain">{";"} </span>
           <br></br>
         </div>
         <br></br>
         {/* three */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">async </span>
-          <span className="sp-syntax-keyword">function</span>
-          <span className="sp-syntax-definition"> ConferencePage</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            async{" "}
+          </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            function
+          </span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            {" "}
+            ConferencePage
+          </span>
           <span className="sp-syntax-plain">{"({ "}</span>
-          <span className="sp-syntax-property">slug</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            slug
+          </span>
           <span className="sp-syntax-plain">{" }) {"}</span>
           <br></br>
         </div>
         {/* four */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; const</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; const
+          </span>
           <span className="sp-syntax-punctuation"> conf =</span>
-          <span className="sp-syntax-keyword"> await</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            {" "}
+            await
+          </span>
           <span className="sp-syntax-plain"> db.</span>
-          <span className="sp-syntax-property">Confs</span>.
-          <span className="sp-syntax-property">find</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            Confs
+          </span>
+          .
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            find
+          </span>
           <span className="sp-syntax-punctuation">{"({"}</span>
-          <span className="sp-syntax-property">{" slug "}</span>
-          <span className="sp-syntax-punctuation">{"})"}</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            {" slug "}
+          </span>
+          <span className="sp-syntax-punctuation">{"};"}</span>
           <br></br>
         </div>
         {/* five */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; return</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; return
+          </span>
           <span className="sp-syntax-plain">{" ("}</span>
           <br></br>
         </div>
@@ -628,8 +733,12 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           onMouseOut={() => handleMouseOut()}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &lt;</span>
-          <span className="sp-syntax-definition">ConferenceLayout </span>
-          <span className="sp-syntax-property">conf</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            ConferenceLayout{" "}
+          </span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            conf
+          </span>
           <span className="sp-syntax-plain">{"={conf}>"}</span>
           <br></br>
         </div>
@@ -642,10 +751,16 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           onMouseOut={() => handleMouseOut()}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; &lt;</span>
-          <span className="sp-syntax-definition">Suspense </span>
-          <span className="sp-syntax-property">fallback</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            Suspense{" "}
+          </span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            fallback
+          </span>
           <span className="sp-syntax-plain">{"={<"}</span>
-          <span className="sp-syntax-definition">TalksLoading</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            TalksLoading
+          </span>
           <span className="sp-syntax-plain">{" />}>"}</span>
           <br></br>
         </div>
@@ -660,10 +775,14 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">
             &nbsp; &nbsp; &nbsp; &nbsp; &lt;
           </span>
-          <span className="sp-syntax-definition">Talks </span>
-          <span className="sp-syntax-property">confId</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            Talks{" "}
+          </span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            confId
+          </span>
           <span className="sp-syntax-plain">{"={conf."}</span>
-          <span className="sp-syntax-property">id</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">id</span>
           <span className="sp-syntax-plain">{" />}"}</span>
           <br></br>
         </div>
@@ -676,7 +795,9 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           onMouseOut={() => handleMouseOut()}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; &lt;/</span>
-          <span className="sp-syntax-definition">Suspense</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            Suspense
+          </span>
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
@@ -689,7 +810,9 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           onMouseOut={() => handleMouseOut()}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &lt;/</span>
-          <span className="sp-syntax-definition">ConferenceLayout</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            ConferenceLayout
+          </span>
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
@@ -706,35 +829,62 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
         <br></br>
         {/* Thirteen */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">async </span>
-          <span className="sp-syntax-keyword">function</span>
-          <span className="sp-syntax-definition"> Talks</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            async{" "}
+          </span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            function
+          </span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            {" "}
+            Talks
+          </span>
           <span className="sp-syntax-plain">{"({ "}</span>
-          <span className="sp-syntax-property">slug</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            slug
+          </span>
           <span className="sp-syntax-plain">{" }) {"}</span>
           <br></br>
         </div>
         {/* fourteen */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; const</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; const
+          </span>
           <span className="sp-syntax-punctuation"> talks =</span>
-          <span className="sp-syntax-keyword"> await</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            {" "}
+            await
+          </span>
           <span className="sp-syntax-plain"> db.</span>
-          <span className="sp-syntax-property">Talks</span>.
-          <span className="sp-syntax-property">findAll</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            Talks
+          </span>
+          .
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            findAll
+          </span>
           <span className="sp-syntax-punctuation">{"({"}</span>
-          <span className="sp-syntax-property">{" confId "}</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            {" confId "}
+          </span>
           <span className="sp-syntax-punctuation">{"});"}</span>
           <br></br>
         </div>
         {/* fifteen */}
         <div className="cm-line ">
-          <span className="sp-syntax-keyword">&nbsp; const</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; const
+          </span>
           <span className="sp-syntax-punctuation"> videos =</span>
           <span className="sp-syntax-plain"> talks.</span>
-          <span className="sp-syntax-property">map</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            map
+          </span>
           <span className="sp-syntax-plain">{"(talk => talk."}</span>
-          <span className="sp-syntax-property">video</span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            video
+          </span>
           <span className="sp-syntax-punctuation">{");"}</span>
           <br></br>
         </div>
@@ -746,10 +896,16 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           onMouseOver={() => handleMouseOver("eight")}
           onMouseOut={() => handleMouseOut()}
         >
-          <span className="sp-syntax-keyword">&nbsp; return</span>
+          <span className="sp-syntax-keyword dark:sp-syntax-keyword">
+            &nbsp; return
+          </span>
           <span className="sp-syntax-punctuation"> &lt;</span>
-          <span className="sp-syntax-definition">{"SearchableVideoList "}</span>
-          <span className="sp-syntax-property">videos</span>
+          <span className="sp-syntax-definition dark:sp-syntax-definition">
+            {"SearchableVideoList "}
+          </span>
+          <span className="sp-syntax-property dark:sp-syntax-property">
+            videos
+          </span>
           <span className="sp-syntax-plain">{"={videos} />;"}</span>
           <br></br>
         </div>

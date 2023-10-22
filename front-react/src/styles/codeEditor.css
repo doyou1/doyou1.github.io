@@ -85,7 +85,18 @@ span {
 :is(.dark .dark\:sp-syntax-tag) {
   color: var(--sp-syntax-color-tag-dark);
 }
-
+.sp-syntax-property {
+  color: var(--sp-syntax-color-property);
+}
+:is(.dark .dark\:sp-syntax-property) {
+  color: var(--sp-syntax-color-property-dark);
+}
+.sp-syntax-static {
+  color: var(--sp-syntax-color-static);
+}
+:is(.dark .dark\:sp-syntax-static) {
+  color: var(--sp-syntax-color-static-dark);
+}
 /* ==========================
       summaryRgintBox css 
    ==========================*/
