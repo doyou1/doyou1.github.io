@@ -54,7 +54,7 @@ span {
   padding: 15px;
   -webkit-font-smoothing: auto;
 }
-/* 컬러지정  */
+/* 컬러지정 / 다크모드 */
 .sp-syntax-keyword {
   color: var(--sp-syntax-color-keyword);
 }
@@ -112,8 +112,23 @@ span {
     0 0 0 1px var(--tw-shadow-color);
   --tw-text-opacity: 1;
 }
+/* 비디오 박스 색상스타일  */
 .via-blue-50 {
   background-image: linear-gradient(#2b3491, #087ea4);
+}
+.via-red-50 {
+  --tw-gradient-to: #2b3491 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from),
+    #a6423a var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-from: #c76a15 var(--tw-gradient-from-position);
+  background-image: conic-gradient(at top right, var(--tw-gradient-stops));
+}
+.via-green-50 {
+  --tw-gradient-to: #2b3491 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from),
+    #388f7f var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-from: #c76a15 var(--tw-gradient-from-position);
+  background-image: conic-gradient(at top right, var(--tw-gradient-stops));
 }
 
 .text-red-50 {
@@ -123,6 +138,9 @@ span {
 .text-tertiary {
   --tw-text-opacity: 1;
   color: rgb(94 104 126 / var(--tw-text-opacity));
+}
+.text-xl {
+  font-size: 20px;
 }
 
 /* 버튼에 마우스를 올리면 적용되는 스타일 */
