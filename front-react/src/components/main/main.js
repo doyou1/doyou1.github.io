@@ -33,6 +33,7 @@ import { useState } from "react";
 export default function Main() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
   const isOpenDocSearch = useRecoilValue(isOpenDocSearchState);
+  // firstSummary, secondSummary, firstSummaryButton, secondSummaryButton 부분 Porps로 전달
   const [isHover, setIsHover] = useState(false);
 
   return (
