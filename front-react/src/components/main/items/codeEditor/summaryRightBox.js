@@ -10,7 +10,7 @@ function MainVideoBox({ isHover, setIsHover }) {
   //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
   useEffect(() => {
     if (isHover === "videoThree" || isHover === "videoTen") {
-      setStyle("w-full max-w-[48rem] h-[97px] three-rightBox");
+      setStyle("three-rightBox");
       // console.log("렌더링");
     }
     if (isHover === "videoFour") {
@@ -51,7 +51,7 @@ function MainVideoBox({ isHover, setIsHover }) {
       </div>
       {/* 마우스이벤트 발생시 나오는 레이아웃 */}
       <div
-        className={`flex flex-col justify-center items-center absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu${
+        className={`p-7 flex flex-col justify-center items-center absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu${
           isHover ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -223,15 +223,27 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
 }
 function ConfsSlug({}) {
   const [searchValue, setSearchValue] = useState("");
+  const [selectedYear, setSelectedYear] = useState("react-conf-2021"); //이미지 변경상태관리
 
+  // 이곳에서 검색을 처리하거나 상태를 업데이트함
   const handleSearchChange = (e) => {
     setSearchValue(e.target.value);
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 이곳에서 검색을 처리하거나 상태를 업데이트할 수 있습니다.
   };
+  // 이미지 선택시 변경되는 코드
+  const handleSelectChange = (event) => {
+    setSelectedYear(event.target.value);
+  };
+  const getImageSource = () => {
+    if (selectedYear === "react-conf-2021") {
+      return "https://react.dev/images/home/conf2021/cover.svg";
+    } else if (selectedYear === "react-conf-2019") {
+      return "https://react.dev/images/home/conf2019/cover.svg";
+    }
+  };
+
   return (
     <div className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
       <div className="mx-auto max-w-3xl shadow-nav dark:shadow-nav-dark relative overflow-hidden w-full dark:border-opacity-10 rounded-2xl">
@@ -278,6 +290,8 @@ function ConfsSlug({}) {
                 <div className="h-40 overflow-hidden relative items-center flex">
                   <div className="absolute inset-0 px-4 py-2 flex items-end bg-gradient-to-t from-black/40 via-black/0">
                     <select
+                      value={selectedYear}
+                      onChange={handleSelectChange}
                       aria-label="Event"
                       className="appearance-none pe-8 bg-transparent text-primary-dark text-2xl font-bold mb-0.5"
                       style={{
@@ -296,7 +310,8 @@ function ConfsSlug({}) {
                     </select>
                   </div>
                   <img
-                    src="https://react.dev/images/home/conf2021/cover.svg"
+                    // 이미지 변경되는곳
+                    src={getImageSource()}
                     width={500}
                     height={263}
                     alt=""
@@ -364,7 +379,6 @@ function ConfsSlug({}) {
                     </section>
                   </div>
                 </div>
-                ;
               </div>
             </div>
           </div>

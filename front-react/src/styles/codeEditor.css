@@ -235,10 +235,10 @@ span {
   align-items: center;
   height: 100%;
 }
-.four-rightBox {
-  position: absolute;
-  left: 1.8rem;
-  /* width: auto; */
+.three-rightBox {
+  position: relative;
+  width: 100%;
+  height: 97px;
 }
 .nine-box {
   position: relative;
@@ -329,7 +329,8 @@ span {
   }
 }
 
-@media (max-width: 600px) and (min-width: 370px) {
-}
-@media (max-width: 1024px) {
+@media (min-width: 810px) {
+  .three-rightBox {
+    max-width: 47rem;
+  }
 }
