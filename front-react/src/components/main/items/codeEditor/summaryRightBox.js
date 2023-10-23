@@ -10,7 +10,7 @@ function MainVideoBox({ isHover, setIsHover }) {
   //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
   useEffect(() => {
     if (isHover === "videoThree" || isHover === "videoTen") {
-      setStyle("w-[89.5%] left-[1.8rem] max-w-[48rem] h-[97px] three-rightBox");
+      setStyle("w-full max-w-[48rem] h-[97px] three-rightBox");
       // console.log("렌더링");
     }
     if (isHover === "videoFour") {
@@ -107,7 +107,7 @@ function MainVideoListBox({ isHover, setIsHover }) {
   );
 }
 
-function SearchableVideoListBox({ isHover, setIsHover, style }) {
+function SearchableVideoListBox({ isHover, setIsHover }) {
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearchChange = (e) => {

@@ -310,7 +310,8 @@ span {
 
 /* 반응형 쿼리  374px*/
 @media (min-width: 374px) {
-  .rightbox-container-padding {
+  .rightbox-container-padding,
+  .three-rightBox {
     padding: 1.25rem;
   }
   .xs\:w-36 {
@@ -327,18 +328,8 @@ span {
     margin-bottom: -5rem;
   }
 }
-@media (max-width: 828px) and (min-width: 690px) {
-  .three-rightBox {
-    width: 93%;
-  }
-}
+
 @media (max-width: 600px) and (min-width: 370px) {
-  .three-rightBox {
-    width: 89%;
-  }
 }
 @media (max-width: 1024px) {
-  .three-rightBox {
-    max-width: 47rem;
-  }
 }

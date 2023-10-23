@@ -65,7 +65,7 @@
 
   font-size: 40px;
   font-weight: 600;
-
+  /* padding-left: 2rem; */
   --tw-text-opacity: 1;
   color: rgb(35 39 47 / var(--tw-text-opacity));
 }
@@ -483,5 +483,20 @@
   .lower-button-box > a {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .text-box-h2 {
+    padding-left: 2rem;
+  }
+  .text-box-p {
+    padding-left: 2rem;
+  }
+  .lower-box-p {
+    padding-left: 2rem;
+  }
+  .lower-button-box {
+    padding-left: 2rem;
   }
 }

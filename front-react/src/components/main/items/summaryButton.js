@@ -19,7 +19,7 @@ export default function SummaryButton({
         {/* text-box start */}
         <div className="text-box">
           <h2 className="text-box-h2 dark:text-white ">{title}</h2>
-          <p className="text-box-p">{textBox}</p>
+          <p className="">{textBox}</p>
         </div>
       </div>
       {/* content-container start */}
