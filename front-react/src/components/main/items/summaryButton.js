@@ -26,7 +26,7 @@ export default function SummaryButton({
       <div className="content-main-container">
         <div className="content-sub-container">
           <div className="content-in-container">
-            <div className="content-box dark:content-box">
+            <div className="content-box dark:content-box dark:shadow-nav-dark dark:shadow-inner-border-dark">
               <div className="content-leftbox dark:bg-gray-95">
                 <div className="content-leftbox-nav dark:bg-wash-dark dark:border-white/5">
                   <h3 className="content-leftbox-nav-h3 dark:text-tertiary-dark">

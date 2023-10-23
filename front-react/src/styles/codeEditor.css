@@ -142,7 +142,40 @@ span {
 .text-xl {
   font-size: 20px;
 }
+.text-gray-30 {
+  --tw-text-opacity: 1;
+  color: rgb(153 161 179 / var(--tw-text-opacity));
+}
+.bg-gray-30\/20 {
+  background-color: rgba(153, 161, 179, 0.2);
+}
 
+/* 비디오박스 제목 라인스타일 */
+.shadow-outer-border {
+  --tw-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 0 0 1px var(--tw-shadow-color);
+}
+.shadow-outer-border,
+.shadow-secondary-button-stroke {
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.bg-secondary-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 236 240 / var(--tw-bg-opacity));
+}
+.delay-100 {
+  transition-delay: 0.1s;
+}
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+.text-primary-dark {
+  --tw-text-opacity: 1;
+  color: rgb(246 247 249 / var(--tw-text-opacity));
+}
 /* 버튼에 마우스를 올리면 적용되는 스타일 */
 .hover {
   background-color: rgb(255, 255, 221);
@@ -236,6 +269,42 @@ span {
   100% {
     transform: scale(1);
     stroke-width: 0px;
+  }
+}
+.animation-pulse-button {
+  animation: pulse-button 2s infinite;
+}
+.animation-pulse-shadow {
+  --tw-shadow: 0 0 0 8px rgba(0, 0, 0, 0.5);
+  --tw-shadow-colored: 0 0 0 8px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  animation: pulse-shadow 2s infinite;
+}
+@keyframes pulse-button {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes pulse-shadow {
+  0% {
+    transform: scale(0.65);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.65);
+    opacity: 0;
   }
 }
 

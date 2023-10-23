@@ -18,8 +18,10 @@ import {
   CodeEditorConferencePage,
 } from "@/components/main/items/codeEditor/codeEditor";
 import {
+  ConfsSlug,
   MainVideoBox,
   MainVideoListBox,
+  SearchableVideoListBox,
 } from "./items/codeEditor/summaryRightBox";
 import { useRecoilValue } from "recoil";
 import {
@@ -104,6 +106,12 @@ export default function Main() {
               setIsHover={setIsHover}
             ></CodeEditorSearchableVideoList>
           }
+          rightBox={
+            <SearchableVideoListBox
+              isHover={isHover}
+              setIsHover={setIsHover}
+            ></SearchableVideoListBox>
+          }
         ></SummaryButton>
 
         {/* second SummaryButton  */}
@@ -118,6 +126,9 @@ export default function Main() {
               isHover={isHover}
               setIsHover={setIsHover}
             ></CodeEditorConferencePage>
+          }
+          rightBox={
+            <ConfsSlug isHover={isHover} setIsHover={setIsHover}></ConfsSlug>
           }
         ></SummaryButton>
         <SummaryButtonPlatform

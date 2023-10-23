@@ -3,7 +3,7 @@ import { ReactComponent as PlayButton } from "@/assets/summary/playButton.svg";
 import { ReactComponent as EmptyHeart } from "@/assets/summary/emptyHeart.svg";
 import { ReactComponent as FullOfHeart } from "@/assets/summary/fullOfHeart.svg";
 import { ReactComponent as HeartBackGround } from "@/assets/summary/heartBackGround.svg";
-function SummaryVideo({ videoTitle, via50 }) {
+function SummaryVideo({ videoTitle, videoSubTitle, via50 }) {
   // 좋아요 버튼 클릭시 토글기능
   const [isLiked, setIsLiked] = useState(true);
   const handleButtonClick = () => {
@@ -40,7 +40,7 @@ function SummaryVideo({ videoTitle, via50 }) {
             {videoTitle}
           </h3>
           <p className="text-tertiary text-sm leading-snug" data-hover="p">
-            Video description
+            {videoSubTitle}
           </p>
         </a>
         {/* 좋아요버튼  */}
