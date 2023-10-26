@@ -1,6 +1,6 @@
 // 정은우
-// 2310078
-// 버튼 화살표 svg 애니메이션 추가
+// 231021
+// darkmode change
 import "@/styles/summary.css";
 import "@/styles/summaryButtonNews.css";
 import { ReactComponent as ArrowBottom } from "@/assets/summary/arrow-bottom.svg";
@@ -20,10 +20,10 @@ export default function SummaryButtonNews({
     <div className="summary-main-container">
       <div className="my-32 w-full grow flex-col flex">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-5">
-          <div className="max-w-3xl lg:max-w-7xl lg:px-5 gap-5 px-0.5 lg:flex-row flex-col flex">
+          <div className=" max-w-3xl lg:max-w-7xl lg:px-5 gap-5 px-0.5 lg:flex-row flex-col flex dark:summary-news-primary-text-dark">
             <div className="lg:w-6/12 max-w-3xl lg:max-w-7xl lg:ps-5 lg:pe-10 items-start content-start flex-col flex">
               <h2 className="leading-xl summary-news-left-h2 text-left font-display text-primary font-semibold text-5xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl">
-                { title }
+                {title}
               </h2>
               <p className="summary-news-text-color max-w-3xl mx-auto text-lg lg:text-xl">
                 {lowerText}
@@ -36,7 +36,7 @@ export default function SummaryButtonNews({
                   <a
                     href="#"
                     target="_blank"
-                    className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark" 
+                    className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark"
                     rel="noreferrer"
                   >
                     <NewsPaper className="code-logo" alt="news paper" />
@@ -47,7 +47,7 @@ export default function SummaryButtonNews({
               </div>
             </div>
             <div className="lg:w-6/12 summary-news-right-box">
-              <p className="uppercase tracking-wide font-bold text-sm summary-news-p-color dark:summary-news-p-color-dark flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full">
+              <p className=" uppercase tracking-wide font-bold text-sm summary-news-p-color flex flex-row gap-2 items-center mt-5 lg:-mt-2 w-full dark:summary-button-news-sub-text-dark">
                 <ArrowBottom /> {rightTopPtag}
               </p>
               <div className="text-start my-5 gap-5 w-full flex-row flex-wrap flex">
@@ -57,14 +57,14 @@ export default function SummaryButtonNews({
                       href="#"
                       className="block outline-none outline-offset-2 rounded-2xl text-inherit text-inheritw-full h-full"
                     >
-                      <div className="hover-summary-news-button-bg summary-news-button-stroke decoration-inherit decoration-inherit box-border leading-relaxed p-5 w-full h-full text-xl rounded-2xl justify-between flex-col flex">
+                      <div className="hover-summary-news-button-bg summary-news-button-stroke decoration-inherit decoration-inherit box-border leading-relaxed p-5 w-full h-full text-xl rounded-2xl justify-between flex-col flex dark:summary-news-button-stroke-dark">
                         <div className="summary-news-item-first-text gap-3 w-full flex-row flex">
                           <h2 className="break-words text-2xl lg:text-3xl font-semibold leading-snug mb-4 flex-1">
                             {box.title}
                           </h2>
                         </div>
                         <div>
-                          <div className="summary-news-item-second-text text-base gap-2 flex-rowitems-center justify-start flex">
+                          <div className="summary-news-item-second-text text-base gap-2 flex-rowitems-center justify-start flex  dark:summary-button-news-subtext-color">
                             {box.component}
                             {box.date}
                           </div>
@@ -78,9 +78,9 @@ export default function SummaryButtonNews({
                 <a
                   href="#"
                   target="_blank"
-                  className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark" rel="noreferrer"
+                  className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark dark:summary-news-primary-text-dark" rel="noreferrer"
                 >
-                  <NewsPaper className="code-logo" alt="news paper" />
+                  <NewsPaper className="code-logo text-[#23272f] dark:text-white" alt="news paper" />
                   {btnText}
                   <ArrowRightMiddleAnimation />
                 </a>

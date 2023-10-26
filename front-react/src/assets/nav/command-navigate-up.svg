@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg width="15" height="15">
-    <g
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.2"
-    >
-        <path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path>
-    </g>
+  <g
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="1.2"
+  >
+    <path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path>
+  </g>
 </svg>

@@ -1,12 +1,32 @@
+/* 수치 변수지정  */
+html {
+    --tw-text-opacity: 1;
+    --tw-bg-opacity: 1;
+}
 /* ===============================
   ==   summaryButtonNews  ==
   ===============================*/
 
-/* [231007] summary-news : 정은우 */
+/* [231021] summary-news : 정은우 */
+
+:is(.dark .dark\:summary-news-primary-text-dark){
+    color: rgb(246 247 249/var(--tw-text-opacity));
+}
+:is(.dark .dark\:summary-button-news-sub-text-dark){
+    color: rgb(235 236 240/var(--tw-text-opacity));
+}
+:is(.dark .dark\:summary-news-button-stroke-dark){
+    --tw-shadow: inset 0 0 0 1px #404756;
+    --tw-shadow-colored: inset 0 0 0 1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
 /* 왼쪽 공간 시작 */
-.summary-news-text-color {
-    --tw-text-opacity: 1;
+.summary-news-text {
     color: rgb(64 71 86/var(--tw-text-opacity));
+}
+:is(.dark .dark\:summary-news-primary-text-dark){
+    color: rgb(246 247 249/var(--tw-text-opacity)) !important;
 }
 .hover-summary-news-button-bg:hover{
     background-color: rgba(120,131,155,.05);
@@ -15,6 +35,9 @@
     background-color: rgba(120,131,155,.1);
 }
 /* 오른쪽 공간 시작 */
+:is(.dark .dark\:summary-button-news-subtext-color){
+    color: rgb(153 161 179/var(--tw-text-opacity));
+}
 .summary-news-item-container>a {
     color: inherit;
     text-decoration: inherit;
@@ -25,7 +48,6 @@
     box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
 }
 .summary-news-p-color{
-    --tw-text-opacity: 1;
     color: rgb(94 104 126/var(--tw-text-opacity));
 }
 .summary-news-item-box:hover {
@@ -36,7 +58,6 @@
     color: inherit;
 }
 .summary-news-item-second-text {
-    --tw-text-opacity: 1;
     color: rgb(94 104 126/var(--tw-text-opacity));
 }
 /* summaryButtonNews CSS end */

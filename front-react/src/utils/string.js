@@ -1,10 +1,10 @@
-import code from "@/assets/summary/code.svg";
-// 지우고 두개의 svg 파일로 만들예정
-import arrow from "@/assets/summary/arrow-right.svg";
-import chart from "@/assets/summary/chart-network.svg";
-import build from "@/assets/summary/build.svg";
+import "@/styles/summary.css";
+import "@/styles/summaryButtonPlatform.css";
+import { ReactComponent as Code } from "@/assets/summary/code.svg";
 import { ReactComponent as NewsPaper } from "@/assets/summary/news-paper.svg";
 import { ReactComponent as LaboratoryFlask } from "@/assets/summary/laboratory-flask.svg";
+import { ReactComponent as Chart } from "@/assets/summary/chart-network.svg";
+import { ReactComponent as ArrowRightMiddleAnimation } from "@/assets/summary/arrow-right-middle-animation.svg";
 const string = {
   // firstSummart text
   firstSummary: {
@@ -15,18 +15,18 @@ const string = {
     lowerText:
       " Whether you work on your own or with thousands of other developers, using React feels the same. It is designed to let you seamlessly combine components written by independent people, teams, and organizations.",
     textBox: (
-      <p className="text-box-p">
+      <p className="text-box-p dark:text-secondary-dark">
         React lets you build user interfaces out of individual pieces called
         components. Create your own React components like&nbsp;
-        <code dir="ltr" className="font-mono">
+        <code dir="ltr" className="font-mono dark:bg-secondary-button-dark p-2">
           Thumbnail
         </code>
         , &nbsp;
-        <code dir="ltr" className="font-mono">
+        <code dir="ltr" className="font-mono dark:bg-secondary-button-dark p-2">
           LikeButton
         </code>
         , and&nbsp;
-        <code dir="ltr" className="font-mono">
+        <code dir="ltr" className="font-mono dark:bg-secondary-button-dark p-2">
           Video
         </code>
         . Then combine them into entire screens, pages, and apps.
@@ -43,14 +43,14 @@ const string = {
     lowerText:
       "This markup syntax is called JSX. It is a JavaScript syntax extension popularized by React. Putting JSX markup close to related rendering logic makes React components easy to create, maintain, and delete.",
     textBox: (
-      <p className="text-box-p">
+      <p className="text-box-p dark:text-secondary-dark">
         React components are JavaScript functions. Want to show some content
         conditionally? Use an&nbsp;
-        <code dir="ltr" className="font-mono">
+        <code dir="ltr" className="font-mono dark:bg-secondary-button-dark p-2">
           if
         </code>
         &nbsp;statement. Displaying a list? Try array&nbsp;
-        <code dir="ltr" className="font-mono">
+        <code dir="ltr" className="font-mono dark:bg-secondary-button-dark p-2">
           map().
         </code>
         &nbsp;Learning React is learning programming.
@@ -68,7 +68,7 @@ const string = {
     lowerText:
       "You don’t have to build your whole page in React. Add React to your existing HTML page, and render interactive React components anywhere on it.",
     textBox: (
-      <p className="text-box-p">
+      <p className="text-box-p dark:text-secondary-dark">
         React components receive data and return what should appear on the
         screen. You can pass them new data in response to an interaction, like
         when the user types into an input. React will then update the screen to
@@ -78,10 +78,15 @@ const string = {
     // button layout
     btnText: (
       <div className="lower-button-box">
-        <a href="#" target="_blank">
-          <img className="code-logo" src={code} alt="code logo" />
+        <a
+          className="group dark:text-white"
+          href="https://reactnative.dev/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Code className="code-logo dark:text-[#f6f7f9] " alt="code logo" />
           Add React to your page
-          <img className="arrow-logo" src={arrow} alt="arrow logo" />
+          <ArrowRightMiddleAnimation className="arrow-right-middle-animation text-[#23272f] dark:text-[#f6f7f9] rtl:rotate-180" />
         </a>
       </div>
     ),
@@ -96,7 +101,7 @@ const string = {
     lowerText:
       "React is also an architecture. Frameworks that implement it let you fetch data in asynchronous components that run on the server or even during the build. Read data from a file or a database, and pass it down to your interactive components.",
     textBox: (
-      <p className="text-box-p">
+      <p className="text-box-p dark:text-secondary-dark">
         React is a library. It lets you put components together, but it doesn’t
         prescribe how to do routing and data fetching. To build an entire app
         with React, we recommend a full-stack React framework like&nbsp;
@@ -111,10 +116,15 @@ const string = {
     ),
     btnText: (
       <div className="lower-button-box">
-        <a href="#" target="_blank">
-          <img className="code-logo" src={chart} alt="code logo" />
+        <a
+          className="group dark:text-white"
+          href="https://reactnative.dev/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Chart className="code-logo dark:text-white" alt="code logo" />
           Get started with a framework
-          <img className="arrow-logo" src={arrow} alt="arrow logo" />
+          <ArrowRightMiddleAnimation className="arrow-right-middle-animation text-[#23272f] dark:text-[#f6f7f9] rtl:rotate-180" />
         </a>
       </div>
     ),
@@ -154,28 +164,21 @@ const string = {
     ],
   },
 
-  // Footer String Start
-  // Footer Content
-  footerContentString: {
-    h2: (
-      <h2 className="footer-text-h2 w-full">
-        Join a community <br /> of millions
-      </h2>
-    ),
+  // 231021
+  // summaryButtonSlider
+  summaryButtonSliderString: {
+    h2:
+
+        "Join a community of millions"
+    ,
     firstText:
       "You’re not alone. Two million developers from all over the world visit the React docs every month. React is something that people and teams can agree on.",
     secondText:
       "This is why React is more than a library, an architecture, or even an ecosystem. React is a community. It’s a place where you can ask for help, find opportunities, and meet new friends. You will meet both developers and designers, beginners and experts, researchers and artists, teachers and students. Our backgrounds may be very different, but React lets us all create user interfaces together.",
   },
   // Footer Button section below the slider
-  footerContentBtn: {
-    h2: (
-      <h2 className="footer-text-h2">
-        Welcome to the
-        <br />
-        React community
-      </h2>
-    ),
+  summaryButtonSliderBtn: {
+    h2: "Welcome to the React community",
     btnText: <a className="footer-start-button">Get Started</a>,
   },
 
@@ -184,18 +187,10 @@ const string = {
     h2: {
       title: "Use the best from every platform",
     },
-    textBox: "People love web and native apps for different reasons. React lets you build both web apps and native apps using the same skills. It leans upon each platform’s unique strengths to let your interfaces feel just right on every platform.",
+    textBox:
+      "People love web and native apps for different reasons. React lets you build both web apps and native apps using the same skills. It leans upon each platform’s unique strengths to let your interfaces feel just right on every platform.",
     lowerText:
       "With React, you can be a web and a native developer. Your team can ship to many platforms without sacrificing the user experience. Your organization can bridge the platform silos, and form teams that own entire features end-to-end.",
-    btnText: (
-      <div className="lower-button-box">
-        <a href="#" target="_blank">
-          <img className="code-logo" src={build} alt="code logo" />
-          Build for native platforms
-          <img className="arrow-logo" src={arrow} alt="arrow logo" />
-        </a>
-      </div>
-    ),
   },
 };
 

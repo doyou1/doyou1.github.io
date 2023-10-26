@@ -1,4 +1,3 @@
-import "@/styles/nav.css";
 import { useMemo, useEffect, useState, useCallback } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { isDarkState, isMacState, isOpenHomeMenuState, isOpenDocSearchState } from "@/recoil/recoil_state";
@@ -154,18 +153,18 @@ export default function Nav() {
               Search
               <span className="ms-auto hidden sm:flex item-center me-1">
                 <kbd
-                  className={`${isMac ? "inline-flex" : "hidden"} w-5 h-5 border border-transparent me-1 bg-[#FFFFFF] dark:bg-[#23272f] text-gray-30 align-middle p-0 justify-center items-center text-xs text-center rounded-md`}
+                  className={`${isMac ? "inline-flex" : "hidden"} w-5 h-5 border border-transparent me-1 bg-[#FFFFFF] dark:bg-[#23272f] text-gray-30 align-middle p-0 justify-center items-center text-[11px] text-center rounded-md`}
                   data-platform="mac"
                 >
                   ⌘
                 </kbd>
                 <kbd
-                  className={`${isMac ? "hidden" : "inline-flex"} w-10 h-5 border border-transparent me-1 bg-[#FFFFFF] dark:bg-[#23272f] text-gray-30 align-middle p-0 justify-center items-center text-xs text-center rounded-md`}
+                  className={`${isMac ? "hidden" : "inline-flex"} w-10 h-5 border border-transparent me-1 bg-[#FFFFFF] dark:bg-[#23272f] text-gray-30 align-middle p-0 justify-center items-center text-[11px] text-center rounded-md`}
                   data-platform="win"
                 >
                   Ctrl
                 </kbd>
-                <kbd className="w-5 h-5 border border-transparent me-1 bg-[#FFFFFF] dark:bg-[#23272f] text-gray-30 align-middle p-0 inline-flex justify-center items-center text-xs text-center rounded-md">
+                <kbd className="w-5 h-5 border border-transparent me-1 bg-[#FFFFFF] dark:bg-[#23272f] text-gray-30 align-middle p-0 inline-flex justify-center items-center text-[11px] text-center rounded-md">
                   K
                 </kbd>
               </span>

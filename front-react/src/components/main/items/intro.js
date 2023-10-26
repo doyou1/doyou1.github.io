@@ -16,7 +16,7 @@ export default function Intro() {
           </a>
         </div>
         {/* text set */}
-        <h1 className="text-h1 font-diplay text-xl dark:text-white">React</h1>
+        <h1 className="text-h1 font-diplay text-[40px] dark:text-white">React</h1>
         <p className="text-p font-diplay dark:text-white">
           The library for web and native user interfaces
         </p>

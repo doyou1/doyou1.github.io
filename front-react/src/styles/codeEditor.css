@@ -16,12 +16,37 @@ html {
   --sp-syntax-color-property: #005cc5;
   --sp-syntax-color-static: #032f62;
   --sp-syntax-color-string: #032f62;
+  /* 다크모드 컬러지정  */
+  --sp-syntax-color-keyword-dark: #77b7d7;
+  --sp-colors-accent-dark: #149eca;
+  --sp-colors-clickable-dark: #999;
+  --sp-colors-disabled-dark: #fff;
+  --sp-colors-error-dark: #811e18;
+  --sp-colors-error-surface-dark: #ffcdca;
+  --sp-colors-surface1-dark: #16181d;
+  --sp-colors-surface2-dark: #343a46;
+  --sp-syntax-color-plain-dark: #fff;
+  --sp-syntax-color-comment-dark: #757575;
+  --sp-syntax-color-tag-dark: #dfab5c;
+  --sp-syntax-color-punctuation-dark: #fff;
+  --sp-syntax-color-definition-dark: #86d9ca;
+  --sp-syntax-color-property-dark: #77b7d7;
+  --sp-syntax-color-static-dark: #c64640;
+  --sp-syntax-color-string-dark: #977cdc;
 }
+
+/* 수치 변수지정  */
+html {
+  --sp-space-5: 20px;
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  --tw-border-opacity: 1;
+}
+
 span {
   margin: 1px;
 }
 .cm-line {
-  --sp-space-5: 20px;
   padding-left: var(--sp-space-5);
   margin-top: 1px;
 }
@@ -36,26 +61,283 @@ span {
   padding: 15px;
   -webkit-font-smoothing: auto;
 }
-/* 컬러지정  */
+/* 컬러지정 / 다크모드 */
 .sp-syntax-keyword {
   color: var(--sp-syntax-color-keyword);
+}
+:is(.dark .dark\:sp-syntax-keyword) {
+  color: var(--sp-syntax-color-keyword-dark);
 }
 .sp-syntax-definition {
   color: var(--sp-syntax-color-definition);
 }
-.sp-syntax-property {
-  color: var(--sp-syntax-color-property);
+:is(.dark .dark\:sp-syntax-definition) {
+  color: var(--sp-syntax-color-definition-dark);
 }
-.sp-syntax-property {
-  color: var(--sp-syntax-color-property);
+:is(.dark .dark\:sp-syntax-property) {
+  color: var(--sp-syntax-color-property-dark);
+}
+:is(.dark .dark\:sp-syntax-property) {
+  color: var(--sp-syntax-color-property-dark);
 }
 .sp-syntax-string {
   color: var(--sp-syntax-color-string);
 }
+:is(.dark .dark\:sp-syntax-string) {
+  color: var(--sp-syntax-color-string-dark);
+}
 .sp-syntax-tag {
   color: var(--sp-syntax-color-tag);
 }
+:is(.dark .dark\:sp-syntax-tag) {
+  color: var(--sp-syntax-color-tag-dark);
+}
+.sp-syntax-property {
+  color: var(--sp-syntax-color-property);
+}
+:is(.dark .dark\:sp-syntax-property) {
+  color: var(--sp-syntax-color-property-dark);
+}
+.sp-syntax-static {
+  color: var(--sp-syntax-color-static);
+}
+:is(.dark .dark\:sp-syntax-static) {
+  color: var(--sp-syntax-color-static-dark);
+}
+/* ==========================
+      summaryRgintBox css 
+   ==========================*/
 
-.hover:hover {
+.shadow-nav {
+  color: rgb(64 71 86 / var(--tw-text-opacity));
+}
+/* 비디오 박스 색상스타일  */
+.via-blue-50 {
+  background-image: linear-gradient(#2b3491, #087ea4);
+}
+.via-red-50 {
+  --tw-gradient-to: #2b3491;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    #a6423a var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-from: #c76a15;
+  background-image: conic-gradient(at top right, var(--tw-gradient-stops));
+}
+.via-green-50 {
+  --tw-gradient-to: #2b3491;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    #388f7f var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-from: #c76a15;
+  background-image: conic-gradient(at top right, var(--tw-gradient-stops));
+}
+
+.text-red-50 {
+  color: rgb(166 66 58 / var(--tw-text-opacity));
+}
+.text-tertiary {
+  color: rgb(94 104 126 / var(--tw-text-opacity));
+}
+.text-xl {
+  font-size: 20px;
+}
+.text-gray-30 {
+  color: rgb(153 161 179 / var(--tw-text-opacity));
+}
+.bg-gray-30\/20 {
+  background-color: rgba(153, 161, 179, 0.2);
+}
+
+/* 비디오박스 제목 라인스타일 */
+.shadow-outer-border {
+  --tw-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 0 0 1px var(--tw-shadow-color);
+}
+.shadow-outer-border,
+.shadow-secondary-button-stroke {
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.bg-secondary-button {
+  background-color: rgb(235 236 240 / var(--tw-bg-opacity));
+}
+.delay-100 {
+  transition-delay: 0.1s;
+}
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+.text-primary-dark {
+  color: rgb(246 247 249 / var(--tw-text-opacity));
+}
+/* 버튼에 마우스를 올리면 적용되는 스타일 */
+.hover {
   background-color: rgb(255, 255, 221);
+}
+:is(.dark .dark\:bg-opacity-10) {
+  background-color: rgba(255, 251, 221, 0.1);
+}
+.hover\:bg-card:hover {
+  background-color: rgb(246 247 249 / var(--tw-bg-opacity));
+}
+
+.focus\:text-red-50:focus {
+  color: rgb(166 66 58 / var(--tw-text-opacity));
+}
+.focus\:bg-red-50\/5:focus {
+  background-color: rgba(166, 66, 58, 0.05);
+}
+
+.text-red-50\/50 {
+  color: rgba(166, 66, 58, 0.5);
+}
+/* 하트 백그라운드 배경  */
+.line circle {
+  color: rgba(166, 66, 58, 0.5);
+  transform-origin: center;
+  animation: circle 0.3s forwards;
+}
+
+.animate-\[scale_\.35s_ease-in-out_forwards\] {
+  animation: wave 0.35s ease-in-out forwards;
+}
+.origin-center {
+  transform-origin: center;
+}
+
+/* codeEditor hover 됐을 시 */
+.bg-blue-30\/5 {
+  background-color: rgba(88, 196, 220, 0.05);
+}
+.border-link {
+  border-color: rgb(8 126 164 / var(--tw-border-opacity));
+}
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+.pointer-events-none {
+  pointer-events: none;
+}
+.rightbox-container-padding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.three-rightBox {
+  position: relative;
+  width: 100%;
+  height: 97px;
+}
+.nine-box {
+  position: relative;
+  left: 12.8rem;
+}
+/* SummaryConfsSlug box이미지 */
+
+.to-gray-70 {
+  --tw-gradient-from: #343a46;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    #16181d var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #404756;
+  background-image: conic-gradient(at top right, var(--tw-gradient-stops));
+}
+.text-link-dark {
+  color: rgb(20 158 202 / var(--tw-text-opacity));
+}
+.border-gray-70 {
+  border-color: rgb(64 71 86 / var(--tw-border-opacity));
+}
+
+/* 애니메이션  */
+@keyframes wave {
+  0% {
+    transform: scale(0.8);
+  }
+  90% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes circle {
+  0% {
+    transform: scale(0);
+    stroke-width: 16px;
+  }
+  50% {
+    transform: scale(0.5);
+    stroke-width: 16px;
+  }
+  100% {
+    transform: scale(1);
+    stroke-width: 0px;
+  }
+}
+.animation-pulse-button {
+  animation: pulse-button 2s infinite;
+}
+.animation-pulse-shadow {
+  animation: pulse-shadow 2s infinite;
+}
+@keyframes pulse-button {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes pulse-shadow {
+  0% {
+    transform: scale(0.65);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.65);
+    opacity: 0;
+  }
+}
+
+/* 반응형 쿼리  374px*/
+@media (min-width: 374px) {
+  .rightbox-container-padding,
+  .three-rightBox {
+    padding: 1.25rem;
+  }
+  .xs\:w-36 {
+    width: 9rem;
+  }
+  .xs\:p-5 {
+    padding: 1.25rem;
+  }
+}
+/* 반응형 쿼리  1024px*/
+@media (min-width: 1024px) {
+  .rightbox-container-padding {
+    margin-top: -5rem;
+    margin-bottom: -5rem;
+  }
+}
+
+@media (min-width: 810px) {
+  .three-rightBox {
+    max-width: 47rem;
+  }
+}
+@media (max-width: 1024px) {
+  .conf {
+    height: 35rem;
+  }
 }
