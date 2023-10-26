@@ -28,7 +28,12 @@
 
 /* darkmode apply */
 .dark .summary-main-container {
-  background-image: conic-gradient(from 90deg at -10% 100%,#2b303b 0deg,#2b303b 90deg,#16181d 1turn) !important; 
+  background-image: conic-gradient(
+    from 90deg at -10% 100%,
+    #2b303b 0deg,
+    #2b303b 90deg,
+    #16181d 1turn
+  ) !important;
 }
 
 /* summary-sub-container 구성 */
@@ -60,7 +65,7 @@
 
   font-size: 40px;
   font-weight: 600;
-
+  /* padding-left: 2rem; */
   --tw-text-opacity: 1;
   color: rgb(35 39 47 / var(--tw-text-opacity));
 }
@@ -129,12 +134,15 @@
   background-position: 50%;
   background-size: cover;
 
-  background-image: url(../assets/contentmain.png);
+  background-image: url(../assets/meta-gradient.png);
   background-repeat: no-repeat;
   --tw-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
   --tw-shadow-colored: inset 0 0 0 1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+:is(.dark .dark\:content-box) {
+  background-image: url(../assets/meta-gradient-dark.png);
 }
 .content-leftbox {
   display: flex;
@@ -282,6 +290,7 @@
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  max-width: 48rem;
 }
 
 .lower-button-box > a {
@@ -343,6 +352,43 @@
   --tw-bg-opacity: 0.8;
 }
 
+:is(.dark .dark\:text-secondary-dark) {
+  --tw-text-opacity: 0.94;
+  color: rgb(235 236 240 / var(--tw-text-opacity));
+}
+:is(.dark .dark\:bg-secondary-button-dark) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 71 86 / var(--tw-bg-opacity));
+}
+:is(.dark .dark\:bg-wash-dark) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(35 39 47 / var(--tw-bg-opacity));
+}
+:is(.dark .dark\:border-white\/5) {
+  border-color: hsla(0, 0%, 100%, 0.05);
+}
+:is(.dark .dark\:bg-gray-95) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 24 29 / var(--tw-bg-opacity));
+}
+:is(.dark .dark\:text-tertiary-dark) {
+  --tw-text-opacity: 1;
+  color: rgb(153 161 179 / var(--tw-text-opacity));
+}
+:is(.dark .dark\:shadow-nav-dark) {
+  --tw-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.1),
+    0 0 0 1px hsla(0, 0%, 100%, 0.05);
+  --tw-shadow-colored: 0 16px 32px -16px var(--tw-shadow-color),
+    0 0 0 1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+:is(.dark .dark\:shadow-inner-border-dark) {
+  --tw-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.08);
+  --tw-shadow-colored: inset 0 0 0 1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 /* =================================
    =======  Logo Style  ============
    ================================= */
@@ -352,7 +398,11 @@
 
   margin-inline-end: 0.625rem;
   --tw-text-opacity: 1;
+  color: rgb(35 39 47 / var(--tw-text-opacity));
+
+  fill: #16181d;
 }
+
 .arrow-logo {
   padding-left: 0.6rem;
 }
@@ -395,13 +445,12 @@
     grid-gap: 1.25rem;
     gap: 1.25rem;
 
-    background-size: 60% 100%;
+    background-size: 60% 101%;
     background-position: 100%;
     border-radius: 1rem;
-
-    --tw-bg-opacity: 1;
-    background-image: url(../assets/contentmain.png);
-    background-color: rgb(235 236 240 / var(--tw-bg-opacity));
+  }
+  :is(.dark .dark\:content-box) {
+    background-image: url(../assets/meta-gradient-dark.png);
   }
   .content-leftbox {
     margin: -1.25rem;
@@ -434,5 +483,20 @@
   .lower-button-box > a {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .text-box-h2 {
+    padding-left: 2rem;
+  }
+  .text-box-p {
+    padding-left: 2rem;
+  }
+  .lower-box-p {
+    padding-left: 2rem;
+  }
+  .lower-button-box {
+    padding-left: 2rem;
   }
 }

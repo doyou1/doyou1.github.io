@@ -6,7 +6,7 @@
   transition-duration: 150ms;
 }
 
-.lower-button-box>a:hover .middle-line {
+.lower-button-box > a:hover .middle-line {
   opacity: 1;
 }
 
@@ -15,15 +15,12 @@
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-
 }
 
-.lower-button-box>a:hover .arrow-right-move
-{
+.lower-button-box > a:hover .arrow-right-move {
   transform: translateX(8px);
 }
 /* arrow right move 관련 css */
-
 
 /*  ==============================   
     ===  content-main-platform ===
@@ -33,7 +30,7 @@
   grid-gap: 1.25rem;
   gap: 1.25rem;
 
-  margin: 0 2rem 4rem 2rem;
+  margin: 0 2rem -1rem 2rem;
 }
 
 /* ===============================
@@ -148,7 +145,12 @@
 }
 
 .dark .platform-rightbox-webbox-textbox {
-  background-image: conic-gradient(from -90deg at 110% 100%,#2b303b 0deg,#16181d 90deg,#16181d 1turn);
+  background-image: conic-gradient(
+    from -90deg at 110% 100%,
+    #2b303b 0deg,
+    #16181d 90deg,
+    #16181d 1turn
+  );
 }
 
 .second-leftbox-webbox {
@@ -326,5 +328,6 @@
 }
 
 .box-shadow-custom {
-  box-shadow: 0 0 #0000, 0 0 #0000, 0 16px 32px -16px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.1);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 16px 32px -16px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
 }
