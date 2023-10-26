@@ -33,7 +33,7 @@ export default function SummaryButton({
                     {subHead}
                   </h3>
                 </div>
-                <div dif="ltr" className="content-leftbox-main dark:bg-gray-95">
+                <div className="content-leftbox-main dark:bg-gray-95">
                   <div className="sp-wrapper">
                     <div className="sp-stack">
                       <div className="sp-code-editor dark:bg-gray-95">

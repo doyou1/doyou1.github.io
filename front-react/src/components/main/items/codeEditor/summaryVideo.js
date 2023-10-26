@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { useState } from "react";
 import { ReactComponent as PlayButton } from "@/assets/summary/playButton.svg";
 import { ReactComponent as EmptyHeart } from "@/assets/summary/emptyHeart.svg";
 import { ReactComponent as FullOfHeart } from "@/assets/summary/fullOfHeart.svg";

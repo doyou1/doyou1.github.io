@@ -1,3 +1,8 @@
+/* 수치 변수지정  */
+html {
+    --tw-text-opacity: 1;
+    --tw-bg-opacity: 1;
+}
 /* ===============================
   ==   summaryButtonNews  ==
   ===============================*/
@@ -5,11 +10,9 @@
 /* [231021] summary-news : 정은우 */
 
 :is(.dark .dark\:summary-news-primary-text-dark){
-    --tw-text-opacity: 1;
     color: rgb(246 247 249/var(--tw-text-opacity));
 }
 :is(.dark .dark\:summary-button-news-sub-text-dark){
-    --tw-text-opacity: 1;
     color: rgb(235 236 240/var(--tw-text-opacity));
 }
 :is(.dark .dark\:summary-news-button-stroke-dark){
@@ -20,11 +23,9 @@
 
 /* 왼쪽 공간 시작 */
 .summary-news-text {
-    --tw-text-opacity: 1;
     color: rgb(64 71 86/var(--tw-text-opacity));
 }
 :is(.dark .dark\:summary-news-primary-text-dark){
-    --tw-text-opacity: 1;
     color: rgb(246 247 249/var(--tw-text-opacity)) !important;
 }
 .hover-summary-news-button-bg:hover{
@@ -35,7 +36,6 @@
 }
 /* 오른쪽 공간 시작 */
 :is(.dark .dark\:summary-button-news-subtext-color){
-    --tw-text-opacity: 1;
     color: rgb(153 161 179/var(--tw-text-opacity));
 }
 .summary-news-item-container>a {
@@ -48,7 +48,6 @@
     box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
 }
 .summary-news-p-color{
-    --tw-text-opacity: 1;
     color: rgb(94 104 126/var(--tw-text-opacity));
 }
 .summary-news-item-box:hover {
@@ -59,7 +58,6 @@
     color: inherit;
 }
 .summary-news-item-second-text {
-    --tw-text-opacity: 1;
     color: rgb(94 104 126/var(--tw-text-opacity));
 }
 /* summaryButtonNews CSS end */

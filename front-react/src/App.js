@@ -7,7 +7,7 @@ function App() {
   const isDark = useRecoilValue(isDarkState);
 
   return (
-    <div className={ `App ${isDark ? 'dark' : ''}` }>
+    <div className={ `App ${isDark && 'dark'}` }>
       <Main />
     </div>
   );

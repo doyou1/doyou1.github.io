@@ -10,7 +10,7 @@ import SummaryButtonPlatform from "@/components/main/items/summaryButtonPlatform
 import SummaryButtonSlider from "@/components/main/items/summaryButtonSlider";
 import DocSearch from "@/components/main/nav/docSearch";
 import string from "@/utils/string";
-// import footerString from "./utils/footerString";
+
 import {
   CodeEditorVideo,
   CodeEditorVideoList,

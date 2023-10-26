@@ -1,5 +1,5 @@
 import "@/styles/summary.css";
-import "@/styles/platform.css";
+import "@/styles/summaryButtonPlatform.css";
 import { ReactComponent as Key } from "@/assets/summary/key.svg";
 import { ReactComponent as Google } from "@/assets/summary/google.svg";
 import { ReactComponent as Firefox } from "@/assets/summary/firefox.svg";

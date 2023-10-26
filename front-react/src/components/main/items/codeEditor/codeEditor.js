@@ -1,4 +1,3 @@
-import React from "react";
 import "@/styles/codeEditor.css";
 // CodeEditerVideo
 const CodeEditorVideo = ({ isHover, setIsHover }) => {

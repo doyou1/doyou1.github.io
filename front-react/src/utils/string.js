@@ -1,5 +1,5 @@
 import "@/styles/summary.css";
-import "@/styles/platform.css";
+import "@/styles/summaryButtonPlatform.css";
 import { ReactComponent as Code } from "@/assets/summary/code.svg";
 import { ReactComponent as NewsPaper } from "@/assets/summary/news-paper.svg";
 import { ReactComponent as LaboratoryFlask } from "@/assets/summary/laboratory-flask.svg";
