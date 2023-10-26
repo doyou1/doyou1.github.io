@@ -1,11 +1,11 @@
 import "@/styles/codeEditor.css";
-import React, { useState, useEffect } from "react";
 import SummaryVideo from "./summaryVideo";
 import SummaryConfsSlug from "./summaryconfsSlug";
 import { ReactComponent as Key } from "@/assets/summary/Key.svg";
 import { ReactComponent as Search } from "@/assets/summary/search.svg";
 import { ReactComponent as Refresh } from "@/assets/summary/refresh.svg";
 import { ReactComponent as PlayButton } from "@/assets/summary/playButton.svg";
+import { useState, useEffect } from "react";
 function MainVideoBox({ isHover, setIsHover }) {
   const [style, setStyle] = useState({}); // rightBox 스타일 관리
 
@@ -180,10 +180,10 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
                 marginTop: "72px",
               }}
             >
-              <h1 class="mx-4 mb-1 font-bold text-3xl text-primary">
+              <h1 className="mx-4 mb-1 font-bold text-3xl text-primary">
                 React Videos
               </h1>
-              <p class="mx-4 mb-0 leading-snug text-secondary text-xl">
+              <p className="mx-4 mb-0 leading-snug text-secondary text-xl">
                 A brief history of React
               </p>
               {/* 검색창 및 비디오 부분  */}
@@ -240,7 +240,7 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
   );
 }
 
-function ConfsSlug({}) {
+function ConfsSlug() {
   const [searchValue, setSearchValue] = useState("");
   const [selectedYear, setSelectedYear] = useState("react-conf-2021"); //이미지 변경상태관리
 
@@ -275,11 +275,11 @@ function ConfsSlug({}) {
               <span className="text-gray-30">example.com/</span>
               confs/react-conf-2021
             </div>
-            <div class="relative rounded-full flex justify-center items-center animation-pulse-button">
-              <div class="z-0 absolute shadow-[0_0_0_8px_rgba(0,0,0,0.5)] inset-0 rounded-full animation-pulse-shadow"></div>
+            <div className="relative rounded-full flex justify-center items-center animation-pulse-button">
+              <div className="z-0 absolute shadow-[0_0_0_8px_rgba(0,0,0,0.5)] inset-0 rounded-full animation-pulse-shadow"></div>
               <button
                 aria-label="Reload"
-                class="z-10 flex items-center p-1.5 rounded-full cursor-pointer justify-center bg-[#ebecef] hover:bg-[#d3d7de]"
+                className="z-10 flex items-center p-1.5 rounded-full cursor-pointer justify-center bg-[#ebecef] hover:bg-[#d3d7de]"
               >
                 {/* svg */}
                 <Refresh></Refresh>
@@ -319,7 +319,7 @@ function ConfsSlug({}) {
                           "linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%)",
                       }}
                     >
-                      <option value="react-conf-2021" selected>
+                      <option value="react-conf-2021">
                         React Conf 2021
                       </option>
                       <option value="react-conf-2019">React Conf 2019</option>
