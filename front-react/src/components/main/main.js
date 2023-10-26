@@ -138,7 +138,6 @@ export default function Main() {
           lowerText={string.summaryButtonPlatform.lowerText}
           btnText={string.summaryButtonPlatform.btnText}
         />
-
         <SummaryButtonNews
           title={string.summaryButtonNews.h2}
           lowerText={string.summaryButtonNews.lowerText}
@@ -147,12 +146,14 @@ export default function Main() {
           rightTopPtag={string.summaryButtonNews.rightTopPtag}
           rightBox={string.summaryButtonNews.rightBox}
         />
-        <SummaryButtonSlider />
-
-        <Footer
-          footerContentString={string.footerContentString}
-          footerContentBtn={string.footerContentBtn}
+        <SummaryButtonSlider
+          title={string.summaryButtonSliderString.h2}
+          firstTextBox={string.summaryButtonSliderString.firstText}
+          secondTextBox={string.summaryButtonSliderString.secondText}
+          btnTitle={string.summaryButtonSliderBtn.h2}
+          btnText={string.summaryButtonSliderBtn.btnText}
         />
+        <Footer />
       </main>
 
       {isOpenDocSearch && <DocSearch />}
