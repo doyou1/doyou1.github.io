@@ -33,13 +33,23 @@ html {
 }
 
 /* darkmode apply */
-.dark .summary-main-container {
+.dark .summary-main-container:nth-child(even) { /* 홀수 */
   background-image: conic-gradient(
     from 90deg at -10% 100%,
     #2b303b 0deg,
     #2b303b 90deg,
     #16181d 1turn
-  ) !important;
+  );
+}
+
+
+.dark .summary-main-container:nth-child(odd) {  /* 짝수 */
+  background-image: conic-gradient(
+    from -90deg at 110% 100%,
+    #2b303b 0deg,
+    #16181d 90deg,
+    #16181d 1turn
+  );
 }
 
 /* summary-sub-container 구성 */
@@ -411,7 +421,7 @@ html {
   }
   .text-box-h2 {
     font-size: 52px;
-    max-width: 32rem;
+    max-width: 36rem;
   }
   .text-box-p {
     font-size: 20px;

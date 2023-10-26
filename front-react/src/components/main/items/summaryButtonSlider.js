@@ -80,7 +80,7 @@ export default function SummaryButtonSlider({
         <div className="content-bottom-box">
           <ReactLogo className="footer-react-logo dark:text-[#149eca]"
                   style={{ color: "#087ea4"}} alt="react logo in footer" />
-          <h2 className="footer-text-h2 leading-xl font-display font-semibold summary-button-slider-h2-size lg:text-6xl -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl dark:primary-text-dark">
+          <h2 className="footer-text-h2 font-display font-semibold lg:leading-[1.15] text-[40px] -mt-4 mb-7 w-full max-w-3xl lg:max-w-xl dark:primary-text-dark">
             {btnTitle}
           </h2>
           {btnText}
