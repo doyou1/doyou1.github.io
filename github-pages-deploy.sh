@@ -3,7 +3,7 @@ git checkout dev
 git pull
 
 git checkout release
-git merge dev
+git merge dev --no-edit
 
 rm -rf ./docs/react
 rm -rf ./docs/vue
