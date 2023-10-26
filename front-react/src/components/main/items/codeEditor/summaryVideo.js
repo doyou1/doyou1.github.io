@@ -3,7 +3,7 @@ import { ReactComponent as PlayButton } from "@/assets/summary/playButton.svg";
 import { ReactComponent as EmptyHeart } from "@/assets/summary/emptyHeart.svg";
 import { ReactComponent as FullOfHeart } from "@/assets/summary/fullOfHeart.svg";
 import { ReactComponent as HeartBackGround } from "@/assets/summary/heartBackGround.svg";
-function SummaryVideo({ videoTitle, videoSubTitle, via50 }) {
+function SummaryVideo({ videoTitle, videoSubTitle, via50, bg, playButton }) {
   // 좋아요 버튼 클릭시 토글기능
   const [isLiked, setIsLiked] = useState(true);
   const handleButtonClick = () => {
@@ -21,9 +21,10 @@ function SummaryVideo({ videoTitle, videoSubTitle, via50 }) {
           aria-hidden="true"
           tabIndex="-1"
           className={`outline-link dark:outline-link outline-offset-2 aspect-video w-32 xs:w-36 select-none flex-col shadow-inner-border rounded-lg flex items-center overflow-hidden justify-center align-middle text-white/50 bg-cover bg-white bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] ${via50} `}
+          style={{ backgroundImage: `${bg}` }}
         >
           {/* 재생버튼 아이콘 */}
-          <PlayButton alt="play button" />
+          {playButton}
         </a>
         {/* 비디오정보 */}
         <a

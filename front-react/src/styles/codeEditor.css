@@ -244,6 +244,23 @@ span {
   position: relative;
   left: 12.8rem;
 }
+/* SummaryConfsSlug box이미지 */
+
+.to-gray-70 {
+  --tw-gradient-from: #343a46 var(--tw-gradient-from-position);
+  --tw-gradient-stops: var(--tw-gradient-from),
+    #16181d var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #404756 var(--tw-gradient-to-position);
+  background-image: conic-gradient(at top right, var(--tw-gradient-stops));
+}
+.text-link-dark {
+  --tw-text-opacity: 1;
+  color: rgb(20 158 202 / var(--tw-text-opacity));
+}
+.border-gray-70 {
+  --tw-border-opacity: 1;
+  border-color: rgb(64 71 86 / var(--tw-border-opacity));
+}
 
 /* 애니메이션  */
 @keyframes wave {
@@ -332,5 +349,10 @@ span {
 @media (min-width: 810px) {
   .three-rightBox {
     max-width: 47rem;
+  }
+}
+@media (max-width: 1024px) {
+  .conf {
+    height: 35rem;
   }
 }

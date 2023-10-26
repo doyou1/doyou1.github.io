@@ -1,9 +1,11 @@
 import "@/styles/codeEditor.css";
 import React, { useState, useEffect } from "react";
 import SummaryVideo from "./summaryVideo";
+import SummaryConfsSlug from "./summaryconfsSlug";
 import { ReactComponent as Key } from "@/assets/summary/Key.svg";
 import { ReactComponent as Search } from "@/assets/summary/search.svg";
 import { ReactComponent as Refresh } from "@/assets/summary/refresh.svg";
+import { ReactComponent as PlayButton } from "@/assets/summary/playButton.svg";
 function MainVideoBox({ isHover, setIsHover }) {
   const [style, setStyle] = useState({}); // rightBox 스타일 관리
 
@@ -46,6 +48,7 @@ function MainVideoBox({ isHover, setIsHover }) {
             videoTitle="My video"
             videoSubTitle="Video description"
             via50="via-blue-50"
+            playButton={<PlayButton alt="play button" />}
           ></SummaryVideo>
         </div>
       </div>
@@ -84,16 +87,19 @@ function MainVideoListBox({ isHover, setIsHover }) {
                   videoTitle="First Video"
                   videoSubTitle="Video description"
                   via50="via-blue-50"
+                  playButton={<PlayButton alt="play button" />}
                 ></SummaryVideo>
                 <SummaryVideo
                   videoTitle="Second Video"
                   videoSubTitle="Video description"
                   via50="via-red-50"
+                  playButton={<PlayButton alt="play button" />}
                 ></SummaryVideo>
                 <SummaryVideo
                   videoTitle="Third Video"
                   videoSubTitle="Video description"
                   via50="via-green-50"
+                  playButton={<PlayButton alt="play button" />}
                 ></SummaryVideo>
               </div>
             </section>
@@ -116,8 +122,37 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 이곳에서 검색을 처리하거나 상태를 업데이트할 수 있습니다.
+    // 이곳에서 검색을 처리하거나 상태를 업데이트 있음
   };
+
+  // 객체형태로 만듬, json파일로 빼면 좋을듯
+  const videoData = [
+    {
+      videoTitle: "React: The Documentary",
+      videoSubTitle: "The origin story of React",
+      bg: "url(https://react.dev/images/home/videos/documentary.webp)",
+    },
+    {
+      videoTitle: "Rethinking Best Practices",
+      videoSubTitle: "Pete Hunt (2013)",
+      bg: "url(https://react.dev/images/home/videos/rethinking.jpg)",
+    },
+    {
+      videoTitle: "Introducing React Native",
+      videoSubTitle: "Tom Occhino (2015)",
+      bg: "url(https://react.dev/images/home/videos/rn.jpg)",
+    },
+    {
+      videoTitle: "Introducing React Hooks",
+      videoSubTitle: "Sophie Alpert and Dan Abramov (2018)",
+      bg: "url(https://react.dev/images/home/videos/hooks.jpg)",
+    },
+    {
+      videoTitle: "Introducing Server Components",
+      videoSubTitle: "Dan Abramov and Lauren Tan (2020)",
+      bg: "url(https://react.dev/images/home/videos/rsc.jpg)",
+    },
+  ];
   return (
     <div className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
       <div className="mx-auto max-w-3xl shadow-nav dark:shadow-nav-dark relative overflow-hidden w-full dark:border-opacity-10 rounded-2xl">
@@ -183,31 +218,14 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
                       5 Videos
                     </h2>
                     <div className="flex flex-col gap-4">
-                      <SummaryVideo
-                        videoTitle="React: The Documentary"
-                        videoSubTitle="The origin story of React"
-                        via50="via-green-50"
-                      ></SummaryVideo>
-                      <SummaryVideo
-                        videoTitle="Rethinking Best Practices"
-                        videoSubTitle="Pete Hunt (2013)"
-                        via50="via-green-50"
-                      ></SummaryVideo>{" "}
-                      <SummaryVideo
-                        videoTitle="Introducing React Native"
-                        videoSubTitle="Tom Occhino (2015)"
-                        via50="via-green-50"
-                      ></SummaryVideo>{" "}
-                      <SummaryVideo
-                        videoTitle="Introducing React Hooks"
-                        videoSubTitle="Sophie Alpert and Dan Abramov (2018)"
-                        via50="via-green-50"
-                      ></SummaryVideo>{" "}
-                      <SummaryVideo
-                        videoTitle="Introducing Server Components"
-                        videoSubTitle="Dan Abramov and Lauren Tan (2020)"
-                        via50="via-green-50"
-                      ></SummaryVideo>
+                      {videoData.map((video, index) => (
+                        <SummaryVideo
+                          key={index}
+                          videoTitle={video.videoTitle}
+                          videoSubTitle={video.videoSubTitle}
+                          bg={video.bg}
+                        ></SummaryVideo>
+                      ))}
                     </div>
                   </section>
                 </div>
@@ -221,6 +239,7 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
     </div>
   );
 }
+
 function ConfsSlug({}) {
   const [searchValue, setSearchValue] = useState("");
   const [selectedYear, setSelectedYear] = useState("react-conf-2021"); //이미지 변경상태관리
@@ -270,16 +289,13 @@ function ConfsSlug({}) {
         </div>
         {/* 콘텐츠 부분  */}
         <div className="h-full flex flex-1">
-          <div
-            className="max-w-3xl rounded-2xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto shadow-nav dark:shadow-nav-dark"
-            style={{ height: "38rem" }}
-          >
+          <div className="max-w-3xl rounded-2xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto shadow-nav dark:shadow-nav-dark h-[38rem] conf">
             {/* React Videos 제목부분  */}
             <div
               className="p-0"
               style={{
                 contentVisibility: "auto",
-                marginTop: "72px",
+                marginTop: "58px",
               }}
             >
               <div
@@ -353,27 +369,32 @@ function ConfsSlug({}) {
                         <SummaryVideo
                           videoTitle="React: The Documentary"
                           videoSubTitle="The origin story of React"
-                          via50="via-green-50"
+                          via50={"to-gray-70"}
+                          playButton={<SummaryConfsSlug></SummaryConfsSlug>}
                         ></SummaryVideo>
                         <SummaryVideo
                           videoTitle="Rethinking Best Practices"
                           videoSubTitle="Pete Hunt (2013)"
-                          via50="via-green-50"
+                          via50={"to-gray-70"}
+                          playButton={<SummaryConfsSlug></SummaryConfsSlug>}
                         ></SummaryVideo>{" "}
                         <SummaryVideo
                           videoTitle="Introducing React Native"
                           videoSubTitle="Tom Occhino (2015)"
-                          via50="via-green-50"
+                          via50={"to-gray-70"}
+                          playButton={<SummaryConfsSlug></SummaryConfsSlug>}
                         ></SummaryVideo>{" "}
                         <SummaryVideo
                           videoTitle="Introducing React Hooks"
                           videoSubTitle="Sophie Alpert and Dan Abramov (2018)"
-                          via50="via-green-50"
+                          via50={"to-gray-70"}
+                          playButton={<SummaryConfsSlug></SummaryConfsSlug>}
                         ></SummaryVideo>{" "}
                         <SummaryVideo
                           videoTitle="Introducing Server Components"
                           videoSubTitle="Dan Abramov and Lauren Tan (2020)"
-                          via50="via-green-50"
+                          via50={"to-gray-70"}
+                          playButton={<SummaryConfsSlug></SummaryConfsSlug>}
                         ></SummaryVideo>
                       </div>
                     </section>
