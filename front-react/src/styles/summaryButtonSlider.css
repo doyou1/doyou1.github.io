@@ -14,7 +14,9 @@
     --tw-text-opacity: 1;
     color: rgb(235 236 240/var(--tw-text-opacity)) !important;
 } */
-
+.footer-slide-img-hover:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 .summary-button-slider-h2-size {
     line-height: 1.15;
 }
