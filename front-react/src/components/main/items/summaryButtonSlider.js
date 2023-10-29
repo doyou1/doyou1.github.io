@@ -21,7 +21,7 @@ const SummaryButtonSlideImg = () => {
         <div key={item} className="group flex justify-center px-5 min-w-[50%] lg:min-w-[25%] rounded-2xl relative">
             <img
               alt=""
-              className={`ease-in-out duration-300 aspect-[4/3] rounded-2xl  image-size group-hover:scale-110 group-hover:shadow-lg lg:group-hover:shadow-2xl ${item} ${
+              className={`footer-slide-img-hover ease-in-out duration-300 aspect-[4/3] rounded-2xl  image-size group-hover:scale-110 group-hover:shadow-lg lg:group-hover:shadow-2xl ${item} ${
                 idx % 2 === 0
                   ? "rotate-[2deg] group-hover:rotate-[-1deg]"
                   : "rotate-[-2deg] group-hover:rotate-1"
