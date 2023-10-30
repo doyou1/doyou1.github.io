@@ -19,4 +19,3 @@ const isDarkStore = useIsDarkStore()
     <FooterView />
   </div>
 </template>
-
