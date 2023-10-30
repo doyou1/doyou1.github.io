@@ -8,7 +8,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   // github pages 배포용
   base: '/web-study-clone/vue',
-  plugins: [vue(), svgLoader({ defaultImport: "component" }), tsconfigPaths()],
+  plugins: [vue(), svgLoader({ svgo: false, defaultImport: "component" }), tsconfigPaths()],
   resolve: {
     alias: [
       { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
