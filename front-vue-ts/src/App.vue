@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import NavView from '@/components/main/nav/NavView.vue'
 import IntroView from '@/components/main/items/IntroView.vue'
 import SponsorAndValueView from '@/components/main/items/SponsorAndValueView.vue'
