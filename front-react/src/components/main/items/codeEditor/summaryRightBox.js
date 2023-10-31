@@ -12,23 +12,47 @@ function MainVideoBox({ isHover, setIsHover }) {
   //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
   useEffect(() => {
     if (isHover === "videoThree" || isHover === "videoTen") {
-      setStyle("three-rightBox");
+      setStyle({
+        width: "526px",
+        height: "97px",
+        transform: "translate(28px, 28px)",
+      });
       // console.log("렌더링");
     }
     if (isHover === "videoFour") {
-      setStyle("w-[160px] max-w-[48rem] h-[97px] four-rightBox");
+      setStyle({
+        width: "160px",
+        height: "97px",
+        transform: "translate(28px, 28px)",
+      });
     }
     if (isHover === "videoFive" || isHover === "videoEight") {
-      setStyle("left-[11.5rem] w-[53%] max-w-[48rem] h-[55px] five-rightBox");
+      setStyle({
+        width: "318px",
+        height: "55px",
+        transform: "translate(184px, 49px)",
+      });
     }
     if (isHover === "videoSix") {
-      setStyle("left-[11.5rem] w-[53%] max-w-[48rem] h-[35px] mb-[19px]");
+      setStyle({
+        width: "318px",
+        height: "35px",
+        transform: "translate(184px, 49px)",
+      });
     }
     if (isHover === "videoSeven") {
-      setStyle("left-[11.5rem] w-[53%] max-w-[48rem] h-[35px] mt-[23px]");
+      setStyle({
+        width: "318px",
+        height: "34px",
+        transform: "translate(184px, 70px)",
+      });
     }
     if (isHover === "videoNine") {
-      setStyle(" w-[56px] max-w-[56px] h-[56px] nine-box");
+      setStyle({
+        width: "56px",
+        height: "56px",
+        transform: "translate(488px, 48px)",
+      });
     }
   }, [isHover]);
 
@@ -54,14 +78,15 @@ function MainVideoBox({ isHover, setIsHover }) {
       </div>
       {/* 마우스이벤트 발생시 나오는 레이아웃 */}
       <div
-        className={`p-7 flex flex-col justify-center items-center absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu${
+        className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu${
           isHover ? "opacity-100" : "opacity-0"
         }`}
       >
         <div
-          className={`${
-            isHover ? style : "opacity-0"
-          } start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark rounded-lg `}
+          className={` start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark rounded-lg ${
+            isHover ? "opacity-100 " : "opacity-0"
+          }`}
+          style={style}
           // top-0
         ></div>
       </div>
@@ -70,6 +95,33 @@ function MainVideoBox({ isHover, setIsHover }) {
 }
 
 function MainVideoListBox({ isHover, setIsHover }) {
+  const [style, setStyle] = useState({}); // rightBox 스타일 관리
+
+  //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
+  useEffect(() => {
+    if (isHover === "videoListNine" || isHover === "videoListFourTeen") {
+      setStyle({
+        width: "526px",
+        height: "334px",
+        transform: "translate(28px, 28px)",
+      });
+      // console.log("렌더링");
+    }
+    if (isHover === "videoListTen") {
+      setStyle({
+        width: "526px",
+        height: "43px",
+        transform: "translate(28px, 28px)",
+      });
+    }
+    if (isHover === "videoListTwelve") {
+      setStyle({
+        width: "526px",
+        height: "97px",
+        transform: "translate(28px, 71px)",
+      });
+    }
+  }, [isHover]);
   return (
     <div className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
       <div className="max-w-3xl rounded-2xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto shadow-nav dark:shadow-nav-dark">
@@ -108,22 +160,88 @@ function MainVideoListBox({ isHover, setIsHover }) {
       </div>
 
       {/* 마우스이벤트 발생시 나오는 레이아웃 */}
-      <div className="content-shadow-videolistbox"></div>
+      <div
+        className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu opacity-0 ${
+          isHover ? "opacity-100 " : "opacity-0"
+        }`}
+      >
+        <div
+          className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
+            isHover ? "opacity-100 " : "opacity-0"
+          }`}
+          style={style}
+        ></div>
+        {/* 두 번째 div */}
+        {isHover == "videoListTwelve" ? (
+          <div
+            className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg opacity-100`}
+            style={{
+              width: "526px",
+              height: "97px",
+              transform: "translate(28px, 168px)",
+            }}
+          ></div>
+        ) : (
+          ""
+        )}
+        {/* 두 번째 div */}
+        {isHover == "videoListTwelve" ? (
+          <div
+            className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg opacity-100`}
+            style={{
+              width: "526px",
+              height: "97px",
+              transform: "translate(28px, 265px)",
+            }}
+          ></div>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 }
 
 function SearchableVideoListBox({ isHover, setIsHover }) {
   const [searchValue, setSearchValue] = useState("");
-
+  const [style, setStyle] = useState({}); // rightBox 스타일 관리
   const handleSearchChange = (e) => {
     setSearchValue(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 이곳에서 검색을 처리하거나 상태를 업데이트 있음
   };
+  //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
+  useEffect(() => {
+    if (
+      isHover === "searchableVideoSix" ||
+      isHover === "searchableVideoThirTeen"
+    ) {
+      setStyle({
+        width: "526px",
+        height: "390px",
+        transform: "translate(28px, 164px)",
+      });
+      // console.log("렌더링");
+    }
+    if (isHover === "searchableVideoSeven") {
+      setStyle({
+        width: "526px",
+        height: "64px",
+        transform: "translate(28px, 164px)",
+      });
+    }
+    if (isHover === "searchableVideoNine") {
+      setStyle({
+        width: "526px",
+        height: "330px",
+        transform: "translate(28px, 229px)",
+      });
+    }
+  }, [isHover]);
+
+  // 이곳에서 검색을 처리하거나 상태를 업데이트 있음
 
   // 객체형태로 만듬, json파일로 빼면 좋을듯
   const videoData = [
@@ -235,15 +353,26 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
         </div>
       </div>
       {/* 마우스이벤트 발생시 나오는 레이아웃 */}
-      <div className="content-shadow-searchablebox"></div>
+      <div
+        className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu opacity-0 ${
+          isHover ? "opacity-100 " : "opacity-0"
+        }`}
+      >
+        <div
+          className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
+            isHover ? "opacity-100 " : "opacity-0"
+          }`}
+          style={style}
+        ></div>
+      </div>
     </div>
   );
 }
 
-function ConfsSlug() {
+function ConfsSlug({ isHover }) {
   const [searchValue, setSearchValue] = useState("");
   const [selectedYear, setSelectedYear] = useState("react-conf-2021"); //이미지 변경상태관리
-
+  const [style, setStyle] = useState({}); // rightBox 스타일 관리
   // 이곳에서 검색을 처리하거나 상태를 업데이트함
   const handleSearchChange = (e) => {
     setSearchValue(e.target.value);
@@ -262,7 +391,29 @@ function ConfsSlug() {
       return "https://react.dev/images/home/conf2019/cover.svg";
     }
   };
-
+  //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
+  useEffect(() => {
+    if (isHover === "ConferencePageSix" || isHover === "ConferencePageTen") {
+      setStyle({
+        width: "558px",
+        height: "565px",
+        transform: "translate(12px, 68px)",
+      });
+      // console.log("렌더링");
+    }
+    if (
+      isHover === "ConferencePageSeven" ||
+      isHover === "ConferencePageEight" ||
+      isHover === "ConferencePageNine" ||
+      isHover === "ConferencePageSixTeen"
+    ) {
+      setStyle({
+        width: "526px",
+        height: "393px",
+        transform: "translate(28px, 240px)",
+      });
+    }
+  }, [isHover]);
   return (
     <div className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
       <div className="mx-auto max-w-3xl shadow-nav dark:shadow-nav-dark relative overflow-hidden w-full dark:border-opacity-10 rounded-2xl">
@@ -319,9 +470,7 @@ function ConfsSlug() {
                           "linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%)",
                       }}
                     >
-                      <option value="react-conf-2021">
-                        React Conf 2021
-                      </option>
+                      <option value="react-conf-2021">React Conf 2021</option>
                       <option value="react-conf-2019">React Conf 2019</option>
                     </select>
                   </div>
@@ -406,7 +555,18 @@ function ConfsSlug() {
         </div>
       </div>
       {/* 마우스이벤트 발생시 나오는 레이아웃 */}
-      <div className="content-shadow-searchablebox"></div>
+      <div
+        className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu opacity-0 ${
+          isHover ? "opacity-100 " : "opacity-0"
+        }`}
+      >
+        <div
+          className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
+            isHover ? "opacity-100 " : "opacity-0"
+          }`}
+          style={style}
+        ></div>
+      </div>
     </div>
   );
 }

@@ -436,6 +436,7 @@ const CodeEditorVideoList = ({ isHover, setIsHover }) => {
 
 // codeEditorSearchableVideoList
 const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
+  console.log(isHover);
   const handleMouseOver = (element) => {
     setIsHover(element);
   };
@@ -565,9 +566,9 @@ const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
 
         <div
           className={`cm-line ${
-            isHover === " searchableVideoNine" ? "hover dark:bg-opacity-10" : ""
+            isHover === "searchableVideoNine" ? "hover dark:bg-opacity-10" : ""
           }`}
-          onMouseOver={() => handleMouseOver(" searchableVideoNine")}
+          onMouseOver={() => handleMouseOver("searchableVideoNine")}
           onMouseOut={() => handleMouseOut()}
         >
           {/* ten */}
@@ -608,9 +609,11 @@ const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
         {/* Thirteen */}
         <div
           className={`cm-line ${
-            isHover === "eight" ? "hover dark:bg-opacity-10" : ""
+            isHover === "searchableVideoThirTeen"
+              ? "hover dark:bg-opacity-10"
+              : ""
           }`}
-          onMouseOver={() => handleMouseOver("eight")}
+          onMouseOver={() => handleMouseOver("searchableVideoThirTeen")}
           onMouseOut={() => handleMouseOut()}
         >
           <span className="sp-syntax-punctuation">&nbsp; &nbsp; {"</>"}</span>
@@ -890,9 +893,11 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
         {/* sixteen */}
         <div
           className={`cm-line ${
-            isHover === "eight" ? "hover dark:bg-opacity-10" : ""
+            isHover === "ConferencePageSixTeen"
+              ? "hover dark:bg-opacity-10"
+              : ""
           }`}
-          onMouseOver={() => handleMouseOver("eight")}
+          onMouseOver={() => handleMouseOver("ConferencePageSixTeen")}
           onMouseOut={() => handleMouseOut()}
         >
           <span className="sp-syntax-keyword dark:sp-syntax-keyword">
