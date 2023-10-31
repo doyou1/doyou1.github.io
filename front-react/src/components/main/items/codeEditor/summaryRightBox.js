@@ -4,59 +4,34 @@ import { ReactComponent as Key } from "@/assets/summary/Key.svg";
 import { ReactComponent as Search } from "@/assets/summary/search.svg";
 import { ReactComponent as Refresh } from "@/assets/summary/refresh.svg";
 import { ReactComponent as PlayButton } from "@/assets/summary/playButton.svg";
-import { useState, useEffect } from "react";
-function MainVideoBox({ isHover, setIsHover }) {
-  const [style, setStyle] = useState({}); // rightBox 스타일 관리
+import { useState, useEffect, useRef } from "react";
+function MainVideoBox({ isHover }) {
+  const [sizeProp, setSizeProp] = useState({
+    width: -1,
+    height: -1,
+    translate1: -1,
+    translate2: -1,
+  }); // rightBox 스타일 관리
 
-  //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
-  useEffect(() => {
-    if (isHover === "videoThree" || isHover === "videoTen") {
-      setStyle({
-        width: "526px",
-        height: "97px",
-        transform: "translate(28px, 28px)",
-      });
-      // console.log("렌더링");
+  const rightBoxRef = useRef();
+
+  const getRightBoxSize = () => {
+    if (rightBoxRef.current) {
+      return {
+        width: rightBoxRef.current.offsetWidth,
+        height: rightBoxRef.current.offsetHeight,
+      };
+    } else {
+      return {
+        width: -1,
+        height: -1,
+      };
     }
-    if (isHover === "videoFour") {
-      setStyle({
-        width: "160px",
-        height: "97px",
-        transform: "translate(28px, 28px)",
-      });
-    }
-    if (isHover === "videoFive" || isHover === "videoEight") {
-      setStyle({
-        width: "318px",
-        height: "55px",
-        transform: "translate(184px, 49px)",
-      });
-    }
-    if (isHover === "videoSix") {
-      setStyle({
-        width: "318px",
-        height: "35px",
-        transform: "translate(184px, 49px)",
-      });
-    }
-    if (isHover === "videoSeven") {
-      setStyle({
-        width: "318px",
-        height: "34px",
-        transform: "translate(184px, 70px)",
-      });
-    }
-    if (isHover === "videoNine") {
-      setStyle({
-        width: "56px",
-        height: "56px",
-        transform: "translate(488px, 48px)",
-      });
-    }
-  }, [isHover]);
+  };
 
   return (
     <div
+      ref={rightBoxRef}
       className="relative mt-0 lg:-my-20 w-full  flex grow justify-center rightbox-container-padding"
       data-value="div"
     >
@@ -72,20 +47,32 @@ function MainVideoBox({ isHover, setIsHover }) {
             videoSubTitle="Video description"
             via50="via-blue-50"
             playButton={<PlayButton alt="play button" />}
+            codeEditor="firstSummary"
+            isHover={isHover}
+            setSizeProp={setSizeProp}
+            getRightBoxSize={getRightBoxSize}
           ></SummaryVideo>
         </div>
       </div>
       {/* 마우스이벤트 발생시 나오는 레이아웃 */}
       <div
         className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu${
-          isHover ? "opacity-100" : "opacity-0"
+          Object.keys(isHover).filter((key) => isHover[key]).length > 0
+            ? "opacity-100"
+            : "opacity-0"
         }`}
       >
         <div
           className={` start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark rounded-lg ${
-            isHover ? "opacity-100 " : "opacity-0"
+            Object.keys(isHover).filter((key) => isHover[key]).length > 0
+              ? "opacity-100 "
+              : "opacity-0"
           }`}
-          style={style}
+          style={{
+            width: `${sizeProp.width}px`,
+            height: `${sizeProp.height}px`,
+            transform: `translate(${sizeProp.translate1}px, ${sizeProp.translate2}px)`,
+          }}
           // top-0
         ></div>
       </div>
@@ -418,97 +405,105 @@ function ConfsSlug({ isHover }) {
     {
       videoTitle: "React 18 Keynote",
       videoSubTitle: "The React Team",
-      speakers: ["https://react.dev/images/home/conf2021/andrew.jpg", "https://react.dev/images/home/conf2021/lauren.jpg", "https://react.dev/images/home/conf2021/juan.jpg", "https://react.dev/images/home/conf2021/rick.jpg"]
+      speakers: [
+        "https://react.dev/images/home/conf2021/andrew.jpg",
+        "https://react.dev/images/home/conf2021/lauren.jpg",
+        "https://react.dev/images/home/conf2021/juan.jpg",
+        "https://react.dev/images/home/conf2021/rick.jpg",
+      ],
     },
     {
       videoTitle: "React 18 for App Developers",
       videoSubTitle: "Shruti Kapoor",
-      speakers: ["https://react.dev/images/home/conf2021/shruti.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/shruti.jpg"],
     },
     {
       videoTitle: "Streaming Server Rendering with Suspense",
       videoSubTitle: "Shaundai Person",
-      speakers: ["https://react.dev/images/home/conf2021/shaundai.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/shaundai.jpg"],
     },
     {
       videoTitle: "The First React Working Group",
       videoSubTitle: "Aakansha Doshi",
-      speakers: ["https://react.dev/images/home/conf2021/aakansha.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/aakansha.jpg"],
     },
     {
       videoTitle: "React Developer Tooling",
       videoSubTitle: "Brian Vaughn",
-      speakers: ["https://react.dev/images/home/conf2021/brian.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/brian.jpg"],
     },
     {
       videoTitle: "React without memo",
       videoSubTitle: "Xuan Huang (黄玄)",
-      speakers: ["https://react.dev/images/home/conf2021/xuan.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/xuan.jpg"],
     },
     {
       videoTitle: "React Docs Keynote",
       videoSubTitle: "Rachel Nabors",
-      speakers: ["https://react.dev/images/home/conf2021/rachel.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/rachel.jpg"],
     },
     {
       videoTitle: "Things I Learnt from the New React Docs",
       videoSubTitle: "Debbie O'Brien",
-      speakers: ["https://react.dev/images/home/conf2021/debbie.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/debbie.jpg"],
     },
     {
       videoTitle: "Learning in the Browser",
       videoSubTitle: "Sarah Rainsberger",
-      speakers: ["https://react.dev/images/home/conf2021/sarah.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/sarah.jpg"],
     },
     {
       videoTitle: "The ROI of Designing with React",
       videoSubTitle: "Linton Ye",
-      speakers: ["https://react.dev/images/home/conf2021/linton.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/linton.jpg"],
     },
     {
       videoTitle: "Interactive Playgrounds with React",
       videoSubTitle: "Delba de Oliveira",
-      speakers: ["https://react.dev/images/home/conf2021/delba.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/delba.jpg"],
     },
     {
       videoTitle: "Re-introducing Relay",
       videoSubTitle: "Robert Balicki",
-      speakers: ["https://react.dev/images/home/conf2021/robert.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/robert.jpg"],
     },
     {
       videoTitle: "React Native Desktop",
       videoSubTitle: "Eric Rozell and Steven Moyes",
-      speakers: ["https://react.dev/images/home/conf2021/eric.jpg", "https://react.dev/images/home/conf2021/steven.jpg"]
+      speakers: [
+        "https://react.dev/images/home/conf2021/eric.jpg",
+        "https://react.dev/images/home/conf2021/steven.jpg",
+      ],
     },
     {
       videoTitle: "On-device Machine Learning for React Native",
       videoSubTitle: "Roman Rädle",
-      speakers: ["https://react.dev/images/home/conf2021/roman.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/roman.jpg"],
     },
     {
       videoTitle: "React 18 for External Store Libraries",
       videoSubTitle: "Daishi Kato",
-      speakers: ["https://react.dev/images/home/conf2021/daishi.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/daishi.jpg"],
     },
     {
       videoTitle: "Building Accessible Components with React 18",
       videoSubTitle: "Diego Haz",
-      speakers: ["https://react.dev/images/home/conf2021/diego.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/diego.jpg"],
     },
     {
       videoTitle: "Accessible Japanese Form Components with React",
       videoSubTitle: "Tafu Nakazaki",
-      speakers: ["https://react.dev/images/home/conf2021/tafu.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/tafu.jpg"],
     },
     {
       videoTitle: "UI Tools for Artists",
       videoSubTitle: "Lyle Troxell",
-      speakers: ["https://react.dev/images/home/conf2021/lyle.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/lyle.jpg"],
     },
     {
       videoTitle: "Hydrogen + React 18",
       videoSubTitle: "Helen Lin",
-      speakers: ["https://react.dev/images/home/conf2021/helen.jpg"]
+      speakers: ["https://react.dev/images/home/conf2021/helen.jpg"],
     },
   ];
 
@@ -516,107 +511,112 @@ function ConfsSlug({ isHover }) {
     {
       videoTitle: "Keynote (Part 1)",
       videoSubTitle: "Tom Occhino",
-      speakers: ["https://react.dev/images/home/conf2019/tom.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/tom.jpg"],
     },
     {
       videoTitle: "Keynote (Part 2)",
       videoSubTitle: "Yuzhi Zheng",
-      speakers: ["https://conf2019.reactjs.org/img/speakers/yuzhi.jpg"]
+      speakers: ["https://conf2019.reactjs.org/img/speakers/yuzhi.jpg"],
     },
     {
       videoTitle: "Building The New Facebook With React and Relay (Part 1)",
       videoSubTitle: "Frank Yan",
-      speakers: ["https://react.dev/images/home/conf2019/frank.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/frank.jpg"],
     },
     {
       videoTitle: "Building The New Facebook With React and Relay (Part 2)",
       videoSubTitle: "Ashley Watkins",
-      speakers: ["https://react.dev/images/home/conf2019/ashley.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/ashley.jpg"],
     },
     {
       videoTitle: "How Our Team Is Using React Native to Save The World",
       videoSubTitle: "Tania Papazafeiropoulou",
-      speakers: ["https://react.dev/images/home/conf2019/tania.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/tania.jpg"],
     },
     {
-      videoTitle: "Using Hooks and Codegen to Bring the Benefits of GraphQL to REST APIs",
+      videoTitle:
+        "Using Hooks and Codegen to Bring the Benefits of GraphQL to REST APIs",
       videoSubTitle: "Tejas Kumar",
-      speakers: ["https://react.dev/images/home/conf2019/tejas.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/tejas.jpg"],
     },
     {
       videoTitle: "Building a Custom React Renderer",
       videoSubTitle: "Sophie Alpert",
-      speakers: ["https://react.dev/images/home/conf2019/sophie.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/sophie.jpg"],
     },
     {
       videoTitle: "Is React Translated Yet?",
       videoSubTitle: "Nat Alison",
-      speakers: ["https://react.dev/images/home/conf2019/nat.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/nat.jpg"],
     },
     {
       videoTitle: "Building (And Re-Building) the Airbnb Design System",
       videoSubTitle: "Maja Wichrowska and Tae Kim",
-      speakers: ["https://react.dev/images/home/conf2019/maja.jpg", "https://react.dev/images/home/conf2019/tae.jpg"]
+      speakers: [
+        "https://react.dev/images/home/conf2019/maja.jpg",
+        "https://react.dev/images/home/conf2019/tae.jpg",
+      ],
     },
     {
       videoTitle: "Accessibility Is a Marathon, Not a Sprint",
       videoSubTitle: "Brittany Feenstra",
-      speakers: ["https://react.dev/images/home/conf2019/brittany.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/brittany.jpg"],
     },
     {
       videoTitle: "The State of React State in 2019",
       videoSubTitle: "Becca Bailey",
-      speakers: ["https://react.dev/images/home/conf2019/becca.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/becca.jpg"],
     },
     {
       videoTitle: "Let’s Program Like It’s 1999",
       videoSubTitle: "Lee Byron",
-      speakers: ["https://react.dev/images/home/conf2019/lee.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/lee.jpg"],
     },
     {
       videoTitle: "React Developer Tooling",
       videoSubTitle: "Brian Vaughn",
-      speakers: ["https://react.dev/images/home/conf2019/brian.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/brian.jpg"],
     },
     {
       videoTitle: "Data Fetching With Suspense In Relay",
       videoSubTitle: "Joe Savona",
-      speakers: ["https://react.dev/images/home/conf2019/joe.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/joe.jpg"],
     },
     {
       videoTitle: "Automatic Visualizations of the Frontend",
       videoSubTitle: "Cameron Yick",
-      speakers: ["https://react.dev/images/home/conf2019/cameron.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/cameron.jpg"],
     },
     {
       videoTitle: "React Is Fiction",
       videoSubTitle: "Jenn Creighton",
-      speakers: ["https://react.dev/images/home/conf2019/jenn.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/jenn.jpg"],
     },
     {
       videoTitle: "Progressive Web Animations",
       videoSubTitle: "Alexandra Holachek",
-      speakers: ["https://react.dev/images/home/conf2019/alexandra.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/alexandra.jpg"],
     },
     {
-      videoTitle: "Creating Games, Animations and Interactions with the Wick Editor",
+      videoTitle:
+        "Creating Games, Animations and Interactions with the Wick Editor",
       videoSubTitle: "Luca Damasco",
-      speakers: ["https://react.dev/images/home/conf2019/luca.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/luca.jpg"],
     },
     {
       videoTitle: "Building React-Select",
       videoSubTitle: "Jed Watson",
-      speakers: ["https://react.dev/images/home/conf2019/jed.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/jed.jpg"],
     },
     {
       videoTitle: "Promoting Transparency in Government Spending with React",
       videoSubTitle: "Lizzie Salita",
-      speakers: ["https://react.dev/images/home/conf2019/lizzie.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/lizzie.jpg"],
     },
     {
       videoTitle: "Wonder-driven Development: Using React to Make a Spaceship",
       videoSubTitle: "Alex Anderson",
-      speakers: ["https://react.dev/images/home/conf2019/alex.jpg"]
+      speakers: ["https://react.dev/images/home/conf2019/alex.jpg"],
     },
   ];
   return (
@@ -717,29 +717,32 @@ function ConfsSlug({ isHover }) {
                     {/* 비디오 */}
                     <section className="relative">
                       <h2 className="font-bold text-xl text-primary mb-4 leading-snug">
-                        {selectedYear === "react-conf-2021" ? videoData2021.length : videoData2019.length} Videos
+                        {selectedYear === "react-conf-2021"
+                          ? videoData2021.length
+                          : videoData2019.length}{" "}
+                        Videos
                       </h2>
                       <div className="flex flex-col gap-4">
-                      {selectedYear === "react-conf-2021" 
-                      ? videoData2021.map((video, index) => (
-                        <SummaryVideo
-                          key={index}
-                          videoTitle={video.videoTitle}
-                          videoSubTitle={video.videoTitle}
-                          via50={"to-gray-70"}
-                          speakers={video.speakers}
-                        ></SummaryVideo>
-                      ))
-                      : videoData2019.map((video, index) => (
-                        <SummaryVideo
-                          key={index}
-                          videoTitle={video.videoTitle}
-                          videoSubTitle={video.videoTitle}
-                          via50={"to-gray-70"}
-                          speakers={video.speakers}
-                        ></SummaryVideo>
-                      ))}
-                        
+                        {selectedYear === "react-conf-2021"
+                          ? videoData2021.map((video, index) => (
+                              <SummaryVideo
+                                key={index}
+                                videoTitle={video.videoTitle}
+                                videoSubTitle={video.videoTitle}
+                                via50={"to-gray-70"}
+                                speakers={video.speakers}
+                              ></SummaryVideo>
+                            ))
+                          : videoData2019.map((video, index) => (
+                              <SummaryVideo
+                                key={index}
+                                videoTitle={video.videoTitle}
+                                videoSubTitle={video.videoTitle}
+                                via50={"to-gray-70"}
+                                speakers={video.speakers}
+                              ></SummaryVideo>
+                            ))}
+
                         {/* <SummaryVideo
                           videoTitle="React: The Documentary"
                           videoSubTitle="The origin story of React"

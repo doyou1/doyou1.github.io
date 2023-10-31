@@ -1,12 +1,154 @@
 import "@/styles/codeEditor.css";
 // CodeEditerVideo
-const CodeEditorVideo = ({ isHover, setIsHover }) => {
-  const handleMouseOver = (element) => {
-    setIsHover(element);
+const CodeEditorVideo = ({ setIsHover }) => {
+  const handleMouseOver = (value) => {
+    setIsHover((prev) => {
+      switch (value) {
+        case "divOpen":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              divOpen: true,
+            },
+          };
+        case "thumbnail":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              thumbnail: true,
+            },
+          };
+        case "aOpen":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              aOpen: true,
+            },
+          };
+        case "h3":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              h3: true,
+            },
+          };
+        case "p":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              p: true,
+            },
+          };
+        case "aClose":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              aClose: true,
+            },
+          };
+        case "likeButton":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              likeButton: true,
+            },
+          };
+        case "divClose":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              divClose: true,
+            },
+          };
+        default:
+          return {
+            ...prev,
+          };
+      }
+    });
   };
 
-  const handleMouseOut = () => {
-    setIsHover(null);
+  const handleMouseOut = (value) => {
+    setIsHover((prev) => {
+      switch (value) {
+        case "divOpen":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              divOpen: false,
+            },
+          };
+        case "thumbnail":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              thumbnail: false,
+            },
+          };
+        case "aOpen":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              aOpen: false,
+            },
+          };
+        case "h3":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              h3: false,
+            },
+          };
+        case "p":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              p: false,
+            },
+          };
+        case "aClose":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              aClose: false,
+            },
+          };
+        case "likeButton":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              likeButton: false,
+            },
+          };
+        case "divClose":
+          return {
+            ...prev,
+            firstSummary: {
+              ...prev.firstSummary,
+              divClose: false,
+            },
+          };
+        default:
+          return {
+            ...prev,
+          };
+      }
+    });
   };
 
   return (
@@ -35,13 +177,11 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">(</span>
           <br></br>
         </div>
-        {/* three */}
+        {/* three divOpen */}
         <div
-          className={`cm-line ${
-            isHover === "videoThree" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("videoThree")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("divOpen")}
+          onMouseOut={() => handleMouseOut("divOpen")}
         >
           <span className="sp-syntax-punctuation">
             {" "}
@@ -53,13 +193,11 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-punctuation">{">"}</span>
           <br></br>
         </div>
-        {/* four */}
+        {/* four thumbnail */}
         <div
-          className={`cm-line ${
-            isHover === "videoFour" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("videoFour")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("thumbnail")}
+          onMouseOut={() => handleMouseOut("thumbnail")}
         >
           <span className="sp-syntax-punctuation">
             &nbsp; &nbsp; &nbsp; {"<"}
@@ -76,13 +214,11 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
           </span>
           <br></br>
         </div>
-        {/* five */}
+        {/* five aOpen */}
         <div
-          className={`cm-line ${
-            isHover === "videoFive" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("videoFive")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("aOpen")}
+          onMouseOut={() => handleMouseOut("aOpen")}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; {"<"}</span>
           <span className="sp-syntax-tag dark:sp-syntax-tag">a</span>
@@ -95,14 +231,11 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">{"}>"}</span>
           <br></br>
         </div>
-
-        {/* six */}
+        {/* six h3 */}
         <div
-          className={`cm-line ${
-            isHover === "videoSix" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("videoSix")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("h3")}
+          onMouseOut={() => handleMouseOut("h3")}
         >
           <span className="sp-syntax-plain">
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{"<"}
@@ -118,15 +251,12 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
+        {/* seven p */}
         <div
-          className={`cm-line ${
-            isHover === "videoSeven" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("videoSeven")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("p")}
+          onMouseOut={() => handleMouseOut("p")}
         >
-          {" "}
-          {/* seven */}
           <span className="sp-syntax-plain">
             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{"<"}
           </span>
@@ -141,28 +271,23 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
+        {/* eight aClose */}
         <div
-          className={`cm-line ${
-            isHover === "videoEight" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("videoEight")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("aClose")}
+          onMouseOut={() => handleMouseOut("aClose")}
         >
-          {" "}
-          {/* eight */}
           &nbsp;&nbsp; &nbsp; &nbsp;
           <span className="sp-syntax-punctuation">{"</"}</span>
           <span className="sp-syntax-tag dark:sp-syntax-tag">a</span>
           <span className="sp-syntax-punctuation">{">"}</span>
           <br></br>
         </div>
-        {/* nine */}
+        {/* nine likeButton */}
         <div
-          className={`cm-line ${
-            isHover === "videoNine" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("videoNine")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("likeButton")}
+          onMouseOut={() => handleMouseOut("likeButton")}
         >
           &nbsp;
           <span className="sp-syntax-punctuation"> &nbsp; &nbsp; &lt;</span>
@@ -176,13 +301,11 @@ const CodeEditorVideo = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-punctuation">{"={video} />"}</span>
           <br></br>
         </div>
-        {/* ten */}
+        {/* ten divClose */}
         <div
-          className={`cm-line ${
-            isHover === "videoTen" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("videoTen")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("divClose")}
+          onMouseOut={() => handleMouseOut("divClose")}
         >
           <span className="sp-syntax-punctuation">
             {" "}
