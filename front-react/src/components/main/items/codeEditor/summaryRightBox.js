@@ -1,6 +1,5 @@
 import "@/styles/codeEditor.css";
 import SummaryVideo from "./summaryVideo";
-import SummaryConfsSlug from "./summaryconfsSlug";
 import { ReactComponent as Key } from "@/assets/summary/Key.svg";
 import { ReactComponent as Search } from "@/assets/summary/search.svg";
 import { ReactComponent as Refresh } from "@/assets/summary/refresh.svg";
@@ -414,6 +413,212 @@ function ConfsSlug({ isHover }) {
       });
     }
   }, [isHover]);
+
+  const videoData2021 = [
+    {
+      videoTitle: "React 18 Keynote",
+      videoSubTitle: "The React Team",
+      speakers: ["https://react.dev/images/home/conf2021/andrew.jpg", "https://react.dev/images/home/conf2021/lauren.jpg", "https://react.dev/images/home/conf2021/juan.jpg", "https://react.dev/images/home/conf2021/rick.jpg"]
+    },
+    {
+      videoTitle: "React 18 for App Developers",
+      videoSubTitle: "Shruti Kapoor",
+      speakers: ["https://react.dev/images/home/conf2021/shruti.jpg"]
+    },
+    {
+      videoTitle: "Streaming Server Rendering with Suspense",
+      videoSubTitle: "Shaundai Person",
+      speakers: ["https://react.dev/images/home/conf2021/shaundai.jpg"]
+    },
+    {
+      videoTitle: "The First React Working Group",
+      videoSubTitle: "Aakansha Doshi",
+      speakers: ["https://react.dev/images/home/conf2021/aakansha.jpg"]
+    },
+    {
+      videoTitle: "React Developer Tooling",
+      videoSubTitle: "Brian Vaughn",
+      speakers: ["https://react.dev/images/home/conf2021/brian.jpg"]
+    },
+    {
+      videoTitle: "React without memo",
+      videoSubTitle: "Xuan Huang (黄玄)",
+      speakers: ["https://react.dev/images/home/conf2021/xuan.jpg"]
+    },
+    {
+      videoTitle: "React Docs Keynote",
+      videoSubTitle: "Rachel Nabors",
+      speakers: ["https://react.dev/images/home/conf2021/rachel.jpg"]
+    },
+    {
+      videoTitle: "Things I Learnt from the New React Docs",
+      videoSubTitle: "Debbie O'Brien",
+      speakers: ["https://react.dev/images/home/conf2021/debbie.jpg"]
+    },
+    {
+      videoTitle: "Learning in the Browser",
+      videoSubTitle: "Sarah Rainsberger",
+      speakers: ["https://react.dev/images/home/conf2021/sarah.jpg"]
+    },
+    {
+      videoTitle: "The ROI of Designing with React",
+      videoSubTitle: "Linton Ye",
+      speakers: ["https://react.dev/images/home/conf2021/linton.jpg"]
+    },
+    {
+      videoTitle: "Interactive Playgrounds with React",
+      videoSubTitle: "Delba de Oliveira",
+      speakers: ["https://react.dev/images/home/conf2021/delba.jpg"]
+    },
+    {
+      videoTitle: "Re-introducing Relay",
+      videoSubTitle: "Robert Balicki",
+      speakers: ["https://react.dev/images/home/conf2021/robert.jpg"]
+    },
+    {
+      videoTitle: "React Native Desktop",
+      videoSubTitle: "Eric Rozell and Steven Moyes",
+      speakers: ["https://react.dev/images/home/conf2021/eric.jpg", "https://react.dev/images/home/conf2021/steven.jpg"]
+    },
+    {
+      videoTitle: "On-device Machine Learning for React Native",
+      videoSubTitle: "Roman Rädle",
+      speakers: ["https://react.dev/images/home/conf2021/roman.jpg"]
+    },
+    {
+      videoTitle: "React 18 for External Store Libraries",
+      videoSubTitle: "Daishi Kato",
+      speakers: ["https://react.dev/images/home/conf2021/daishi.jpg"]
+    },
+    {
+      videoTitle: "Building Accessible Components with React 18",
+      videoSubTitle: "Diego Haz",
+      speakers: ["https://react.dev/images/home/conf2021/diego.jpg"]
+    },
+    {
+      videoTitle: "Accessible Japanese Form Components with React",
+      videoSubTitle: "Tafu Nakazaki",
+      speakers: ["https://react.dev/images/home/conf2021/tafu.jpg"]
+    },
+    {
+      videoTitle: "UI Tools for Artists",
+      videoSubTitle: "Lyle Troxell",
+      speakers: ["https://react.dev/images/home/conf2021/lyle.jpg"]
+    },
+    {
+      videoTitle: "Hydrogen + React 18",
+      videoSubTitle: "Helen Lin",
+      speakers: ["https://react.dev/images/home/conf2021/helen.jpg"]
+    },
+  ];
+
+  const videoData2019 = [
+    {
+      videoTitle: "Keynote (Part 1)",
+      videoSubTitle: "Tom Occhino",
+      speakers: ["https://react.dev/images/home/conf2019/tom.jpg"]
+    },
+    {
+      videoTitle: "Keynote (Part 2)",
+      videoSubTitle: "Yuzhi Zheng",
+      speakers: ["https://conf2019.reactjs.org/img/speakers/yuzhi.jpg"]
+    },
+    {
+      videoTitle: "Building The New Facebook With React and Relay (Part 1)",
+      videoSubTitle: "Frank Yan",
+      speakers: ["https://react.dev/images/home/conf2019/frank.jpg"]
+    },
+    {
+      videoTitle: "Building The New Facebook With React and Relay (Part 2)",
+      videoSubTitle: "Ashley Watkins",
+      speakers: ["https://react.dev/images/home/conf2019/ashley.jpg"]
+    },
+    {
+      videoTitle: "How Our Team Is Using React Native to Save The World",
+      videoSubTitle: "Tania Papazafeiropoulou",
+      speakers: ["https://react.dev/images/home/conf2019/tania.jpg"]
+    },
+    {
+      videoTitle: "Using Hooks and Codegen to Bring the Benefits of GraphQL to REST APIs",
+      videoSubTitle: "Tejas Kumar",
+      speakers: ["https://react.dev/images/home/conf2019/tejas.jpg"]
+    },
+    {
+      videoTitle: "Building a Custom React Renderer",
+      videoSubTitle: "Sophie Alpert",
+      speakers: ["https://react.dev/images/home/conf2019/sophie.jpg"]
+    },
+    {
+      videoTitle: "Is React Translated Yet?",
+      videoSubTitle: "Nat Alison",
+      speakers: ["https://react.dev/images/home/conf2019/nat.jpg"]
+    },
+    {
+      videoTitle: "Building (And Re-Building) the Airbnb Design System",
+      videoSubTitle: "Maja Wichrowska and Tae Kim",
+      speakers: ["https://react.dev/images/home/conf2019/maja.jpg", "https://react.dev/images/home/conf2019/tae.jpg"]
+    },
+    {
+      videoTitle: "Accessibility Is a Marathon, Not a Sprint",
+      videoSubTitle: "Brittany Feenstra",
+      speakers: ["https://react.dev/images/home/conf2019/brittany.jpg"]
+    },
+    {
+      videoTitle: "The State of React State in 2019",
+      videoSubTitle: "Becca Bailey",
+      speakers: ["https://react.dev/images/home/conf2019/becca.jpg"]
+    },
+    {
+      videoTitle: "Let’s Program Like It’s 1999",
+      videoSubTitle: "Lee Byron",
+      speakers: ["https://react.dev/images/home/conf2019/lee.jpg"]
+    },
+    {
+      videoTitle: "React Developer Tooling",
+      videoSubTitle: "Brian Vaughn",
+      speakers: ["https://react.dev/images/home/conf2019/brian.jpg"]
+    },
+    {
+      videoTitle: "Data Fetching With Suspense In Relay",
+      videoSubTitle: "Joe Savona",
+      speakers: ["https://react.dev/images/home/conf2019/joe.jpg"]
+    },
+    {
+      videoTitle: "Automatic Visualizations of the Frontend",
+      videoSubTitle: "Cameron Yick",
+      speakers: ["https://react.dev/images/home/conf2019/cameron.jpg"]
+    },
+    {
+      videoTitle: "React Is Fiction",
+      videoSubTitle: "Jenn Creighton",
+      speakers: ["https://react.dev/images/home/conf2019/jenn.jpg"]
+    },
+    {
+      videoTitle: "Progressive Web Animations",
+      videoSubTitle: "Alexandra Holachek",
+      speakers: ["https://react.dev/images/home/conf2019/alexandra.jpg"]
+    },
+    {
+      videoTitle: "Creating Games, Animations and Interactions with the Wick Editor",
+      videoSubTitle: "Luca Damasco",
+      speakers: ["https://react.dev/images/home/conf2019/luca.jpg"]
+    },
+    {
+      videoTitle: "Building React-Select",
+      videoSubTitle: "Jed Watson",
+      speakers: ["https://react.dev/images/home/conf2019/jed.jpg"]
+    },
+    {
+      videoTitle: "Promoting Transparency in Government Spending with React",
+      videoSubTitle: "Lizzie Salita",
+      speakers: ["https://react.dev/images/home/conf2019/lizzie.jpg"]
+    },
+    {
+      videoTitle: "Wonder-driven Development: Using React to Make a Spaceship",
+      videoSubTitle: "Alex Anderson",
+      speakers: ["https://react.dev/images/home/conf2019/alex.jpg"]
+    },
+  ];
   return (
     <div className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
       <div className="mx-auto max-w-3xl shadow-nav dark:shadow-nav-dark relative overflow-hidden w-full dark:border-opacity-10 rounded-2xl">
@@ -512,10 +717,30 @@ function ConfsSlug({ isHover }) {
                     {/* 비디오 */}
                     <section className="relative">
                       <h2 className="font-bold text-xl text-primary mb-4 leading-snug">
-                        5 Videos
+                        {selectedYear === "react-conf-2021" ? videoData2021.length : videoData2019.length} Videos
                       </h2>
                       <div className="flex flex-col gap-4">
+                      {selectedYear === "react-conf-2021" 
+                      ? videoData2021.map((video, index) => (
                         <SummaryVideo
+                          key={index}
+                          videoTitle={video.videoTitle}
+                          videoSubTitle={video.videoTitle}
+                          via50={"to-gray-70"}
+                          speakers={video.speakers}
+                        ></SummaryVideo>
+                      ))
+                      : videoData2019.map((video, index) => (
+                        <SummaryVideo
+                          key={index}
+                          videoTitle={video.videoTitle}
+                          videoSubTitle={video.videoTitle}
+                          via50={"to-gray-70"}
+                          speakers={video.speakers}
+                        ></SummaryVideo>
+                      ))}
+                        
+                        {/* <SummaryVideo
                           videoTitle="React: The Documentary"
                           videoSubTitle="The origin story of React"
                           via50={"to-gray-70"}
@@ -544,7 +769,7 @@ function ConfsSlug({ isHover }) {
                           videoSubTitle="Dan Abramov and Lauren Tan (2020)"
                           via50={"to-gray-70"}
                           playButton={<SummaryConfsSlug></SummaryConfsSlug>}
-                        ></SummaryVideo>
+                        ></SummaryVideo> */}
                       </div>
                     </section>
                   </div>
