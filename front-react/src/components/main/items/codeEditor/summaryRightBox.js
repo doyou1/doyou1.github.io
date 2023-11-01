@@ -80,41 +80,78 @@ function MainVideoBox({ isHover }) {
   );
 }
 
-function MainVideoListBox({ isHover, setIsHover }) {
-  const [style, setStyle] = useState({}); // rightBox 스타일 관리
+function MainVideoListBox({ isHover }) {
+  const [sizeProp, setSizeProp] = useState({
+    width: -1,
+    height: -1,
+    translate1: -1,
+    translate2: -1,
+    translate12: -1,
+    translate22: -1,
+    translate13: -1,
+    translate23: -1,
+  }); // rightBox 스타일 관리
 
-  //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
-  useEffect(() => {
-    if (isHover === "videoListNine" || isHover === "videoListFourTeen") {
-      setStyle({
-        width: "526px",
-        height: "334px",
-        transform: "translate(28px, 28px)",
-      });
-      // console.log("렌더링");
+  const rightBoxRef = useRef();
+  const sectionRef = useRef();
+  const h2Ref = useRef();
+
+  const getRightBoxSize = () => {
+    if (rightBoxRef.current) {
+      return {
+        width: rightBoxRef.current.offsetWidth,
+        height: rightBoxRef.current.offsetHeight,
+      };
+    } else {
+      return {
+        width: -1,
+        height: -1,
+      };
     }
-    if (isHover === "videoListTen") {
-      setStyle({
-        width: "526px",
-        height: "43px",
-        transform: "translate(28px, 28px)",
-      });
+  };
+
+  const getSectionSize = () => {
+    if (sectionRef.current) {
+      return {
+        width: sectionRef.current.offsetWidth,
+        height: sectionRef.current.offsetHeight,
+      };
+    } else {
+      return {
+        width: -1,
+        height: -1,
+      };
     }
-    if (isHover === "videoListTwelve") {
-      setStyle({
-        width: "526px",
-        height: "97px",
-        transform: "translate(28px, 71px)",
-      });
+  };
+  const getH2Size = () => {
+    if (h2Ref.current) {
+      return {
+        width: h2Ref.current.offsetWidth,
+        height: h2Ref.current.offsetHeight,
+      };
+    } else {
+      return {
+        width: -1,
+        height: -1,
+      };
     }
-  }, [isHover]);
+  };
+
   return (
-    <div className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
+    <div
+      ref={rightBoxRef}
+      className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center"
+    >
       <div className="max-w-3xl rounded-2xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto shadow-nav dark:shadow-nav-dark">
         <div className="p-0" style={{ contentVisibility: "auto" }}>
           <div className="m-4">
-            <section className="relative" data-hover="VideoList">
+            <section
+              ref={sectionRef}
+              className="relative"
+              data-hover="VideoList"
+            >
               <h2
+                ref={h2Ref}
                 className="font-bold text-xl text-primary mb-4 leading-snug"
                 data-hover="h2"
               >
@@ -126,18 +163,38 @@ function MainVideoListBox({ isHover, setIsHover }) {
                   videoSubTitle="Video description"
                   via50="via-blue-50"
                   playButton={<PlayButton alt="play button" />}
+                  codeEditor="secondSummary"
+                  isHover={isHover}
+                  setSizeProp={setSizeProp}
+                  getRightBoxSize={getRightBoxSize}
+                  getSectionSize={getSectionSize}
+                  getH2Size={getH2Size}
+                  getSectionSizeForVideo={getSectionSize}
+                  getH2SizeForVideo={getH2Size}
                 ></SummaryVideo>
                 <SummaryVideo
                   videoTitle="Second Video"
                   videoSubTitle="Video description"
                   via50="via-red-50"
                   playButton={<PlayButton alt="play button" />}
+                  codeEditor="secondSummary"
+                  isHover={isHover}
+                  setSizeProp={setSizeProp}
+                  getRightBoxSize={getRightBoxSize}
+                  getSectionSizeForVideo={getSectionSize}
+                  getH2SizeForVideo={getH2Size}
                 ></SummaryVideo>
                 <SummaryVideo
                   videoTitle="Third Video"
                   videoSubTitle="Video description"
                   via50="via-green-50"
+                  codeEditor="secondSummary"
                   playButton={<PlayButton alt="play button" />}
+                  isHover={isHover}
+                  setSizeProp={setSizeProp}
+                  getRightBoxSize={getRightBoxSize}
+                  getSectionSizeForVideo={getSectionSize}
+                  getH2SizeForVideo={getH2Size}
                 ></SummaryVideo>
               </div>
             </section>
@@ -147,42 +204,46 @@ function MainVideoListBox({ isHover, setIsHover }) {
 
       {/* 마우스이벤트 발생시 나오는 레이아웃 */}
       <div
-        className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu opacity-0 ${
-          isHover ? "opacity-100 " : "opacity-0"
+        className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu${
+          Object.keys(isHover).filter((key) => isHover[key]).length > 0
+            ? "opacity-100"
+            : "opacity-0"
         }`}
       >
         <div
           className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
-            isHover ? "opacity-100 " : "opacity-0"
+            Object.keys(isHover).filter((key) => isHover[key]).length > 0
+              ? "opacity-100 "
+              : "opacity-0"
           }`}
-          style={style}
+          style={{
+            width: `${sizeProp.width}px`,
+            height: `${sizeProp.height}px`,
+            transform: `translate(${sizeProp.translate1}px, ${sizeProp.translate2}px)`,
+          }}
         ></div>
         {/* 두 번째 div */}
-        {isHover == "videoListTwelve" ? (
-          <div
-            className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg opacity-100`}
-            style={{
-              width: "526px",
-              height: "97px",
-              transform: "translate(28px, 168px)",
-            }}
-          ></div>
-        ) : (
-          ""
-        )}
-        {/* 두 번째 div */}
-        {isHover == "videoListTwelve" ? (
-          <div
-            className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg opacity-100`}
-            style={{
-              width: "526px",
-              height: "97px",
-              transform: "translate(28px, 265px)",
-            }}
-          ></div>
-        ) : (
-          ""
-        )}
+        <div
+          className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
+            isHover.video ? "opacity-100 " : "opacity-0"
+          }`}
+          style={{
+            width: `${sizeProp.width}px`,
+            height: `${sizeProp.height}px`,
+            transform: `translate(${sizeProp.translate12}px, ${sizeProp.translate22}px)`,
+          }}
+        ></div>
+        {/* 세 번째 div */}
+        <div
+          className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
+            isHover.video ? "opacity-100 " : "opacity-0"
+          }`}
+          style={{
+            width: `${sizeProp.width}px`,
+            height: `${sizeProp.height}px`,
+            transform: `translate(${sizeProp.translate13}px, ${sizeProp.translate23}px)`,
+          }}
+        ></div>
       </div>
     </div>
   );
@@ -209,7 +270,6 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
         height: "390px",
         transform: "translate(28px, 164px)",
       });
-      // console.log("렌더링");
     }
     if (isHover === "searchableVideoSeven") {
       setStyle({
@@ -385,7 +445,6 @@ function ConfsSlug({ isHover }) {
         height: "565px",
         transform: "translate(12px, 68px)",
       });
-      // console.log("렌더링");
     }
     if (
       isHover === "ConferencePageSeven" ||

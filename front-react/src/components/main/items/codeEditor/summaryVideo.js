@@ -15,6 +15,10 @@ function SummaryVideo({
   isHover,
   setSizeProp,
   getRightBoxSize,
+  getSectionSize,
+  getH2Size,
+  getH2SizeForVideo,
+  getSectionSizeForVideo,
 }) {
   // 좋아요 버튼 클릭시 토글기능
   const [isLiked, setIsLiked] = useState(true);
@@ -31,6 +35,7 @@ function SummaryVideo({
 
   useEffect(() => {
     const { width: rightBoxWidth, height: rightBoxHeight } = getRightBoxSize();
+
     if (codeEditor === "firstSummary") {
       if (isHover.divOpen || isHover.divClose) {
         if (entireDivRef.current) {
@@ -115,6 +120,68 @@ function SummaryVideo({
             translate2:
               (rightBoxHeight - likeButtonRef.current.offsetHeight) / 2,
           });
+        }
+      }
+    } else if (codeEditor === "secondSummary") {
+      if (isHover.sectionOpen || isHover.sectionClose) {
+        if (getSectionSize) {
+          const { width: sectionWidth, height: sectionHeight } =
+            getSectionSize();
+          setSizeProp({
+            width: sectionWidth + 16,
+            height: sectionHeight + 16,
+            translate1: (rightBoxWidth - (sectionWidth + 16)) / 2,
+            translate2: (rightBoxHeight - (sectionHeight + 16)) / 2,
+          });
+        }
+      }
+      if (isHover.h2) {
+        if (getH2Size) {
+          if (getSectionSize) {
+            const { width: h2Width, height: h2Height } = getH2Size();
+            const { width: sectionWidth, height: sectionHeight } =
+              getSectionSize();
+            setSizeProp({
+              width: h2Width + 16,
+              height: h2Height + 16,
+              translate1: (rightBoxWidth - (sectionWidth + 16)) / 2,
+              translate2: (rightBoxHeight - (sectionHeight + 16)) / 2,
+            });
+          }
+        }
+      }
+
+      if (isHover.video) {
+        if (getH2SizeForVideo) {
+          if (getSectionSizeForVideo) {
+            const { width: h2Width, height: h2Height } = getH2SizeForVideo();
+            const { width: sectionWidth, height: sectionHeight } =
+              getSectionSizeForVideo();
+            if (videoTitle === "First Video") {
+              setSizeProp((prev) => ({
+                ...prev,
+                width: h2Width + 16,
+                height: entireDivRef.current.offsetHeight + 16,
+                translate1: (rightBoxWidth - (sectionWidth + 16)) / 2,
+                translate2:
+                  (rightBoxHeight - (sectionHeight + 16)) / 2 + h2Height + 16,
+              }));
+            } else if (videoTitle === "Second Video") {
+              setSizeProp((prev) => ({
+                ...prev,
+                translate12: (rightBoxWidth - (sectionWidth + 16)) / 2,
+                translate22:
+                  prev.translate2 + entireDivRef.current.offsetHeight + 16,
+              }));
+            } else if (videoTitle === "Third Video") {
+              setSizeProp((prev) => ({
+                ...prev,
+                translate13: (rightBoxWidth - (sectionWidth + 16)) / 2,
+                translate23:
+                  prev.translate22 + entireDivRef.current.offsetHeight + 16,
+              }));
+            }
+          }
         }
       }
     }

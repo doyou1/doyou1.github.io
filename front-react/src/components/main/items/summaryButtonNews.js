@@ -15,7 +15,6 @@ export default function SummaryButtonNews({
   rightTopPtag,
   rightBox,
 }) {
-  // console.log();
   return (
     <div className="summary-main-container">
       <div className="my-32 w-full grow flex-col flex">
@@ -39,7 +38,10 @@ export default function SummaryButtonNews({
                     className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark"
                     rel="noreferrer"
                   >
-                    <NewsPaper className="code-logo dark:text-white" alt="news paper" />
+                    <NewsPaper
+                      className="code-logo dark:text-white"
+                      alt="news paper"
+                    />
                     {btnText}
                     <ArrowRightMiddleAnimation />
                   </a>
@@ -78,9 +80,13 @@ export default function SummaryButtonNews({
                 <a
                   href="#"
                   target="_blank"
-                  className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark dark:summary-news-primary-text-dark" rel="noreferrer"
+                  className="hover-summary-news-button-bg focus:outline-none focus-visible:outline focus-visible:outline-link focus:outline-offset-2 group cursor-pointer w-auto justify-center inline-flex font-bold items-center mt-10 outline-none leading-tight text-lg py-2.5 rounded-full px-4 sm:px-6 ease-in-out summary-news-button-stroke dark:summary-news-button-stroke-dark dark:summary-news-primary-text-dark"
+                  rel="noreferrer"
                 >
-                  <NewsPaper className="code-logo text-[#23272f] dark:text-white" alt="news paper" />
+                  <NewsPaper
+                    className="code-logo text-[#23272f] dark:text-white"
+                    alt="news paper"
+                  />
                   {btnText}
                   <ArrowRightMiddleAnimation />
                 </a>
