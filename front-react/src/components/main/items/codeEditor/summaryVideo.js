@@ -1,20 +1,205 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import SummaryConfsSlug from "./summaryconfsSlug";
 import { ReactComponent as PlayButton } from "@/assets/summary/playButton.svg";
 import { ReactComponent as EmptyHeart } from "@/assets/summary/emptyHeart.svg";
 import { ReactComponent as FullOfHeart } from "@/assets/summary/fullOfHeart.svg";
 import { ReactComponent as HeartBackGround } from "@/assets/summary/heartBackGround.svg";
-function SummaryVideo({ videoTitle, videoSubTitle, via50, bg, playButton }) {
+function SummaryVideo({
+  videoTitle,
+  videoSubTitle,
+  via50,
+  bg,
+  playButton,
+  speakers,
+  codeEditor,
+  isHover,
+  setSizeProp,
+  getRightBoxSize,
+  getSectionSize,
+  getH2Size,
+  getH2SizeForVideo,
+  getSectionSizeForVideo,
+}) {
   // 좋아요 버튼 클릭시 토글기능
   const [isLiked, setIsLiked] = useState(true);
   const handleButtonClick = () => {
     setIsLiked(!isLiked);
   };
+
+  const entireDivRef = useRef();
+  const thumbnailRef = useRef();
+  const wrapTextRef = useRef();
+  const h3Ref = useRef();
+  const pRef = useRef();
+  const likeButtonRef = useRef();
+
+  useEffect(() => {
+    if (getRightBoxSize) {
+      const { width: rightBoxWidth, height: rightBoxHeight } =
+        getRightBoxSize();
+
+      if (codeEditor === "firstSummary") {
+        if (isHover.divOpen || isHover.divClose) {
+          if (entireDivRef.current) {
+            setSizeProp({
+              width: entireDivRef.current.offsetWidth + 16,
+              height: entireDivRef.current.offsetHeight + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2,
+              translate2:
+                (rightBoxHeight - (entireDivRef.current.offsetHeight + 16)) / 2,
+            });
+          }
+        }
+        if (isHover.thumbnail) {
+          if (thumbnailRef.current) {
+            setSizeProp({
+              width: thumbnailRef.current.offsetWidth + 16,
+              height: thumbnailRef.current.offsetHeight + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2,
+              translate2:
+                (rightBoxHeight - (thumbnailRef.current.offsetHeight + 16)) / 2,
+            });
+          }
+        }
+        if (isHover.aOpen || isHover.aClose) {
+          if (wrapTextRef.current) {
+            setSizeProp({
+              width: wrapTextRef.current.offsetWidth + 16,
+              height: wrapTextRef.current.offsetHeight + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
+                thumbnailRef.current.offsetWidth +
+                16,
+              translate2:
+                (rightBoxHeight - (wrapTextRef.current.offsetHeight + 16)) / 2,
+            });
+          }
+        }
+        if (isHover.h3) {
+          if (h3Ref.current) {
+            setSizeProp({
+              width: h3Ref.current.offsetWidth + 16,
+              height: h3Ref.current.offsetHeight + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
+                thumbnailRef.current.offsetWidth +
+                16,
+              translate2:
+                (rightBoxHeight - (wrapTextRef.current.offsetHeight + 16)) / 2,
+            });
+          }
+        }
+        if (isHover.p) {
+          if (pRef.current) {
+            setSizeProp({
+              width: pRef.current.offsetWidth + 16,
+              height: pRef.current.offsetHeight + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
+                thumbnailRef.current.offsetWidth +
+                16,
+              translate2:
+                (rightBoxHeight - (wrapTextRef.current.offsetHeight + 16)) / 2 +
+                wrapTextRef.current.offsetHeight -
+                h3Ref.current.offsetHeight,
+            });
+          }
+        }
+        if (isHover.likeButton) {
+          if (likeButtonRef.current) {
+            setSizeProp({
+              width: likeButtonRef.current.offsetWidth,
+              height: likeButtonRef.current.offsetHeight,
+              // translate1: (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 + thumbnailRef.current.offsetWidth + 16 + wrapTextRef.current.offsetWidth + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
+                thumbnailRef.current.offsetWidth +
+                16 +
+                wrapTextRef.current.offsetWidth +
+                16,
+              translate2:
+                (rightBoxHeight - likeButtonRef.current.offsetHeight) / 2,
+            });
+          }
+        }
+      } else if (codeEditor === "secondSummary") {
+        if (isHover.sectionOpen || isHover.sectionClose) {
+          if (getSectionSize) {
+            const { width: sectionWidth, height: sectionHeight } =
+              getSectionSize();
+            setSizeProp({
+              width: sectionWidth + 16,
+              height: sectionHeight + 16,
+              translate1: (rightBoxWidth - (sectionWidth + 16)) / 2,
+              translate2: (rightBoxHeight - (sectionHeight + 16)) / 2,
+            });
+          }
+        }
+        if (isHover.h2) {
+          if (getH2Size) {
+            if (getSectionSize) {
+              const { width: h2Width, height: h2Height } = getH2Size();
+              const { width: sectionWidth, height: sectionHeight } =
+                getSectionSize();
+              setSizeProp({
+                width: h2Width + 16,
+                height: h2Height + 16,
+                translate1: (rightBoxWidth - (sectionWidth + 16)) / 2,
+                translate2: (rightBoxHeight - (sectionHeight + 16)) / 2,
+              });
+            }
+          }
+        }
+
+        if (isHover.video) {
+          if (getH2SizeForVideo) {
+            if (getSectionSizeForVideo) {
+              const { width: h2Width, height: h2Height } = getH2SizeForVideo();
+              const { width: sectionWidth, height: sectionHeight } =
+                getSectionSizeForVideo();
+              if (videoTitle === "First Video") {
+                setSizeProp((prev) => ({
+                  ...prev,
+                  width: h2Width + 16,
+                  height: entireDivRef.current.offsetHeight + 16,
+                  translate1: (rightBoxWidth - (sectionWidth + 16)) / 2,
+                  translate2:
+                    (rightBoxHeight - (sectionHeight + 16)) / 2 + h2Height + 16,
+                }));
+              } else if (videoTitle === "Second Video") {
+                setSizeProp((prev) => ({
+                  ...prev,
+                  translate12: (rightBoxWidth - (sectionWidth + 16)) / 2,
+                  translate22:
+                    prev.translate2 + entireDivRef.current.offsetHeight + 16,
+                }));
+              } else if (videoTitle === "Third Video") {
+                setSizeProp((prev) => ({
+                  ...prev,
+                  translate13: (rightBoxWidth - (sectionWidth + 16)) / 2,
+                  translate23:
+                    prev.translate22 + entireDivRef.current.offsetHeight + 16,
+                }));
+              }
+            }
+          }
+        }
+      }
+    }
+  }, [isHover]);
+
   return (
     <div>
-      {" "}
-      <div className="flex flex-row items-center gap-3" data-hover="Video">
+      <div
+        className="flex flex-row items-center gap-3"
+        data-hover="Video"
+        ref={entireDivRef}
+      >
         {/* 비디오 썸네일 */}
         <a
+          ref={thumbnailRef}
           data-hover="Thumbnail"
           target="_blank"
           rel="noreferrer"
@@ -23,11 +208,16 @@ function SummaryVideo({ videoTitle, videoSubTitle, via50, bg, playButton }) {
           className={`outline-link dark:outline-link outline-offset-2 aspect-video w-32 xs:w-36 select-none flex-col shadow-inner-border rounded-lg flex items-center overflow-hidden justify-center align-middle text-white/50 bg-cover bg-white bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] ${via50} `}
           style={{ backgroundImage: `${bg}` }}
         >
+          {speakers ? (
+            <SummaryConfsSlug speakers={speakers}></SummaryConfsSlug>
+          ) : (
+            playButton
+          )}
           {/* 재생버튼 아이콘 */}
-          {playButton}
         </a>
         {/* 비디오정보 */}
         <a
+          ref={wrapTextRef}
           target="_blank"
           rel="noreferrer"
           className="outline-link dark:outline-link outline-offset-4 group flex flex-col flex-1 gap-0.5"
@@ -35,17 +225,23 @@ function SummaryVideo({ videoTitle, videoSubTitle, via50, bg, playButton }) {
         >
           {/* 비디오제목 */}
           <h3
+            ref={h3Ref}
             className="text-base leading-tight text-primary font-bold"
             data-hover="h3"
           >
             {videoTitle}
           </h3>
-          <p className="text-tertiary text-sm leading-snug" data-hover="p">
+          <p
+            ref={pRef}
+            className="text-tertiary text-sm leading-snug"
+            data-hover="p"
+          >
             {videoSubTitle}
           </p>
         </a>
         {/* 좋아요버튼  */}
         <button
+          ref={likeButtonRef}
           data-hover="LikeButton"
           className={`"outline-none focus:bg-red-50/5 focus:text-red-50 relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-card active:scale-95 active:bg-red-50/5 active:text-red-50 ${
             isLiked ? "text-tertiary fill" : "text-red-50 line"

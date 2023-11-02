@@ -34,14 +34,14 @@ export default function Summary({
                     <div className="sp-stack ">
                       <div className="sp-code-editor dark:bg-gray-95">
                         {/* codeEditor */}
-                        {codeEditor}
+                        {codeEditor()}
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               {/* 콘텐츠 오른쪽 박스 구성 */}
-              {rightBox}
+              {rightBox()}
             </div>
           </div>
         </div>

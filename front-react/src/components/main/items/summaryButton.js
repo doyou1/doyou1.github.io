@@ -19,7 +19,7 @@ export default function SummaryButton({
         {/* text-box start */}
         <div className="text-box">
           <h2 className="text-box-h2 dark:text-white ">{title}</h2>
-            {textBox}
+          {textBox}
         </div>
       </div>
       {/* content-container start */}
@@ -38,14 +38,14 @@ export default function SummaryButton({
                     <div className="sp-stack">
                       <div className="sp-code-editor dark:bg-gray-95">
                         {/* <CodeEditor /> */}
-                        {codeEditor}
+                        {codeEditor()}
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               {/* 콘텐츠 오른쪽 박스 구성 */}
-              {rightBox}
+              {rightBox()}
             </div>
           </div>
         </div>
