@@ -249,43 +249,14 @@ function MainVideoListBox({ isHover }) {
   );
 }
 
-function SearchableVideoListBox({ isHover, setIsHover }) {
+function SearchableVideoListBox({ isHover }) {
   const [searchValue, setSearchValue] = useState("");
-  const [style, setStyle] = useState({}); // rightBox 스타일 관리
   const handleSearchChange = (e) => {
     setSearchValue(e.target.value);
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-  //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
-  useEffect(() => {
-    if (
-      isHover === "searchableVideoSix" ||
-      isHover === "searchableVideoThirTeen"
-    ) {
-      setStyle({
-        width: "526px",
-        height: "390px",
-        transform: "translate(28px, 164px)",
-      });
-    }
-    if (isHover === "searchableVideoSeven") {
-      setStyle({
-        width: "526px",
-        height: "64px",
-        transform: "translate(28px, 164px)",
-      });
-    }
-    if (isHover === "searchableVideoNine") {
-      setStyle({
-        width: "526px",
-        height: "330px",
-        transform: "translate(28px, 229px)",
-      });
-    }
-  }, [isHover]);
 
   // 이곳에서 검색을 처리하거나 상태를 업데이트 있음
 
@@ -317,11 +288,95 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
       bg: "url(https://react.dev/images/home/videos/rsc.jpg)",
     },
   ];
+
+  const [sizeProp, setSizeProp] = useState({
+    width: -1,
+    height: -1,
+    translate1: -1,
+    translate2: -1,
+  }); // rightBox 스타일 관리
+
+  const rightBoxRef = useRef();
+  const urlTopRef = useRef();
+  const containerRef = useRef();
+  const titleRef = useRef();
+  const subTitleRef = useRef();
+
+  const wrapRef = useRef();
+
+  const searchInputRef = useRef();
+  const videoListRef = useRef();
+
+  useEffect(() => {
+    // const { width: rightBoxWidth, height: rightBoxHeight } =
+    //   getRightBoxSize();
+
+    if (isHover.wrapOpen || isHover.wrapClose) {
+      setSizeProp({
+        width: wrapRef.current.offsetWidth + 16,
+        height:
+          wrapRef.current.offsetHeight / 2 +
+          searchInputRef.current.offsetHeight +
+          titleRef.current.offsetHeight +
+          subTitleRef.current.offsetHeight,
+        // height: rightBoxRef.current.offsetHeight,
+        translate1:
+          (rightBoxRef.current.offsetWidth - wrapRef.current.offsetWidth - 16) /
+          2,
+        translate2:
+          wrapRef.current.offsetHeight / 2 -
+          urlTopRef.current.offsetHeight -
+          titleRef.current.offsetHeight -
+          subTitleRef.current.offsetHeight,
+      });
+    }
+    if (isHover.searchInput) {
+      setSizeProp({
+        width: searchInputRef.current.offsetWidth + 16,
+        height: searchInputRef.current.offsetHeight + 16,
+        translate1:
+          (rightBoxRef.current.offsetWidth - wrapRef.current.offsetWidth - 16) /
+          2,
+        translate2:
+          wrapRef.current.offsetHeight / 2 -
+          urlTopRef.current.offsetHeight -
+          titleRef.current.offsetHeight -
+          subTitleRef.current.offsetHeight,
+      });
+    }
+    if (isHover.videoList) {
+      setSizeProp({
+        width: searchInputRef.current.offsetWidth + 16,
+        height:
+          wrapRef.current.offsetHeight / 2 +
+          titleRef.current.offsetHeight +
+          subTitleRef.current.offsetHeight -
+          16,
+        translate1:
+          (rightBoxRef.current.offsetWidth - wrapRef.current.offsetWidth - 16) /
+          2,
+        translate2:
+          wrapRef.current.offsetHeight / 2 -
+          urlTopRef.current.offsetHeight -
+          titleRef.current.offsetHeight -
+          subTitleRef.current.offsetHeight +
+          searchInputRef.current.offsetHeight +
+          16,
+      });
+    }
+  }, [isHover]);
+
   return (
-    <div className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
+    <div
+      ref={rightBoxRef}
+      className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center"
+    >
       <div className="mx-auto max-w-3xl shadow-nav dark:shadow-nav-dark relative overflow-hidden w-full dark:border-opacity-10 rounded-2xl">
         {/* 제목 부분  */}
-        <div className="w-full h-14 rounded-t-2xl shadow-outer-border backdrop-filter overflow-hidden backdrop-blur-lg backdrop-saturate-200 bg-white bg-opacity-90 z-10 absolute top-0 px-3 gap-2 flex flex-row items-center">
+        <div
+          ref={urlTopRef}
+          className="w-full h-14 rounded-t-2xl shadow-outer-border backdrop-filter overflow-hidden backdrop-blur-lg backdrop-saturate-200 bg-white bg-opacity-90 z-10 absolute top-0 px-3 gap-2 flex flex-row items-center"
+        >
           <div className="select-none h-8 relative bg-gray-30/20 text-sm text-tertiary text-center rounded-full w-full flex-row flex space-between items-center">
             <div className="w-full leading-snug flex flex-row items-center justify-center">
               {/* svg */}
@@ -338,23 +393,35 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
           >
             {/* React Videos 제목부분  */}
             <div
+              ref={containerRef}
               className="p-0"
               style={{
                 contentVisibility: "auto",
                 marginTop: "72px",
               }}
             >
-              <h1 className="mx-4 mb-1 font-bold text-3xl text-primary">
+              <h1
+                ref={titleRef}
+                className="mx-4 mb-1 font-bold text-3xl text-primary"
+              >
                 React Videos
               </h1>
-              <p className="mx-4 mb-0 leading-snug text-secondary text-xl">
+              <p
+                ref={subTitleRef}
+                className="mx-4 mb-0 leading-snug text-secondary text-xl"
+              >
                 A brief history of React
               </p>
               {/* 검색창 및 비디오 부분  */}
               <div className="px-4 pb-4">
-                <div className="mt-3" data-hover="SearchableVideoList">
+                <div
+                  ref={wrapRef}
+                  className="mt-3"
+                  data-hover="SearchableVideoList"
+                >
                   {/* 검색창 */}
                   <form
+                    ref={searchInputRef}
                     className="mb-3 py-1"
                     data-hover="SearchInput"
                     onSubmit={handleSubmit}
@@ -377,7 +444,7 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
                     </div>
                   </form>
                   {/* 비디오 */}
-                  <section className="relative">
+                  <section ref={videoListRef} className="relative">
                     <h2 className="font-bold text-xl text-primary mb-4 leading-snug">
                       5 Videos
                     </h2>
@@ -400,15 +467,23 @@ function SearchableVideoListBox({ isHover, setIsHover }) {
       </div>
       {/* 마우스이벤트 발생시 나오는 레이아웃 */}
       <div
-        className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu opacity-0 ${
-          isHover ? "opacity-100 " : "opacity-0"
+        className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu${
+          Object.keys(isHover).filter((key) => isHover[key]).length > 0
+            ? "opacity-100"
+            : "opacity-0"
         }`}
       >
         <div
-          className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
-            isHover ? "opacity-100 " : "opacity-0"
+          className={` start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark rounded-lg ${
+            Object.keys(isHover).filter((key) => isHover[key]).length > 0
+              ? "opacity-100 "
+              : "opacity-0"
           }`}
-          style={style}
+          style={{
+            width: `${sizeProp.width}px`,
+            height: `${sizeProp.height}px`,
+            transform: `translate(${sizeProp.translate1}px, ${sizeProp.translate2}px)`,
+          }}
         ></div>
       </div>
     </div>

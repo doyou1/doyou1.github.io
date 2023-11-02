@@ -50,7 +50,12 @@ export default function Main() {
       video: false,
       sectionClose: false,
     },
-    firstSummaryBtn: {},
+    firstSummaryBtn: {
+      wrapOpen: false,
+      searchInput: false,
+      videoList: false,
+      wrapClose: false,
+    },
     secondSummaryBtn: {},
   });
 
@@ -104,7 +109,7 @@ export default function Main() {
         ></Summary>
 
         {/* first SummaryButton  */}
-        {/* <SummaryButton
+        <SummaryButton
           title={string.firstSummaryBtn.h2.title}
           subHead={string.firstSummaryBtn.h2.subHead}
           btnText={string.firstSummaryBtn.btnText}
@@ -112,7 +117,7 @@ export default function Main() {
           textBox={string.firstSummaryBtn.textBox}
           codeEditor={
             () => <CodeEditorSearchableVideoList
-              setIsHover={setIsHoverGroup.firstSummaryBtn}
+              setIsHover={setIsHoverGroup}
             ></CodeEditorSearchableVideoList>
           }
           rightBox={
@@ -120,7 +125,7 @@ export default function Main() {
               isHover={isHoverGroup.firstSummaryBtn}
             ></SearchableVideoListBox>
           }
-        ></SummaryButton> */}
+        ></SummaryButton>
 
         {/* second SummaryButton  */}
         {/* <SummaryButton

@@ -420,6 +420,7 @@ const CodeEditorVideoList = ({ setIsHover }) => {
       }
     });
   };
+
   return (
     <pre className="pre">
       <code className="code-editer">
@@ -628,14 +629,93 @@ const CodeEditorVideoList = ({ setIsHover }) => {
 };
 
 // codeEditorSearchableVideoList
-const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
-  const handleMouseOver = (element) => {
-    setIsHover(element);
+const CodeEditorSearchableVideoList = ({ setIsHover }) => {
+  const handleMouseOver = (value) => {
+    setIsHover((prev) => {
+      switch (value) {
+        case "wrapOpen":
+          return {
+            ...prev,
+            firstSummaryBtn: {
+              ...prev.firstSummaryBtn,
+              wrapOpen: true,
+            },
+          };
+        case "searchInput":
+          return {
+            ...prev,
+            firstSummaryBtn: {
+              ...prev.firstSummaryBtn,
+              searchInput: true,
+            },
+          };
+        case "videoList":
+          return {
+            ...prev,
+            firstSummaryBtn: {
+              ...prev.firstSummaryBtn,
+              videoList: true,
+            },
+          };
+        case "wrapClose":
+          return {
+            ...prev,
+            firstSummaryBtn: {
+              ...prev.firstSummaryBtn,
+              wrapClose: true,
+            },
+          };
+        default:
+          return {
+            ...prev,
+          };
+      }
+    });
   };
 
-  const handleMouseOut = () => {
-    setIsHover(null);
+  const handleMouseOut = (value) => {
+    setIsHover((prev) => {
+      switch (value) {
+        case "wrapOpen":
+          return {
+            ...prev,
+            firstSummaryBtn: {
+              ...prev.firstSummaryBtn,
+              wrapOpen: false,
+            },
+          };
+        case "searchInput":
+          return {
+            ...prev,
+            firstSummaryBtn: {
+              ...prev.firstSummaryBtn,
+              searchInput: false,
+            },
+          };
+        case "videoList":
+          return {
+            ...prev,
+            firstSummaryBtn: {
+              ...prev.firstSummaryBtn,
+              videoList: false,
+            },
+          };
+        case "wrapClose":
+          return {
+            ...prev,
+            firstSummaryBtn: {
+              ...prev.firstSummaryBtn,
+              wrapClose: false,
+            },
+          };
+        default:
+          return {
+            ...prev,
+          };
+      }
+    });
   };
+
   return (
     <pre className="pre">
       <code className="code-editer">
@@ -705,26 +785,22 @@ const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain"> (</span>
           <br></br>
         </div>
-        {/* six */}
+        {/* six wrapOpen */}
         <div
-          className={`cm-line ${
-            isHover === "searchableVideoSix" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("searchableVideoSix")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("wrapOpen")}
+          onMouseOut={() => handleMouseOut("wrapOpen")}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; {"<>"}</span>
           <br></br>
         </div>
 
+        {/* seven searchInput */}
         <div
-          className={`cm-line ${
-            isHover === "searchableVideoSeven" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("searchableVideoSeven")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("searchInput")}
+          onMouseOut={() => handleMouseOut("searchInput")}
         >
-          {/* seven */}
           <div className="cm-line ">
             <span className="sp-syntax-punctuation">
               &nbsp; &nbsp; &nbsp;{" <"}
@@ -756,14 +832,12 @@ const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
           </div>
         </div>
 
+        {/* ten videoList */}
         <div
-          className={`cm-line ${
-            isHover === "searchableVideoNine" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("searchableVideoNine")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("videoList")}
+          onMouseOut={() => handleMouseOut("videoList")}
         >
-          {/* ten */}
           <div className="cm-line ten">
             <span className="sp-syntax-punctuation">
               &nbsp; &nbsp; &nbsp; &lt;
@@ -800,13 +874,9 @@ const CodeEditorSearchableVideoList = ({ isHover, setIsHover }) => {
         </div>
         {/* Thirteen */}
         <div
-          className={`cm-line ${
-            isHover === "searchableVideoThirTeen"
-              ? "hover dark:bg-opacity-10"
-              : ""
-          }`}
-          onMouseOver={() => handleMouseOver("searchableVideoThirTeen")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("wrapClose")}
+          onMouseOut={() => handleMouseOut("wrapClose")}
         >
           <span className="sp-syntax-punctuation">&nbsp; &nbsp; {"</>"}</span>
           <br></br>

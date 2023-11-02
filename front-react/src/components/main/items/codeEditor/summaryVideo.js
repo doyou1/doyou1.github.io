@@ -34,152 +34,155 @@ function SummaryVideo({
   const likeButtonRef = useRef();
 
   useEffect(() => {
-    const { width: rightBoxWidth, height: rightBoxHeight } = getRightBoxSize();
+    if (getRightBoxSize) {
+      const { width: rightBoxWidth, height: rightBoxHeight } =
+        getRightBoxSize();
 
-    if (codeEditor === "firstSummary") {
-      if (isHover.divOpen || isHover.divClose) {
-        if (entireDivRef.current) {
-          setSizeProp({
-            width: entireDivRef.current.offsetWidth + 16,
-            height: entireDivRef.current.offsetHeight + 16,
-            translate1:
-              (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2,
-            translate2:
-              (rightBoxHeight - (entireDivRef.current.offsetHeight + 16)) / 2,
-          });
+      if (codeEditor === "firstSummary") {
+        if (isHover.divOpen || isHover.divClose) {
+          if (entireDivRef.current) {
+            setSizeProp({
+              width: entireDivRef.current.offsetWidth + 16,
+              height: entireDivRef.current.offsetHeight + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2,
+              translate2:
+                (rightBoxHeight - (entireDivRef.current.offsetHeight + 16)) / 2,
+            });
+          }
         }
-      }
-      if (isHover.thumbnail) {
-        if (thumbnailRef.current) {
-          setSizeProp({
-            width: thumbnailRef.current.offsetWidth + 16,
-            height: thumbnailRef.current.offsetHeight + 16,
-            translate1:
-              (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2,
-            translate2:
-              (rightBoxHeight - (thumbnailRef.current.offsetHeight + 16)) / 2,
-          });
+        if (isHover.thumbnail) {
+          if (thumbnailRef.current) {
+            setSizeProp({
+              width: thumbnailRef.current.offsetWidth + 16,
+              height: thumbnailRef.current.offsetHeight + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2,
+              translate2:
+                (rightBoxHeight - (thumbnailRef.current.offsetHeight + 16)) / 2,
+            });
+          }
         }
-      }
-      if (isHover.aOpen || isHover.aClose) {
-        if (wrapTextRef.current) {
-          setSizeProp({
-            width: wrapTextRef.current.offsetWidth + 16,
-            height: wrapTextRef.current.offsetHeight + 16,
-            translate1:
-              (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
-              thumbnailRef.current.offsetWidth +
-              16,
-            translate2:
-              (rightBoxHeight - (wrapTextRef.current.offsetHeight + 16)) / 2,
-          });
+        if (isHover.aOpen || isHover.aClose) {
+          if (wrapTextRef.current) {
+            setSizeProp({
+              width: wrapTextRef.current.offsetWidth + 16,
+              height: wrapTextRef.current.offsetHeight + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
+                thumbnailRef.current.offsetWidth +
+                16,
+              translate2:
+                (rightBoxHeight - (wrapTextRef.current.offsetHeight + 16)) / 2,
+            });
+          }
         }
-      }
-      if (isHover.h3) {
-        if (h3Ref.current) {
-          setSizeProp({
-            width: h3Ref.current.offsetWidth + 16,
-            height: h3Ref.current.offsetHeight + 16,
-            translate1:
-              (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
-              thumbnailRef.current.offsetWidth +
-              16,
-            translate2:
-              (rightBoxHeight - (wrapTextRef.current.offsetHeight + 16)) / 2,
-          });
+        if (isHover.h3) {
+          if (h3Ref.current) {
+            setSizeProp({
+              width: h3Ref.current.offsetWidth + 16,
+              height: h3Ref.current.offsetHeight + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
+                thumbnailRef.current.offsetWidth +
+                16,
+              translate2:
+                (rightBoxHeight - (wrapTextRef.current.offsetHeight + 16)) / 2,
+            });
+          }
         }
-      }
-      if (isHover.p) {
-        if (pRef.current) {
-          setSizeProp({
-            width: pRef.current.offsetWidth + 16,
-            height: pRef.current.offsetHeight + 16,
-            translate1:
-              (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
-              thumbnailRef.current.offsetWidth +
-              16,
-            translate2:
-              (rightBoxHeight - (wrapTextRef.current.offsetHeight + 16)) / 2 +
-              wrapTextRef.current.offsetHeight -
-              h3Ref.current.offsetHeight,
-          });
+        if (isHover.p) {
+          if (pRef.current) {
+            setSizeProp({
+              width: pRef.current.offsetWidth + 16,
+              height: pRef.current.offsetHeight + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
+                thumbnailRef.current.offsetWidth +
+                16,
+              translate2:
+                (rightBoxHeight - (wrapTextRef.current.offsetHeight + 16)) / 2 +
+                wrapTextRef.current.offsetHeight -
+                h3Ref.current.offsetHeight,
+            });
+          }
         }
-      }
-      if (isHover.likeButton) {
-        if (likeButtonRef.current) {
-          setSizeProp({
-            width: likeButtonRef.current.offsetWidth,
-            height: likeButtonRef.current.offsetHeight,
-            // translate1: (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 + thumbnailRef.current.offsetWidth + 16 + wrapTextRef.current.offsetWidth + 16,
-            translate1:
-              (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
-              thumbnailRef.current.offsetWidth +
-              16 +
-              wrapTextRef.current.offsetWidth +
-              16,
-            translate2:
-              (rightBoxHeight - likeButtonRef.current.offsetHeight) / 2,
-          });
+        if (isHover.likeButton) {
+          if (likeButtonRef.current) {
+            setSizeProp({
+              width: likeButtonRef.current.offsetWidth,
+              height: likeButtonRef.current.offsetHeight,
+              // translate1: (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 + thumbnailRef.current.offsetWidth + 16 + wrapTextRef.current.offsetWidth + 16,
+              translate1:
+                (rightBoxWidth - (entireDivRef.current.offsetWidth + 16)) / 2 +
+                thumbnailRef.current.offsetWidth +
+                16 +
+                wrapTextRef.current.offsetWidth +
+                16,
+              translate2:
+                (rightBoxHeight - likeButtonRef.current.offsetHeight) / 2,
+            });
+          }
         }
-      }
-    } else if (codeEditor === "secondSummary") {
-      if (isHover.sectionOpen || isHover.sectionClose) {
-        if (getSectionSize) {
-          const { width: sectionWidth, height: sectionHeight } =
-            getSectionSize();
-          setSizeProp({
-            width: sectionWidth + 16,
-            height: sectionHeight + 16,
-            translate1: (rightBoxWidth - (sectionWidth + 16)) / 2,
-            translate2: (rightBoxHeight - (sectionHeight + 16)) / 2,
-          });
-        }
-      }
-      if (isHover.h2) {
-        if (getH2Size) {
+      } else if (codeEditor === "secondSummary") {
+        if (isHover.sectionOpen || isHover.sectionClose) {
           if (getSectionSize) {
-            const { width: h2Width, height: h2Height } = getH2Size();
             const { width: sectionWidth, height: sectionHeight } =
               getSectionSize();
             setSizeProp({
-              width: h2Width + 16,
-              height: h2Height + 16,
+              width: sectionWidth + 16,
+              height: sectionHeight + 16,
               translate1: (rightBoxWidth - (sectionWidth + 16)) / 2,
               translate2: (rightBoxHeight - (sectionHeight + 16)) / 2,
             });
           }
         }
-      }
-
-      if (isHover.video) {
-        if (getH2SizeForVideo) {
-          if (getSectionSizeForVideo) {
-            const { width: h2Width, height: h2Height } = getH2SizeForVideo();
-            const { width: sectionWidth, height: sectionHeight } =
-              getSectionSizeForVideo();
-            if (videoTitle === "First Video") {
-              setSizeProp((prev) => ({
-                ...prev,
+        if (isHover.h2) {
+          if (getH2Size) {
+            if (getSectionSize) {
+              const { width: h2Width, height: h2Height } = getH2Size();
+              const { width: sectionWidth, height: sectionHeight } =
+                getSectionSize();
+              setSizeProp({
                 width: h2Width + 16,
-                height: entireDivRef.current.offsetHeight + 16,
+                height: h2Height + 16,
                 translate1: (rightBoxWidth - (sectionWidth + 16)) / 2,
-                translate2:
-                  (rightBoxHeight - (sectionHeight + 16)) / 2 + h2Height + 16,
-              }));
-            } else if (videoTitle === "Second Video") {
-              setSizeProp((prev) => ({
-                ...prev,
-                translate12: (rightBoxWidth - (sectionWidth + 16)) / 2,
-                translate22:
-                  prev.translate2 + entireDivRef.current.offsetHeight + 16,
-              }));
-            } else if (videoTitle === "Third Video") {
-              setSizeProp((prev) => ({
-                ...prev,
-                translate13: (rightBoxWidth - (sectionWidth + 16)) / 2,
-                translate23:
-                  prev.translate22 + entireDivRef.current.offsetHeight + 16,
-              }));
+                translate2: (rightBoxHeight - (sectionHeight + 16)) / 2,
+              });
+            }
+          }
+        }
+
+        if (isHover.video) {
+          if (getH2SizeForVideo) {
+            if (getSectionSizeForVideo) {
+              const { width: h2Width, height: h2Height } = getH2SizeForVideo();
+              const { width: sectionWidth, height: sectionHeight } =
+                getSectionSizeForVideo();
+              if (videoTitle === "First Video") {
+                setSizeProp((prev) => ({
+                  ...prev,
+                  width: h2Width + 16,
+                  height: entireDivRef.current.offsetHeight + 16,
+                  translate1: (rightBoxWidth - (sectionWidth + 16)) / 2,
+                  translate2:
+                    (rightBoxHeight - (sectionHeight + 16)) / 2 + h2Height + 16,
+                }));
+              } else if (videoTitle === "Second Video") {
+                setSizeProp((prev) => ({
+                  ...prev,
+                  translate12: (rightBoxWidth - (sectionWidth + 16)) / 2,
+                  translate22:
+                    prev.translate2 + entireDivRef.current.offsetHeight + 16,
+                }));
+              } else if (videoTitle === "Third Video") {
+                setSizeProp((prev) => ({
+                  ...prev,
+                  translate13: (rightBoxWidth - (sectionWidth + 16)) / 2,
+                  translate23:
+                    prev.translate22 + entireDivRef.current.offsetHeight + 16,
+                }));
+              }
             }
           }
         }
