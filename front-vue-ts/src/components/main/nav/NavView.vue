@@ -699,6 +699,11 @@ body {
     font-weight: 500;
 }
 
+.dark .text {
+    color: rgba(255, 255, 255, .87);
+}
+
+
 .content {
     display: flex;
     justify-content: flex-end;
@@ -880,7 +885,6 @@ body {
     color: #213547;
     transition: color .5s;
 }
-
 .dark .vt-flyout-button {
     color: rgba(255, 255, 255, .87);
 }
