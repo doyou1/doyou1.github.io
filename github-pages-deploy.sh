@@ -12,11 +12,11 @@ mkdir ./docs/react
 mkdir ./docs/vue
 
 cd front-react
-npm run build
+npm i && npm run build
 cd ..
 
 cd front-vue-ts
-npm run build
+npm i && npm run build
 cd ..
 
 mv ./front-react/dist/* ./docs/react
