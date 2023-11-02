@@ -23,7 +23,7 @@
     "traceResolution": true,
 
     /* vite path alias */
-    "types": ["@types"],
+    // "types": ["@types"],
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
