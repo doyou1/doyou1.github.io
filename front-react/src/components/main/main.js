@@ -22,7 +22,7 @@ import {
   MainVideoBox,
   MainVideoListBox,
   SearchableVideoListBox,
-} from "./items/codeEditor/summaryRightBox";
+} from "@/components/main/items/codeEditor/summaryRightBox";
 import { useRecoilValue } from "recoil";
 import {
   isOpenHomeMenuState,
@@ -33,8 +33,38 @@ import { useState } from "react";
 export default function Main() {
   const isOpenHomeMenu = useRecoilValue(isOpenHomeMenuState);
   const isOpenDocSearch = useRecoilValue(isOpenDocSearchState);
-  // firstSummary, secondSummary, firstSummaryButton, secondSummaryButton 부분 Porps로 전달
-  const [isHover, setIsHover] = useState(false);
+  const [isHoverGroup, setIsHoverGroup] = useState({
+    firstSummary: {
+      divOpen: false,
+      thumbnail: false,
+      aOpen: false,
+      h3: false,
+      p: false,
+      aClose: false,
+      likeButton: false,
+      divClose: false,
+    },
+    secondSummary: {
+      sectionOpen: false,
+      h2: false,
+      video: false,
+      sectionClose: false,
+    },
+    firstSummaryBtn: {
+      wrapOpen: false,
+      searchInput: false,
+      videoList: false,
+      wrapClose: false,
+    },
+    secondSummaryBtn: {
+      conferenceLayoutOpen: false,
+      suspenseOpen: false,
+      talks: false,
+      suspenseClose: false,
+      conferenceLayoutClose: false,
+      searchableVideoList: false,
+    },
+  });
 
   return (
     <div
@@ -59,39 +89,30 @@ export default function Main() {
           subHead={string.firstSummary.h2.subHead}
           lowerText={string.firstSummary.lowerText}
           textBox={string.firstSummary.textBox}
-          codeEditor={
-            <CodeEditorVideo
-              isHover={isHover}
-              setIsHover={setIsHover}
-            ></CodeEditorVideo>
-          }
-          rightBox={
-            <MainVideoBox
-              isHover={isHover}
-              setIsHover={setIsHover}
-            ></MainVideoBox>
-          }
+          codeEditor={() => (
+            <CodeEditorVideo setIsHover={setIsHoverGroup}></CodeEditorVideo>
+          )}
+          rightBox={() => (
+            <MainVideoBox isHover={isHoverGroup.firstSummary}></MainVideoBox>
+          )}
         ></Summary>
 
         {/* second Summary  */}
-
         <Summary
           title={string.secondSummary.h2.title}
           subHead={string.secondSummary.h2.subHead}
           lowerText={string.secondSummary.lowerText}
           textBox={string.secondSummary.textBox}
-          codeEditor={
+          codeEditor={() => (
             <CodeEditorVideoList
-              isHover={isHover}
-              setIsHover={setIsHover}
+              setIsHover={setIsHoverGroup}
             ></CodeEditorVideoList>
-          }
-          rightBox={
+          )}
+          rightBox={() => (
             <MainVideoListBox
-              isHover={isHover}
-              setIsHover={setIsHover}
+              isHover={isHoverGroup.secondSummary}
             ></MainVideoListBox>
-          }
+          )}
         ></Summary>
 
         {/* first SummaryButton  */}
@@ -102,15 +123,13 @@ export default function Main() {
           lowerText={string.firstSummaryBtn.lowerText}
           textBox={string.firstSummaryBtn.textBox}
           codeEditor={
-            <CodeEditorSearchableVideoList
-              isHover={isHover}
-              setIsHover={setIsHover}
+            () => <CodeEditorSearchableVideoList
+              setIsHover={setIsHoverGroup}
             ></CodeEditorSearchableVideoList>
           }
           rightBox={
-            <SearchableVideoListBox
-              isHover={isHover}
-              setIsHover={setIsHover}
+            () => <SearchableVideoListBox
+              isHover={isHoverGroup.firstSummaryBtn}
             ></SearchableVideoListBox>
           }
         ></SummaryButton>
@@ -123,15 +142,15 @@ export default function Main() {
           lowerText={string.secondSummaryBtn.lowerText}
           textBox={string.secondSummaryBtn.textBox}
           codeEditor={
-            <CodeEditorConferencePage
-              isHover={isHover}
-              setIsHover={setIsHover}
+            () => <CodeEditorConferencePage
+              setIsHover={setIsHoverGroup}
             ></CodeEditorConferencePage>
           }
           rightBox={
-            <ConfsSlug isHover={isHover} setIsHover={setIsHover}></ConfsSlug>
+            () => <ConfsSlug isHover={isHoverGroup.secondSummaryBtn}></ConfsSlug>
           }
         ></SummaryButton>
+
         <SummaryButtonPlatform
           title={string.summaryButtonPlatform.h2.title}
           textBox={string.summaryButtonPlatform.textBox}

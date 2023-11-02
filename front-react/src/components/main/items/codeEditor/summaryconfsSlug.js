@@ -1,13 +1,16 @@
 import "@/styles/codeEditor.css";
-const SummaryConfsSlug = () => {
+const SummaryConfsSlug = (speakers) => {
   return (
     <>
       <div className="transition-opacity mt-2.5 -space-x-2 flex flex-row w-full justify-center">
-        <img
-          className="h-8 w-8 border-2 shadow-md border-gray-70 object-cover rounded-full"
-          // src="/images/home/conf2021/andrew.jpg"
-          alt=""
-        />
+        {speakers.speakers && speakers.speakers.map((speaker, index) => (
+          <img
+            key={index}
+            className="h-8 w-8 border-2 shadow-md border-gray-70 object-cover rounded-full"
+            src={speaker}
+            alt=""
+          />
+        ))}
       </div>
       <div className="mt-1">
         <span className="inline-flex text-xs font-normal items-center text-primary-dark py-1 whitespace-nowrap outline-link px-1.5 rounded-lg">
