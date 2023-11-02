@@ -15,12 +15,12 @@ cd front-react
 npm run build
 cd ..
 
-cd front-vue
+cd front-vue-ts
 npm run build
 cd ..
 
 mv ./front-react/dist/* ./docs/react
-mv ./front-vue/dist/* ./docs/vue
+mv ./front-vue-ts/dist/* ./docs/vue
 
 git add .
 git commit -m "deploy"
