@@ -898,14 +898,125 @@ const CodeEditorSearchableVideoList = ({ setIsHover }) => {
 };
 
 // codeEditerConferencePage
-const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
-  const handleMouseOver = (element) => {
-    setIsHover(element);
+const CodeEditorConferencePage = ({ setIsHover }) => {
+  const handleMouseOver = (value) => {
+    setIsHover((prev) => {
+      switch (value) {
+        case "conferenceLayoutOpen":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              conferenceLayoutOpen: true,
+            },
+          };
+        case "suspenseOpen":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              suspenseOpen: true,
+            },
+          };
+        case "talks":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              talks: true,
+            },
+          };
+        case "suspenseClose":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              suspenseClose: true,
+            },
+          };
+        case "conferenceLayoutClose":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              conferenceLayoutClose: true,
+            },
+          };
+        case "searchableVideoList":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              searchableVideoList: true,
+            },
+          };
+        default:
+          return {
+            ...prev,
+          };
+      }
+    });
   };
 
-  const handleMouseOut = () => {
-    setIsHover(null);
+  const handleMouseOut = (value) => {
+    setIsHover((prev) => {
+      switch (value) {
+        case "conferenceLayoutOpen":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              conferenceLayoutOpen: false,
+            },
+          };
+        case "suspenseOpen":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              suspenseOpen: false,
+            },
+          };
+        case "talks":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              talks: false,
+            },
+          };
+        case "suspenseClose":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              suspenseClose: false,
+            },
+          };
+        case "conferenceLayoutClose":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              conferenceLayoutClose: false,
+            },
+          };
+        case "searchableVideoList":
+          return {
+            ...prev,
+            secondSummaryBtn: {
+              ...prev.secondSummaryBtn,
+              searchableVideoList: false,
+            },
+          };
+        default:
+          return {
+            ...prev,
+          };
+      }
+    });
   };
+
   return (
     <pre className="pre">
       <code className="code-editer">
@@ -988,13 +1099,11 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">{" ("}</span>
           <br></br>
         </div>
-        {/* six */}
+        {/* six conferenceLayoutOpen */}
         <div
-          className={`cm-line ${
-            isHover === "ConferencePageSix" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("ConferencePageSix")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("conferenceLayoutOpen")}
+          onMouseOut={() => handleMouseOut("conferenceLayoutOpen")}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &lt;</span>
           <span className="sp-syntax-definition dark:sp-syntax-definition">
@@ -1006,13 +1115,11 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">{"={conf}>"}</span>
           <br></br>
         </div>
-        {/* seven */}
+        {/* seven suspenseOpen */}
         <div
-          className={`cm-line ${
-            isHover === "ConferencePageSeven" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("ConferencePageSeven")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("suspenseOpen")}
+          onMouseOut={() => handleMouseOut("suspenseOpen")}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; &lt;</span>
           <span className="sp-syntax-definition dark:sp-syntax-definition">
@@ -1028,13 +1135,11 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">{" />}>"}</span>
           <br></br>
         </div>
-        {/* eight */}
+        {/* eight talks */}
         <div
-          className={`cm-line ${
-            isHover === "ConferencePageEight" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("ConferencePageEight")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("talks")}
+          onMouseOut={() => handleMouseOut("talks")}
         >
           <span className="sp-syntax-plain">
             &nbsp; &nbsp; &nbsp; &nbsp; &lt;
@@ -1050,13 +1155,11 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">{" />}"}</span>
           <br></br>
         </div>
-        {/* nine */}
+        {/* nine suspenseClose */}
         <div
-          className={`cm-line ${
-            isHover === "ConferencePageNine" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("ConferencePageNine")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("suspenseClose")}
+          onMouseOut={() => handleMouseOut("suspenseClose")}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &nbsp; &lt;/</span>
           <span className="sp-syntax-definition dark:sp-syntax-definition">
@@ -1065,13 +1168,11 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-plain">{">"}</span>
           <br></br>
         </div>
-        {/* ten */}
+        {/* ten conferenceLayoutClose */}
         <div
-          className={`cm-line ${
-            isHover === "ConferencePageTen" ? "hover dark:bg-opacity-10" : ""
-          }`}
-          onMouseOver={() => handleMouseOver("ConferencePageTen")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("conferenceLayoutClose")}
+          onMouseOut={() => handleMouseOut("conferenceLayoutClose")}
         >
           <span className="sp-syntax-plain">&nbsp; &nbsp; &lt;/</span>
           <span className="sp-syntax-definition dark:sp-syntax-definition">
@@ -1152,15 +1253,11 @@ const CodeEditorConferencePage = ({ isHover, setIsHover }) => {
           <span className="sp-syntax-punctuation">{");"}</span>
           <br></br>
         </div>
-        {/* sixteen */}
+        {/* sixteen searchableVideoList */}
         <div
-          className={`cm-line ${
-            isHover === "ConferencePageSixTeen"
-              ? "hover dark:bg-opacity-10"
-              : ""
-          }`}
-          onMouseOver={() => handleMouseOver("ConferencePageSixTeen")}
-          onMouseOut={() => handleMouseOut()}
+          className={"cm-line hover:bg-[#ffffdd] hover:dark:bg-opacity-10"}
+          onMouseOver={() => handleMouseOver("searchableVideoList")}
+          onMouseOut={() => handleMouseOut("searchableVideoList")}
         >
           <span className="sp-syntax-keyword dark:sp-syntax-keyword">
             &nbsp; return

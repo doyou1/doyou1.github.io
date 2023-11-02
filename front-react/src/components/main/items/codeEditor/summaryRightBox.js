@@ -258,8 +258,6 @@ function SearchableVideoListBox({ isHover }) {
     e.preventDefault();
   };
 
-  // 이곳에서 검색을 처리하거나 상태를 업데이트 있음
-
   // 객체형태로 만듬, json파일로 빼면 좋을듯
   const videoData = [
     {
@@ -308,9 +306,6 @@ function SearchableVideoListBox({ isHover }) {
   const videoListRef = useRef();
 
   useEffect(() => {
-    // const { width: rightBoxWidth, height: rightBoxHeight } =
-    //   getRightBoxSize();
-
     if (isHover.wrapOpen || isHover.wrapClose) {
       setSizeProp({
         width: wrapRef.current.offsetWidth + 16,
@@ -512,28 +507,6 @@ function ConfsSlug({ isHover }) {
       return "https://react.dev/images/home/conf2019/cover.svg";
     }
   };
-  //  codeEditor에서 isHover값이 변할 떄 값마다 스타일값을 줌
-  useEffect(() => {
-    if (isHover === "ConferencePageSix" || isHover === "ConferencePageTen") {
-      setStyle({
-        width: "558px",
-        height: "565px",
-        transform: "translate(12px, 68px)",
-      });
-    }
-    if (
-      isHover === "ConferencePageSeven" ||
-      isHover === "ConferencePageEight" ||
-      isHover === "ConferencePageNine" ||
-      isHover === "ConferencePageSixTeen"
-    ) {
-      setStyle({
-        width: "526px",
-        height: "393px",
-        transform: "translate(28px, 240px)",
-      });
-    }
-  }, [isHover]);
 
   const videoData2021 = [
     {
@@ -753,11 +726,50 @@ function ConfsSlug({ isHover }) {
       speakers: ["https://react.dev/images/home/conf2019/alex.jpg"],
     },
   ];
+
+  const [sizeProp, setSizeProp] = useState({
+    width: -1,
+    height: -1,
+    translate1: -1,
+    translate2: -1,
+  }); // rightBox 스타일 관리
+
+  const rightBoxRef = useRef();
+  const urlTopRef = useRef();
+
+  const scrollContainerRef = useRef();
+  const scrollWrapRef = useRef();
+
+  useEffect(() => {
+    if (isHover.conferenceLayoutOpen || isHover.conferenceLayoutClose) {
+      setSizeProp({
+        width: urlTopRef.current.offsetWidth + 16,
+        height: rightBoxRef.current.offsetHeight - urlTopRef.current.offsetHeight,
+        translate1: (rightBoxRef.current.offsetWidth - urlTopRef.current.offsetWidth - 16) /
+        2,
+        translate2: urlTopRef.current.offsetHeight + 16, 
+      });
+    }
+    if (isHover.suspenseOpen || isHover.talks || isHover.suspenseClose || isHover.searchableVideoList) {
+      setSizeProp({
+        width: scrollWrapRef.current.offsetWidth + 16,
+        height: rightBoxRef.current.offsetHeight - (scrollContainerRef.current.offsetHeight - scrollWrapRef.current.offsetHeight + urlTopRef.current.offsetHeight),
+        translate1: (rightBoxRef.current.offsetWidth - scrollWrapRef.current.offsetWidth - 16) /
+        2,
+        translate2: scrollContainerRef.current.offsetHeight - scrollWrapRef.current.offsetHeight + urlTopRef.current.offsetHeight,
+      });
+    }
+  }, [isHover]);
+
   return (
-    <div className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
+    <div 
+      ref={rightBoxRef}
+      className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
       <div className="mx-auto max-w-3xl shadow-nav dark:shadow-nav-dark relative overflow-hidden w-full dark:border-opacity-10 rounded-2xl">
         {/* 제목 부분  */}
-        <div className="w-full h-14 rounded-t-2xl shadow-outer-border backdrop-filter overflow-hidden backdrop-blur-lg backdrop-saturate-200 bg-white bg-opacity-90 z-10 absolute top-0 px-3 gap-2 flex flex-row items-center">
+        <div 
+        ref={urlTopRef}
+        className="w-full h-14 rounded-t-2xl shadow-outer-border backdrop-filter overflow-hidden backdrop-blur-lg backdrop-saturate-200 bg-white bg-opacity-90 z-10 absolute top-0 px-3 gap-2 flex flex-row items-center">
           <div className="select-none h-8 relative bg-gray-30/20 text-sm text-tertiary text-center rounded-full w-full flex-row flex space-between items-center">
             <div className="w-full leading-snug flex flex-row items-center justify-center">
               {/* svg */}
@@ -782,6 +794,7 @@ function ConfsSlug({ isHover }) {
           <div className="max-w-3xl rounded-2xl mx-auto text-secondary leading-normal bg-white overflow-hidden w-full overflow-y-auto shadow-nav dark:shadow-nav-dark h-[38rem] conf">
             {/* React Videos 제목부분  */}
             <div
+              ref={scrollContainerRef}
               className="p-0"
               style={{
                 contentVisibility: "auto",
@@ -824,7 +837,9 @@ function ConfsSlug({ isHover }) {
                 </div>
                 {/* 검색창 및 비디오 부분  */}
                 <div className="px-4 pb-4">
-                  <div className="mt-3" data-hover="SearchableVideoList">
+                  <div 
+                    ref={scrollWrapRef}
+                  className="mt-3" data-hover="SearchableVideoList">
                     {/* 검색창 */}
                     <form
                       className="mb-3 py-1"
@@ -876,37 +891,6 @@ function ConfsSlug({ isHover }) {
                                 speakers={video.speakers}
                               ></SummaryVideo>
                             ))}
-
-                        {/* <SummaryVideo
-                          videoTitle="React: The Documentary"
-                          videoSubTitle="The origin story of React"
-                          via50={"to-gray-70"}
-                          playButton={<SummaryConfsSlug></SummaryConfsSlug>}
-                        ></SummaryVideo>
-                        <SummaryVideo
-                          videoTitle="Rethinking Best Practices"
-                          videoSubTitle="Pete Hunt (2013)"
-                          via50={"to-gray-70"}
-                          playButton={<SummaryConfsSlug></SummaryConfsSlug>}
-                        ></SummaryVideo>{" "}
-                        <SummaryVideo
-                          videoTitle="Introducing React Native"
-                          videoSubTitle="Tom Occhino (2015)"
-                          via50={"to-gray-70"}
-                          playButton={<SummaryConfsSlug></SummaryConfsSlug>}
-                        ></SummaryVideo>{" "}
-                        <SummaryVideo
-                          videoTitle="Introducing React Hooks"
-                          videoSubTitle="Sophie Alpert and Dan Abramov (2018)"
-                          via50={"to-gray-70"}
-                          playButton={<SummaryConfsSlug></SummaryConfsSlug>}
-                        ></SummaryVideo>{" "}
-                        <SummaryVideo
-                          videoTitle="Introducing Server Components"
-                          videoSubTitle="Dan Abramov and Lauren Tan (2020)"
-                          via50={"to-gray-70"}
-                          playButton={<SummaryConfsSlug></SummaryConfsSlug>}
-                        ></SummaryVideo> */}
                       </div>
                     </section>
                   </div>
@@ -918,15 +902,23 @@ function ConfsSlug({ isHover }) {
       </div>
       {/* 마우스이벤트 발생시 나오는 레이아웃 */}
       <div
-        className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu opacity-0 ${
-          isHover ? "opacity-100 " : "opacity-0"
+        className={`absolute z-10 inset-0 pointer-events-none transition-opacity transform-gpu${
+          Object.keys(isHover).filter((key) => isHover[key]).length > 0
+            ? "opacity-100"
+            : "opacity-0"
         }`}
       >
         <div
-          className={`top-0 start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark absolute rounded-lg ${
-            isHover ? "opacity-100 " : "opacity-0"
+          className={` start-0 bg-blue-30/5 border-2 border-link dark:border-link-dark rounded-lg ${
+            Object.keys(isHover).filter((key) => isHover[key]).length > 0
+              ? "opacity-100 "
+              : "opacity-0"
           }`}
-          style={style}
+          style={{
+            width: `${sizeProp.width}px`,
+            height: `${sizeProp.height}px`,
+            transform: `translate(${sizeProp.translate1}px, ${sizeProp.translate2}px)`,
+          }}
         ></div>
       </div>
     </div>

@@ -56,7 +56,14 @@ export default function Main() {
       videoList: false,
       wrapClose: false,
     },
-    secondSummaryBtn: {},
+    secondSummaryBtn: {
+      conferenceLayoutOpen: false,
+      suspenseOpen: false,
+      talks: false,
+      suspenseClose: false,
+      conferenceLayoutClose: false,
+      searchableVideoList: false,
+    },
   });
 
   return (
@@ -128,7 +135,7 @@ export default function Main() {
         ></SummaryButton>
 
         {/* second SummaryButton  */}
-        {/* <SummaryButton
+        <SummaryButton
           title={string.secondSummaryBtn.h2.title}
           subHead={string.secondSummaryBtn.h2.subHead}
           btnText={string.secondSummaryBtn.btnText}
@@ -136,13 +143,13 @@ export default function Main() {
           textBox={string.secondSummaryBtn.textBox}
           codeEditor={
             () => <CodeEditorConferencePage
-              setIsHover={setIsHoverGroup.secondSummaryBtn}
+              setIsHover={setIsHoverGroup}
             ></CodeEditorConferencePage>
           }
           rightBox={
             () => <ConfsSlug isHover={isHoverGroup.secondSummaryBtn}></ConfsSlug>
           }
-        ></SummaryButton> */}
+        ></SummaryButton>
 
         <SummaryButtonPlatform
           title={string.summaryButtonPlatform.h2.title}
