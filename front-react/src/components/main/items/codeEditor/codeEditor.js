@@ -736,10 +736,10 @@ const CodeEditorSearchableVideoList = ({ setIsHover }) => {
         {/* two */}
         <div className="cm-line ">
           <span className="sp-syntax-keyword dark:sp-syntax-keyword">
-            function
+            function&nbsp;
           </span>
           <span className="sp-syntax-definition dark:sp-syntax-definition">
-            SearchableVideoList
+           SearchableVideoList
           </span>
           <span className="sp-syntax-plain">{"({"}</span>
           <span className="sp-syntax-property dark:sp-syntax-property">
