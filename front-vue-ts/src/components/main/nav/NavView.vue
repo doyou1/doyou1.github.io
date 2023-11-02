@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import "@/styles/navView.css";
 import HomeLogo from "@/assets/nav/home-logo.svg";
 import SearchIcon from "@/assets/nav/search.svg";
 import DownArrowIcon from "@/assets/nav/down-arrow.svg";
