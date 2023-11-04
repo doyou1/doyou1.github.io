@@ -18,12 +18,12 @@
 
   - create config file
 
-    > echo {}> .eslintrc.js
+    > echo {}> .eslintrc.cjs
 
   - recommended rules for Vue 3
 
   ```javascript
-  // .eslintrc.js
+  // .eslintrc.cjs
   module.exports = {
     env: {
       node: true,
@@ -43,7 +43,7 @@
   - 구성 순서에 따라 다른 구성의 중복 규칙이 처리되므로 확장 배열에 정의된 마지막 구성인지 확인합니다. (뭔말이여ㅕㅕㅕ)
 
   ```javascript
-  //.eslintrc.js
+  //.eslintrc.cjs
   extends: [
   'eslint:recommended',
   "plugin:vue/vue3-recommended",
@@ -81,10 +81,10 @@
 ```javascript
 // Code/User/settings.json
 {
-"editor.formatOnSave": true,
-"editor.codeActionsOnSave": {
-  "source.fixAll.eslint": true
-},
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
 }
 ```
 
