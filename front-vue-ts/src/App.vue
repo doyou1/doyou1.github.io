@@ -16,5 +16,6 @@ const isDarkStore = useIsDarkStore();
     <SponsorAndValueView />
     <SponsorListView />
     <FooterView />
+    asdasd
   </div>
 </template>
