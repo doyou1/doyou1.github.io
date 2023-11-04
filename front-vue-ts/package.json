@@ -8,8 +8,7 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.ts,.vue--ignore-path .gitignore --fix src",
-    "format": "prettier .  --write",
-    "prepare": "husky install"
+    "format": "prettier .  --write"
   },
   "dependencies": {
     "husky": "^8.0.3",
