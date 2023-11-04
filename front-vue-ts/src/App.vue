@@ -7,6 +7,8 @@ import FooterView from "@/components/main/footer/FooterView.vue";
 
 import { useIsDarkStore } from "@/pinia/pinia";
 const isDarkStore = useIsDarkStore();
+
+const notused = "123";
 </script>
 
 <template>
