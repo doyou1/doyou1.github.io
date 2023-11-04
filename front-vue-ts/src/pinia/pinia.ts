@@ -1,39 +1,41 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export interface IsDarkState {
-    isDark: boolean;
-}
+export type IsDarkState = {
+  isDark: boolean;
+};
 
-export interface IsDarkStateActions {
-	toggle: () => void;
-}
+export type IsDarkStateActions = {
+  toggle: () => void;
+};
 
-export interface IsMacState {
-    isMac: boolean;
-}
+export type IsMacState = {
+  isMac: boolean;
+};
 
-export interface IsMacStateActions {
-	toggle: () => void;
-}
+export type IsMacStateActions = {
+  toggle: () => void;
+};
 
-const useIsDarkStore = defineStore<string, IsDarkState, {}, IsDarkStateActions>({
+const useIsDarkStore = defineStore<string, IsDarkState, {}, IsDarkStateActions>(
+  {
     id: "isDark",
     state: () => ({ isDark: false }),
     actions: {
-        toggle() {
-            this.isDark = !this.isDark;
-        }
+      toggle() {
+        this.isDark = !this.isDark;
+      },
     },
-});
+  },
+);
 
 const useIsMacStore = defineStore<string, IsMacState, {}, IsMacStateActions>({
-    id: "isMac",
-    state: () => ({ isMac: window.navigator.platform.includes("Mac") }),
-    actions: {
-        toggle() {
-            this.isMac = !this.isMac;
-        }
+  id: "isMac",
+  state: () => ({ isMac: window.navigator.platform.includes("Mac") }),
+  actions: {
+    toggle() {
+      this.isMac = !this.isMac;
     },
+  },
 });
 
 export { useIsDarkStore, useIsMacStore };

@@ -37,10 +37,10 @@ const isMacStore = useIsMacStore();
                   <span class="DocSearch-Button-Placeholder">Search</span>
                 </span>
                 <span class="DocSearch-Button-Keys">
-                  <kbd class="DocSearch-Button-Key" v-if="isMacStore.isMac"
+                  <kbd v-if="isMacStore.isMac" class="DocSearch-Button-Key"
                     >⌘</kbd
                   >
-                  <kbd class="DocSearch-Button-Key" v-if="!isMacStore.isMac"
+                  <kbd v-if="!isMacStore.isMac" class="DocSearch-Button-Key"
                     >Ctrl</kbd
                   >
                   <kbd class="DocSearch-Button-Key">K</kbd>
@@ -67,27 +67,13 @@ const isMacStore = useIsMacStore();
               <div class="vt-flyout-menu">
                 <div class="vt-menu">
                   <div class="vt-menu-items">
-                    <a
-                      class="vt-link link vt-menu-link"
-                      href="#"
-                    >
-                      Guide
-                    </a>
+                    <a class="vt-link link vt-menu-link" href="#"> Guide </a>
+                    <a class="vt-link link vt-menu-link" href="#"> Tutorial </a>
+                    <a class="vt-link link vt-menu-link" href="#"> Examples </a>
                     <a class="vt-link link vt-menu-link" href="#">
-                      Tutorial
-                    </a>
-                    <a class="vt-link link vt-menu-link" href="#">
-                      Examples
-                    </a>
-                    <a
-                      class="vt-link link vt-menu-link"
-                      href="#"
-                    >
                       Quick Start
                     </a>
-                    <a class="vt-link link vt-menu-link" href="#">
-                      Glossary
-                    </a>
+                    <a class="vt-link link vt-menu-link" href="#"> Glossary </a>
                     <a
                       class="vt-link link vt-menu-link"
                       href="#"
@@ -139,12 +125,7 @@ const isMacStore = useIsMacStore();
                       <a class="vt-link link vt-menu-link" href="#">
                         Partners
                       </a>
-                      <a
-                        class="vt-link link vt-menu-link"
-                        href="#"
-                      >
-                        Themes
-                      </a>
+                      <a class="vt-link link vt-menu-link" href="#"> Themes </a>
                       <a
                         class="vt-link link vt-menu-link"
                         href="#"
@@ -193,10 +174,7 @@ const isMacStore = useIsMacStore();
                         Pinia
                         <LinkIcon class="vt-link-icon" />
                       </a>
-                      <a
-                        class="vt-link link vt-menu-link"
-                        href="#"
-                      >
+                      <a class="vt-link link vt-menu-link" href="#">
                         Tooling Guide
                       </a>
                     </div>
@@ -283,10 +261,7 @@ const isMacStore = useIsMacStore();
                         Events
                         <LinkIcon class="vt-link-icon" />
                       </a>
-                      <a
-                        class="vt-link link vt-menu-link"
-                        href="#"
-                      >
+                      <a class="vt-link link vt-menu-link" href="#">
                         Newsletters
                       </a>
                     </div>
@@ -310,19 +285,10 @@ const isMacStore = useIsMacStore();
               <div class="vt-flyout-menu">
                 <div class="vt-menu">
                   <div class="vt-menu-items">
+                    <a class="vt-link link vt-menu-link" href="#"> FAQ </a>
+                    <a class="vt-link link vt-menu-link" href="#"> Team </a>
+                    <a class="vt-link link vt-menu-link" href="#"> Releases </a>
                     <a class="vt-link link vt-menu-link" href="#">
-                      FAQ
-                    </a>
-                    <a class="vt-link link vt-menu-link" href="#">
-                      Team
-                    </a>
-                    <a class="vt-link link vt-menu-link" href="#">
-                      Releases
-                    </a>
-                    <a
-                      class="vt-link link vt-menu-link"
-                      href="#"
-                    >
                       Community Guide
                     </a>
                     <a class="vt-link link vt-menu-link" href="#">
@@ -341,12 +307,8 @@ const isMacStore = useIsMacStore();
                 </div>
               </div>
             </div>
-            <a class="vt-link link VPNavBarMenuLink" href="#">
-              Sponsor
-            </a>
-            <a class="vt-link link VPNavBarMenuLink" href="#">
-              Partners
-            </a>
+            <a class="vt-link link VPNavBarMenuLink" href="#"> Sponsor </a>
+            <a class="vt-link link VPNavBarMenuLink" href="#"> Partners </a>
             <div class="vt-flyout VPNavBarMenuGroup active VPNavBarLocale">
               <button
                 type="button"
@@ -385,8 +347,7 @@ const isMacStore = useIsMacStore();
                         class="vt-locales-menu-item-text"
                         href="#"
                         target="_blank"
-                        >日本語
-                        <LinkIcon class="vt-link-icon" /> </a
+                        >日本語 <LinkIcon class="vt-link-icon" /> </a
                       ><a
                         href="#"
                         title="日本語 Repository"
@@ -416,8 +377,7 @@ const isMacStore = useIsMacStore();
                         class="vt-locales-menu-item-text"
                         href="#"
                         target="_blank"
-                        >Français
-                        <LinkIcon class="vt-link-icon" /> </a
+                        >Français <LinkIcon class="vt-link-icon" /> </a
                       ><a
                         href="#"
                         title="Français Repository"
@@ -431,8 +391,7 @@ const isMacStore = useIsMacStore();
                         class="vt-locales-menu-item-text"
                         href="#"
                         target="_blank"
-                        >한국어
-                        <LinkIcon class="vt-link-icon" /> </a
+                        >한국어 <LinkIcon class="vt-link-icon" /> </a
                       ><a
                         href="#"
                         title="한국어 Repository"
@@ -446,8 +405,7 @@ const isMacStore = useIsMacStore();
                         class="vt-locales-menu-item-text"
                         href="#"
                         target="_blank"
-                        >Português
-                        <LinkIcon class="vt-link-icon" /> </a
+                        >Português <LinkIcon class="vt-link-icon" /> </a
                       ><a
                         href="#"
                         title="Português Repository"
@@ -461,8 +419,7 @@ const isMacStore = useIsMacStore();
                         class="vt-locales-menu-item-text"
                         href="#"
                         target="_blank"
-                        >বাংলা
-                        <LinkIcon class="vt-link-icon" /> </a
+                        >বাংলা <LinkIcon class="vt-link-icon" /> </a
                       ><a
                         href="#"
                         title="বাংলা Repository"
@@ -537,9 +494,7 @@ const isMacStore = useIsMacStore();
             </a>
           </div>
 
-          <div
-            class="vt-flyout VPNavBarExtra extra"
-          >
+          <div class="vt-flyout VPNavBarExtra extra">
             <button
               type="button"
               class="vt-flyout-button"
@@ -547,14 +502,14 @@ const isMacStore = useIsMacStore();
               aria-expanded="false"
               aria-label="extra navigation"
             >
-                <ExtraIcon class="vt-flyout-button-icon"/>
+              <ExtraIcon class="vt-flyout-button-icon" />
             </button>
             <div class="vt-flyout-menu">
               <div class="vt-menu">
-                <div class="vt-menu-group" >
-                  <div class="vt-menu-item item" >
-                    <p class="vt-menu-label" >Appearance</p>
-                    <div class="vt-menu-action action" >
+                <div class="vt-menu-group">
+                  <div class="vt-menu-item item">
+                    <p class="vt-menu-label">Appearance</p>
+                    <div class="vt-menu-action action">
                       <button
                         class="vt-switch vt-switch-appearance"
                         type="button"
@@ -562,28 +517,27 @@ const isMacStore = useIsMacStore();
                         aria-label="Toggle dark mode"
                         aria-checked="false"
                         @click="isDarkStore.toggle()"
-                    >
+                      >
                         <span class="vt-switch-check">
-                            <span class="vt-switch-icon">
-                                <SunIcon class="opacity-100 dark:opacity-0" />
-                                <MoonIcon class="opacity-0 dark:opacity-100" />
-                            </span>
+                          <span class="vt-switch-icon">
+                            <SunIcon class="opacity-100 dark:opacity-0" />
+                            <MoonIcon class="opacity-0 dark:opacity-100" />
+                          </span>
                         </span>
                       </button>
                     </div>
                   </div>
                 </div>
-                <div class="vt-menu-group" >
-                  <div class="vt-menu-item item" >
-                    <div
-                      class="vt-social-links social-links">
+                <div class="vt-menu-group">
+                  <div class="vt-menu-item item">
+                    <div class="vt-social-links social-links">
                       <a
                         class="vt-social-link is-small"
                         href="#"
                         title="github"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >
+                      >
                         <GithubIcon class="vt-social-link-icon" />
                         <span class="visually-hidden">github</span></a
                       ><a
@@ -592,7 +546,7 @@ const isMacStore = useIsMacStore();
                         title="twitter"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >
+                      >
                         <TwitterIcon class="vt-social-link-icon" />
                         <span class="visually-hidden">twitter</span></a
                       ><a
@@ -601,7 +555,7 @@ const isMacStore = useIsMacStore();
                         title="discord"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >
+                      >
                         <DiscordIcon class="vt-social-link-icon" />
                         <span class="visually-hidden">discord</span></a
                       >
@@ -619,723 +573,734 @@ const isMacStore = useIsMacStore();
 
 <style scoped lang="scss">
 body .dark {
-    color: rgba(255, 255, 255, .87);
-    background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1a1a1a;
 }
 
 body {
-    color: #213547;
-    background-color: #ffffff;
+  color: #213547;
+  background-color: #ffffff;
 }
 
-*, :before, :after {
-    box-sizing: border-box;
+*,
+:before,
+:after {
+  box-sizing: border-box;
 }
 
 .VPNav {
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 20;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 20;
 }
-    @media (min-width: 960px) {
-        .VPNav {
-            position: fixed;
-            top: 0px;
-            width: 100%;
-        }
-    }
-
-.VPNavBar{
-    position: relative;
-    border-bottom: 1px solid rgba(60, 60, 60, .12);
-    padding: 0 12px 0 24px;
-    height: 55px;
-    background-color: #fff;
-    white-space: nowrap;
-    transition: border-color .5s,background-color .5s;
+@media (min-width: 960px) {
+  .VPNav {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+  }
 }
-    .dark .VPNavBar {
-        background-color: #1a1a1a;
-    }
 
-    @media (min-width: 1280px) {
-        .VPNavBar {
-            padding: 0 32px;
-        }
-    }
+.VPNavBar {
+  position: relative;
+  border-bottom: 1px solid rgba(60, 60, 60, 0.12);
+  padding: 0 12px 0 24px;
+  height: 55px;
+  background-color: #fff;
+  white-space: nowrap;
+  transition:
+    border-color 0.5s,
+    background-color 0.5s;
+}
+.dark .VPNavBar {
+  background-color: #1a1a1a;
+}
 
-    @media (min-width: 768px) {
-        .VPNavBar {
-            padding: 0 12px 0 32px;
-        }
-    }
+@media (min-width: 1280px) {
+  .VPNavBar {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .VPNavBar {
+    padding: 0 12px 0 32px;
+  }
+}
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1376px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1376px;
 }
 
 .VPNavBarTitle {
-    display: flex;
-    align-items: center;
-    padding-top: 1px;
-    height: 55px;
-    transition: opacity .25s;
+  display: flex;
+  align-items: center;
+  padding-top: 1px;
+  height: 55px;
+  transition: opacity 0.25s;
 }
 
 .VPNavBarTitle:hover {
-    opacity: .6;
+  opacity: 0.6;
 }
 
-.logo+.text {
-    padding-left: 8px;
+.logo + .text {
+  padding-left: 8px;
 }
 
 .text {
-    font-size: 16px;
-    font-weight: 500;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .dark .text {
-    color: rgba(255, 255, 255, .87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
-
 .content {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .VPNavBarSearch {
-    display: flex;
-    align-items: center;
-    padding-left: 16px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
 }
 
-    @media (min-width: 768px) {
-        .VPNavBarSearch {
-            flex-grow: 1;
-        }
-    }
+@media (min-width: 768px) {
+  .VPNavBarSearch {
+    flex-grow: 1;
+  }
+}
 
 .DocSearch-Button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    width: 48px;
-    height: 55px;
-    background: transparent;
-    border: 0;
-    border-radius: 40px;
-    color: rgba(60, 60, 60, .7);
-    cursor: pointer;
-    font-weight: 500;
-    padding: 0 8px;
-    user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 48px;
+  height: 55px;
+  background: transparent;
+  border: 0;
+  border-radius: 40px;
+  color: rgba(60, 60, 60, 0.7);
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0 8px;
+  user-select: none;
 }
 
-    @media (min-width: 768px) {
-        .DocSearch-Button {
-            justify-content: flex-start;
-            width: 100%;
-        }
-    }
+@media (min-width: 768px) {
+  .DocSearch-Button {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
 
 .DocSearch-Button-Container {
-    align-items: center;
-    display: flex;
+  align-items: center;
+  display: flex;
 }
 
 .DocSearch-Button .DocSearch-Button-Keys {
-    display: none;
-    gap: 2px;
-    min-width: auto;
-    box-sizing: border-box;
-    border: 1px solid rgba(60, 60, 60, .33);
-    border-radius: 4px;
-    padding: 0 6px;
-    font-family: inherit;
-    font-size: 12px;
-    height: 22px;
-    line-height: 22px;
-    font-weight: 500;
-    transition: color .5s,border-color .5s;
+  display: none;
+  gap: 2px;
+  min-width: auto;
+  box-sizing: border-box;
+  border: 1px solid rgba(60, 60, 60, 0.33);
+  border-radius: 4px;
+  padding: 0 6px;
+  font-family: inherit;
+  font-size: 12px;
+  height: 22px;
+  line-height: 22px;
+  font-weight: 500;
+  transition:
+    color 0.5s,
+    border-color 0.5s;
 }
 
-    @media (min-width: 768px) {
-        .DocSearch-Button .DocSearch-Search-Icon {
-            top: 1px;
-            margin-right: 10px;
-            width: 15px;
-            height: 15px;
-        }
-    }
-    @media (min-width: 768px) {
-        .DocSearch-Button .DocSearch-Button-Keys {
-            display: flex;
-        }
-    }
+@media (min-width: 768px) {
+  .DocSearch-Button .DocSearch-Search-Icon {
+    top: 1px;
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+  }
+}
+@media (min-width: 768px) {
+  .DocSearch-Button .DocSearch-Button-Keys {
+    display: flex;
+  }
+}
 
 .DocSearch-Button .DocSearch-Search-Icon {
-    color: rgba(60, 60, 60, .7);
-    transition: color .5s;
-    position: relative;
+  color: rgba(60, 60, 60, 0.7);
+  transition: color 0.5s;
+  position: relative;
 }
 
 .dark .DocSearch-Button .DocSearch-Search-Icon {
-    color: rgba(235, 235, 235, .6);
+  color: rgba(235, 235, 235, 0.6);
 }
 
 .DocSearch-Search-Icon {
-    stroke-width: 1.6;
+  stroke-width: 1.6;
 }
-
-
 
 .DocSearch-Button-Placeholder {
-    transition: color .5s;
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(60, 60, 60, .7);
-    display: none;
-    padding: 0 10px 0 0;
+  transition: color 0.5s;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(60, 60, 60, 0.7);
+  display: none;
+  padding: 0 10px 0 0;
 }
-    .dark .DocSearch-Button-Placeholder {
-        color: rgba(235, 235, 235, .6);
-    }
+.dark .DocSearch-Button-Placeholder {
+  color: rgba(235, 235, 235, 0.6);
+}
 
-    
-    @media (min-width: 960px) {
-        .DocSearch-Button-Placeholder {
-            display: inline-block;
-        }
-    }
-
+@media (min-width: 960px) {
+  .DocSearch-Button-Placeholder {
+    display: inline-block;
+  }
+}
 
 .DocSearch-Button-Keys {
-    display: flex;
-    min-width: calc(40px + 0.8em);
+  display: flex;
+  min-width: calc(40px + 0.8em);
 }
 
 .DocSearch-Button .DocSearch-Button-Key {
-    width: auto;
-    min-width: auto;
-    font-family: inherit;
-    font-size: 12px;
-    height: 22px;
-    padding: 0;
-    margin: 0;
-    color: rgba(60, 60, 60, .33);
-    transition: color .5s;
+  width: auto;
+  min-width: auto;
+  font-family: inherit;
+  font-size: 12px;
+  height: 22px;
+  padding: 0;
+  margin: 0;
+  color: rgba(60, 60, 60, 0.33);
+  transition: color 0.5s;
 }
 
 .DocSearch-Button-Key {
-    align-items: center;
-    background: transparent;
-    border-radius: 3px;
-    color: rgba(60, 60, 60, .7);
-    display: flex;
-    height: 18px;
-    justify-content: center;
-    margin-right: 0.4em;
-    position: relative;
-    padding: 0 0 2px;
-    border: 0;
-    top: -1px;
-    width: 20px;
+  align-items: center;
+  background: transparent;
+  border-radius: 3px;
+  color: rgba(60, 60, 60, 0.7);
+  display: flex;
+  height: 18px;
+  justify-content: center;
+  margin-right: 0.4em;
+  position: relative;
+  padding: 0 0 2px;
+  border: 0;
+  top: -1px;
+  width: 20px;
 }
 
 .VPNavBarMenu {
-    display: none;
+  display: none;
 }
 
-    @media (min-width: 768px) {
-        .VPNavBarMenu {
-            display: flex;
-        }
-    }
+@media (min-width: 768px) {
+  .VPNavBarMenu {
+    display: flex;
+  }
+}
 
 .visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .vt-flyout {
-    position: relative;
+  position: relative;
 }
-
-
 
 .vt-flyout-button {
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    height: 55px;
-    color: #213547;
-    transition: color .5s;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  height: 55px;
+  color: #213547;
+  transition: color 0.5s;
 }
 .dark .vt-flyout-button {
-    color: rgba(255, 255, 255, .87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
-
 .vt-flyout-button:hover {
-    color: rgba(60, 60, 60, 0.7);
-    transition: color .25s;
+  color: rgba(60, 60, 60, 0.7);
+  transition: color 0.25s;
 }
 
 .vt-flyout-button-text {
-    display: flex;
-    align-items: center;
-    line-height: 55px;
-    font-size: 13px;
-    font-weight: 500;
-    transition: color .25s;
-    white-space: nowrap;
+  display: flex;
+  align-items: center;
+  line-height: 55px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.25s;
+  white-space: nowrap;
 }
 
 .vt-flyout-button-text-icon {
-    margin-left: 4px;
-    width: 14px;
-    height: 14px;
-    fill: currentColor;
+  margin-left: 4px;
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
 }
 
 .vt-flyout-menu {
-    max-height: calc(100vh - 55px)!important;
-    display: flex;
-    position: absolute;
-    top: calc(var(55px) / 2 + 15px);
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-4px);
-    transition: opacity .25s,visibility .25s,transform .25s;
-    max-height: calc(100vh - 55px);
+  max-height: calc(100vh - 55px) !important;
+  display: flex;
+  position: absolute;
+  top: calc(var(55px) / 2 + 15px);
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.25s,
+    visibility 0.25s,
+    transform 0.25s;
+  max-height: calc(100vh - 55px);
 }
 
 .vt-menu {
-    border-radius: 8px;
-    padding: 12px 0;
-    min-width: 192px;
-    border: 1px solid transparent;
-    background: #fff;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, .1), 0 2px 6px rgba(0, 0, 0, .08);
-    transition: background-color .5s;
-    overflow: auto;
+  border-radius: 8px;
+  padding: 12px 0;
+  min-width: 192px;
+  border: 1px solid transparent;
+  background: #fff;
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.5s;
+  overflow: auto;
 }
 
 .vt-menu-items {
-    transition: border-color .5s;
+  transition: border-color 0.5s;
 }
 
 .vt-menu-link {
-    display: block;
-    padding: 0 18px;
-    line-height: 28px;
-    font-size: 13px;
-    font-weight: 400;
-    color: #213547;
-    white-space: nowrap;
-    transition: color .25s;
+  display: block;
+  padding: 0 18px;
+  line-height: 28px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #213547;
+  white-space: nowrap;
+  transition: color 0.25s;
 }
 
 .vt-menu-link:hover {
-    color: #42b883;
+  color: #42b883;
 }
 
 .VPNavBarMenuLink {
-    display: block;
-    padding: 0 12px;
-    line-height: calc(55px - 1px);
-    font-size: 13px;
-    font-weight: 500;
-    color: #213547;
-    transition: color .25s;
-    white-space: nowrap;
+  display: block;
+  padding: 0 12px;
+  line-height: calc(55px - 1px);
+  font-size: 13px;
+  font-weight: 500;
+  color: #213547;
+  transition: color 0.25s;
+  white-space: nowrap;
 }
 
 .dark .VPNavBarMenuLink {
-    color: rgba(255, 255, 255, .87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .VPNavBarMenuLink:hover {
-    color: #42b883;
+  color: #42b883;
 }
 
 .vt-link-icon {
-    display: inline-block;
-    margin-top: -2px;
-    margin-left: 4px;
-    width: 11px;
-    height: 11px;
-    fill: rgba(60, 60, 60, 0.33);
-    transition: fill .25s;
+  display: inline-block;
+  margin-top: -2px;
+  margin-left: 4px;
+  width: 11px;
+  height: 11px;
+  fill: rgba(60, 60, 60, 0.33);
+  transition: fill 0.25s;
 }
 
-.VPNavBarMenuGroup:hover+.vt-flyout-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+.VPNavBarMenuGroup:hover + .vt-flyout-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-.vt-flyout:hover .vt-flyout-menu, .vt-flyout-button[aria-expanded=true]+.vt-flyout-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+.vt-flyout:hover .vt-flyout-menu,
+.vt-flyout-button[aria-expanded="true"] + .vt-flyout-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .vt-menu-group-title {
-    padding: 0 18px;
-    line-height: 28px;
-    font-size: 10px;
-    font-weight: 600;
-    color: rgba(60, 60, 60, 0.33);
-    text-transform: uppercase;
-    transition: color .25s;
+  padding: 0 18px;
+  line-height: 28px;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(60, 60, 60, 0.33);
+  text-transform: uppercase;
+  transition: color 0.25s;
 }
 
 .vt-locales-btn-icon-container {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .vt-flyout-button .vt-locales-btn-icon-container:before {
-    width: 1px;
-    height: 24px;
-    background-color: rgba(60, 60, 60, 0.12);
-    content: "";
-    margin-right: 4px;
+  width: 1px;
+  height: 24px;
+  background-color: rgba(60, 60, 60, 0.12);
+  content: "";
+  margin-right: 4px;
 }
 
 .vt-flyout-button .vt-locales-btn-icon-container:after {
-    width: 1px;
-    height: 24px;
-    background-color: rgba(60, 60, 60, 0.12);
-    content: "";
-    margin-left: 4px;
+  width: 1px;
+  height: 24px;
+  background-color: rgba(60, 60, 60, 0.12);
+  content: "";
+  margin-left: 4px;
 }
 
 .vt-locales-btn-icon {
-    width: 1rem;
-    height: 1rem;
-    fill: #213547;
-    margin: 0 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  fill: #213547;
+  margin: 0 0.5rem;
 }
 
 .dark .vt-locales-btn-icon {
-    fill: rgba(255, 255, 255, .87);
+  fill: rgba(255, 255, 255, 0.87);
 }
 
 .x-padding {
-    padding: 0 14px;    
+  padding: 0 14px;
 }
 
 .vt-locales-menu-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 6px;
-    font-size: .875rem;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 6px;
+  font-size: 0.875rem;
+  position: relative;
 }
 
 .vt-locales-menu-item-text:hover {
-    color: #42b883;
+  color: #42b883;
 }
 
 .vt-locales-menu-hr-divider {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(60, 60, 60, 0.12);
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(60, 60, 60, 0.12);
 }
 
 .join-translations {
-    margin-top: 8px;
-    padding: 0 14px;
+  margin-top: 8px;
+  padding: 0 14px;
 }
 
 .join-translations .vt-locales-menu-item-text {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .VPNavBarAppearance {
-    display: none;
+  display: none;
 }
 
-    @media (min-width: 1280px) {
-        .VPNavBarAppearance {
-            display: block;
-        }    
-    }
+@media (min-width: 1280px) {
+  .VPNavBarAppearance {
+    display: block;
+  }
+}
 
 .appearance {
-    margin-left: 8px
+  margin-left: 8px;
 }
 
 .vt-switch {
-    position: relative;
-    border-radius: 11px;
-    display: block;
-    width: 40px;
-    height: 22px;
-    flex-shrink: 0;
-    border: 1px solid rgba(60, 60, 60, .29);
-    background-color: #f1f1f1;
-    transition: border-color .25s,background-color .25s;
+  position: relative;
+  border-radius: 11px;
+  display: block;
+  width: 40px;
+  height: 22px;
+  flex-shrink: 0;
+  border: 1px solid rgba(60, 60, 60, 0.29);
+  background-color: #f1f1f1;
+  transition:
+    border-color 0.25s,
+    background-color 0.25s;
 }
 
 .dark .vt-switch {
-    background-color: #2f2f2f;
-    border-color: rgba(84, 84, 84, .65);
+  background-color: #2f2f2f;
+  border-color: rgba(84, 84, 84, 0.65);
 }
 
 .dark .vt-switch:hover {
-    border-color: #8e8e8e;
+  border-color: #8e8e8e;
 }
 
 .vt-switch-check {
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: #fff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
-    transition: background-color .25s,transform .25s;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+  transition:
+    background-color 0.25s,
+    transform 0.25s;
 }
 
 .vt-switch-icon {
-    position: relative;
-    display: block;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    overflow: hidden;
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .vt-switch-icon svg {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 12px;
-    height: 12px;
-    fill: rgba(60, 60, 60, .7);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  fill: rgba(60, 60, 60, 0.7);
 }
 
 .dark .vt-switch-icon svg {
-    fill: rgba(255, 255, 255, .87);
-    transition: opacity .25s;
+  fill: rgba(255, 255, 255, 0.87);
+  transition: opacity 0.25s;
 }
 
 .dark .vt-switch-appearance .vt-switch-check {
-    transform: translate(18px);
+  transform: translate(18px);
 }
 
 .dark .vt-switch-check {
-    background-color: #1a1a1a;
+  background-color: #1a1a1a;
 }
 
-.appearance+.social-links {
-    margin-left: 12px;
+.appearance + .social-links {
+  margin-left: 12px;
 }
 
 .VPNavBarSocialLinks {
-    display: none;
-    margin-right: -10px;
+  display: none;
+  margin-right: -10px;
 }
 
-    @media (min-width: 1280px) {
-        .VPNavBarSocialLinks {
-            display: flex;
-        }
-    }
+@media (min-width: 1280px) {
+  .VPNavBarSocialLinks {
+    display: flex;
+  }
+}
 
-    .visually-hidden {
-        clip: rect(0 0 0 0);
-        -webkit-clip-path: inset(50%);
-        clip-path: inset(50%);
-        height: 1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-        width: 1px;
-    }
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 
 .vt-social-link.is-small {
-    width: 36px;
-    height: 36px;
+  width: 36px;
+  height: 36px;
 }
 
 .vt-social-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(60, 60, 60, .7);
-    transition: color .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(60, 60, 60, 0.7);
+  transition: color 0.5s;
 }
 
 .dark .vt-social-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(235, 235, 235, .6);
-    transition: color .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(235, 235, 235, 0.6);
+  transition: color 0.5s;
 }
 
 .vt-social-link.is-small .vt-social-link-icon {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .vt-social-link-icon {
-    fill: currentColor;
+  fill: currentColor;
 }
 
 .VPNavBarExtra {
-    display: none;
+  display: none;
 }
 
-    @media (min-width: 768px) {
-        .VPNavBarExtra {
-            display: block;
-        }
-    }
+@media (min-width: 768px) {
+  .VPNavBarExtra {
+    display: block;
+  }
+}
 
-    @media (min-width: 1280px) {
-        .VPNavBarExtra {
-            display: none;
-        }
-    }
-
+@media (min-width: 1280px) {
+  .VPNavBarExtra {
+    display: none;
+  }
+}
 
 .vt-flyout-button-icon {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    transition: fill .25s;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: fill 0.25s;
 }
 
 .vt-menu .vt-menu-group {
-    padding: 0 0 12px;
+  padding: 0 0 12px;
 }
 
 .item {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .vt-menu .vt-menu-item {
-    padding: 0 16px;
-    white-space: nowrap;
+  padding: 0 16px;
+  white-space: nowrap;
 }
 
 .vt-menu-label {
-    flex-grow: 1;
-    line-height: 28px;
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(60, 60, 60, .7);
-    transition: color .5s;
+  flex-grow: 1;
+  line-height: 28px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(60, 60, 60, 0.7);
+  transition: color 0.5s;
 }
 
 .dark .vt-menu-label {
-    color: rgba(235, 235, 235, .6);
+  color: rgba(235, 235, 235, 0.6);
 }
 
 .action {
-    margin-right: -2px;
+  margin-right: -2px;
 }
 
 .vt-menu-action {
-    padding-left: 24px;
+  padding-left: 24px;
 }
 
 .social-links {
-    margin: -4px -8px;
+  margin: -4px -8px;
 }
 
 .vt-menu-group .vt-menu-item .vt-social-links {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.DocSearch-Button:hover{
-    background: transparent;
+.DocSearch-Button:hover {
+  background: transparent;
 }
 .DocSearch-Button:hover .DocSearch-Button-Keys {
-    border: 1px solid #42b883;
-    color: #42b883;
+  border: 1px solid #42b883;
+  color: #42b883;
 }
 
 .DocSearch-Button:hover .DocSearch-Button-Key {
-    color: #42b883;
+  color: #42b883;
 }
 
 .dark .DocSearch-Button-Keys {
-    border: 1px solid rgba(235, 235, 235, .38);
+  border: 1px solid rgba(235, 235, 235, 0.38);
 }
 
 .dark .DocSearch-Button:hover .DocSearch-Button-Placeholder {
-    color: rgba(255, 255, 255, .87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .dark .DocSearch-Button:hover .DocSearch-Search-Icon {
-    color: rgba(255, 255, 255, .87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .dark .DocSearch-Button-Key {
-    color: rgba(235, 235, 235, .38);
+  color: rgba(235, 235, 235, 0.38);
 }
 
 /* 추가수정 */
 .vt-flyout:hover {
-    transition: color .5s;
+  transition: color 0.5s;
 }
 
 .dark .vt-flyout-button {
-    color: rgba(255, 255, 255, .87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .vt-flyout:hover .vt-flyout-button-text {
-    color: rgba(60, 60, 60, .7);
+  color: rgba(60, 60, 60, 0.7);
 }
 
 .dark .vt-flyout:hover .vt-flyout-button-text {
-    color: rgba(255, 255, 255, .87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
-.vt-flyout:hover .vt-flyout-button-text .vt-flyout-button-text-icon{
-    color: rgba(60, 60, 60, .7);
+.vt-flyout:hover .vt-flyout-button-text .vt-flyout-button-text-icon {
+  color: rgba(60, 60, 60, 0.7);
 }
 
-.dark .vt-flyout:hover .vt-flyout-button-text .vt-flyout-button-text-icon{
-    color: rgba(255, 255, 255, .87);
+.dark .vt-flyout:hover .vt-flyout-button-text .vt-flyout-button-text-icon {
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .dark .vt-social-link:hover {
-    color: rgba(255, 255, 255, .87);
-    transition: color .25s;
+  color: rgba(255, 255, 255, 0.87);
+  transition: color 0.25s;
 }
 
 .dark .vt-menu {
-    background: #1a1a1a;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
-    border: 1px solid rgba(84, 84, 84, .48);
+  background: #1a1a1a;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(84, 84, 84, 0.48);
 }
 </style>

@@ -1,3 +1,7 @@
+# vue project ts & eslint, prettier (최신, 20231104 추가)
+- 아래의 README.md 참고
+    - 
+
 # github pages 배포 (최신, 20231001 추가)
 - 결과물
     - react: https://doyou1.github.io/web-study-clone/react/
