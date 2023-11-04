@@ -1,3 +1,6 @@
+# lint check in pre-commit (최신, 20231104 추가)
+- references: https://www.youtube.com/watch?v=_ssKvmZqSnk
+
 # vue project ts & eslint, prettier (최신, 20231104 추가)
 - 아래의 README.md 참고
     - https://github.com/doyou1/web-study-clone/tree/dev/front-vue-ts
