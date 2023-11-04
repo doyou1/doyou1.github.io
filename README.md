@@ -1,6 +1,10 @@
 # vue project ts & eslint, prettier (최신, 20231104 추가)
 - 아래의 README.md 참고
-    - 
+    - https://github.com/doyou1/web-study-clone/tree/dev/front-vue-ts
+    - https://github.com/doyou1/web-study-clone/tree/dev/sampling/vue-eslint-prittier-sampling
+
+- 혹시 실행 에러 발생시 아래 내용 참고
+    - https://github.com/doyou1/web-study-clone/tree/dev/sampling/vue-eslint-prittier-sampling
 
 # github pages 배포 (최신, 20231001 추가)
 - 결과물
