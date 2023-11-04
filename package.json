@@ -1,0 +1,15 @@
+{
+  "name": "web-study-clone",
+  "version": "1.0.0",
+  "description": "- 아래의 README.md 참고     - https://github.com/doyou1/web-study-clone/tree/dev/front-vue-ts     - https://github.com/doyou1/web-study-clone/tree/dev/sampling/vue-eslint-prittier-sampling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.0"
+  }
+}
