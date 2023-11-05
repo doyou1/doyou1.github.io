@@ -12,8 +12,16 @@ import DiscordIcon from "@/assets/nav/discord.svg";
 import ExtraIcon from "@/assets/nav/extra.svg";
 
 import { useIsDarkStore, useIsMacStore } from "@/pinia/pinia";
+import { watch } from "vue";
 const isDarkStore = useIsDarkStore();
 const isMacStore = useIsMacStore();
+
+watch(
+  () => isDarkStore.isDark,
+  () => {
+    console.log("isDark changed");
+  },
+);
 </script>
 
 <template>
