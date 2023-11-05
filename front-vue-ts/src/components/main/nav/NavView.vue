@@ -19,7 +19,7 @@ const isMacStore = useIsMacStore();
 watch(
   () => isDarkStore.isDark,
   () => {
-    console.log("isDark changed");
+    console.log("isDark changed", isDarkStore.isDark);
   },
 );
 </script>
