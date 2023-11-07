@@ -19,6 +19,7 @@
 ### SwaggerHub
 1. [SwaggerHub 공식사이트](https://app.swaggerhub.com/) 로그인
 2. Create New -> Create New API
+3. 이하의 내용 입력 및 테스트
 ```yaml
 openapi: 3.0.0
 info:
