@@ -80,3 +80,9 @@ paths:
               schema:
                 type: string
 ```
+
+### Node.js Swagger UI
+1. `npm install swagger`
+2. `swagger project create {project name}`
+3. `swagger project start`  # sample api server start
+4. node js 문법으로 swagger ui 확인할 것 (/docs : API 명세서 페이지)

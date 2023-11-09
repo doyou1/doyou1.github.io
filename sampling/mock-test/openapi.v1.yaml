@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: mock-test
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /v1/api/test/list:
+    get:
+      summary: for test
+      responses:
+        '200':
+          description: for mock server test
+          content:
+            application/json:
+              schema:
+                type: array
+                title: test list
+                description: test list
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                      example: examplename
+                    status:
+                      type: string
+                      enum:
+                        - process
+                        - success
+                        - wait
+
+  /v1/api/test/one:
+    get:
+      summary: for test
+      responses:
+        '200':
+          description: for mock server test
+          content:
+            application/json:
+              schema:
+                title: test one
+                description: for mock server test
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                    example: examplename
+                  status:
+                    type: string
+                    enum:
+                      - process
+                      - success
+                      - wait
