@@ -15,6 +15,7 @@
     <a class="menu-link-a" href="#">
       {{ menuLinkTitleList.partners.title }}
     </a>
+    <NavMenuGroupLocale />
   </nav>
   <div>DarkMode</div>
   <div>SocialLink</div>
@@ -29,6 +30,7 @@ import type {
   MenuLinkListType,
 } from "@/composables/use-nav-menu";
 import NavMenuGroup from "@/components/main/nav/NavMenuGroup.vue";
+import NavMenuGroupLocale from "@/components/main/nav/NavMenuGroupLocale.vue";
 
 const menuGroupList = ref<MenuGroupListType>({
   docs: {

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import DownArrowIcon from "@/assets/nav/down-arrow.svg";
-// import LinkIcon from "@/assets/nav/link.svg";
 // import LanguageIcon from "@/assets/nav/language.svg";
 // import GithubIcon from "@/assets/nav/github.svg";
 // import SunIcon from "@/assets/nav/sun.svg";
