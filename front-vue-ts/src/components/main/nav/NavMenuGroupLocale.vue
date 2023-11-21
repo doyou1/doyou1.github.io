@@ -1,6 +1,6 @@
 <template>
-  <div class="menu-group locale">
-    <button class="locale__button">
+  <div class="locale">
+    <button type="button" class="locale__button">
       <div class="locale__button__icon__container">
         <LanguageIcon />
       </div>
@@ -176,6 +176,7 @@ import GithubIcon from "@/assets/nav/github.svg";
           position: relative;
 
           &__text {
+            color: var(--nav-text-1);
             svg {
               display: inline-block;
               margin-top: -2px;
@@ -215,6 +216,7 @@ import GithubIcon from "@/assets/nav/github.svg";
       &__text {
         margin-top: 8px;
         padding: 0 14px;
+        color: var(--nav-text-1);
 
         &__link {
           font-size: 0.875rem;
@@ -227,7 +229,7 @@ import GithubIcon from "@/assets/nav/github.svg";
     }
   }
 
-  :hover &__menu {
+  &:hover &__menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
