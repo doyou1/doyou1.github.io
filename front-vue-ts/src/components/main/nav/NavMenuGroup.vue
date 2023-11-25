@@ -53,7 +53,7 @@ defineProps<{
 }>();
 </script>
 
-<style setup lang="scss">
+<style scoped lang="scss">
 .menu-group {
   position: relative;
 

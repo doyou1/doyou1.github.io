@@ -96,7 +96,7 @@ import LanguageIcon from "@/assets/nav/language.svg";
 import GithubIcon from "@/assets/nav/github.svg";
 </script>
 
-<style setup lang="scss">
+<style scoped lang="scss">
 .locale {
   position: relative;
 

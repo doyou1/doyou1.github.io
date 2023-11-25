@@ -4,7 +4,7 @@
 
 <script setup lang="ts"></script>
 
-<style setup lang="scss">
+<style scoped lang="scss">
 // .mobile-entire {
 
 // }
