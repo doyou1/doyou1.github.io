@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg
-xmlns="http://www.w3.org/2000/svg"
-aria-hidden="true"
-focusable="false"
-viewBox="0 0 24 24"
-
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  viewBox="0 0 24 24"
 >
-<circle cx="12" cy="12" r="2"></circle>
-<circle cx="19" cy="12" r="2"></circle>
-<circle cx="5" cy="12" r="2"></circle></svg
->
+  <circle fill="currentColor" cx="12" cy="12" r="2"></circle>
+  <circle fill="currentColor" cx="19" cy="12" r="2"></circle>
+  <circle fill="currentColor" cx="5" cy="12" r="2"></circle>
+</svg>
