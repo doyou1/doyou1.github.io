@@ -38,6 +38,21 @@
     letter-spacing: -1.5px;
     max-width: 960px;
     margin: 0 auto;
+
+    &__title-span {
+      background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__explam {
+    max-width: 960px;
+    line-height: 1.5;
+    color: rgba(60, 60, 60, 0.7);
+    transition: color 0.5s;
+    font-size: 22px;
+    margin: 24px auto 40px;
   }
 }
 
@@ -51,6 +66,10 @@
     &__title-h1 {
       font-size: 64px;
       letter-spacing: -0.5px;
+    }
+    &__explam {
+      font-size: 18px;
+      margin-bottom: 48px;
     }
   }
 }
