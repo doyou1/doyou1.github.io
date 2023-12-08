@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="intro-container">
+  <section class="intro-container intro">
     <!-- INTRO TITLE  -->
     <h1 class="intro-container__title-h1">
       The <span class="intro-container__title-h1__title-span">Progressive</span>
@@ -17,7 +17,7 @@
 
     <!-- INTRO BUTTON -->
     <p class="intro-container__button">
-      <a href="#" class="intro-container__button__why-vue">Why vue</a>
+      <a href="#" class="intro-container__button__why-vue">Why Vue</a>
       <a href="#" class="intro-container__button__get-started">Get Started</a>
       <a href="#" class="intro-container__button__install">Install</a>
     </p>
@@ -29,12 +29,12 @@
 .intro-container {
   padding: 96px 32px;
   text-align: center;
-
+  transition: background-color 0.5s;
   &__title-h1 {
     color: #213547;
     font-size: 76px;
     line-height: 1.25;
-    font-weight: 900;
+    font-weight: 800;
     letter-spacing: -1.5px;
     max-width: 960px;
     margin: 0 auto;
@@ -43,19 +43,93 @@
       background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      transition: background 0.5s;
     }
   }
 
   &__explam {
     max-width: 960px;
     line-height: 1.5;
-    color: rgba(60, 60, 60, 0.7);
-    transition: color 0.5s;
+    letter-spacing: 0.5px;
+    transition: color 0.9s;
     font-size: 22px;
+    font-weight: 300;
+    color: rgba(60, 60, 60, 0.6);
     margin: 24px auto 40px;
+  }
+
+  &__button {
+    &__why-vue {
+      font-size: 16px;
+      display: inline-block;
+      border-radius: 8px;
+      transition:
+        background-color 0.5s,
+        color 0.5s;
+      position: relative;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      background-color: #42b883;
+      color: #fff;
+      margin-right: 18px;
+      padding: 8px 1em 8px 3em;
+    }
+    &__get-started,
+    &__install {
+      display: inline-block;
+      color: #476582;
+      font-size: 16px;
+      background-color: #f1f1f1;
+      letter-spacing: 0.5px;
+      margin-right: 18px;
+      padding: 8px 18px;
+      font-weight: 400;
+      border-radius: 8px;
+      transition:
+        background-color 0.5s,
+        color 0.5s;
+    }
   }
 }
 
+// ===============================
+//        Dark mode styles
+// ===============================
+.dark {
+  .intro-container {
+    // Adjust styles for dark mode
+    background-color: #1a1a1a;
+    transition: background-color 0.5s;
+    &__title-h1 {
+      background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: background 0.5s;
+    }
+
+    &__explam {
+      color: rgba(235, 235, 235, 0.6);
+      transition: color 0.9s;
+    }
+
+    &__button {
+      &__why-vue {
+        color: #213547;
+        transition:
+          background-color 0.5s,
+          color 0.5s;
+      }
+      &__get-started,
+      &__install {
+        color: #aac8e4;
+        background-color: #2f2f2f;
+        transition:
+          background-color 0.5s,
+          color 0.5s;
+      }
+    }
+  }
+}
 // ===============================
 //          MEDIA QUREIES
 // ===============================
