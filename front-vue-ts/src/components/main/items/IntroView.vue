@@ -26,6 +26,14 @@
 
 <!-- Style -->
 <style scoped lang="scss">
+.intro {
+  --hover-green: #33a06f;
+  --hover-gray-3: #e5e5e5;
+}
+.dark .intro {
+  --hover-green: #42d392;
+  --hover-gray-3: #3a3a3a;
+}
 .intro-container {
   padding: 96px 32px;
   text-align: center;
@@ -73,6 +81,10 @@
       color: #fff;
       margin-right: 18px;
       padding: 8px 1em 8px 3em;
+      &:hover {
+        background-color: var(--hover-green);
+        transition-duration: 0.2s;
+      }
     }
     &__get-started,
     &__install {
@@ -88,6 +100,10 @@
       transition:
         background-color 0.5s,
         color 0.5s;
+      &:hover {
+        background-color: var(--hover-gray-3);
+        transition-duration: 0.2s;
+      }
     }
   }
 }
@@ -115,9 +131,7 @@
     &__button {
       &__why-vue {
         color: #213547;
-        transition:
-          background-color 0.5s,
-          color 0.5s;
+        transition: color 0.5s;
       }
       &__get-started,
       &__install {
@@ -126,6 +140,10 @@
         transition:
           background-color 0.5s,
           color 0.5s;
+        &:hover {
+          background-color: #3a3a3a;
+          transition-duration: 0.2s;
+        }
       }
     }
   }
