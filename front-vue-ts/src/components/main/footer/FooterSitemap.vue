@@ -116,7 +116,7 @@ const footerMenuList = ref<FooterColStructureType>([
       {
         detailName: "도구가이드",
         detailUrl: "https://v3-docs.vuejs-korea.org/examples/#hello-world",
-        newPage: true,
+        newPage: false,
       },
     ],
   },
@@ -178,7 +178,7 @@ const footerMenuList = ref<FooterColStructureType>([
       {
         detailName: "뉴스레터",
         detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
-        newPage: true,
+        newPage: false,
       },
     ],
   },
