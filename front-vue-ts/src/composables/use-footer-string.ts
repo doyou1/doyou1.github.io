@@ -12,3 +12,16 @@ export type FooterColType = {
 };
 
 export type FooterColStructureType = FooterColType[];
+
+
+type FooterBottomLinkDetail={
+    text:string;
+    url:string;
+}
+
+export type FooterBottomLinkList = (string|FooterBottomLinkDetail)[]
+
+export type FooterBottomText = {
+    bottomLink:FooterBottomLinkList;
+    bottomText:string;
+}
