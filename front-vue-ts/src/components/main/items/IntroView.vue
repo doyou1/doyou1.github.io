@@ -1,4 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import PlayIcon from "@/assets/intro/play-icon.svg";
+import ArrowIcon from "@/assets/intro/arrow.svg";
+</script>
 
 <template>
   <section class="intro-container intro">
@@ -17,8 +20,17 @@
 
     <!-- INTRO BUTTON -->
     <p class="intro-container__button">
-      <a href="#" class="intro-container__button__why-vue">Why Vue</a>
-      <a href="#" class="intro-container__button__get-started">Get Started</a>
+      <a href="#" class="intro-container__button__why-vue">
+        <PlayIcon class="intro-container__button__why-vue__play-icon">
+        </PlayIcon>
+        Why Vue</a
+      >
+      <a href="#" class="intro-container__button__get-started"
+        >Get Started
+        <ArrowIcon
+          class="intro-container__button__get-started__arrow"
+        ></ArrowIcon>
+      </a>
       <a href="#" class="intro-container__button__install">Install</a>
     </p>
   </section>
@@ -35,9 +47,11 @@
   --hover-gray-3: #3a3a3a;
 }
 .intro-container {
-  padding: 96px 32px;
+  padding: 148px 32px;
   text-align: center;
   transition: background-color 0.5s;
+  font-size: 1.5em;
+
   &__title-h1 {
     color: #213547;
     font-size: 76px;
@@ -58,7 +72,7 @@
   &__explam {
     max-width: 960px;
     line-height: 1.5;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.25px;
     transition: color 0.9s;
     font-size: 22px;
     font-weight: 300;
@@ -85,7 +99,31 @@
         background-color: var(--hover-green);
         transition-duration: 0.2s;
       }
+      &__play-icon {
+        display: inline;
+        position: absolute;
+        left: 15px;
+        top: 8px;
+        margin-left: 2px;
+        fill: currentColor;
+        width: 1.5em;
+      }
     }
+    &__get-started {
+      &__arrow {
+        display: inline;
+        position: relative;
+        top: -1px;
+        margin-left: 2px;
+        fill: currentColor;
+
+        transition: transform 0.2s;
+      }
+      &:hover &__arrow {
+        transform: translateX(2px);
+      }
+    }
+
     &__get-started,
     &__install {
       display: inline-block;
@@ -155,6 +193,7 @@
 /* 미디어 쿼리: 화면 너비가 960px 이하일 때 */
 @media (max-width: 960px) {
   .intro-container {
+    padding: 96px 32px;
     &__title-h1 {
       font-size: 64px;
       letter-spacing: -0.5px;
@@ -171,6 +210,29 @@
     &__title-h1 {
       font-size: 48px;
       letter-spacing: -0.5px;
+    }
+  }
+}
+
+/* 미디어 쿼리: 화면 너비가 576px 이하일 때 */
+@media (max-width: 576px) {
+  .intro-container {
+    padding: 56px 32px;
+    &__explam {
+      font-size: 16px;
+      margin: 18px 0 30px;
+    }
+    &__button {
+      &__why-vue {
+        display: block;
+        margin: 0 auto;
+        width: 150px;
+      }
+      &__get-started,
+      &__install {
+        margin: 18px 0;
+        margin-right: 18px;
+      }
     }
   }
 }
