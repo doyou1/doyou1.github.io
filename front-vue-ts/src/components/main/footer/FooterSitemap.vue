@@ -1,39 +1,44 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { FooterColStructureType } from "@/composables/use-footer-string";
-import ArrowLink from "@/assets/footer/arrow-link.svg"
+import ArrowLink from "@/assets/footer/arrow-link.svg";
 
 const footerMenuList = ref<FooterColStructureType>([
   {
-    footerTitle: "문서",
+    footerTitle: "Docs",
     footerDetail: [
       {
-        detailName: "가이드",
+        detailName: "Guide",
         detailUrl: "https://v3-docs.vuejs-korea.org/guide/introduction.html",
         newPage: false,
       },
       {
-        detailName: "튜토리얼",
+        detailName: "Tutorial",
         detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
         newPage: false,
       },
       {
-        detailName: "예제",
+        detailName: "Examples",
         detailUrl: "https://v3-docs.vuejs-korea.org/examples/#hello-world",
         newPage: false,
       },
       {
-        detailName: "시작하기",
+        detailName: "Quick Start",
         detailUrl: "https://v3-docs.vuejs-korea.org/guide/quick-start.html",
         newPage: false,
       },
       {
-        detailName: "Vue 2 문서",
+        detailName: "Glossary",
         detailUrl: "https://ko.vuejs.org/",
         newPage: true,
       },
       {
-        detailName: "Vue 2에서 마이그레이션",
+        detailName: "Vue 2 Docs",
+        detailUrl: "https://ko.vuejs.org/",
+        newPage: true,
+      },
+      {
+        detailName: "Migration from Vue 2",
         detailUrl: "https://v3-migration.vuejs.org",
         newPage: true,
       },
@@ -41,67 +46,77 @@ const footerMenuList = ref<FooterColStructureType>([
   },
   //   정은우: 이 아래 부터는 url 연결 할 예정
   {
-    footerTitle: "정보",
+    footerTitle: "About",
     footerDetail: [
       {
-        detailName: "자주 묻는 질문",
+        detailName: "FAQ",
         detailUrl: "https://v3-docs.vuejs-korea.org/guide/introduction.html",
         newPage: false,
       },
       {
-        detailName: "팀",
+        detailName: "Team",
         detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
         newPage: false,
       },
       {
-        detailName: "출시",
+        detailName: "Releases",
         detailUrl: "https://v3-docs.vuejs-korea.org/examples/#hello-world",
         newPage: false,
       },
       {
-        detailName: "커뮤니티 가이드",
+        detailName: "Community Guide",
         detailUrl: "https://v3-docs.vuejs-korea.org/examples/#hello-world",
         newPage: false,
       },
       {
-        detailName: "행동 강령",
+        detailName: "Code of Conduct",
         detailUrl: "https://v3-docs.vuejs-korea.org/examples/#hello-world",
         newPage: false,
       },
       {
-        detailName: "다큐멘터리",
+        detailName: "The Documentary",
         detailUrl: "https://v3-docs.vuejs-korea.org/examples/#hello-world",
         newPage: true,
       },
     ],
   },
   {
-    footerTitle: "리소스",
+    footerTitle: "Resources",
     footerDetail: [
       {
-        detailName: "파트너",
+        detailName: "Partners",
         detailUrl: "https://v3-docs.vuejs-korea.org/guide/introduction.html",
         newPage: false,
       },
       {
-        detailName: "테마",
+        detailName: "Themes",
         detailUrl: "https://v3-docs.vuejs-korea.org/guide/introduction.html",
         newPage: false,
       },
       {
-        detailName: "일자리",
+        detailName: "UI Components",
         detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
         newPage: true,
       },
       {
-        detailName: "T-셔츠샵",
+        detailName: "Certification",
+        detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
+        newPage: true,
+      },
+      {
+        detailName: "Jobs",
+        detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
+        newPage: true,
+      },
+      {
+        detailName: "T-Shirt Shop",
         detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
         newPage: true,
       },
     ],
   },
   {
-    footerTitle: "공식 라이브러리",
+    footerTitle: "Official Libraries",
     footerDetail: [
       {
         detailName: "Vue Router",
@@ -114,7 +129,7 @@ const footerMenuList = ref<FooterColStructureType>([
         newPage: true,
       },
       {
-        detailName: "도구가이드",
+        detailName: "Tooling Guide",
         detailUrl: "https://v3-docs.vuejs-korea.org/examples/#hello-world",
         newPage: false,
       },
@@ -122,7 +137,7 @@ const footerMenuList = ref<FooterColStructureType>([
   },
 
   {
-    footerTitle: "비디오 코스",
+    footerTitle: "Video Courses",
     footerDetail: [
       {
         detailName: "Vue Mastery",
@@ -137,15 +152,15 @@ const footerMenuList = ref<FooterColStructureType>([
     ],
   },
   {
-    footerTitle: "도움",
+    footerTitle: "Help",
     footerDetail: [
       {
-        detailName: "Discord 채팅",
+        detailName: "Discord Chat",
         detailUrl: "https://v3-docs.vuejs-korea.org/guide/introduction.html",
         newPage: true,
       },
       {
-        detailName: "GitHub 토론",
+        detailName: "GitHub Discussions",
         detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
         newPage: true,
       },
@@ -158,25 +173,25 @@ const footerMenuList = ref<FooterColStructureType>([
   },
 
   {
-    footerTitle: "뉴스",
+    footerTitle: "News",
     footerDetail: [
       {
-        detailName: "블로그",
+        detailName: "Blog",
         detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
         newPage: true,
       },
       {
-        detailName: "트위터",
+        detailName: "Twitter",
         detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
         newPage: true,
       },
       {
-        detailName: "이벤트",
+        detailName: "Events",
         detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
         newPage: true,
       },
       {
-        detailName: "뉴스레터",
+        detailName: "Newsletters",
         detailUrl: "https://v3-docs.vuejs-korea.org/tutorial/#step-1",
         newPage: false,
       },
@@ -199,10 +214,9 @@ const footerMenuList = ref<FooterColStructureType>([
             v-for="(detail, detailIndex) in footerMenu.footerDetail"
             :key="detailIndex"
           >
-            <a class="footer-col-link" :href="detail.detailUrl">{{
-              detail.detailName
-            }}
-            <ArrowLink v-if="detail.newPage" class="footer-col-arrowlink"/>
+            <a class="footer-col-link" :href="detail.detailUrl"
+              >{{ detail.detailName }}
+              <ArrowLink v-if="detail.newPage" class="footer-col-arrowlink" />
             </a>
           </li>
         </ul>
@@ -211,18 +225,18 @@ const footerMenuList = ref<FooterColStructureType>([
   </section>
 </template>
 <style lang="scss">
-#footer-wrap .footer-col-arrowlink{
+#footer-wrap .footer-col-arrowlink {
   display: inline-block;
-    margin-top: -2px;
-    margin-left: 4px;
-    width: 11px;
-    height: 11px;
-    fill: var(--footer-fill-svg);
-    transition: fill .25s;
+  margin-top: -2px;
+  margin-left: 4px;
+  width: 11px;
+  height: 11px;
+  fill: var(--footer-fill-svg);
+  transition: fill 0.25s;
 }
 #footer-wrap .footer-col-link {
   font-size: 0.9rem;
-  color: var( --footer-text-color);
+  color: var(--footer-text-color);
 }
 #footer-wrap h4 {
   color: var(--footer-text-h4);
