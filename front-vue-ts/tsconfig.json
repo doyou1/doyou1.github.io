@@ -26,10 +26,17 @@
     "types": ["@types"],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
-    },
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.css", "src/**/*.svg"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.css",
+    "src/**/*.svg"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }],
   "ts-node": {
     "moduleTypes": {
