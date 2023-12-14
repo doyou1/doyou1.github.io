@@ -1,0 +1,9 @@
+// 231214 : 정은우
+// 화면별 max width를 일괄적으로 관리함으로써 css의 일관성을 유지시키기고자 만듦
+
+// 작은 화면
+$breakpoint-small: 420px;
+
+// 큰 화면
+$breakpoint-large: 720px;
+
