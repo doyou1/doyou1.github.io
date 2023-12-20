@@ -32,7 +32,7 @@ export default {
 </template>
 
 <style lang="scss">
-.footer-bottom-release a{
+.footer-bottom-release a {
   color: var(--footer-text-h4);
 }
 #footer-bottom p {
@@ -49,5 +49,6 @@ export default {
     border-top 0.5s,
     background-color 0.5s;
   text-align: center;
+  background-color: var(--footer-fill-backgroundcolor-2);
 }
 </style>

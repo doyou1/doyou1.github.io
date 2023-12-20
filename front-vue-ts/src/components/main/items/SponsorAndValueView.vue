@@ -218,18 +218,23 @@ const imageList = ref<SponsorItemListType>([
   box-sizing: border-box;
 }
 $--sponsor-text-light-3: rgba(60, 60, 60, 0.33);
+$--sponsor-fill-card-light: #f9f9f9;
+$--sponsor-text-dark-2: rgba(255, 255, 255, 0.87);
+$--sponsor-text-dark-3: rgba(235, 235, 235, 0.38);
+$--sponsor-fill-card-dark: #242424;
+$--sponsor-fill-card-dark-hover: #f1f1f1;
+$--sponsor-text-card-dark-hover: #213547;
 
 .sponsor {
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 42px 32px;
+  }
   &__item {
     font-size: 11px;
     color: $--sponsor-text-light-3;
     font-weight: 400;
-  }
-  &__container {
-    --sponsor-fill-card: #f9f9f9;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 42px 32px;
   }
   &__h2 {
     font-size: 20px;
@@ -262,7 +267,7 @@ $--sponsor-text-light-3: rgba(60, 60, 60, 0.33);
   }
   &__card {
     margin: 2px 0;
-    background-color: var(--sponsor-fill-card);
+    background-color: $--sponsor-fill-card-light;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -272,6 +277,84 @@ $--sponsor-text-light-3: rgba(60, 60, 60, 0.33);
     &__image {
       max-width: calc(var(--max-width) - 30px);
       max-height: calc(var(--max-width) / 2 - 20px);
+    }
+  }
+}
+
+// ===============================
+//        Dark mode styles
+// ===============================
+
+.dark {
+  .sponsor {
+    &__container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 42px 32px;
+    }
+    &__item {
+      font-size: 11px;
+      color: $--sponsor-text-dark-3;
+      font-weight: 400;
+    }
+    &__h2 {
+      font-size: 20px;
+      font-weight: 600;
+      // margin-bottom: 1em;
+      color: $--sponsor-text-dark-2;
+    }
+    &__cards {
+      &__platinum {
+        margin-top: 1rem;
+        --max-width: 240px;
+        @include large() {
+          --max-width: 180px;
+        }
+        margin-bottom: 3rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--max-width), 1fr));
+        column-gap: 4px;
+      }
+      &__gold {
+        margin-top: 1rem;
+        --max-width: 180px;
+        @include large() {
+          --max-width: 140px;
+        }
+        margin-bottom: 3rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--max-width), 1fr));
+        column-gap: 4px;
+      }
+    }
+    &__card {
+      margin: 2px 0;
+      background-color: $--sponsor-fill-card-dark;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 2px;
+      transition: background-color 0.2s ease;
+      height: calc(var(--max-width) / 2 - 6px);
+      &:hover {
+        span {
+          color: $--sponsor-text-card-dark-hover;
+        }
+        background-color: $--sponsor-fill-card-dark-hover;
+
+        .sponsor__card__image {
+          // 직접 클래스를 명시
+          filter: none;
+          transition: filter 0.2s ease;
+        }
+      }
+
+      &__image {
+        filter: grayscale(1) invert(1);
+        max-width: calc(var(--max-width) - 30px);
+        max-height: calc(var(--max-width) / 2 - 20px);
+        transition: filter 0.2s ease;
+      }
     }
   }
 }
