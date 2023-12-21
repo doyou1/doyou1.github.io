@@ -4,7 +4,7 @@ import type { FooterBottomText } from "@/composables/use-footer-string";
 
 const footerBottom = ref<FooterBottomText>({
   bottomLink: [
-    "Released under the",
+    { text: "Released under the" },
     { text: "MIT License.", url: "https://opensource.org/license/mit/" },
   ],
   bottomText: "Copyright © 2014-2023 Evan You",
@@ -14,7 +14,7 @@ const footerBottom = ref<FooterBottomText>({
 <template>
   <section id="footer-bottom">
     <p class="footer-bottom-release">
-      {{ footerBottom.bottomLink[0] }}
+      {{ footerBottom.bottomLink[0].text }}
       <a :href="footerBottom.bottomLink[1].url">{{
         footerBottom.bottomLink[1].text
       }}</a>
