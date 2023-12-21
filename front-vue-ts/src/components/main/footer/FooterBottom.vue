@@ -9,7 +9,6 @@ const footerBottom = ref<FooterBottomText>({
   ],
   bottomText: "Copyright © 2014-2023 Evan You",
 });
-console.log(footerBottom.value.bottomLink);
 </script>
 
 <template>
