@@ -1,22 +1,15 @@
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from "vue";
 import type { FooterBottomText } from "@/composables/use-footer-string";
 
-export default {
-  setup() {
-    const footerBottom = ref<FooterBottomText>({
-      bottomLink: [
-        "Released under the",
-        { text: "MIT License.", url: "https://opensource.org/license/mit/" },
-      ],
-      bottomText: "Copyright © 2014-2023 Evan You",
-    });
-
-    return {
-      footerBottom,
-    };
-  },
-};
+const footerBottom = ref<FooterBottomText>({
+  bottomLink: [
+    "Released under the",
+    { text: "MIT License.", url: "https://opensource.org/license/mit/" },
+  ],
+  bottomText: "Copyright © 2014-2023 Evan You",
+});
+console.log(footerBottom.value.bottomLink);
 </script>
 
 <template>
