@@ -1,3 +1,18 @@
+# lint check in pre-commit (최신, 20231104 추가)
+- references: https://www.youtube.com/watch?v=_ssKvmZqSnk
+- 주의점
+    - 커밋시 lint, prettier를 체크하기 위해선 반드시 `./front-vue-ts` 뿐만 아니라 `.git/` 디렉토리가 있는 `./`(root directory)에서 `npm install`을 해야한다.
+        - 스터디용으로 root directory에 프로젝트가 없어서 발생하는 문제
+        - 디테일하게 지금같은 상황에 따른 설정은 다시 한번 확인 필요
+
+# vue project ts & eslint, prettier (최신, 20231104 추가)
+- 아래의 README.md 참고
+    - https://github.com/doyou1/web-study-clone/tree/dev/front-vue-ts
+    - https://github.com/doyou1/web-study-clone/tree/dev/sampling/vue-eslint-prittier-sampling
+
+- 혹시 실행 에러 발생시 아래 내용 참고
+    - https://github.com/doyou1/web-study-clone/tree/dev/sampling/vue-eslint-prittier-sampling
+
 # github pages 배포 (최신, 20231001 추가)
 - 결과물
     - react: https://doyou1.github.io/web-study-clone/react/
