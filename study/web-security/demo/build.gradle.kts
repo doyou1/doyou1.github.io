@@ -25,18 +25,13 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
 	implementation("org.springframework.boot:spring-boot-starter-validation")
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
 	implementation("org.springframework.boot:spring-boot-starter-security")
-	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	implementation("io.jsonwebtoken:jjwt-api:0.11.5")
-	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
 	runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
-	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
 	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
 
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
 //	runtimeOnly("com.mysql:mysql-connector-j")
 	implementation("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

@@ -11,7 +11,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 data class MemberDtoRequest(
-        val id: Long?,
+        var id: Long?,
         @field:NotBlank
         @JsonProperty("loginId")
         private val _loginId: String?,
@@ -46,20 +46,20 @@ data class MemberDtoRequest(
         @JsonProperty("email")
         private val _email: String?,
 ) {
-        val loginId: String
-            get() = _loginId!!
-        val password: String
-            get() = _password!!
-        val name: String
-            get() = _name!!
-        val birthDate: LocalDate
-            get() = _birthDate!!.toLocalDate()
-        val gender: Gender
-            get() = Gender.valueOf(_gender!!)
-        val email: String
-            get() = _email!!
+    val loginId: String
+        get() = _loginId!!
+    val password: String
+        get() = _password!!
+    val name: String
+        get() = _name!!
+    val birthDate: LocalDate
+        get() = _birthDate!!.toLocalDate()
+    val gender: Gender
+        get() = Gender.valueOf(_gender!!)
+    val email: String
+        get() = _email!!
 
-    private fun String.toLocalDate() : LocalDate = LocalDate.parse(this, DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+    private fun String.toLocalDate(): LocalDate = LocalDate.parse(this, DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 
     fun toEntity(): Member = Member(id, loginId, password, name, birthDate, gender, email)
 }
@@ -77,3 +77,12 @@ data class LoginDto(
     val password: String
         get() = _password!!
 }
+
+data class MemberDtoResponse(
+        val id: Long,
+        val loginId: String,
+        val name: String,
+        val birthDate: String,
+        val gender: String,
+        val email: String,
+)

@@ -20,7 +20,8 @@ class SecurityConfig(private val jwtTokenProvider: JwtTokenProvider) {
                 .csrf { it.disable() }
                 .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
                 .authorizeHttpRequests {
-                    it.requestMatchers(("/api/member/signup")).anonymous()
+                    it.requestMatchers("/api/member/signup", "/api/member/login").anonymous()
+                            .requestMatchers("/api/member/**").hasRole("MEMBER")
                             .anyRequest().permitAll()
                 }
                 .addFilterBefore(

@@ -20,11 +20,11 @@ annotation class ValidEnum(
 class ValidEnumValidator: ConstraintValidator<ValidEnum,Any> {
     private lateinit var enumValues: Array<out Enum<*>>
 
-    override fun initialize(annotation: ValidEnum?) {
-        annotation?.let {enumValues = it.enumClass.java.enumConstants }
+    override fun initialize(annotation: ValidEnum) {
+        enumValues = annotation.enumClass.java.enumConstants 
     }
 
-    override fun isValid(value: Any?, context: ConstraintValidatorContext?): Boolean {
+    override fun isValid(value: Any?, context: ConstraintValidatorContext): Boolean {
         if (value == null) {
             return true
         }

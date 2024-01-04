@@ -6,18 +6,20 @@ import com.example.demo.common.exception.InvalidInputException
 import com.example.demo.common.status.ROLE
 import com.example.demo.member.dto.LoginDto
 import com.example.demo.member.dto.MemberDtoRequest
+import com.example.demo.member.dto.MemberDtoResponse
 import com.example.demo.member.entity.Member
 import com.example.demo.member.entity.MemberRole
 import com.example.demo.member.repository.MemberRepository
 import com.example.demo.member.repository.MemberRoleRepository
 import jakarta.transaction.Transactional
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.stereotype.Service
 
 @Transactional
 @Service
-class MemberService (private val memberRepository: MemberRepository, private val memberRoleRepository: MemberRoleRepository, private val authenticationManagerBuilder: AuthenticationManagerBuilder, private val jwtTokenProvider: JwtTokenProvider) {
+class MemberService(private val memberRepository: MemberRepository, private val memberRoleRepository: MemberRoleRepository, private val authenticationManagerBuilder: AuthenticationManagerBuilder, private val jwtTokenProvider: JwtTokenProvider) {
 
 
     /**
@@ -26,7 +28,7 @@ class MemberService (private val memberRepository: MemberRepository, private val
     fun signUp(memberDtoRequest: MemberDtoRequest): String {
         // ID 중복 검사
         var member: Member? = memberRepository.findByLoginId(memberDtoRequest.loginId)
-        if (member != null){
+        if (member != null) {
             throw InvalidInputException("loginId", "이미 등록된 ID입니다.")
         }
         member = memberDtoRequest.toEntity()
@@ -46,5 +48,23 @@ class MemberService (private val memberRepository: MemberRepository, private val
         val authentication = authenticationManagerBuilder.`object`.authenticate(authenticationToken)
 
         return jwtTokenProvider.createToken(authentication)
+    }
+
+    /**
+     * 내 정보 조회
+     */
+    fun searchMyInfo(id: Long): MemberDtoResponse {
+        val member: Member = memberRepository.findByIdOrNull(id)
+                ?: throw InvalidInputException("id", "회원번호(${id})가 존재하지 않는 유저입니다.")
+        return member.toDto()
+    }
+
+    /**
+     * 내 정보 수정
+     */
+    fun saveMyInfo(memberDtoRequest: MemberDtoRequest): String {
+        val member: Member = memberDtoRequest.toEntity()
+        memberRepository.save(member)
+        return "수정 완료되었습니다."
     }
 }

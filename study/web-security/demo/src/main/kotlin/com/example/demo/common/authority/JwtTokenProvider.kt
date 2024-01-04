@@ -1,5 +1,6 @@
 package com.example.demo.common.authority
 
+import com.example.demo.common.dto.CustomUser
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.ExpiredJwtException
 import io.jsonwebtoken.Jwts
@@ -30,13 +31,22 @@ class JwtTokenProvider {
 
     /**
      * 토큰 생성
-      */
-    fun createToken(authentication: Authentication) : TokenInfo {
+     */
+    fun createToken(authentication: Authentication): TokenInfo {
         val authorities: String = authentication.authorities.joinToString(",", transform = GrantedAuthority::getAuthority)
         val now = Date()
         val accessExpiration = Date(now.time + EXPIRATION_MILLISECONDS)
         // Access Token
-        val accessToken = Jwts.builder().setSubject(authentication.name).claim("auth", authorities).setIssuedAt(now).setExpiration(accessExpiration).signWith(key, SignatureAlgorithm.HS256).compact()
+        val accessToken = Jwts
+                .builder()
+                .setSubject(authentication.name)
+                .claim("auth", authorities)
+                .claim("userId", (authentication.principal as CustomUser).userId)
+                .setIssuedAt(now)
+                .setExpiration(accessExpiration)
+                .signWith(key, SignatureAlgorithm.HS256)
+                .compact()
+
         return TokenInfo("Bearer", accessToken)
     }
 
@@ -46,9 +56,10 @@ class JwtTokenProvider {
     fun getAuthentication(token: String): Authentication {
         val claims: Claims = getClaims(token)
         val auth = claims["auth"] ?: throw RuntimeException("잘못된 토큰입니다.")
+        val userId = claims["userId"] ?: throw RuntimeException("잘못된 토큰입니다.")
         // 권한 정보 추출
         val authorities: Collection<GrantedAuthority> = (auth as String).split(",").map { SimpleGrantedAuthority(it) }
-        val principal: UserDetails = User(claims.subject, "", authorities)
+        val principal: UserDetails = CustomUser(userId.toString().toLong(), claims.subject, "", authorities)
         return UsernamePasswordAuthenticationToken(principal, "", authorities)
     }
 
@@ -73,5 +84,5 @@ class JwtTokenProvider {
         return false
     }
 
-    private fun getClaims(token: String): Claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJwt(token).body
+    private fun getClaims(token: String): Claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).body
 }
